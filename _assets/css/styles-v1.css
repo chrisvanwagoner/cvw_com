@@ -1,0 +1,442 @@
+@import 'normalize.css';
+
+
+* {
+    font-family: europa, "Avenir Next", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    font-size: 20px;
+    line-height: 1.5rem;
+
+}
+
+html {
+  font-family: europa,"Avenir Next", serif;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: RGBA(13, 255, 250, 1.00);
+    background: linear-gradient( 180deg, RGBA(13, 255, 250, 1.00), #fafafa);
+    /*background: linear-gradient( 180deg, lightgrey, #fafafa, #1e1e1e);*/
+    background: lightgrey;
+    background: #fafafa;
+}
+
+/***********************************
+Header
+***********************************/
+
+header {
+  /*margin: 5vh 5% 0 1.5rem;*/
+  /*margin: 1% 5% 1% 2%;*/
+  margin: 1%;
+  /*padding: 0 5%;*/
+  color: #fff;
+  position: relative;
+  display: block;
+  background-color: #204B4A;
+  background-image: url("/_assets/img/palm clear.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh;
+  animation: blink 5s 0.5s infinite step-start normal;
+  z-index: 0;
+}
+
+
+header.tint:before {
+  content: "";
+  display: inline;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+
+header h1 {
+  font-size: 2.5em;
+  line-height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 35vh auto 0;
+
+}
+
+header h1:after {
+    content: "";
+    /*animation: addtext 3s 4s 1 normal forwards running step-start;*/
+    position: absolute;
+    display: inline-block;
+    min-width: 300px;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: bottom;
+    float: left;
+    text-align: left;
+    font-family: monospace;
+}
+
+header hr {
+  border-width: 0px;
+  border-top: 2px solid gold;
+  /*border-style: unset;*/
+  width: 10rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+header h2 {
+
+  /*margin: 2% auto 0;*/
+  font-size: 1.2em;
+  line-height: 2rem;
+  /*font-family: "source-serif-pro", sans-serif;*/
+  letter-spacing: 1px;
+}
+
+
+main { }
+
+
+
+main div {
+  position: relative;
+    line-height: 1.5rem;
+    margin-bottom: 0.7rem;
+}
+
+a {
+    font-weight: 400;
+    /*color: inherit;*/
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+
+.btn {
+    /*width: 10rem;*/
+    /*height: 5rem;*/
+    outline: none;
+
+}
+
+.sociallinks {
+  width: 100%;
+  height: auto;
+  margin: 3rem 0 4rem;
+  border: 1px dashed orange;
+}
+
+.btn.buzzshift {
+  background: RGBA(244, 176, 2, 1.00);
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  color: #fff;
+  /*background: linear-gradient(to bottom, #FFF, #FAFAFA);*/
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 10px;
+  /*top: -0.1rem;*/
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn.buzzshift:hover, .btn.buzzshift:active {
+  background: RGBA(256, 186, 0, 1.00);
+  box-shadow: 0 4px 3rem RGBA(214, 116, 0, 1.00), rgba(0, 0, 0, 0.2) 0 4px 10px;
+  text-shadow: 0 0 0.5rem RGBA(214, 116, 0, 1.00);
+}
+
+.btn.twitter {
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  background: linear-gradient(180deg, RGBA(45, 199, 245, 1.00), RGBA(5, 159, 245, 1));
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  border-radius: 25px;
+  width: 150px;
+  height: 50px;
+  box-shadow: 0px 6px 10px 1px RGBA(5, 159, 245, 0.5);
+  transition: 0.2s;
+  margin: 0 1rem;
+}
+.twitter .highlight {
+  background: linear-gradient(180deg, rgba(255,255,255,0.5), RGBA(5, 159, 245, 0.1));
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+  width: 135px;
+  height: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin: 3px auto;
+  box-shadow: 0 0 16px 1px rgba(255,255,255,0.1);
+
+}
+.twitter .lowlight {
+  height: 0px;
+  position: inherit;
+  width: 135px;
+  top: -0.75rem;
+  /*bottom: 0px;*/
+  margin: 0 auto;
+  box-shadow: 0 0 12px 1px rgba(255,255,255,0.5);
+
+}
+.twitter .lowlight2 {
+  height: 0px;
+  position: inherit;
+  width: 115px;
+  top: -0.75rem;
+  margin: 0 auto;
+  box-shadow: 0 0 16px 2px rgba(255,255,255,0.7);
+
+}
+.btn.twitter:hover {
+  transition: 0.2s;
+  top: -2px;
+  box-shadow: 0px 10px 16px 1px RGBA(5, 159, 245, 0.5);
+}
+.btn.twitter:hover .name {
+  opacity: 1;
+  transition: 0.2s;
+}
+.btn.twitter:active {
+  width: 140px;
+  line-height: 1.3rem;
+  font-size: 1em;
+  height: 45px;
+  transition: 0.2s;
+  top: 2px;
+  box-shadow: 0px 2px 6px 1px RGBA(5, 159, 245, 0.50);
+}
+.btn.twitter:active .highlight {
+  display: inline-block;
+  position: relative;
+  width: 115px;
+  height: 10px;
+  /*top: 0px;*/
+  top: -4px;
+}
+.btn.twitter .name {
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  /*opacity: 0.8;*/
+  clear: both;
+  float: none;
+  /*float: inline-start;*/
+  margin: 0 auto;
+  top: -1rem;
+  /*left: 50%;*/
+}
+
+
+
+footer {
+    position: relative;
+    width: 100%;
+    clear: both;
+    /*display: sticky;*/
+    /*bottom: 0;*/
+    background-color: #1a1a20;
+    background-color: #222D32;
+    color: #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+footer a {
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.2rem;
+  color: #111;
+  background-color: #fff;
+  border: 2px solid transparent;
+  transition: 0.2s;
+  border-radius: 6px;
+
+}
+footer a:hover {
+  color: #fff;
+  /*border-bottom: 2px solid #fff;*/
+  background-color: gold;
+  background-color: #AC0000;
+
+
+}
+footer p:last-child {
+  font-family: "source-serif-pro", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.2em;
+}
+
+
+
+/***********************************
+Main Bio
+***********************************/
+
+section.bio {
+  /*font-size: 1em;*/
+  margin: 0 0;
+  padding: 6rem 5%;
+  font-weight: 200;
+  z-index: 0;
+  color: #fff;
+  background-color: #222D32;
+}
+
+.bio * {
+    display: inline;
+    /*vertical-align: middle;*/
+    text-align: left;
+    line-height: 1.4;
+
+}
+.bio span {
+  /*animation: codedisappear .5s 2s forwards;*/
+
+   }
+
+.bio .brac {
+    color: #7EC9C2;
+    font-family: monospace;
+}
+
+.bio .el {
+    color: #DC5B63;
+    font-family: monospace;
+}
+
+
+.bio div {
+  display: block;
+  padding-bottom: 0.5rem;
+}
+
+
+.btn.github {
+  color: #000;
+  z-index: 2;
+  line-height: 3rem;
+  width: 100px;
+  top: 0.5rem;
+  position: relative;
+  padding: 0.5rem ;
+  /*padding-bottom: 0.6rem;*/
+  font-family: monospace;
+  background-color: darkgrey;
+  border: medium solid grey;
+  border-top: medium solid lightgrey;
+  border-left: medium solid lightgrey;
+  transform: rotateZ( 3deg);
+
+}
+
+.btn.github:hover, .btn.github:active {
+  border-top-color: grey;
+  border-left-color: grey;
+  border-right-color: lightgrey;
+  border-bottom-color: lightgrey;
+
+}
+
+.btn.vsco {
+  width: 200px;
+  display: inline;
+  position: relative;
+  height: 50px;
+  /*border-radius: 6px;*/
+  color: #fff;
+  padding: 0.8rem 1.4rem;
+  /*background-image: url("/_assets/img/vsco_070716.jpg");*/
+  background-color: #ae995a;
+  /*box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);*/
+  /*border: 2px solid #fafafa;*/
+  transition-property: color,background-color,box-shadow,transform;
+  transition-duration: .15s;
+  transition: transform .3s cubic-bezier(.165,.84,.44,1);
+  will-change: transform;
+  font-size: 1.8em;
+  top: -0.8rem;
+  left: 0rem;
+  /*z-index: 0;*/
+  /*text-shadow: 0 0 5px #000;*/
+  /*border-radius: 6px;*/
+  font-weight: 500;
+  font-size: .75rem;
+  font-family: helvetica, Arial, sans-serif;
+  letter-spacing: .0625rem;
+  line-height: 2.8125rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*.btn.vsco:hover  {
+  background-color: #ae995a;
+}*/
+
+.btn.tumblr {
+  padding: 0.5rem 0.8rem;
+  color: #fff;
+    border-radius: 2px;
+    position: relative;
+    left: 0.8rem;
+  background-color: #36465d;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+/***********************************
+Main Work
+***********************************/
+
+.work {
+  text-align: left;
+  word-break: keep-all;
+}
+
+.work__client {
+  vertical-align: bottom;
+  height: 30vh;
+  padding: 5%;
+}
+
+.which-wich {
+  background: RGBA(254, 197, 36, 1.00);
+}
+
+.which-wich .client-info__name {
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 0rem;
+
+}
+
+.invisible {
+    transition: opacity 0.5s ease;
+    opacity: 0.0;
+}
+
+.visible {
+    transition: opacity 0.5s ease;
+    opacity: 1.0;
+}
+
+
+
+
+/***********************************
+Footer
+***********************************/
+

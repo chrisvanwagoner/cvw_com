@@ -1,0 +1,63 @@
+.full-width {
+  width: 100%; }
+
+/* Flexbox layout*/
+.flex {
+  display: flex; }
+
+.flex.vertical {
+  flex-direction: column; }
+
+.flex.horizontal {
+  justify-content: center; }
+
+.flex.row {
+  flex-direction: row; }
+
+.flex.center {
+  align-items: center;
+  justify-content: center;
+  /* height is very different than flex - AJ
+  height: 100%;
+  */ }
+
+.flex.stretch {
+  align-items: stretch; }
+
+.flex.initial-center {
+  justify-content: center; }
+
+.flex.cross-center {
+  align-items: center; }
+
+.flex.initial-spaced {
+  justify-content: space-between; }
+
+.flex.wrap {
+  flex-wrap: wrap; }
+
+.flex.bottom {
+  align-self: flex-end; }
+
+.flex.right {
+  justify-content: flex-end; }
+
+.flex.thirds > * {
+  margin-right: 5%;
+  flex: 0 0 30%;
+  margin-bottom: 3%; }
+
+.flex.thirds > *:nth-child(3n) {
+  margin-right: 0; }
+
+.flex > .fill {
+  flex: 1 1 auto; }
+
+.flex.full {
+  flex: 0 0 100%; }
+
+.flex.right {
+  justify-content: flex-end; }
+
+.flex > .last-item {
+  order: 1; }

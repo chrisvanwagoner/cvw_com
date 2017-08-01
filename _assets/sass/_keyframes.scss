@@ -1,0 +1,54 @@
+@keyframes flicker {
+	0% {background-image: url("/_assets/img/header-bg-palm1.jpeg");}
+	30% { background-image: url("/_assets/img/palm.jpg"); }
+	31% { background-image: url("/_assets/img/header-bg-palm1.jpg"); }
+	100% {background-image: url("/_assets/img/header-bg-palm1.jpeg");}
+}
+@-webkit-keyframes flicker {
+	0% { background-image: url("/_assets/img/header-bg-palm1.jpeg");}
+	30% { background-image: url("/_assets/img/palm.jpg"); }
+	31% { background-image: url("/_assets/img/header-bg-palm1.jpg"); }
+	100% {background-image: url("/_assets/img/header-bg-palm1.jpeg");}
+}
+
+
+
+@keyframes rainbow-shadow{
+	0% {
+		box-shadow: 0 2px 0.5em rgba(255,0,0,0.8);
+	}
+	33% {
+		box-shadow: 0 2px 0.5em rgba(0,255,0,0.8);	
+	}
+	66% {
+		box-shadow: 0 2px 0.5em rgba(0,0,255,0.8);	
+	}
+	100% {
+		box-shadow: 0 2px 0.5em rgba(255,0,0,0.8);	
+	}
+}
+
+
+@-webkit-keyframes slide {
+  0% { 
+  		width: 10px; 
+  }          
+  50% { 
+  		width: 100%;
+  }
+  100% {
+  		width: 10px;
+  }
+}
+
+@keyframes slide {
+  0% { 
+  		width: 10px; 
+  }          
+  50% { 
+  		width: 100%;
+  }
+  100% {
+  		width: 10px;
+  }
+}
