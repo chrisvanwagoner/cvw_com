@@ -25,7 +25,7 @@ $black: #000000;
 $red: #ff0036;
 $blue: #2633ff;
 
-
+$pink: #ffe8e2;
 $blue: #2633FF;
 $red: #E20000;
 $light-blue: #0082DD;
@@ -35,6 +35,7 @@ $green: #2E7D7A;
 
 $client-ww-yellow: #FEC524;
 $client-bs-green: #B4D335;
+$client-bs-blue: #161843;
 $client-raleys-red: #FF0036;
 $client-ivie-green: #87A93E;
 $client-deca-blue: #447FC6;
@@ -82,6 +83,7 @@ h1 {
   letter-spacing: 2px;
   font-weight: 600;
   color: $blue;
+  color: #272AC5;
 }
 
 h2 {
@@ -103,7 +105,7 @@ h4 {}
 ***********************************/
 
 header {
-  background-color: #ffe8e2;
+  background-color: $pink;
   // background-color: #F5E6E6;
   // background-color: #ffefef;
   // background-color: #fff1f6;
@@ -307,24 +309,45 @@ main {
       margin-bottom: $section-spacing;
     }
     
-    .header__h2 {
-      color: $primary-color;
-      text-align: center;
-      top: 0;
-      background-color: $primary-bg;
-      position: sticky;
-      position: -webkit-sticky;
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter:  blur(20px);
-      backdrop-filter: saturate(180%) blur(20px);
-      // background-color: rgba(255, 255, 255, 0.7);
-      background-color: rgba(246, 246, 246, 0.7);
-      z-index: 1;
-    }
-    .header__flavor {
-      color: $primary-color;
-      text-align: center;
-      // opacity: 0.6;
+    .h2-wrapper {
+      display: flex;
+      flex-direction: row;
+      .header__h2 {
+        // align-self: center;
+        margin-top: $section-spacing * 2;
+        margin-bottom: $section-spacing;
+        display: flex;
+        left: -5%;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        // text-align: center;
+        // top: 0;
+        
+        width: auto;
+        background-color: $primary-bg;
+        // position: sticky;
+        // position: -webkit-sticky;
+        // -webkit-backdrop-filter: saturate(180%) blur(20px);
+        // -webkit-backdrop-filter:  blur(20px);
+        // backdrop-filter: saturate(180%) blur(20px);
+        // background-color: rgba(255, 255, 255, 0.7);
+        // background-color: rgba(246, 246, 246, 0.7);
+        z-index: 1;
+
+        p {
+          transform: rotateZ(-18deg);
+          font-weight: 600;
+          font-size: 4em;
+          line-height: 0;
+        }
+      }
+
+      .header__flavor {
+        color: $primary-color;
+        text-align: center;
+        // opacity: 0.6;
+      }
     }
 
     .client-details__link {
@@ -349,8 +372,8 @@ main {
         margin-left: 5%;
         margin-right: 5%;
         max-width: 600px;
-        margin-top: $section-spacing;
-        margin-bottom: $section-spacing;
+        margin-top: $section-spacing * 2;
+        margin-bottom: $section-spacing * 2;
         // max-width: 75%;
 
         :first-child {
@@ -409,7 +432,7 @@ main {
       flex: 1;
       color: $primary-color;
       height: auto;
-      background-image: linear-gradient(180deg, #bbb, #ccc 30%, #eee 40%, $primary-bg 50%);
+      background-image: linear-gradient(180deg, #ccc, #eee 30%, #fafafa 40%, $primary-bg 50%);
       // margin-bottom: $section-spacing;
 
 
@@ -454,6 +477,7 @@ main {
         max-width: 600px;
         margin: 5%;
         margin-bottom: $section-spacing;
+        margin-top: 1em;
 
         :first-child {
           margin-bottom: 2em;
@@ -492,58 +516,73 @@ main {
 
 
     .tertiary {
-      background-color: $black;
+      background-color: #fff;
       height: auto;
       display: flex;
-      flex-direction: row;
+      // flex-direction: column;
       flex: 1;
       margin: 5%;
+      // height: 700px;
+      // z-index: 0;
       // box-shadow: 0 0.8em 1em rgba(50, 50, 50, 0.25);
 
       .client-content{
+        // z-index: 1;
         display: flex;
-        flex: 1;
+        // flex: 1;
         flex-direction: column;
-        margin: 2%;
-        padding: 2%;
-        padding-right: 0;
-        padding-bottom: 0;
-        background-color: white;
+        justify-content: center;
+        align-items: center;
+        // margin: 2%;
+        border: 1em solid black;
+        // padding-right: 0;
+        // padding-bottom: 0;
+        
 
         .client-details {
           flex-direction: column;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-top: $section-spacing;
-          margin-bottom: $section-spacing;  
+          margin-top: $section-spacing * 0.5;
+          margin-bottom: $section-spacing * 0.5;  
 
-          
-
+          img {
+            // max-width: 100%;
+            max-height: 5em;
+            width: 300px;
+            min-width: 90%;
+            align-self: center;
+          }
+          .client-details__type {
+            margin-bottom: 1em;
+          }
           .client-details__name { 
             display: none;
           }
-
-          img {
-            max-width: 100%;
-            width: 75%;
-            align-self: center;
+          .client-details__link {
+            margin-top: 1em;
           }
-        }
+
+          
+        } // .client-details
 
         .offset-screenshot {
-          flex-direction: row;
-          align-self: flex-end;
-          // display: flex;
-          margin-bottom: 0;
-          flex: 1;
           // align-self: center;
-          width: 75%;
+          // display: flex;
+          // margin-top: 1em;
+          margin-bottom: 1em;
+
+          box-shadow: 0 0 0.3em 0.1em rgba(0,0,0,0.25);
+          // flex: 1;
+          // align-self: center;
+          width: 90%;
           height: auto;
+          // margin-bottom: 1em;
           // background-image: url("/_assets/img/buyers.png");
         }
 
-      }
+      } // .client-content
 
 
 
@@ -558,25 +597,34 @@ main {
       background-repeat: no-repeat;
 
       .client-details__name {
-        // color: $client-deca-blue;
+        color: $client-deca-blue;
       }
    
     }
 
     .work__client--buyers {
       .client-details__name {
-        // color: $client-bs-green;
+        color: $client-bs-blue;
       }
     }
 
     .work__client--whichwich{
-      background-color: $client-ww-yellow;
+      .client-content { 
+        border-color: $client-ww-yellow;
+      }
+      .offset-screenshot {
+
+      }
     }
     .work__client--raleys {
-      background-color: $client-raleys-red;
+      .client-content {
+        border-color: $client-raleys-red;
+      }
     }
     .work__client--ivie {
-      background-color: $client-ivie-green;
+      .client-content {
+        border-color: $client-ivie-green;
+      }
     }
 
 

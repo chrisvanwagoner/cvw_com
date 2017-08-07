@@ -150,7 +150,8 @@ h1 {
   line-height: 1;
   letter-spacing: 2px;
   font-weight: 600;
-  color: #2633ff; }
+  color: #2633ff;
+  color: #272AC5; }
 
 h2 {
   font-size: 2em; }
@@ -283,21 +284,28 @@ main {
       margin-top: 6rem; }
     main .work .work__header:nth-child(2) {
       margin-bottom: 6rem; }
-    main .work .header__h2 {
-      color: #2a2a2a;
-      text-align: center;
-      top: 0;
-      background-color: #f6f6f6;
-      position: sticky;
-      position: -webkit-sticky;
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: saturate(180%) blur(20px);
-      background-color: rgba(246, 246, 246, 0.7);
-      z-index: 1; }
-    main .work .header__flavor {
-      color: #2a2a2a;
-      text-align: center; }
+    main .work .h2-wrapper {
+      display: flex;
+      flex-direction: row; }
+      main .work .h2-wrapper .header__h2 {
+        margin-top: 12rem;
+        margin-bottom: 6rem;
+        display: flex;
+        left: -5%;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        width: auto;
+        background-color: #f6f6f6;
+        z-index: 1; }
+        main .work .h2-wrapper .header__h2 p {
+          transform: rotateZ(-18deg);
+          font-weight: 600;
+          font-size: 4em;
+          line-height: 0; }
+      main .work .h2-wrapper .header__flavor {
+        color: #2a2a2a;
+        text-align: center; }
     main .work .client-details__link {
       color: #2a2a2a; }
     main .work .work__client.primary {
@@ -316,8 +324,8 @@ main {
         margin-left: 5%;
         margin-right: 5%;
         max-width: 600px;
-        margin-top: 6rem;
-        margin-bottom: 6rem; }
+        margin-top: 12rem;
+        margin-bottom: 12rem; }
         main .work .work__client.primary .client-details .client-details__type {
           font-size: 0.8em; }
         main .work .work__client.primary .client-details .client-details__name {
@@ -340,7 +348,7 @@ main {
       flex: 1;
       color: #2a2a2a;
       height: auto;
-      background-image: linear-gradient(180deg, #bbbbbb, #cccccc 30%, #eeeeee 40%, #f6f6f6 50%); }
+      background-image: linear-gradient(180deg, #cccccc, #eeeeee 30%, #fafafa 40%, #f6f6f6 50%); }
       main .work .work__client.secondary .work__client__img-wrapper {
         padding: 5%;
         padding-top: 6rem;
@@ -364,7 +372,8 @@ main {
       main .work .work__client.secondary .client-details {
         max-width: 600px;
         margin: 5%;
-        margin-bottom: 6rem; }
+        margin-bottom: 6rem;
+        margin-top: 1em; }
         main .work .work__client.secondary .client-details :first-child {
           margin-bottom: 2em; }
         main .work .work__client.secondary .client-details :last-child {
@@ -382,52 +391,55 @@ main {
           margin-top: 1em;
           margin-bottom: 1em; }
     main .work .tertiary {
-      background-color: black;
+      background-color: #fff;
       height: auto;
       display: flex;
-      flex-direction: row;
       flex: 1;
       margin: 5%; }
       main .work .tertiary .client-content {
         display: flex;
-        flex: 1;
         flex-direction: column;
-        margin: 2%;
-        padding: 2%;
-        padding-right: 0;
-        padding-bottom: 0;
-        background-color: white; }
+        justify-content: center;
+        align-items: center;
+        border: 1em solid black; }
         main .work .tertiary .client-content .client-details {
           flex-direction: column;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-top: 6rem;
-          margin-bottom: 6rem; }
+          margin-top: 3rem;
+          margin-bottom: 3rem; }
+          main .work .tertiary .client-content .client-details img {
+            max-height: 5em;
+            width: 300px;
+            min-width: 90%;
+            align-self: center; }
+          main .work .tertiary .client-content .client-details .client-details__type {
+            margin-bottom: 1em; }
           main .work .tertiary .client-content .client-details .client-details__name {
             display: none; }
-          main .work .tertiary .client-content .client-details img {
-            max-width: 100%;
-            width: 75%;
-            align-self: center; }
+          main .work .tertiary .client-content .client-details .client-details__link {
+            margin-top: 1em; }
         main .work .tertiary .client-content .offset-screenshot {
-          flex-direction: row;
-          align-self: flex-end;
-          margin-bottom: 0;
-          flex: 1;
-          width: 75%;
+          margin-bottom: 1em;
+          box-shadow: 0 0 0.3em 0.1em rgba(0, 0, 0, 0.25);
+          width: 90%;
           height: auto; }
     main .work .work__client--deca {
       background-image: url("/_assets/img/client-bg-deca-dental.jpg");
       background-position: 70% 0%;
       background-size: cover;
       background-repeat: no-repeat; }
-    main .work .work__client--whichwich {
-      background-color: #fec524; }
-    main .work .work__client--raleys {
-      background-color: #ff0036; }
-    main .work .work__client--ivie {
-      background-color: #87a93e; }
+      main .work .work__client--deca .client-details__name {
+        color: #447fc6; }
+    main .work .work__client--buyers .client-details__name {
+      color: #161843; }
+    main .work .work__client--whichwich .client-content {
+      border-color: #fec524; }
+    main .work .work__client--raleys .client-content {
+      border-color: #ff0036; }
+    main .work .work__client--ivie .client-content {
+      border-color: #87a93e; }
 
 .sociallinks {
   background-color: #f6f6f6;
@@ -628,7 +640,13 @@ footer {
     justify-content: space-between; }
 
   .work .tertiary.work__client .client-content {
-    flex-direction: row; } }
+    flex-direction: row; }
+    .work .tertiary.work__client .client-content .offset-screenshot {
+      margin-bottom: 0;
+      margin-top: 1em;
+      max-width: 60%;
+      box-shadow: none;
+      align-self: flex-end; } }
 @media screen and (min-width: 900px) {
   html {
     font-size: 20px; }
@@ -656,7 +674,8 @@ footer {
     padding-left: 5%; }
 
   .secondary.work__client--buyers {
-    background: linear-gradient(180deg, #f6f6f6, #eeeeee 35%, #cccccc 60%, #f6f6f6 70%); }
+    background: linear-gradient(180deg, #f6f6f6, #eeeeee 35%, #cccccc 60%, #f6f6f6 70%);
+    background-image: linear-gradient(180deg, #cccccc, #eeeeee 30%, #fafafa 40%, #f6f6f6 50%); }
 
   main .work .secondary.work__client > .work__client__img-wrapper {
     background-image: none; }
@@ -665,18 +684,10 @@ footer {
     padding-top: 9rem;
     padding-bottom: 9rem; }
 
-  #work .client-details {
-    padding-top: 9rem;
-    padding-bottom: 9rem; }
-
   .work__client--buyers {
     padding-top: 6rem;
     padding-bottom: 6rem; } }
 @media (min-width: 1200px) {
-  #work .client-details {
-    padding-top: 12rem;
-    padding-bottom: 12rem; }
-
   .work__client--buyers {
     padding-top: 6rem;
     padding-bottom: 6rem; } }
