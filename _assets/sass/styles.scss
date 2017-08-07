@@ -24,14 +24,18 @@ $green: #418965;
 $black: #000000;
 $red: #ff0036;
 $blue: #2633ff;
-
+$white: #FFFFFF;
 $pink: #ffe8e2;
 $blue: #2633FF;
 $red: #E20000;
 $light-blue: #0082DD;
 $yellow: #EED600;
 $green: #2E7D7A;
+$orange: #FF6F20;
 
+$sansfonts: Europa, Futura, "Avenir Next", sans-serif;
+$seriffonts: Garamond, serif;
+$monofonts: Inconsolata, monospace;
 
 $client-ww-yellow: #FEC524;
 $client-bs-green: #B4D335;
@@ -68,7 +72,7 @@ html {
   color: #ffffff;
   font-size: 16px;  
   line-height: 1.5;
-  font-family: europa, "Avenir Next", sans-serif;
+  font-family: $sansfonts;
 }
 
 
@@ -110,7 +114,7 @@ header {
   // background-color: #ffefef;
   // background-color: #fff1f6;
   // background-color: #FFF6FF;
-	height: 95vh;
+	height: 98vh;
   display: flex;
 
   .header__content-wrap { 
@@ -126,6 +130,7 @@ header {
     background-position: 50% -2em;
     background-repeat: no-repeat;
     flex: 1;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -217,7 +222,7 @@ main {
     background-color: #222D32;
     background-image: url("/_assets/img/geometry-blueoverlay.png");
 
-    font-family: Inconsolata, monospace;
+    font-family: $monofonts;
 
     h2 {
       font-size: inherit;
@@ -284,6 +289,10 @@ main {
         font-family: Inconsolata, monospace;
         letter-spacing: 0px;
         // font-weight: 200;
+      }
+
+      .gus {
+        text-decoration: underline;
       }
 
     } // #bio__text-wrap
@@ -852,7 +861,7 @@ footer {
 
   p {
     text-align: center;
-    font-family: Garamond;
+    font-family: $seriffonts;
     font-style: italic;
     letter-spacing: 2px;
     font-size: 1.5em;

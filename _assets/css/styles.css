@@ -143,7 +143,7 @@ html {
   color: #ffffff;
   font-size: 16px;
   line-height: 1.5;
-  font-family: europa, "Avenir Next", sans-serif; }
+  font-family: Europa, Futura, "Avenir Next", sans-serif; }
 
 h1 {
   font-size: 1.8em;
@@ -164,7 +164,7 @@ h2 {
 ***********************************/
 header {
   background-color: #ffe8e2;
-  height: 95vh;
+  height: 98vh;
   display: flex; }
   header .header__content-wrap {
     margin: 5%;
@@ -177,6 +177,7 @@ header {
     background-position: 50% -2em;
     background-repeat: no-repeat;
     flex: 1;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -275,6 +276,8 @@ main {
       main .bio #bio__text-wrap p, main .bio #bio__text-wrap h2 {
         font-family: Inconsolata, monospace;
         letter-spacing: 0px; }
+      main .bio #bio__text-wrap .gus {
+        text-decoration: underline; }
   main .work {
     display: flex;
     flex-direction: column;
@@ -584,7 +587,7 @@ footer {
   z-index: 1; }
   footer p {
     text-align: center;
-    font-family: Garamond;
+    font-family: Garamond, serif;
     font-style: italic;
     letter-spacing: 2px;
     font-size: 1.5em;
