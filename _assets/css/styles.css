@@ -289,10 +289,11 @@ main {
       margin-bottom: 6rem; }
     main .work .h2-wrapper {
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      overflow: hidden; }
       main .work .h2-wrapper .header__h2 {
         margin-top: 12rem;
-        margin-bottom: 6rem;
+        margin-bottom: 12rem;
         display: flex;
         left: -5%;
         position: relative;
@@ -443,6 +444,8 @@ main {
       border-color: #ff0036; }
     main .work .work__client--ivie .client-content {
       border-color: #87a93e; }
+    main .work .work__client--als .client-content {
+      border-color: #e51837; }
 
 .sociallinks {
   background-color: #f6f6f6;
@@ -578,6 +581,11 @@ main {
 
 .btn.tumblr:hover {
   animation: 2s linear  infinite rainbow-shadow; }
+
+.btn.keybase {
+  padding: 0.25em 0.5em;
+  background-color: orange;
+  color: black; }
 
 /***********************************
 Footer

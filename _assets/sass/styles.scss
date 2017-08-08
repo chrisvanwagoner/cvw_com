@@ -43,6 +43,7 @@ $client-bs-blue: #161843;
 $client-raleys-red: #FF0036;
 $client-ivie-green: #87A93E;
 $client-deca-blue: #447FC6;
+$client-als-red: #E51837;
 
 
 
@@ -321,10 +322,11 @@ main {
     .h2-wrapper {
       display: flex;
       flex-direction: row;
+      overflow: hidden;
       .header__h2 {
         // align-self: center;
         margin-top: $section-spacing * 2;
-        margin-bottom: $section-spacing;
+        margin-bottom: $section-spacing * 2;
         display: flex;
         left: -5%;
         position: relative;
@@ -635,6 +637,11 @@ main {
         border-color: $client-ivie-green;
       }
     }
+    .work__client--als {
+      .client-content {
+        border-color: $client-als-red;
+      }
+    }
 
 
   } // #work
@@ -843,6 +850,12 @@ main {
   animation: 2s linear  infinite rainbow-shadow;
 }
 
+
+.btn.keybase {
+  padding: 0.25em 0.5em;
+  background-color: orange;
+  color: $black;
+}
 
 
 
