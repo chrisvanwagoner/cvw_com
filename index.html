@@ -48,13 +48,17 @@
 
  <header>
     <div class="header__content-wrap">
+      
       <div class="header-image">
+        
         <div class="header__text-wrap">
           <h1 class="header__name">Chris<br/>van Wagoner</h1>
           <p class="header__summary">Overview in Screen Minor</p>
         </div>
-      </div>
-    </div>
+
+      </div> <!-- header-image -->
+
+    </div> <!-- header__content-wrap -->
   </header>
   
 <!-- Header with Delta mask background -->
@@ -246,20 +250,22 @@
 
   <!-- <script type="text/javascript" src="_assets/javascript/runthisshitty.js"></script> -->
   
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+  </script>
   
-  <!-- smooth scrolling -->
+  <!-- smooth scrolling to in-page anchor tags-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-    $(document).on('click', 'a[href*="#"]', function(event){
+    jQuery(document).on('click', 'a[href*="#"]', function(event){
       event.preventDefault();
 
-      $('html, body').animate({
+      jQuery('html, body').animate({
           scrollTop: $( $.attr(this, 'href') ).offset().top
       }, 500);
     });
   </script>
-  <!-- end smooth scrolling -->
+  <!-- end smooth scrolling to in-page anchor tags -->
 
 </body>
 

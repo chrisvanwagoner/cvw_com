@@ -165,9 +165,10 @@ h2 {
 header {
   background-color: #ffe8e2;
   height: 98vh;
-  display: flex; }
+  display: flex;
+  justify-content: center; }
   header .header__content-wrap {
-    margin: 5%;
+    margin: 7% 5%;
     display: flex;
     flex: 1; }
   header .header-image {
@@ -184,11 +185,9 @@ header {
     justify-content: flex-start;
     box-shadow: 0 0.8em 1em rgba(146, 1, 3, 0.25), 0 0.1em 0.5em rgba(46, 1, 3, 0.25);
     box-shadow: -0.5em 0.8em 1em rgba(146, 1, 3, 0.25), -0.2em 0.2em 0.3em rgba(46, 1, 3, 0.1);
-    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25);
-    margin-top: 6rem;
-    margin-bottom: 6rem; }
+    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); }
     header .header-image .header__text-wrap {
-      margin: 10% 7%;
+      padding: 10% 7%;
       flex: 1;
       flex-direction: column;
       flex-direction: row; }
@@ -196,29 +195,6 @@ header {
         margin-top: 1em;
         font-weight: 600;
         letter-spacing: 2px; }
-  header .header__content {
-    margin: 5%; }
-    header .header__content .header-mask {
-      -webkit-mask-image: url("/_assets/img/delta-mask.svg");
-      mask-image: url("/_assets/img/delta-mask.svg");
-      -webkit-mask-size: contain;
-      mask-size: contain;
-      mask-repeat: no-repeat;
-      -webkit-mask-repeat: no-repeat;
-      width: 100%;
-      -webkit-mask-position: 50% 50%;
-      mask-position: 50% 50%;
-      vertical-align: middle;
-      margin-left: auto;
-      margin-right: auto;
-      margin: auto;
-      margin-bottom: 5%; }
-      header .header__content .header-mask img {
-        width: 100%; }
-    header .header__content .header__text-wrap {
-      position: absolute;
-      z-index: 100;
-      color: black; }
 
 /***********************************
   Main
