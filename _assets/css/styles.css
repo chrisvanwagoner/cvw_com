@@ -166,10 +166,11 @@ h2 {
 header {
   background-color: #ffe8e2;
   height: 98vh;
+  min-height: 600px;
   display: flex;
   justify-content: center; }
   header .header__content-wrap {
-    margin: 7% 5%;
+    margin: 5% 12%;
     display: flex;
     flex: 1; }
   header .header-image {
@@ -565,7 +566,7 @@ main {
   padding: 0.5em 0.8em;
   position: relative;
   top: 0.4em;
-  background-color: orange;
+  background-color: #ff6f20;
   color: black;
   transition: 0.2s;
   -webkit-transition: 0.2s;
@@ -660,9 +661,15 @@ footer {
     font-size: 4em; }
 
   .work .secondary.work__client.work__client--buyers {
-    flex-direction: row; }
+    flex-direction: row;
+    align-items: center;
+    display: flex; }
     .work .secondary.work__client.work__client--buyers .work__client__img-wrapper {
-      width: 60%; }
+      width: 60%;
+      align-self: center;
+      padding-top: 0; }
+    .work .secondary.work__client.work__client--buyers .client-details {
+      align-self: center; }
 
   .work .work__header.header__h2, .work .work__header.header__flavor {
     text-align: left;

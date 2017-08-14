@@ -113,13 +113,14 @@ header {
   // background-color: #fff1f6;
   // background-color: #FFF6FF;
 	height: 98vh;
+  min-height: 600px;
   display: flex;
   // padding: $section-spacing 5%;
   justify-content: center;
 
 
   .header__content-wrap { 
-    margin: 7% 5%;
+    margin: 5% 12%;
     display: flex;
     flex: 1;
   }
@@ -822,7 +823,7 @@ main {
   padding: 0.5em 0.8em;
   position: relative;
   top: 0.4em;
-  background-color: orange;
+  background-color: $orange;
   color: $black;
   transition: 0.2s;
   -webkit-transition: 0.2s;

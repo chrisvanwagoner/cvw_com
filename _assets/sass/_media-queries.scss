@@ -78,8 +78,18 @@
 
   .work .secondary.work__client.work__client--buyers {
     flex-direction:row;
+    align-items: center;
+    display: flex;
+
     .work__client__img-wrapper {
       width: 60%;
+      align-self: center;
+      padding-top: 0;
+    }
+
+    .client-details {
+      align-self: center;
+
     }
   }
   
