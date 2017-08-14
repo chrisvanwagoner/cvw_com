@@ -62,10 +62,9 @@ $highlight: 1px solid orange;
   font-weight: 400;
   text-align: left;
   text-decoration: none;
-  // letter-spacing: 0.5px;
-
 
   // border: $highlight;
+
 }
 
 html {
@@ -78,7 +77,8 @@ html {
 
 
 body {
-
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -86,7 +86,7 @@ h1 {
   font-size: 1.8em;
   line-height: 1;
   letter-spacing: 2px;
-  font-weight: 600;
+  font-weight: 500;
   color: $blue;
   color: #272AC5;
 }
@@ -100,9 +100,6 @@ h3 {}
 h4 {}
 
 
-.btn {
-  outline: none;
-}
 
 
 /***********************************
@@ -156,7 +153,7 @@ header {
 
       .header__summary {
         margin-top: 1em;
-        font-weight: 600;
+        font-weight: 500;
         // font-size: 1em;
         // line-height: 1.3em;
         letter-spacing: 2px;
@@ -175,7 +172,9 @@ header {
 ***********************************/
 
 main {
-  // z-index: 0;
+
+  display: flex;
+  flex-direction: column;
 
   /***********************************
     Main Bio
@@ -185,12 +184,16 @@ main {
     padding-left: 5%;
     padding-right: 5%;
     background-color: #222D32;
-    background-image: url("/_assets/img/geometry-blueoverlay.png");
+    // background-image: url("/_assets/img/geometry-blueoverlay.png");
 
     font-family: $monofonts;
 
     h2 {
       font-size: inherit;
+    }
+
+    .btn {
+      outline: none;
     }
 
     .btn.buzzshift {
@@ -288,7 +291,9 @@ main {
       flex-direction: row;
       overflow: hidden;
       .header__h2 {
+
         // align-self: center;
+
         margin-top: $section-spacing * 2;
         margin-bottom: $section-spacing * 2;
         display: flex;
@@ -308,11 +313,12 @@ main {
         // backdrop-filter: saturate(180%) blur(20px);
         // background-color: rgba(255, 255, 255, 0.7);
         // background-color: rgba(246, 246, 246, 0.7);
-        z-index: 1;
+        // z-index: 1;
 
         p {
           transform: rotateZ(-18deg);
-          font-weight: 600;
+          font-family: $sansfonts;
+          font-weight: 500;
           font-size: 4em;
           line-height: 0;
         }
@@ -327,6 +333,10 @@ main {
 
     .client-details__link {
       color: $primary-color;
+    }
+
+    .client-details__link:hover {
+       text-decoration: underline;
     }
 
     .work__client.primary{
@@ -367,7 +377,7 @@ main {
         }
 
         .client-details__name {
-          font-weight: 600;
+          font-weight: 500;
           font-size: 2.2em;
           line-height: 1;
           margin-top: 0.5em;
@@ -389,10 +399,7 @@ main {
             // vertical-align: center;
           }
 
-        }
-        .client-details__link:hover {
-            text-decoration: underline;
-        }
+        }        
 
       } // .client-details.primary
 
@@ -443,12 +450,6 @@ main {
       }
 
       .client-details {
-        // flex-direction: column;
-        // clear: both;
-        // padding-top: 10%;
-        // z-index: 10;
-        // padding-top: 2em;
-        // padding-bottom: 4em;
         max-width: 600px;
         margin: 5%;
         margin-bottom: $section-spacing;
@@ -470,7 +471,7 @@ main {
         }
 
         .client-details__name {
-          font-weight: 600;
+          font-weight: 500;
           font-size: 2.2em;
           line-height: 1;
           margin-top: 0.5em;
@@ -498,11 +499,9 @@ main {
       flex: 1;
       margin: 5%;
       // height: 700px;
-      // z-index: 0;
       // box-shadow: 0 0.8em 1em rgba(50, 50, 50, 0.25);
 
       .client-content{
-        // z-index: 1;
         display: flex;
         // flex: 1;
         flex-direction: column;
@@ -525,8 +524,8 @@ main {
           img {
             // max-width: 100%;
             max-height: 5em;
-            width: 300px;
-            min-width: 90%;
+            // width: 300px;
+            max-width: 90%;
             align-self: center;
           }
           .client-details__type {
@@ -626,8 +625,9 @@ main {
 .sociallinks {
   background-color: #f6f6f6;
   width: 100%;
-  padding-top: 3em;
-  padding-bottom: 4em;
+  // padding-top: 3em;
+  // padding-bottom: 4em;
+  margin-bottom: $section-spacing;
   text-align: center;
 
   * {
@@ -673,7 +673,7 @@ main {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
   background: linear-gradient(180deg, RGBA(45, 199, 245, 1.00), RGBA(5, 159, 245, 1));
-  z-index: 1;
+  // z-index: 1;
   position: relative;
   display: inline-block;
   border-radius: 25px;
@@ -699,7 +699,7 @@ main {
   position: relative;
   // display: inline-block;
   margin: 0 auto;
-  // z-index: 10;
+
   // width: 100%;
   width: 135px;
   height: 15px;
@@ -759,7 +759,7 @@ main {
 
 .btn.github {
   color: #000;
-  z-index: 2;
+  // z-index: 2;
   top: 0.5rem;
   position: relative;
   padding: 0.5rem ;
@@ -784,7 +784,7 @@ main {
   padding: 0.8em 1.4em 0.6em;
   background-color: #ae995a;
   border: 3px solid #ae995a;
-  top: 1em;
+  top: 1.6em;
   font-weight: 500;
   font-family: helvetica, Arial, sans-serif;
   letter-spacing: 1px;
@@ -805,20 +805,35 @@ main {
   color: #fff;
   border-radius: 2px;
   position: relative;
-  left: 0.8rem;
+  top: 1em;
+  left: 0.6em;
   background-color: #36465d;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .btn.tumblr:hover {
   animation: 2s linear  infinite rainbow-shadow;
+  -moz-animation: 2s linear  infinite rainbow-shadow;
+  -webkit-animation: 2s linear  infinite rainbow-shadow;
 }
 
 
 .btn.keybase {
-  padding: 0.25em 0.5em;
+  padding: 0.5em 0.8em;
+  position: relative;
+  top: 0.4em;
   background-color: orange;
   color: $black;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+}
+
+.btn.keybase:hover {
+  border-radius: 0.5em;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
 }
 
 
@@ -834,7 +849,6 @@ Footer
 
 footer {
   background-color: #28282B;
-  z-index: 1;
 
   p {
     text-align: center;
