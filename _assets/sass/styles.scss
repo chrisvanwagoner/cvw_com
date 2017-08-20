@@ -376,8 +376,8 @@ main {
       color: $primary-color;
       height: auto;
       background-image: linear-gradient(180deg, #ccc, #eee 30%, #fafafa 40%, $primary-bg 50%);
-      margin-bottom: $section-spacing;
-      max-height: 700px;
+      // margin-bottom: $section-spacing;
+      max-height: 600px;
 
 
       .work__client__img-wrapper {
@@ -410,8 +410,8 @@ main {
       .client-details {
         max-width: 600px;
         margin: 5%;
-        margin-bottom: $section-spacing;
-        margin-top: 1em;
+        // margin-bottom: $section-spacing;
+        // margin-top: 1em;
 
         :first-child {
           margin-bottom: 2em;
