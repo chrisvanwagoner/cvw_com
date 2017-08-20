@@ -388,7 +388,8 @@ main {
             max-width: 90%;
             align-self: center; }
           main .work .tertiary .client-content .client-details .client-details__type {
-            margin-bottom: 1em; }
+            margin-bottom: 1em;
+            text-align: center; }
           main .work .tertiary .client-content .client-details .client-details__name {
             display: none; }
           main .work .tertiary .client-content .client-details .client-details__link {
