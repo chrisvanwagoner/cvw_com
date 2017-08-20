@@ -426,6 +426,7 @@ main {
       height: auto;
       background-image: linear-gradient(180deg, #ccc, #eee 30%, #fafafa 40%, $primary-bg 50%);
       margin-bottom: $section-spacing;
+      max-height: 700px;
 
 
       .work__client__img-wrapper {
