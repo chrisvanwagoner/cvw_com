@@ -375,7 +375,8 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 1em solid black; }
+        border: 1em solid black;
+        border: 0.2em solid black; }
         main .work .tertiary .client-content .client-details {
           flex-direction: column;
           display: flex;
@@ -625,8 +626,6 @@ footer {
 
   .work .tertiary.work__client .client-content {
     flex-direction: row; }
-    .work .tertiary.work__client .client-content .client-details {
-      width: 40%; }
     .work .tertiary.work__client .client-content .offset-screenshot {
       width: 60%;
       margin-bottom: 0;
