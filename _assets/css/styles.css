@@ -150,12 +150,12 @@ h2 {
 ***********************************/
 header {
   background-color: #ffe8e2;
-  height: 98vh;
+  height: 90vh;
   min-height: 500px;
   display: flex;
   justify-content: center; }
   header .header__content-wrap {
-    margin: 5% 12%;
+    margin: 5% 5%;
     display: flex;
     flex: 1; }
   header .header-image {
@@ -439,8 +439,10 @@ main {
     margin-bottom: 0.5em; }
   .sociallinks #sociallinks__button-wrap {
     display: inline-block;
+    width: auto;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    padding: 0 5%; }
 
 .twitter {
   color: #fff;
@@ -502,7 +504,7 @@ main {
 
 .btn.github {
   color: #000;
-  top: 0.5rem;
+  top: -0.4em;
   position: relative;
   padding: 0.5rem;
   font-family: monospace;
@@ -524,6 +526,8 @@ main {
   background-color: #ae995a;
   border: 3px solid #ae995a;
   font-weight: 500;
+  left: 0.4em;
+  top: 1.2em;
   font-family: helvetica, Arial, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -553,6 +557,14 @@ Footer
 ***********************************/
 footer {
   background-color: #28282B; }
+  footer .portrait-wrap {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: auto; }
+    footer .portrait-wrap .portrait {
+      max-width: 100%;
+      max-height: 250px; }
   footer p {
     text-align: center;
     font-family: Garamond, serif;
