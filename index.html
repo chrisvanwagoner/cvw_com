@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="shortcut icon" href="/_assets/img/apple-icon-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/_assets/img/apple-icon-precomposed.png">
-    <!-- Social --> 
+
+    <!-- ============================== -->
+    <!-- Social  -->
     <meta property="og:title" content="Chris van Wagoner">
     <meta property="og:description" content="Chris's Cool Web-Site">
     <meta property="og:type" content="website">
@@ -17,16 +19,24 @@
     <meta name="twitter:description" content="Chris's Cool Web-Site">
     <meta name="twitter:image:src" content="https://www.chrisvanwagoner.com/_assets/img/apple-icon-precomposed.png">
     <!-- end Social -->
-
-    <!-- Scripts -->
+    
+    <!-- ============================== -->
+    <!-- Scripts --> 
+    <!-- Load in Europa from Adobe Typekit -->
     <script src="https://use.typekit.net/luj6vzy.js"></script>
     <script> try { Typekit.load({ async: true }); } catch (e) {} </script>
     <!-- Font Awesome CDN-->
     <script src="https://use.fontawesome.com/0d546cdd84.js"></script>
+    <!-- jQuery used for scroll-up buttons in footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- offline jQuery use -->
+    <!-- <script src="/_assets/javascript/jquery.min.js"></script> -->
+    <!-- end Scripts  -->
 
+    <!-- ============================== -->
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/_assets/css/styles.css" />
-
+    <!-- end Stylesheets -->
 
 </head>
 
@@ -50,8 +60,6 @@
   <main>
 
     <section class="bio" id="about">
-
-      <!-- <div class="arrow-down center"></div> -->
 
       <div id="bio__text-wrap">
 
@@ -213,23 +221,8 @@
     </ul>
 
   </footer>
-
-  <!-- <script type="text/javascript" src="_assets/javascript/runthisshitty.js"></script> -->
   
-  <!-- smooth scrolling to in-page anchor tags-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- <script src="/_assets/javascript/jquery.min.js"></script> -->
-  <script>
-    jQuery(document).on('click', 'a[href*="#"]', function(event){
-      event.preventDefault();
-
-      jQuery('html, body').animate({
-          scrollTop: $( $.attr(this, 'href') ).offset().top
-      }, 500);
-    });
-  </script>
-  <!-- end smooth scrolling to in-page anchor tags -->
+  <script src="/_assets/javascript/runthisshitty.js"></script>
 
 </body>
-
 </html>
