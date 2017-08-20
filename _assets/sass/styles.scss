@@ -352,6 +352,18 @@ main {
 
       } // .client-details.primary
 
+      .image-credit {
+        display: flex; 
+        flex: 1;
+        justify-content: flex-end;
+        // align-self: flex-end;
+
+        a {
+          align-self: flex-end;
+          opacity: 0.5;
+        }
+      }
+
     } // .work__client.primary
 
 

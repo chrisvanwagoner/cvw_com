@@ -11,5 +11,5 @@ jQuery(document).on('click', 'a[href*="#"]', function(event){
 	event.preventDefault();
 	jQuery('html, body').animate({
 		scrollTop: $( $.attr(this, 'href') ).offset().top
- 	}, 500);
+ 	}, 750);
 });
