@@ -6,8 +6,8 @@
 
 @import "flex";
 @import "keyframes";
-@import "compatibility-mixins";
-@import "mixins";
+// @import "compatibility-mixins";
+// @import "mixins";
 
 
 
@@ -45,15 +45,12 @@ $client-ivie-green: #87A93E;
 $client-deca-blue: #447FC6;
 $client-als-red: #E51837;
 
-
-
 $highlight: 1px solid orange;
 
 
 /***********************************
 
 ***********************************/
-
 
 
 * {
@@ -74,7 +71,6 @@ html {
   line-height: 1.5;
   font-family: $sansfonts;
 }
-
 
 body {
   display: flex;
@@ -108,14 +104,9 @@ h4 {}
 
 header {
   background-color: $pink;
-  // background-color: #F5E6E6;
-  // background-color: #ffefef;
-  // background-color: #fff1f6;
-  // background-color: #FFF6FF;
 	height: 98vh;
   min-height: 500px;
   display: flex;
-  // padding: $section-spacing 5%;
   justify-content: center;
 
 
@@ -123,14 +114,11 @@ header {
     margin: 5% 12%;
     display: flex;
     flex: 1;
-    
   }
 
   .header-image {
-    // position: relative;
     animation: 5s ease-in-out infinite header-hover;
     -webkit-animation: 5s ease-in-out infinite header-hover;
-
     background-color: darken( #ffe8e2, 20%);
   	background-image: url("/_assets/img/name-in-Gilbert.png");
     background-size: cover;
@@ -142,25 +130,16 @@ header {
     flex-direction: column;
     align-items: end;
     justify-content: flex-start;
-    box-shadow: 0 0.8em 1em rgba(146, 1, 3, 0.25), 0 0.1em 0.5em rgba(46, 1, 3, 0.25);
-    box-shadow: -0.5em 0.8em 1em rgba(146, 1, 3, 0.25), -0.2em 0.2em 0.3em rgba(46, 1, 3, 0.1);
-    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25);
-    
-    
+    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); 
   	
     .header__text-wrap {
-      // width: 100%;
       padding: 10% 7%;
       flex: 1;
-      flex-direction: column;
       flex-direction: row;
-      // align-self: flex-end;
 
       .header__summary {
         margin-top: 1em;
         font-weight: 500;
-        // font-size: 1em;
-        // line-height: 1.3em;
         letter-spacing: 2px;
 
       }
@@ -189,7 +168,6 @@ main {
     padding-left: 5%;
     padding-right: 5%;
     background-color: #222D32;
-    // background-image: url("/_assets/img/geometry-blueoverlay.png");
 
     font-family: $monofonts;
 
@@ -232,7 +210,6 @@ main {
 			position: relative;
 			width: 0;
   		height: 0;
-  		// top: -0.5px;
   		border-left: 14px solid transparent;
   		border-right: 14px solid transparent;
   		border-bottom: 10px solid #8CB2B2;
@@ -243,8 +220,6 @@ main {
     #bio__text-wrap {
       padding-top: $section-spacing;
       padding-bottom: $section-spacing;
-      // background-color: #1F2A2F;
-      // max-width: 900px;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
@@ -261,7 +236,6 @@ main {
       p, h2 {
         font-family: Inconsolata, monospace;
         letter-spacing: 0px;
-        // font-weight: 200;
       }
 
       .gus {
@@ -296,10 +270,8 @@ main {
       display: flex;
       flex-direction: row;
       overflow: hidden;
+
       .header__h2 {
-
-        // align-self: center;
-
         margin-top: $section-spacing * 2;
         margin-bottom: $section-spacing * 2;
         display: flex;
@@ -307,19 +279,8 @@ main {
         position: relative;
         flex-direction: row;
         justify-content: space-between;
-        // text-align: center;
-        // top: 0;
-        
         width: auto;
         background-color: $primary-bg;
-        // position: sticky;
-        // position: -webkit-sticky;
-        // -webkit-backdrop-filter: saturate(180%) blur(20px);
-        // -webkit-backdrop-filter:  blur(20px);
-        // backdrop-filter: saturate(180%) blur(20px);
-        // background-color: rgba(255, 255, 255, 0.7);
-        // background-color: rgba(246, 246, 246, 0.7);
-        // z-index: 1;
 
         p {
           transform: rotateZ(-19deg);
@@ -333,7 +294,6 @@ main {
       .header__flavor {
         color: $primary-color;
         text-align: center;
-        // opacity: 0.6;
       }
     }
 
@@ -354,12 +314,9 @@ main {
       min-height: 500px;
       margin: 5%;
       margin-top: 0;
-
       margin-bottom: $section-spacing;
 
-
       .client-details {
-        // flex: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -369,21 +326,9 @@ main {
         margin-top: $section-spacing * 2;
         margin-bottom: $section-spacing * 2;
         position: relative;
-        // max-width: 75%;
-
-        :first-child {
-          // margin-bottom: 2em;
-        }
-
-        :last-child {
-          // margin-top: 2em;
-        }
         
         .client-details__type {
-          // font-weight: 200;
           font-size: 0.8em;
-          // vertical-align: middle;
-          // line-height: 1em;
         }
 
         .client-details__name {
@@ -403,12 +348,6 @@ main {
 
         .client-details__link { 
           color: $primary-color;
-
-          .link-arrow {
-            // font-size:0.8em; 
-            // vertical-align: center;
-          }
-
         }        
 
       } // .client-details.primary
@@ -433,11 +372,7 @@ main {
 
         padding: 5%;
         padding-top: $section-spacing;
-        padding-bottom: 0;
-        
-
-        // background: linear-gradient(180deg, $primary-bg, #eee 35%, #ccc 70%, $primary-bg 80%);
-        
+        padding-bottom: 0;       
         height: 20em;   
         display: inline;
         position: relative;
@@ -475,10 +410,7 @@ main {
         }
         
         .client-details__type {
-          // font-weight: 200;
           font-size: 0.8em;
-          // vertical-align: middle;
-          // line-height: 1em;
         }
 
         .client-details__name {
@@ -499,30 +431,20 @@ main {
 
     } // .work__client.secondary
 
-
-
-
     .tertiary {
       background-color: #fff;
       height: auto;
       display: flex;
       flex: 1;
       margin: 5%;
-      // height: 700px;
-      // box-shadow: 0 0.8em 1em rgba(50, 50, 50, 0.25);
 
       .client-content{
         display: flex;
-        // flex: 1;
         width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // margin: 2%;
         border: 1em solid black;
-        // padding-right: 0;
-        // padding-bottom: 0;
-        
 
         .client-details {
           flex-direction: column;
@@ -533,9 +455,7 @@ main {
           margin-bottom: $section-spacing * 0.5;  
 
           img {
-            // max-width: 100%;
             max-height: 5em;
-            // width: 300px;
             max-width: 90%;
             align-self: center;
           }
@@ -553,18 +473,10 @@ main {
         } // .client-details
 
         .offset-screenshot {
-          // align-self: center;
-          // display: flex;
-          // margin-top: 1em;
           margin-bottom: 1em;
-
           box-shadow: 0 0 0.3em 0.1em rgba(0,0,0,0.25);
-          // flex: 1;
-          // align-self: center;
           width: 90%;
           height: auto;
-          // margin-bottom: 1em;
-          // background-image: url("/_assets/img/buyers.png");
         }
 
       } // .client-content
@@ -623,27 +535,14 @@ main {
 } // main
 
 
-
-
-
-
-
-
-
-
-
-
 .sociallinks {
   background-color: #f6f6f6;
   width: 100%;
-  // padding-top: 3em;
-  // padding-bottom: 4em;
   margin-bottom: $section-spacing;
   text-align: center;
 
   * {
   }
-  // border: 1px dashed orange;
 
   a {
     font-weight: 400;
@@ -662,7 +561,6 @@ main {
     margin-left: 5%;
     width: 90%;
     color: black;
-    // position: absolute;
     transform: rotateZ(-5deg);
     margin-bottom: 0.5em;
   }
@@ -708,15 +606,11 @@ main {
 .twitter .highlight {
   background: linear-gradient(180deg, rgba(255,255,255,0.5), RGBA(5, 159, 245, 0.1));
   position: relative;
-  // display: inline-block;
   margin: 0 auto;
-
-  // width: 100%;
   width: 135px;
   height: 15px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  // margin: 3px auto;
   box-shadow: 0 0 16px 1px rgba(255,255,255,0.1);
 
 }
@@ -725,7 +619,6 @@ main {
   position: inherit;
   width: 135px;
   top: -0.75em;
-  /*bottom: 0px;*/
   margin: 0 auto;
   box-shadow: 0 0 12px 1px rgba(255,255,255,0.5);
 
@@ -748,29 +641,10 @@ main {
   opacity: 1;
   transition: 0.2s;
 }
-// .twitter:active {
-//   width: 140px;
-//   line-height: 1.3em;
-//   font-size: 1em;
-//   height: 45px;
-//   transition: 0.2s;
-//   top: 2px;
-//   box-shadow: 0px 2px 6px 1px RGBA(5, 159, 245, 0.50);
-// }
-// .twitter:active .highlight {
-//   display: inline-block;
-//   position: relative;
-//   width: 115px;
-//   height: 10px;
-//   /*top: 0px;*/
-//   top: -4px;
-// }
-
 
 
 .btn.github {
   color: #000;
-  // z-index: 2;
   top: 0.5rem;
   position: relative;
   padding: 0.5rem ;
@@ -795,7 +669,6 @@ main {
   padding: 0.8em 1.4em 0.6em;
   background-color: #ae995a;
   border: 3px solid #ae995a;
-  top: 1.6em;
   font-weight: 500;
   font-family: helvetica, Arial, sans-serif;
   letter-spacing: 1px;
@@ -817,7 +690,6 @@ main {
   border-radius: 2px;
   position: relative;
   top: 1em;
-  left: 0.6em;
   background-color: #36465d;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -852,11 +724,8 @@ footer {
     background-color: $blue;
 
     li {
-      // margin-left: 5%;
-      // margin-right: 5%;
       margin-left: 0.5em;
       margin-right: 0.5em;
-      // margin-bottom: 0.5em;
 
       a {
         background-color: #ffffff;
@@ -885,12 +754,7 @@ footer {
 
   } // #footer__menu
 
-
 } // footer
-
-
-
-
 
 
 @import "media-queries";
