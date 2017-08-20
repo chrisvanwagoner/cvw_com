@@ -323,11 +323,9 @@ main {
     main .work .work__client.secondary {
       display: flex;
       flex-direction: column;
-      flex: 1;
       color: #2a2a2a;
       height: auto;
-      background-image: linear-gradient(180deg, #cccccc, #eeeeee 30%, #fafafa 40%, #f6f6f6 50%);
-      max-height: 600px; }
+      background-image: linear-gradient(180deg, #cccccc, #eeeeee 30%, #fafafa 40%, #f6f6f6 50%); }
       main .work .work__client.secondary .work__client__img-wrapper {
         padding: 5%;
         padding-top: 6rem;
@@ -353,8 +351,6 @@ main {
         margin: 5%; }
         main .work .work__client.secondary .client-details :first-child {
           margin-bottom: 2em; }
-        main .work .work__client.secondary .client-details :last-child {
-          margin-top: 2em; }
         main .work .work__client.secondary .client-details .client-details__type {
           font-size: 0.8em; }
         main .work .work__client.secondary .client-details .client-details__name {
@@ -372,10 +368,10 @@ main {
       height: auto;
       display: flex;
       flex: 1;
-      margin: 5%; }
+      margin: 5%;
+      flex-direction: column; }
       main .work .tertiary .client-content {
         display: flex;
-        width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -648,16 +644,14 @@ footer {
     font-size: 4em; }
 
   .work .secondary.work__client.work__client--buyers {
+    display: flex;
     flex-direction: row;
     align-items: center;
     display: flex;
-    margin-bottom: 0; }
+    max-height: 400px; }
     .work .secondary.work__client.work__client--buyers .work__client__img-wrapper {
-      width: 60%;
-      align-self: center;
+      width: 50%;
       padding-top: 0; }
-    .work .secondary.work__client.work__client--buyers .client-details {
-      align-self: center; }
 
   .work .work__header.header__h2, .work .work__header.header__flavor {
     text-align: left;
@@ -683,4 +677,7 @@ footer {
     padding-bottom: 6rem; } }
 @media (min-width: 1400px) {
   header .header-image {
-    background-position: -6em 0em; } }
+    background-position: -6em 0em; }
+
+  .work .secondary.work__client.work__client--buyers .client-details {
+    margin-left: 0; } }

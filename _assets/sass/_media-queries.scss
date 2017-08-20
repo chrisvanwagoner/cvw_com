@@ -70,19 +70,22 @@
   }
 
   .work .secondary.work__client.work__client--buyers {
+    display: flex;
     flex-direction:row;
     align-items: center;
     display: flex;
-    margin-bottom: 0;
+    max-height: 400px;
+    // margin-bottom: 0;
 
     .work__client__img-wrapper {
-      width: 60%;
-      align-self: center;
+      width: 50%;
+      // align-self: center;
       padding-top: 0;
     }
 
     .client-details {
-      align-self: center;
+      // align-self: center;
+      
     }
   }
 
@@ -132,6 +135,11 @@
    header .header-image {
     background-position: -6em 0em;
   }
+
+  .work .secondary.work__client.work__client--buyers .client-details {
+    margin-left: 0; 
+  }
+  
 }
 
 

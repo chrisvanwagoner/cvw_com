@@ -372,12 +372,11 @@ main {
     .work__client.secondary {
       display: flex;
       flex-direction: column;
-      flex: 1;
       color: $primary-color;
       height: auto;
       background-image: linear-gradient(180deg, #ccc, #eee 30%, #fafafa 40%, $primary-bg 50%);
       // margin-bottom: $section-spacing;
-      max-height: 600px;
+      
 
 
       .work__client__img-wrapper {
@@ -418,7 +417,7 @@ main {
         }
 
         :last-child {
-          margin-top: 2em;
+          // margin-top: 2em;
         }
         
         .client-details__type {
@@ -449,10 +448,10 @@ main {
       display: flex;
       flex: 1;
       margin: 5%;
+      flex-direction: column;
 
       .client-content{
         display: flex;
-        width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
