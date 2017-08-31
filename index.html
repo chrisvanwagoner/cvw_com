@@ -28,16 +28,19 @@
     <!-- Font Awesome CDN-->
     <script src="https://use.fontawesome.com/0d546cdd84.js"></script>
     <!-- jQuery used for scroll-up buttons in footer -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <!-- offline jQuery use -->
     <!-- <script src="/_assets/javascript/jquery.min.js"></script> -->
 
-    <script type="text/javascript" src="/_assets/javascript/anime.min.js"></script>
+    <script src="/_assets/javascript/anime.min.js"></script>
+    
+    
     <!-- end Scripts  -->
 
     <!-- ============================== -->
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/_assets/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/_assets/css/animate.css" />
     <!-- end Stylesheets -->
 
 </head>
@@ -45,7 +48,7 @@
 <body>
 
  <header>
-    <div class="header__content-wrap">
+    <div class="header__content-wrap wow pulse">
       
       <div class="header-image" id="header-image">
         
@@ -96,14 +99,12 @@
 
       </div> <!-- #bio__text-wrap -->
 
-      <!-- <div class="arrow"></div> -->
-
     </section> <!-- .bio -->
 
 
     <section class="work">
 
-      <div class="h2-wrapper">
+      <div class="h2-wrapper wow fadeInRight">
         <h2 class="work__header header__h2" id="work">
           <p>Work</p>
           <p>Work</p>
@@ -115,7 +116,6 @@
           <p>Work</p>
           <p>Work</p>
         </h2>
-        <!-- <small class="work__header header__flavor">… 🎶 work work work work work 🎶</small>  -->
       </div>
 
       <div class="work__client primary work__client--deca" >
@@ -152,7 +152,7 @@
 
       <div class="tertiary-wrap">
 
-        <div class="work__client tertiary work__client--ivie" >
+        <div class="work__client tertiary work__client--ivie wow fadeInUp" >
           <div class="client-content">
             <div class="client-details">
               <h4 class="client-details__type">Web Design, Updates, and Maintenance</h4>
@@ -163,7 +163,7 @@
           </div>  <!-- .client-content -->
         </div> <!-- .work__client--ivie -->
 
-        <div class="work__client tertiary work__client--als" >
+        <div class="work__client tertiary work__client--als wow fadeInUp" >
           <div class="client-content">
             <div class="client-details">
               <h4 class="client-details__type">Web Design, Updates, and Maintenance</h4>
@@ -174,7 +174,7 @@
           </div>  <!-- .client-content -->
         </div> <!-- .work__client--als -->
 
-        <div class="work__client tertiary work__client--whichwich" >
+        <div class="work__client tertiary work__client--whichwich wow fadeInUp" >
           <div class="client-content">       
             <div class="client-details">
               <h4 class="client-details__type">Web Design</h4>
@@ -219,18 +219,21 @@
     <p>~ Fin ~</p>
   
     <ul id="footer__menu" class="flex row fill space-around"> 
-      <li class="flex fill">
+      <li class="flex fill wow slideInLeft">
         <a class="fill" href="#about">About <i class="fa fa-level-up" aria-hidden="true"></i></a>
       </li>
-      <li class="flex fill">
+      <li class="flex fill wow slideInRight">
         <a class="fill" href="#work">Work <i class="fa fa-level-up" aria-hidden="true"></i></a>
       </li>
     </ul>
 
   </footer>
 
-  <script src="/_assets/javascript/runthisshitty.js"></script>
-  <script src="/_assets/javascript/jquery.js"></script>
+<script src="/_assets/javascript/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+<!-- <script src="/_assets/javascript/runthisshitty.js"></script>   -->
   
 </body>
 </html>
