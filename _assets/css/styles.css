@@ -128,7 +128,8 @@ html {
   color: #ffffff;
   font-size: 16px;
   line-height: 1.5;
-  font-family: Europa, Futura, "Avenir Next", sans-serif; }
+  font-family: Europa, Futura, "Avenir Next", sans-serif;
+  overflow-x: hidden; }
 
 body {
   display: flex;
@@ -159,8 +160,8 @@ header {
     display: flex;
     flex: 1; }
   header .header-image {
-    animation: 5s ease-in-out infinite header-hover;
-    -webkit-animation: 5s ease-in-out infinite header-hover;
+    animation: 5s ease-in-out 1s infinite header-hover;
+    -webkit-animation: 5s ease-in-out 1s infinite header-hover;
     background-color: #ff977c;
     background-image: url("/_assets/img/name-in-Gilbert.png");
     background-size: cover;
@@ -306,9 +307,9 @@ main {
           letter-spacing: 2px;
           text-transform: uppercase; }
         main .work .work__client.primary .client-details .client-details__text {
-          margin-top: 1em;
-          margin-bottom: 1em; }
+          margin-top: 1em; }
         main .work .work__client.primary .client-details .client-details__link {
+          margin-top: 1em;
           color: #2a2a2a; }
       main .work .work__client.primary .image-credit {
         display: flex;
@@ -562,7 +563,6 @@ footer {
     background-color: black;
     height: auto; }
     footer .portrait-wrap .portrait {
-      max-width: 100%;
       max-height: 250px; }
   footer p {
     text-align: center;

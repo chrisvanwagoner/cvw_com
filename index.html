@@ -31,6 +31,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- offline jQuery use -->
     <!-- <script src="/_assets/javascript/jquery.min.js"></script> -->
+
+    <script type="text/javascript" src="/_assets/javascript/anime.min.js"></script>
     <!-- end Scripts  -->
 
     <!-- ============================== -->
@@ -45,7 +47,7 @@
  <header>
     <div class="header__content-wrap">
       
-      <div class="header-image">
+      <div class="header-image" id="header-image">
         
         <div class="header__text-wrap">
           <h1 class="header__name">Chris<br/>van Wagoner</h1>
@@ -121,6 +123,7 @@
           <h4 class="client-details__type">Web Design and Development</h4>
           <h3 class="client-details__name">DECA Dental Group</h3>
           <p class="client-details__text">A complete site build for the parent company of dental offices located across Texas.</p>
+          <p class="client-details__text">The site is currently under development, but its current state can be seen here.</p>
           <a class="client-details__link" href="https://decadental.wpengine.com/" target="_blank">see the site <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
         </div> <!-- .client-details -->
 
@@ -140,6 +143,7 @@
           <h4 class="client-details__type">Web Design and Development</h4>
           <h3 class="client-details__name">Buyers Safety</h3>
           <p class="client-details__text">An ecommerce site for construction safety equipment, built with WordPress and WooCommerce.</p>
+          <p class="client-details__text">The site is currently under development, but its current state can be seen here.</p>
           <a class="client-details__link" href="https://www.buyerssafety.com/home/" target="_blank">see the site <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
         </div> <!-- .client-details -->
 
@@ -147,17 +151,6 @@
       
 
       <div class="tertiary-wrap">
-
-        <div class="work__client tertiary work__client--als" >
-          <div class="client-content">
-            <div class="client-details">
-              <h4 class="client-details__type">Web Design, Updates, and Maintenance</h4>
-              <img class="client-details__logo" src="/_assets/img/alstexas-logo.png" alt="Logo for ALS Association Texas Chapter" />
-              <h3 class="client-details__name">ALS Texas</h3>
-              <a class="client-details__link" href="http://www.alstexas.org/" target="_blank">see the site <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-            </div>
-          </div>  <!-- .client-content -->
-        </div> <!-- .work__client--als -->
 
         <div class="work__client tertiary work__client--ivie" >
           <div class="client-content">
@@ -169,6 +162,17 @@
             </div>
           </div>  <!-- .client-content -->
         </div> <!-- .work__client--ivie -->
+
+        <div class="work__client tertiary work__client--als" >
+          <div class="client-content">
+            <div class="client-details">
+              <h4 class="client-details__type">Web Design, Updates, and Maintenance</h4>
+              <img class="client-details__logo" src="/_assets/img/alstexas-logo.png" alt="Logo for ALS Association Texas Chapter" />
+              <h3 class="client-details__name">ALS Texas</h3>
+              <a class="client-details__link" href="http://www.alstexas.org/" target="_blank">see the site <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            </div>
+          </div>  <!-- .client-content -->
+        </div> <!-- .work__client--als -->
 
         <div class="work__client tertiary work__client--whichwich" >
           <div class="client-content">       
@@ -225,15 +229,8 @@
 
   </footer>
 
-  <script>
-    // smooth scrolling to in-page anchor tag
-    jQuery(document).on('click', 'a[href*="#"]', function(event){
-      event.preventDefault();
-      jQuery('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-      }, 750);
-    });
-  </script>
-
+  <script src="/_assets/javascript/runthisshitty.js"></script>
+  <script src="/_assets/javascript/jquery.js"></script>
+  
 </body>
 </html>

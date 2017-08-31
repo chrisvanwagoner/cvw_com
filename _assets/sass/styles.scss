@@ -70,6 +70,7 @@ html {
   font-size: 16px;  
   line-height: 1.5;
   font-family: $sansfonts;
+  overflow-x: hidden;
 }
 
 body {
@@ -117,8 +118,8 @@ header {
   }
 
   .header-image {
-    animation: 5s ease-in-out infinite header-hover;
-    -webkit-animation: 5s ease-in-out infinite header-hover;
+    animation: 5s ease-in-out 1s infinite header-hover;
+    -webkit-animation: 5s ease-in-out 1s infinite header-hover;
     background-color: darken( #ffe8e2, 20%);
   	background-image: url("/_assets/img/name-in-Gilbert.png");
     background-size: cover;
@@ -342,10 +343,11 @@ main {
 
         .client-details__text {
           margin-top: 1em;
-          margin-bottom: 1em;
+          // margin-bottom: 1em;
         }
 
         .client-details__link { 
+          margin-top: 1em;
           color: $primary-color;
         }        
 
@@ -725,7 +727,6 @@ footer {
     height: auto;
 
     .portrait {
-      max-width: 100%;
       max-height: 250px;
     }
   }
@@ -779,6 +780,10 @@ footer {
   } // #footer__menu
 
 } // footer
+
+
+
+
 
 
 @import "media-queries";
