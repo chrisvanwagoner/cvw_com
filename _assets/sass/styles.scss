@@ -83,7 +83,7 @@ h1 {
   font-size: 1.8em;
   line-height: 1;
   letter-spacing: 2px;
-  font-weight: 500;
+  font-weight: 700;
   color: $blue;
   color: #272AC5;
 }
@@ -138,9 +138,12 @@ header {
       flex: 1;
       flex-direction: row;
 
+      .header__name {
+        font-weight: 700;
+      }
       .header__summary {
         margin-top: 1em;
-        font-weight: 500;
+        font-weight: 700;
         letter-spacing: 2px;
 
       }
@@ -286,7 +289,7 @@ main {
         p {
           transform: rotateZ(-19deg);
           font-family: $sansfonts;
-          font-weight: 500;
+          font-weight: 700;
           font-size: 4em;
           line-height: 0;
         }
@@ -333,7 +336,7 @@ main {
         }
 
         .client-details__name {
-          font-weight: 500;
+          font-weight: 700;
           font-size: 2.2em;
           line-height: 1;
           margin-top: 0.5em;
@@ -425,7 +428,7 @@ main {
         }
 
         .client-details__name {
-          font-weight: 500;
+          font-weight: 700;
           font-size: 2.2em;
           line-height: 1;
           margin-top: 0.5em;
@@ -680,7 +683,7 @@ main {
   padding: 0.8em 1.4em 0.6em;
   background-color: #ae995a;
   border: 3px solid #ae995a;
-  font-weight: 500;
+  font-weight: 400;
   left: 0.4em;
   top: 1.2em;
   font-family: helvetica, Arial, sans-serif;
