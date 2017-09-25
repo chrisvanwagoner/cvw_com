@@ -1,4 +1,4 @@
 languageCode = "en-us"
 title = "Chris van Wagoner"
-baseURL = "https://chrisvanwagoner.com/clients/"
+baseURL = "/clients/"
 theme = "hugo_theme_pickles"

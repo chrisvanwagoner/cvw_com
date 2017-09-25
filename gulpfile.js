@@ -77,6 +77,7 @@ gulp.task('getHugoPosts', function() {
   return gulp.src(['src/clients/public/posts/**/*'])
     .pipe(gulp.dest('dist/clients'));
 });
+
 // Grab the CSS, JS, and images for the Hugo posts and copy them to the dist/clients directory
 gulp.task('getHugoEtc', ['getHugoPosts'], function() {
   gulp.src(['src/clients/public/css/**/*','src/clients/public/images/**/*','src/clients/public/js/**/*'], { base: 'src/clients/public'})
