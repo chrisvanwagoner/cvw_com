@@ -8,8 +8,6 @@ var gulp = require('gulp'),
   maps = require('gulp-sourcemaps'),
   del = require('del'),
   imagemin = require('gulp-imagemin');
-// var autoprefixer = require('gulp-autoprefixer');
-// var concat = require('gulp-concat');
 
 var browserSync = require('browser-sync').create();
 gulp.task('browserSync', function() {
@@ -68,6 +66,7 @@ gulp.task('images', function(){
   .pipe(gulp.dest('dist/images'))
 });
 
+/* Delete the dist directory and the generated CSS files */
 gulp.task('del', function() {
   del(['dist', 'src/css/main.css*']);
 });
