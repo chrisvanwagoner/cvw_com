@@ -1,0 +1,32 @@
+{
+  "name": "chrisvanwagoner",
+  "version": "1.0.0",
+  "description": "Personal Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/cvw/cvw_com.git"
+  },
+  "author": "Chris van Wagoner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/cvw/cvw_com/issues"
+  },
+  "homepage": "https://gitlab.com/cvw/cvw_com#README",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "node-normalize-scss": "^3.0.0"
+  }
+}
