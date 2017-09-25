@@ -408,10 +408,14 @@ main {
           width: 90%;
           height: auto; }
     main .work .work__client--deca {
-      background-image: url("/images/client-bg-deca-dental.jpg");
-      background-position: 70% 0%;
-      background-size: cover;
-      background-repeat: no-repeat; }
+      display: flex;
+      flex-direction: column; }
+      main .work .work__client--deca img {
+        max-width: 100%;
+        height: auto;
+        border: 0;
+        box-sizing: border-box;
+        display: inline; }
       main .work .work__client--deca .client-details__name {
         color: #447FC6; }
     main .work .work__client--buyers .client-details__name {
