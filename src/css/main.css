@@ -244,7 +244,7 @@ main {
     main .bio #bio__text-wrap {
       padding-top: 6rem;
       padding-bottom: 6rem;
-      max-width: 600px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto; }
       main .bio #bio__text-wrap .bio__text-block {
@@ -669,7 +669,8 @@ Media Queries
     max-width: 800px; }
   main .work .work__client .client-details {
     margin-left: 0;
-    margin-right: 0; } }
+    margin-right: 0;
+    margin-bottom: 6rem; } }
 
 @media (min-width: 1400px) {
   header .header-image {
