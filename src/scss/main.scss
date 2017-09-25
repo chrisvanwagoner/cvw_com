@@ -214,7 +214,7 @@ main {
     flex-direction: column;
     align-items: center;
     color: $primary-color;
-    margin-bottom: $section-spacing;
+    overflow-x: hidden;
 
     .h2-wrapper {
       display: flex;
@@ -225,7 +225,6 @@ main {
         margin-top: $section-spacing * 2;
         margin-bottom: $section-spacing * 2;
         display: flex;
-        // left: -5%;
         position: relative;
         flex-direction: row;
         justify-content: space-between;
@@ -239,6 +238,7 @@ main {
           font-weight: 700;
           font-size: 4em;
           line-height: 0;
+
         }
       } // .header__h2
     }  // .h2-wrapper
@@ -263,6 +263,7 @@ main {
         margin-left: 5%;
         margin-right: 5%;
         max-width: 900px;
+        background-color: $primary-bg;
         margin-top: $section-spacing * 0.25;
         margin-bottom: $section-spacing * 0.5;
         position: relative;

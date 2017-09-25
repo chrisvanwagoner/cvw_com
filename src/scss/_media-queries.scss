@@ -105,9 +105,8 @@ Media Queries
   }
 
   main .work .work__client {
-    img {
-      max-width: 800px;
-    }
+    max-width: 800px;
+
     .client-details {
       margin-left: 0;
       margin-right: 0;
@@ -125,10 +124,18 @@ Media Queries
     background-position: -6em 0em;
   }
 
-  .work .secondary.work__client.work__client--buyers .client-details {
-    margin-left: 0;
-  }
+  main .work {
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items: start;
 
+    .work__client {
+      // align-self: center;
+      min-width: 45%;
+      max-width: 47%;
+    }
+  }
 }
 
 
