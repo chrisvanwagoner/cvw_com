@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/cvw/cvw_com.git"
+    "url": "git+ssh://git@github.com/chrisvanwagoner/cvw_com.git"
   },
   "author": "Chris van Wagoner",
-  "license": "ISC",
+  "license": "",
   "bugs": {
-    "url": "https://gitlab.com/cvw/cvw_com/issues"
+    "url": "https://github.com/chrisvanwagoner/cvw_com/issues"
   },
-  "homepage": "https://gitlab.com/cvw/cvw_com#README",
+  "homepage": "https://github.com/chrisvanwagoner/cvw_com#readme",
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
