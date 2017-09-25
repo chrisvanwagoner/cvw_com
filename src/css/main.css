@@ -1,12 +1,15 @@
-/*
-  Last updated 2017-09-24
-  Chris van Wagoner
-*/
+/***********************************
+main.scss
+- last updated 2017-09-24
+***********************************/
 /***********************************
   Initial Imports
 ***********************************/
 @import url("lib/normalize.css");
-@import url("lib/font-awesome.min.css");
+/***********************************
+_flex.scss
+Flex
+***********************************/
 @import url("lib/animate.min.css");
 .full-width {
   width: 100%; }
@@ -78,6 +81,10 @@
 .flex > .space-around {
   justify-content: space-around; }
 
+/***********************************
+_keyframes.scss
+Keyframes
+***********************************/
 @keyframes rainbow-shadow {
   0% {
     box-shadow: 0 2px 0.5em rgba(255, 0, 0, 0.8); }
@@ -114,7 +121,6 @@
 
 /***********************************
 _variables.scss
-
 Sass Variables
 ***********************************/
 * {
@@ -605,6 +611,10 @@ footer {
   Final Imports
 ***********************************/
 /* <- Override Animate.css here -> */
+/***********************************
+_media-queries.scss
+Media Queries
+***********************************/
 @media screen and (min-width: 400px) {
   header .header__text-wrap {
     align-self: flex-end; }

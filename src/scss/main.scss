@@ -1,16 +1,15 @@
-/*
-  Last updated 2017-09-24
-  Chris van Wagoner
-*/
+/***********************************
+main.scss
+- last updated 2017-09-24
+***********************************/
 
 /***********************************
   Initial Imports
 ***********************************/
 @import url("lib/normalize.css"); // A collection of HTML element and attribute style-normalizations necolas.github.io/normalize.css
-@import url("lib/font-awesome.min.css");
 @import "flex";  // Flexbox properties assigned to HTML Classes
 @import "keyframes"; // Some animations using CSS Keyframes
-@import "variables";
+@import "variables"; // Sass variable
 
 * {
   margin: 0;
@@ -18,9 +17,7 @@
   font-weight: 400;
   text-align: left;
   text-decoration: none;
-
   // border: $highlight;
-
 }
 
 html {
