@@ -73,54 +73,12 @@ Media Queries
     font-size: 4em;
   }
 
-  .work .secondary.work__client.work__client--buyers {
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    max-height: 400px;
-    // margin-bottom: 0;
-
-    .work__client__img-wrapper {
-      width: 50%;
-      // align-self: center;
-      padding-top: 0;
-    }
-
-    .client-details {
-      // align-self: center;
-
-    }
-  }
-
-  .work .work__header.header__h2, .work .work__header.header__flavor {
-    // text-align: left;
-    // padding-left: 5%;
-  }
-
-  .secondary.work__client--buyers {
-     background: linear-gradient(180deg, $primary-bg, #eee 35%, #ccc 60%, $primary-bg 70%);
-     background-image: linear-gradient(180deg, #ccc, #eee 30%, #fafafa 40%, $primary-bg 50%);
-
-  }
-
-  main .work .secondary.work__client > .work__client__img-wrapper {
-      background-image: none;
-  }
-
-
 
 
   #about #bio__text-wrap {
     padding-top: $section-spacing * 1.5;
     padding-bottom: $section-spacing * 1.5;
 
-  }
-
-  #work .client-details {  }
-
-  .work__client--buyers {
-    padding-top: $section-spacing;
-    padding-bottom: $section-spacing;
   }
 
   main .work .tertiary-wrap {
@@ -146,15 +104,18 @@ Media Queries
     }
   }
 
-
+  main .work .work__client {
+    img {
+      max-width: 800px;
+    }
+    .client-details {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
-
-  .work__client--buyers {
-    padding-top: $section-spacing;
-    padding-bottom: $section-spacing;
-  }
 
 }
 

@@ -6,8 +6,7 @@ Sass Variables
 // $primary-color: #2E2E2E;
 // $primary-color: #4a4a4a;
 $primary-color: #2a2a2a;
-$primary-bg: #f6f6f6;
-$primary-bg: #ffffff;
+$primary-bg: #fafafa;
 $section-spacing: 6rem;
 $green: #418965;
 $black: #000000;
@@ -25,6 +24,11 @@ $orange: #FF6F20;
 $sansfonts: Europa, Futura, "Avenir Next", sans-serif;
 $seriffonts: Garamond, serif;
 $monofonts: Inconsolata, monospace;
+
+$font-small: 0.8em;
+$font-normal: 1em;
+$font-large: 1.8em;
+$font-xlarge: 2em;
 
 $client-ww-yellow: #FEC524;
 $client-bs-green: #B4D335;
