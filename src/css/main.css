@@ -1,0 +1,571 @@
+/***********************************
+main.scss
+- last updated 2017-09-25
+***********************************/
+/***********************************
+  Initial Imports
+***********************************/
+@import url("lib/normalize.css");
+/***********************************
+_flex.scss
+Flex
+***********************************/
+@import url("lib/animate.min.css");
+.full-width {
+  width: 100%; }
+
+/* Flexbox layout*/
+.flex {
+  display: flex; }
+
+.flex.column {
+  flex-direction: column; }
+
+.flex.horizontal {
+  justify-content: center; }
+
+.flex.row {
+  flex-direction: row; }
+
+.flex.center {
+  align-items: center;
+  justify-content: center;
+  /* height is very different than flex - AJ
+  height: 100%;
+  */ }
+
+.flex.stretch {
+  align-items: stretch; }
+
+.flex.initial-center {
+  justify-content: center; }
+
+.flex.cross-center {
+  align-items: center; }
+
+.flex.initial-spaced {
+  justify-content: space-between; }
+
+.flex.wrap {
+  flex-wrap: wrap; }
+
+.flex.bottom {
+  align-self: flex-end; }
+
+.flex.right {
+  justify-content: flex-end; }
+
+.flex.thirds > * {
+  margin-right: 5%;
+  flex: 0 0 30%;
+  margin-bottom: 3%; }
+
+.flex.thirds > *:nth-child(3n) {
+  margin-right: 0; }
+
+.flex > .fill {
+  flex: 1 1 auto; }
+
+.flex.full {
+  flex: 0 0 100%; }
+
+.flex.right {
+  justify-content: flex-end; }
+
+.flex > .last-item {
+  order: 1; }
+
+.flex > .left {
+  justify-content: flex-start; }
+
+.flex > .space-around {
+  justify-content: space-around; }
+
+/***********************************
+_keyframes.scss
+Keyframes
+***********************************/
+@keyframes rainbow-shadow {
+  0% {
+    box-shadow: 0 2px 0.5em rgba(255, 0, 0, 0.8); }
+  33% {
+    box-shadow: 0 2px 0.5em rgba(0, 255, 0, 0.8); }
+  66% {
+    box-shadow: 0 2px 0.5em rgba(0, 0, 255, 0.8); }
+  100% {
+    box-shadow: 0 2px 0.5em rgba(255, 0, 0, 0.8); } }
+
+@-webkit-keyframes slide {
+  0% {
+    width: 10px; }
+  50% {
+    width: 100%; }
+  100% {
+    width: 10px; } }
+
+@keyframes slide {
+  0% {
+    width: 10px; }
+  50% {
+    width: 100%; }
+  100% {
+    width: 10px; } }
+
+@keyframes header-hover {
+  0% {
+    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); }
+  50% {
+    box-shadow: 0 0 1em rgba(75, 1, 3, 0.1), 0 0 2em rgba(146, 1, 3, 0.25); }
+  100% {
+    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); } }
+
+/***********************************
+_variables.scss
+Sass Variables
+***********************************/
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  text-align: left; }
+
+html {
+  background-color: #fafafa;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Europa, Futura, "Avenir Next", sans-serif;
+  overflow-x: hidden; }
+
+body {
+  display: flex;
+  flex-direction: column; }
+
+h1 {
+  font-size: 1.8em;
+  line-height: 1;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #272AC5; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-weight: 700;
+  font-size: 2.2em; }
+
+h4 {
+  font-size: 0.8em; }
+
+a {
+  text-decoration: none; }
+
+i {
+  margin-left: 6px; }
+
+/***********************************
+  Header
+***********************************/
+header {
+  background-color: #ffe8e2;
+  height: 90vh;
+  min-height: 500px;
+  display: flex;
+  justify-content: center; }
+  header .header__content-wrap {
+    margin: 5% 5%;
+    display: flex;
+    flex: 1; }
+  header .header-image {
+    animation: 5s ease-in-out 1s infinite header-hover;
+    -webkit-animation: 5s ease-in-out 1s infinite header-hover;
+    background-color: #ff977c;
+    background-image: url("/images/name-in-Gilbert.png");
+    background-size: cover;
+    background-position: 50% -2em;
+    background-repeat: no-repeat;
+    flex: 1;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: flex-start;
+    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); }
+    header .header-image .header__text-wrap {
+      padding: 10% 7%;
+      flex: 1;
+      flex-direction: row; }
+      header .header-image .header__text-wrap .header__name {
+        font-weight: 700; }
+      header .header-image .header__text-wrap .header__summary {
+        margin-top: 1em;
+        font-weight: 700;
+        letter-spacing: 2px; }
+
+/***********************************
+  Main
+***********************************/
+main {
+  display: flex;
+  flex-direction: column;
+  /***********************************
+    Main Bio
+  ***********************************/
+  /***********************************
+    Work
+  ***********************************/
+  /***********************************
+    Social Links
+  ***********************************/ }
+  main .bio {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #222D32;
+    z-index: 1;
+    font-family: Inconsolata, monospace; }
+    main .bio h2 {
+      font-size: inherit; }
+    main .bio .btn {
+      outline: none; }
+    main .bio .btn.buzzshift {
+      padding: 0.3em 0.4em;
+      border-radius: 6px;
+      color: inherit;
+      transition: 0.5s;
+      background-color: RGBA(255, 186, 0, 1);
+      box-shadow: 0 0 3em RGBA(214, 116, 0, 1); }
+    main .bio .btn.buzzshift:hover {
+      box-shadow: none; }
+    main .bio *:not(div) {
+      display: inline; }
+    main .bio .brac {
+      color: #7EC9C2; }
+    main .bio .el {
+      color: #DC5B63; }
+    main .bio .arrow-down {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      width: 0;
+      height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 10px solid #8CB2B2;
+      transform: rotateX(180deg); }
+    main .bio #bio__text-wrap {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto; }
+      main .bio #bio__text-wrap .bio__text-block {
+        padding-bottom: 1em; }
+      main .bio #bio__text-wrap .bio__text-block:last-child {
+        padding-bottom: 0; }
+      main .bio #bio__text-wrap p, main .bio #bio__text-wrap h2 {
+        font-family: Inconsolata, monospace;
+        letter-spacing: 0px; }
+  main .work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2a2a2a;
+    overflow-x: hidden; }
+    main .work .h2-wrapper {
+      display: flex;
+      flex-direction: row;
+      overflow: hidden; }
+      main .work .h2-wrapper .header__h2 {
+        margin-top: 12rem;
+        margin-bottom: 12rem;
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        width: auto;
+        background-color: #fafafa;
+        z-index: -1; }
+        main .work .h2-wrapper .header__h2 p {
+          transform: rotateZ(-19deg);
+          font-family: Europa, Futura, "Avenir Next", sans-serif;
+          font-weight: 700;
+          font-size: 4em;
+          line-height: 0; }
+    main .work .work__client {
+      display: flex;
+      flex-direction: column;
+      z-index: 0;
+      flex: 1;
+      color: #2a2a2a;
+      background-color: #fafafa; }
+      main .work .work__client img {
+        max-width: 100%;
+        height: auto; }
+      main .work .work__client .client-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        max-width: 900px;
+        background-color: #fafafa;
+        margin-top: 1.5rem;
+        margin-bottom: 3rem; }
+        main .work .work__client .client-details .client-details__name {
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          line-height: 1;
+          letter-spacing: 2px;
+          text-transform: uppercase; }
+        main .work .work__client .client-details .client-details__text--in-progress {
+          font-size: 0.8em;
+          color: #777777;
+          color: rgba(0, 0, 0, 0.5); }
+        main .work .work__client .client-details .client-details__link {
+          color: #2a2a2a;
+          margin-top: 0.5em;
+          flex: 0; }
+        main .work .work__client .client-details .client-details__link:hover {
+          text-decoration: underline; }
+  main .social-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    margin-bottom: 6rem; }
+    main .social-links .social-links__title {
+      margin-left: 2%;
+      width: 90%;
+      color: black;
+      transform: rotateZ(-5deg);
+      margin-bottom: 0.5em; }
+    main .social-links .social-links__buttons-wrap {
+      display: flex;
+      flex: 0;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 650px; }
+      main .social-links .social-links__buttons-wrap .btn {
+        letter-spacing: 1px;
+        margin-right: 0.5em;
+        margin-top: 0.5em; }
+      main .social-links .social-links__buttons-wrap .btn--twitter {
+        color: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 200;
+        background: linear-gradient(180deg, RGBA(45, 199, 245, 1), RGBA(5, 159, 245, 1));
+        z-index: 1;
+        position: relative;
+        display: inline-block;
+        border-radius: 25px;
+        width: 150px;
+        height: 50px;
+        box-shadow: 0px 6px 10px 1px RGBA(5, 159, 245, 0.5);
+        transition: 0.2s; }
+        main .social-links .social-links__buttons-wrap .btn--twitter .name {
+          color: #fff;
+          position: relative;
+          text-align: center;
+          display: inline-block;
+          width: 100%;
+          vertical-align: text-top;
+          font-weight: 400;
+          top: -7px; }
+        main .social-links .social-links__buttons-wrap .btn--twitter .highlight {
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), RGBA(5, 159, 245, 0.1));
+          position: relative;
+          margin: 0 auto;
+          width: 135px;
+          height: 15px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          box-shadow: 0 0 16px 1px rgba(255, 255, 255, 0.1); }
+        main .social-links .social-links__buttons-wrap .btn--twitter .lowlight {
+          height: 0px;
+          position: inherit;
+          width: 135px;
+          top: -0.75em;
+          margin: 0 auto;
+          box-shadow: 0 0 12px 1px rgba(255, 255, 255, 0.5); }
+        main .social-links .social-links__buttons-wrap .btn--twitter .lowlight2 {
+          height: 0px;
+          position: inherit;
+          width: 115px;
+          top: -0.75em;
+          margin: 0 auto;
+          box-shadow: 0 0 16px 2px rgba(255, 255, 255, 0.7); }
+        main .social-links .social-links__buttons-wrap .btn--twitter:hover {
+          transition: 0.2s;
+          top: -2px;
+          box-shadow: 0px 10px 16px 1px RGBA(5, 159, 245, 0.5); }
+          main .social-links .social-links__buttons-wrap .btn--twitter:hover .name {
+            opacity: 1;
+            transition: 0.2s; }
+      main .social-links .social-links__buttons-wrap .btn--github {
+        color: #000;
+        top: 0.4em;
+        position: relative;
+        padding: 0.5em;
+        font-family: monospace;
+        background-color: darkgrey;
+        border: medium solid grey;
+        border-top: medium solid lightgrey;
+        border-left: medium solid lightgrey; }
+        main .social-links .social-links__buttons-wrap .btn--github:hover, main .social-links .social-links__buttons-wrap .btn--github:active {
+          border-top-color: grey;
+          border-left-color: grey;
+          border-right-color: lightgrey;
+          border-bottom-color: lightgrey; }
+      main .social-links .social-links__buttons-wrap .btn--vsco {
+        position: relative;
+        color: #fff;
+        padding: 0.8em 1.4em 0.6em;
+        background-color: #ae995a;
+        border: 3px solid #ae995a;
+        font-weight: 400;
+        top: 1.2em;
+        font-family: helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        box-sizing: border-box; }
+        main .social-links .social-links__buttons-wrap .btn--vsco:hover {
+          background-color: #ffffff;
+          border: 3px solid #000000;
+          color: #000000; }
+      main .social-links .social-links__buttons-wrap .btn--tumblr {
+        padding: 0.5rem 0.8rem;
+        color: #fff;
+        border-radius: 2px;
+        position: relative;
+        background-color: #36465d;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        main .social-links .social-links__buttons-wrap .btn--tumblr:hover {
+          animation: 2s linear infinite rainbow-shadow;
+          -moz-animation: 2s linear infinite rainbow-shadow;
+          -webkit-animation: 2s linear infinite rainbow-shadow; }
+      main .social-links .social-links__buttons-wrap .btn--linkedin {
+        padding: 0.5em 1em;
+        color: #ffffff;
+        background-color: #0077B5; }
+        main .social-links .social-links__buttons-wrap .btn--linkedin:hover {
+          background-color: #283E4A; }
+
+/***********************************
+Footer
+***********************************/
+footer {
+  background-color: #28282B; }
+  footer .portrait-wrap {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+    height: auto; }
+    footer .portrait-wrap .portrait {
+      max-height: 250px; }
+  footer p {
+    text-align: center;
+    font-family: Garamond, serif;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-top: 6rem;
+    padding-bottom: 6rem; }
+  footer .footer__menu {
+    background-color: #2633FF;
+    display: flex;
+    flex: 1;
+    justify-content: space-around; }
+    footer .footer__menu li {
+      display: flex;
+      flex: 1;
+      margin-left: 0.5em;
+      margin-right: 0.5em; }
+      footer .footer__menu li a {
+        flex: 1;
+        background-color: #ffffff;
+        text-align: center;
+        color: #2a2a2a;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 4px solid #ff056b;
+        top: -0.5em;
+        position: relative;
+        transition: 0.2s; }
+      footer .footer__menu li a:hover {
+        top: -1em;
+        transition: 0.2s;
+        box-shadow: 0 8px #ff056b;
+        border-bottom: 4px solid #2E7D7A;
+        box-shadow: 0 8px #2E7D7A; }
+    footer .footer__menu li:last-child {
+      margin-left: 0; }
+
+/***********************************
+  Final Imports
+***********************************/
+/* <- Override Animate.css here -> */
+/***********************************
+_media-queries.scss
+Media Queries
+***********************************/
+@media screen and (min-width: 400px) {
+  header .header__text-wrap {
+    align-self: flex-end; }
+  header .header-image {
+    background-position: 40% -2em; }
+  header .header__name {
+    font-size: 2.2em; } }
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 18px; }
+  header {
+    height: 98vh; }
+  header .header__name {
+    font-size: 3em;
+    font-weight: 400; }
+  header .header-image {
+    background-position: 40% -2em; }
+  header .header__content-wrap .header__text-wrap {
+    justify-content: space-between; } }
+
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 20px; }
+  header .header-image {
+    background-position: 40% 2em; }
+  header .header__name {
+    font-size: 4em; }
+  #about #bio__text-wrap {
+    padding-top: 9rem;
+    padding-bottom: 9rem; }
+  main .work .work__client {
+    max-width: 800px; }
+    main .work .work__client .client-details {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 6rem; } }
+
+@media (min-width: 1200px) {
+  main .work {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: start; }
+    main .work .work__client {
+      min-width: 43vw;
+      max-width: 45vw; }
+  main .work > :nth-child(even) {
+    margin-right: 2%; } }
+
+@media (min-width: 1400px) {
+  header .header-image {
+    background-position: -6em 0em; } }
+
+/*# sourceMappingURL=main.css.map */

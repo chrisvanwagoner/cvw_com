@@ -15,9 +15,7 @@ Media Queries
   header .header__name {
     font-size: 2.2em;
   }
-}
-
-
+} // @media
 
 @media screen and (min-width: 600px) {
 
@@ -42,22 +40,7 @@ Media Queries
     justify-content: space-between;
   }
 
-
-  .work .tertiary.work__client .client-content {
-    flex-direction: row;
-
-    .offset-screenshot {
-      width: 60%;
-      margin-bottom: 0;
-      margin-top: 1em;
-      box-shadow: none;
-      align-self: center;
-
-    }
-
-  }
-
-}
+} // @media
 
 @media screen and (min-width: 900px) {
 
@@ -73,35 +56,9 @@ Media Queries
     font-size: 4em;
   }
 
-
-
   #about #bio__text-wrap {
     padding-top: $section-spacing * 1.5;
     padding-bottom: $section-spacing * 1.5;
-
-  }
-
-  main .work .tertiary-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    max-width: 1400px;
-    // align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-
-    .work__client.tertiary {
-      margin: 0;
-      width: 30%;
-      max-width: 395px;
-      .client-content {
-        flex: 1 1 auto;
-      }
-      .client-details__type {
-        margin-left: 5%;
-        margin-right: 5%;
-      }
-    }
   }
 
   main .work .work__client {
@@ -113,30 +70,31 @@ Media Queries
       margin-bottom: $section-spacing;
     }
   }
-}
+} // @media
 
 @media (min-width: 1200px) {
+  main .work {
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: start;
 
-}
+    .work__client {
+      min-width: 43vw;
+      max-width: 45vw;
+    }
+  } // .work
+
+  main .work >:nth-child(even) {
+    margin-right: 2%;
+  }
+} // @media
 
 @media (min-width: 1400px) {
    header .header-image {
     background-position: -6em 0em;
   }
+} // @media
 
-  main .work {
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-    align-items: start;
-
-    .work__client {
-      // align-self: center;
-      min-width: 45%;
-      max-width: 47%;
-    }
-  }
-}
-
-
-@media (min-width: 1800px) {}
+@media (min-width: 1800px) {} // @media

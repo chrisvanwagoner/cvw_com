@@ -1,0 +1,43 @@
+/***********************************
+_keyframes.scss
+Keyframes
+***********************************/
+@keyframes rainbow-shadow {
+  0% {
+    box-shadow: 0 2px 0.5em rgba(255, 0, 0, 0.8); }
+
+  33% {
+    box-shadow: 0 2px 0.5em rgba(0, 255, 0, 0.8); }
+
+  66% {
+    box-shadow: 0 2px 0.5em rgba(0, 0, 255, 0.8); }
+
+  100% {
+    box-shadow: 0 2px 0.5em rgba(255, 0, 0, 0.8); } }
+@-webkit-keyframes slide {
+  0% {
+    width: 10px; }
+
+  50% {
+    width: 100%; }
+
+  100% {
+    width: 10px; } }
+@keyframes slide {
+  0% {
+    width: 10px; }
+
+  50% {
+    width: 100%; }
+
+  100% {
+    width: 10px; } }
+@keyframes header-hover {
+  0% {
+    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); }
+
+  50% {
+    box-shadow: 0 0 1em rgba(75, 1, 3, 0.1), 0 0 2em rgba(146, 1, 3, 0.25); }
+
+  100% {
+    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); } }
