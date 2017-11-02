@@ -98,3 +98,11 @@ Media Queries
 } // @media
 
 @media (min-width: 1800px) {} // @media
+
+
+
+@media (min-height: 500px) {
+  header .header__content-wrap .header__text-wrap {
+    padding-top: 0;
+  }
+}

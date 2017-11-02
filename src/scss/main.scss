@@ -37,7 +37,7 @@ h1 {
   line-height: 1;
   letter-spacing: 2px;
   font-weight: 700;
-  color: #272AC5;
+  color: $blue;
 }
 
 h2 {
@@ -81,7 +81,7 @@ header {
   .header-image {
     animation: 5s ease-in-out 1s infinite header-hover;
     -webkit-animation: 5s ease-in-out 1s infinite header-hover;
-    background-color: darken( #ffe8e2, 20%);
+    background-color: darken( $pink, 20%);
     background-image: url("/images/name-in-Gilbert.png");
     background-size: cover;
     background-position: 50% -2em;
@@ -281,10 +281,11 @@ main {
           color: $primary-color;
           margin-top: 0.5em;
           flex: 0;
+          width: 6em;
         }
 
         .client-details__link:hover {
-           text-decoration: underline;
+          text-decoration: underline;
         }
 
       } // .client-details

@@ -8,7 +8,7 @@ var gulp = require('gulp'),
   maps = require('gulp-sourcemaps'),
   del = require('del'),
   imagemin = require('gulp-imagemin');
-  pug = require('gulp-pug');
+  // pug = require('gulp-pug');
 
 var browserSync = require('browser-sync').create();
 gulp.task('browserSync', function() {
