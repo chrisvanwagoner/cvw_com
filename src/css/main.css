@@ -502,7 +502,7 @@ footer {
         box-shadow: 0 8px #ff056b;
         border-bottom: 4px solid #2E7D7A;
         box-shadow: 0 8px #2E7D7A; }
-    footer .footer__menu li:last-child {
+    footer .footer__menu li:not(:first-child) {
       margin-left: 0; }
 
 /***********************************

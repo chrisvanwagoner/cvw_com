@@ -516,7 +516,7 @@ footer {
       }
     } // li
 
-    li:last-child {
+    li:not(:first-child) {
       margin-left: 0;
     }
 
