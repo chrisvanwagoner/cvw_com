@@ -5,7 +5,7 @@ Media Queries
 @media screen and (min-width: 400px) {
 
   header .header__text-wrap {
-    align-self: flex-end;
+    
   }
 
   header .header-image {
@@ -13,7 +13,7 @@ Media Queries
   }
 
   header .header__name {
-    font-size: 2.2em;
+    font-size: $font-xxlarge * 2;
   }
 } // @media
 
@@ -28,7 +28,7 @@ Media Queries
   }
 
   header .header__name {
-    font-size: 3em;
+    // font-size: 3em;
     font-weight: 400;
   }
 
