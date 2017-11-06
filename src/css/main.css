@@ -564,6 +564,9 @@ Media Queries
       margin-bottom: 6rem; } }
 
 @media (min-width: 1200px) {
+  * {
+    font-weight: 300;
+    letter-spacing: 0.5px; }
   main .work {
     flex-direction: row;
     flex-wrap: wrap;
