@@ -626,7 +626,9 @@ Media Queries
       min-width: 43vw;
       max-width: 45vw; }
   main .work > :nth-child(even) {
-    margin-right: 2%; } }
+    margin-right: 2%; }
+  main .social-links {
+    margin-top: 0; } }
 
 @media (min-width: 1400px) {
   header .header-image {

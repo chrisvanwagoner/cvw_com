@@ -80,6 +80,10 @@ Media Queries
   main .work >:nth-child(even) {
     margin-right: 2%;
   }
+
+  main .social-links {
+    margin-top: 0;
+  }
 } // @media
 
 
