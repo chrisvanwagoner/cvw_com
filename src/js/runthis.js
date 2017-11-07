@@ -30,33 +30,50 @@ wow.init();
 Anime.js animations
 ============================== */
 
-/* Fade in/up the entire Header block */
-var headerFadeUp = anime({
-  targets: '.header__content-wrap',
-  translateY: 50,
-  duration: 1000,
-  easing: 'easeInOutQuad',
-  loop: 1,
+var pathAroundPink= anime.path('.svg-shape--pink path');
+var pathAroundPurple= anime.path('.svg-shape--purple path');
+var pathAroundGreen= anime.path('.svg-shape--green path');
+
+var svgShapePurple = anime({
+  targets: '.svg-shape--purple',
+  translateX: pathAroundGreen('x'),
+  translateY: pathAroundGreen('y'),
+  easing: 'linear',
+  rotate: 360,
+  duration: 20000,
   direction: 'reverse',
-  opacity: 0,
+  loop: true
 });
 
-/* Animation for Header Name */
-var headerNameFadeIn = anime({
-	targets: '.header__name',
-	translateX: 50,
-	duration: 1000,
-	easing: 'easeInOutQuad',
-	loop: 1,
-	direction: 'reverse',
+var svgShapePink = anime({
+  targets: '.svg-shape--pink',
+  translateX: pathAroundPurple('x'),
+  translateY: pathAroundPurple('y'),
+  easing: 'linear',
+  rotate: 720,
+  duration: 20000,
+  direction: 'linear',
+  loop: true
 });
 
-/* Animation for Header Text */
-var headerSummaryFadeIn = anime({
-	targets: '.header__summary',
-	translateY: 50,
-	duration: 1000,
-	easing: 'easeInOutQuad',
-	loop: 1,
-	direction: 'reverse',
+var svgShapeGreen = anime({
+  targets: '.svg-shape--green',
+  translateX: pathAroundPink('x'),
+  translateY: pathAroundPink('y'),
+  easing: 'linear',
+  rotate: 720,
+  duration: 22000,
+  direction: 'reverse',
+  loop: true
+});
+
+var svgShapeBlue = anime({
+  targets: '.svg-shape--blue',
+  translateX: pathAroundPink('x'),
+  translateY: pathAroundPink('y'),
+  easing: 'linear',
+  rotate: 360,
+  duration: 28000,
+  direction: 'linear',
+  loop: true
 });

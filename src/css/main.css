@@ -118,6 +118,26 @@ Keyframes
   100% {
     box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); } }
 
+@keyframes blink {
+  0% {
+    display: inline; }
+  49% {
+    display: inline; }
+  50% {
+    display: none; }
+  100% {
+    display: none; } }
+
+@-webkit-keyframes blink {
+  0% {
+    display: inline; }
+  49% {
+    display: inline; }
+  50% {
+    display: none; }
+  100% {
+    display: none; } }
+
 /***********************************
 _variables.scss
 Sass Variables
@@ -173,35 +193,62 @@ header {
   display: flex;
   justify-content: center; }
   header .header__content-wrap {
-    margin: 5% 5%;
+    width: 100%;
     display: flex;
-    flex: 1; }
-  header .header-image {
-    animation: 5s ease-in-out 1s infinite header-hover;
-    -webkit-animation: 5s ease-in-out 1s infinite header-hover;
-    background-color: #ff977c;
-    background-color: #FF977C;
-    background-image: url("/images/name-in-Gilbert.png");
-    background-size: cover;
-    background-position: 50% -2em;
-    background-repeat: no-repeat;
-    flex: 1;
-    min-height: 350px;
+    justify-content: center;
+    align-items: center; }
+  header .header__text-wrap {
     display: flex;
     flex-direction: column;
-    box-shadow: -0.2em 0.2em 1em rgba(75, 1, 3, 0.1), -1em 1.8em 2em rgba(146, 1, 3, 0.25); }
-    header .header-image .header__text-wrap {
-      padding: 10% 7%;
-      flex: 1;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-self: end; }
-      header .header-image .header__text-wrap .header__name {
-        font-weight: 700; }
-      header .header-image .header__text-wrap .header__summary {
-        margin-top: 1em;
-        font-weight: 700;
-        letter-spacing: 2px; }
+    justify-content: center;
+    align-items: center;
+    text-align: middle;
+    flex: 0 1 auto;
+    max-height: 400px;
+    min-height: 400px;
+    height: 50vh;
+    z-index: 2;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: #FF977C;
+    background-color: rgba(255, 151, 127, 0.8);
+    box-shadow: 0em 0.2em 1em rgba(75, 1, 3, 0.1), 0em 1em 2em rgba(146, 1, 3, 0.25); }
+    header .header__text-wrap .header__name {
+      margin: 0;
+      margin-bottom: 1em;
+      letter-spacing: -1px;
+      font-weight: 700; }
+    header .header__text-wrap .header__summary {
+      font-weight: 400;
+      letter-spacing: 3px; }
+  header .header__svg-wrap {
+    display: flex;
+    align-items: end; }
+    header .header__svg-wrap .svg-shape {
+      z-index: 0;
+      filter: blur(20px);
+      position: absolute; }
+    header .header__svg-wrap .svg-shape--pink {
+      position: absolute;
+      z-index: 1;
+      top: 20%;
+      height: 100vh;
+      left: 50%; }
+    header .header__svg-wrap .svg-shape--purple {
+      position: absolute;
+      top: -5%;
+      left: -15%; }
+    header .header__svg-wrap .svg-shape--green {
+      position: absolute;
+      top: 40%;
+      left: 45%; }
+    header .header__svg-wrap .svg-shape--blue {
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-left: -25%;
+      margin-top: -25%; }
 
 /***********************************
   Main
@@ -262,6 +309,12 @@ main {
         padding-bottom: 1em; }
       main .bio #bio__text-wrap .bio__text-block:last-child {
         padding-bottom: 0; }
+      main .bio #bio__text-wrap .cursor {
+        color: #FE03FF;
+        font-weight: 700;
+        font-size: 1em;
+        -webkit-animation: 1s linear 1s blink;
+        animation: 1s linear 1s blink; }
       main .bio #bio__text-wrap p, main .bio #bio__text-wrap h2 {
         font-family: Inconsolata, monospace;
         letter-spacing: 0px; }
@@ -336,11 +389,11 @@ main {
           line-height: 40px;
           box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.18);
           border-radius: 6px;
-          transition: all .25s ease; }
+          transition: all .15s easeInOut; }
         main .work .work__client .client-details .client-details__link:hover {
           box-shadow: 0 6px 8px rgba(50, 50, 93, 0.21), 0 1px 4px rgba(0, 0, 0, 0.28);
-          transition: all .5s ease;
-          top: -2px; }
+          transition: all .15s easeInOut;
+          top: -1px; }
   main .social-links {
     display: flex;
     flex-direction: column;
@@ -528,30 +581,27 @@ _media-queries.scss
 Media Queries
 ***********************************/
 @media screen and (min-width: 400px) {
-  header .header-image {
-    background-position: 40% -2em; }
-  header .header__name {
-    font-size: 4.4em; } }
+  header .header__text-wrap .header__name {
+    font-size: 2.64em; } }
 
 @media screen and (min-width: 600px) {
   html {
     font-size: 18px; }
   header {
-    height: 98vh; }
+    height: 98vh;
+    min-height: 90%; }
+  header .header__text-wrap {
+    height: 90%;
+    max-height: 80vh;
+    border-radius: 5px; }
+  header .header__text-wrap .header__name {
+    margin-top: -5vh; }
   header .header__name {
-    font-weight: 400; }
-  header .header-image {
-    background-position: 40% -2em; }
-  header .header__content-wrap .header__text-wrap {
-    justify-content: space-between; } }
+    font-size: 3.3em; } }
 
 @media screen and (min-width: 900px) {
   html {
     font-size: 20px; }
-  header .header-image {
-    background-position: 40% 2em; }
-  header .header__name {
-    font-size: 4em; }
   #about #bio__text-wrap {
     padding-top: 4.5em;
     padding-bottom: 4.5em; }

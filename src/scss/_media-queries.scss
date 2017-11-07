@@ -3,57 +3,42 @@ _media-queries.scss
 Media Queries
 ***********************************/
 @media screen and (min-width: 400px) {
-
-  header .header__text-wrap {
-    
-  }
-
-  header .header-image {
-    background-position: 40% -2em;
-  }
-
-  header .header__name {
-    font-size: $font-xxlarge * 2;
+  
+  header .header__text-wrap .header__name {
+    font-size: $font-xxlarge * 1.2
   }
 } // @media
 
-@media screen and (min-width: 600px) {
 
+@media screen and (min-width: 600px) {
   html {
     font-size: 18px;
   }
 
-  header {
+  header { 
     height: 98vh;
+    min-height: 90%;
+  }
+
+  header .header__text-wrap {
+    height: 90%;
+    max-height: 80vh;
+    border-radius: 5px;
+  }
+
+  header .header__text-wrap .header__name {
+    margin-top: -5vh;
   }
 
   header .header__name {
-    // font-size: 3em;
-    font-weight: 400;
+    font-size: $font-xxlarge * 1.5;    
   }
-
-  header .header-image {
-    background-position: 40% -2em;
-  }
-
-  header .header__content-wrap .header__text-wrap {
-    justify-content: space-between;
-  }
-
 } // @media
 
-@media screen and (min-width: 900px) {
 
+@media screen and (min-width: 900px) {
   html {
     font-size: 20px;
-  }
-
-  header .header-image {
-    background-position: 40% 2em;
-  }
-
-  header .header__name {
-    font-size: 4em;
   }
 
   #about #bio__text-wrap {
@@ -69,11 +54,11 @@ Media Queries
       margin-right: 0;
       margin-bottom: $section-spacing;
     }
-  }
+  } // main .work .work__client
 } // @media
 
-@media (min-width: 1200px) {
 
+@media (min-width: 1200px) {
   * {
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -97,18 +82,19 @@ Media Queries
   }
 } // @media
 
+
 @media (min-width: 1400px) {
    header .header-image {
     background-position: -6em 0em;
   }
 } // @media
 
-@media (min-width: 1800px) {} // @media
 
+@media (min-width: 1800px) {} // @media
 
 
 @media (min-height: 500px) {
   header .header__content-wrap .header__text-wrap {
     padding-top: 0;
   }
-}
+} // @media
