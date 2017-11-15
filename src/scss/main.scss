@@ -97,6 +97,7 @@ header {
     
     background-color: $tangerine;
     background-color: rgba(255, 151, 127, 0.8);
+    background-color: RGBA(17, 70, 84, 0.95);
     
     box-shadow: 0em 0.2em 1em rgba(75, 1, 3, 0.1), 0em 1em 2em rgba(146, 1, 3, 0.25);
   
@@ -105,6 +106,7 @@ header {
       margin-bottom: 1em;
       letter-spacing: -1px;
       font-weight: 700;
+      color: $tangerine;
     }
 
     .header__summary {
@@ -121,7 +123,7 @@ header {
     
     .svg-shape {
       z-index: 0;
-      filter: blur(20px);
+      // filter: blur(0px);
       position: absolute;
     }
 
