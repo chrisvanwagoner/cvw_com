@@ -269,6 +269,7 @@ main {
   main .bio {
     padding: 3em 5%;
     background-color: #222D32;
+    background-color: #263238;
     z-index: 1;
     font-family: Inconsolata, monospace; }
     main .bio h2 {
