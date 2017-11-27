@@ -61,6 +61,10 @@ i {
   margin-left: 6px;
 }
 
+li { 
+  list-style: none;
+}
+
 /***********************************
   Header
 ***********************************/
@@ -534,6 +538,8 @@ Footer
 ***********************************/
 
 footer {
+  display: flex;
+  flex-direction: column;
   background-color: #28282B;
 
   .portrait-wrap {
@@ -548,14 +554,52 @@ footer {
   }  // .portrait-wrap
 
   .fin {
-    text-align: center;
-    font-family: $seriffonts;
-    font-style: italic;
-    letter-spacing: 2px;
-    font-size: 1.5em;
-    font-weight: 400;
-    padding-top: $section-spacing;
-    padding-bottom: $section-spacing;
+      text-align: center;
+      font-family: $seriffonts;
+      font-style: italic;
+      letter-spacing: 2px;
+      font-size: 1.5em;
+      font-weight: 400;
+      padding-top: $section-spacing;
+      padding-bottom: $section-spacing;
+    }
+
+  .footer__credits {
+    width: 100%;
+    color: RGBA(255, 255, 255, 0.75);
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    padding-bottom: $section-spacing * 2;
+    justify-content: center;
+    
+    & > * {
+      flex: 1 1;
+      align-self: center;
+      padding: 1rem;
+    }
+
+    & > *:first-child {
+      border-right: 1px solid white;
+      border-right: 1px solid RGBA(255, 255, 255, 0.75);
+    }
+
+    h3 {
+      text-align: right;
+      font-weight: 300;
+    }
+
+    li {
+      padding-top: 4px;
+      padding-bottom: 4px;    
+    }
+
+    a {
+      border-bottom: 1px solid white;
+      color: $white;
+
+    }
+
   }
 
   .footer__menu {
