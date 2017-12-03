@@ -21,9 +21,17 @@ Media Queries
   }
 
   header .header__text-wrap {
-    height: 90%;
+    height: 20%;
     max-height: 80vh;
     border-radius: 5px;
+  }
+
+  header .header__text-wrap .portrait-wrap {
+    top: -7rem;
+  }
+  header .header__text-wrap .portrait-wrap .portrait {
+    max-height: 256px;
+    box-shadow: 0 0.25em 0.5em rgba(0,0,0,0.3);
   }
 
   header .header__text-wrap .header__name {
