@@ -60,51 +60,13 @@ wow.init();
 Anime.js animations
 ============================== */
 
-var pathAroundPink= anime.path('.svg-shape--pink path');
-var pathAroundPurple= anime.path('.svg-shape--purple path');
-var pathAroundGreen= anime.path('.svg-shape--green path');
-
-var svgShapePurple = anime({
-  targets: '.svg-shape--purple',
-  translateX: pathAroundGreen('x'),
-  translateY: pathAroundGreen('y'),
-  easing: 'linear',
-  rotate: 360,
-  duration: 20000,
-  direction: 'reverse',
-  loop: true
-});
-
-var svgShapePink = anime({
-  targets: '.svg-shape--pink',
-  translateX: pathAroundPurple('x'),
-  translateY: pathAroundPurple('y'),
-  easing: 'linear',
-  rotate: 720,
-  duration: 20000,
-  direction: 'linear',
-  loop: true
-});
-
-var svgShapeGreen = anime({
-  targets: '.svg-shape--green',
-  translateX: pathAroundPink('x'),
-  translateY: pathAroundPink('y'),
-  easing: 'linear',
-  rotate: 720,
-  duration: 22000,
-  direction: 'reverse',
-  loop: true
-});
-
-var svgShapeBlue = anime({
-  targets: '.svg-shape--blue',
-  translateX: pathAroundPink('x'),
-  translateY: pathAroundPink('y'),
-  easing: 'linear',
-  rotate: 360,
-  duration: 28000,
-  direction: 'linear',
-  loop: true
-});
+// var moveBlue = anime({
+//   targets: '#shapes__blue',
+//   points: [
+//     { value: '212.094205,582.322815 C192.81317,593.998548 160.160043,677.580791 180.367029,723.543488 C203.556952,776.291154 334.831493,860.920005 391.727687,832.890369 C406.964495,825.384029 431.800162,801.962576 413.798251,782.911828 C365.261597,731.547304 472.755012,625.884528 449.585938,596.976563 C422.720509,563.456669 289.666615,535.348428 212.094205,582.322815' },
+//   ],
+//   easing: 'easeOutQuad',
+//   duration: 2000,
+//   loop: true
+// });
 //# sourceMappingURL=scripts.js.map
