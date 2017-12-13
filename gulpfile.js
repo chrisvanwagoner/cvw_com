@@ -7,7 +7,8 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   maps = require('gulp-sourcemaps'),
   del = require('del'),
-  imagemin = require('gulp-imagemin');
+  imagemin = require('gulp-imagemin'),
+  autoprefixer = require('gulp-autoprefixer');
   // pug = require('gulp-pug');
 
 var browserSync = require('browser-sync').create();
@@ -44,6 +45,10 @@ gulp.task("minifyScripts", ["concatScripts"], function() {
 gulp.task('sass', function() {
   return gulp.src("src/scss/main.scss")
       .pipe(maps.init())
+      .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
       .pipe(sass())
       .pipe(maps.write('./'))
       .pipe(gulp.dest('src/css'))
@@ -54,7 +59,8 @@ gulp.task('sass', function() {
 gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch('src/*.html', browserSync.reload);
-  gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
+  // gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
+  gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
 });
 
 gulp.task('images', function(){
