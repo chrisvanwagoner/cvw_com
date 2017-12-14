@@ -1,0 +1,14 @@
+# Humans.txt
+
+## Contact
+
+Name: Chris van Wagoner
+Email: chrisvanwagoner [at] gmail [dot] com
+Twitter: @freeHDvideos
+
+
+## Site Info 
+
+Software: Sublime Text, Gulp, Affinity Designer, Pixelmator, ForkLift
+Last Update: 2017-12-14
+
