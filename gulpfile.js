@@ -45,8 +45,8 @@ gulp.task("minifyScripts", ["concatScripts"], function() {
 gulp.task('sass', function() {
   return gulp.src("src/scss/main.scss")
       .pipe(maps.init())
-      // .pipe(autoprefixer())
       .pipe(sass())
+      .pipe(autoprefixer())
       .pipe(maps.write('./'))
       .pipe(gulp.dest('src/css'))
       .pipe(browserSync.stream());
