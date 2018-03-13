@@ -426,8 +426,8 @@ main {
       margin-right: auto; }
       main .bio #bio__text-wrap .bio__text-block {
         padding-bottom: 1em; }
-      main .bio #bio__text-wrap .bio__text-block:last-child {
-        padding-bottom: 0; }
+        main .bio #bio__text-wrap .bio__text-block:last-child {
+          padding-bottom: 0; }
       main .bio #bio__text-wrap .cursor {
         color: #FE03FF;
         font-weight: 700;
@@ -619,7 +619,7 @@ main {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 200;
         background: -webkit-gradient(linear, left top, left bottom, from(RGBA(45, 199, 245, 1)), to(RGBA(5, 159, 245, 1)));
-        background: linear-gradient(180deg, RGBA(45, 199, 245, 1), RGBA(5, 159, 245, 1));
+        background: linear-gradient(to bottom, RGBA(45, 199, 245, 1), RGBA(5, 159, 245, 1));
         z-index: 1;
         position: relative;
         display: inline-block;
@@ -641,7 +641,7 @@ main {
           top: -7px; }
         main .social-links .social-links__buttons-wrap .btn--twitter .highlight {
           background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(RGBA(5, 159, 245, 0.1)));
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), RGBA(5, 159, 245, 0.1));
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), RGBA(5, 159, 245, 0.1));
           position: relative;
           margin: 0 auto;
           width: 135px;
@@ -726,13 +726,13 @@ main {
         color: #fff;
         background-color: #287bbc;
         border: 1px solid #1b5480;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#287bbc), to(#23639a));
-        background-image: linear-gradient(top, #287bbc 0%, #23639a 100%);
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#287bbc), to(#23639a));
+        background-image: linear-gradient(to top, #287bbc 0%, #23639a 100%);
         border-radius: 3px; }
         main .social-links .social-links__buttons-wrap .btn--linkedin:hover {
           background-color: #2672ae;
-          background-image: -webkit-gradient(linear, left top, left bottom, from(#2672ae), to(#1e4f7e));
-          background-image: linear-gradient(top, #2672ae 0%, #1e4f7e 100%);
+          background-image: -webkit-gradient(linear, left bottom, left top, from(#2672ae), to(#1e4f7e));
+          background-image: linear-gradient(to top, #2672ae 0%, #1e4f7e 100%);
           -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
 

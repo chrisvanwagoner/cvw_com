@@ -49,10 +49,8 @@ var svgMorphingBlue = anime({
   easing: 'easeInOutQuad',
   duration: 3000,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
-
 
 var svgMorphingBlueLight = anime({
   targets: '.header__svg-wrap #shapes__blue--light',
@@ -62,7 +60,6 @@ var svgMorphingBlueLight = anime({
   easing: 'easeInOutQuad',
   duration: 4000,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
 
@@ -74,10 +71,8 @@ var svgMorphingBlueLight = anime({
   easing: 'easeInOutQuad',
   duration: 4200,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
-
 
 var svgMorphingPink = anime({
   targets: '.header__svg-wrap #shapes__pink',
@@ -87,10 +82,8 @@ var svgMorphingPink = anime({
   easing: 'easeInOutQuad',
   duration: 5200,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
-
 
 var svgMorphingBlack = anime({
   targets: '.header__svg-wrap #shapes__black',
@@ -100,10 +93,8 @@ var svgMorphingBlack = anime({
   easing: 'easeInOutQuad',
   duration: 4200,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
-
 
 var svgMorphingYellow = anime({
   targets: '.header__svg-wrap #shapes__yellow',
@@ -113,7 +104,6 @@ var svgMorphingYellow = anime({
   easing: 'easeInOutQuad',
   duration: 5000,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
 
@@ -125,10 +115,8 @@ var svgMorphingPurple = anime({
   easing: 'easeInOutQuad',
   duration: 3600,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
-
 
 var svgMorphingGreen = anime({
   targets: '.header__svg-wrap #shapes__green',
@@ -138,8 +126,34 @@ var svgMorphingGreen = anime({
   easing: 'easeInOutQuad',
   duration: 3600,
   direction: 'alternate',
-  // rotate: '1turn',
   loop: true
 });
 
 
+/* ==============================
+basicScroll animations
+============================== */
+
+// var basicScroll = require('basicScroll');
+document.querySelectorAll(".work__client img").forEach(function(elem) {
+  // var modifier = elem.getAttribute("data-modifier");
+  var instance = basicScroll.create({
+    elem: elem,
+    // elem: document.querySelectorAll('.work__client img'),
+    from: "bottom-bottom",
+    to: "top-top",
+    direct: true,
+    props: {
+      // "--r": {
+      //   from: "0",
+      //   to: "90deg"
+      // },
+      "--dist": {
+        from: "100",
+        to: "0"
+      }
+
+    }
+  })
+  .start();
+});

@@ -25,6 +25,7 @@ gulp.task("concatScripts", function() {
     return gulp.src([
         'src/js/lib/anime.min.js',
         'src/js/lib/wow.min.js',
+        'src/js/lib/basicScroll.min.js',
         'src/js/runthis.js'
         ])
     .pipe(maps.init())
@@ -101,4 +102,4 @@ gulp.task("build", ['sass', 'minifyScripts', 'images'], function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", ["build"]);
+gulp.task("default", ["watch"]);
