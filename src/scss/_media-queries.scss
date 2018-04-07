@@ -5,8 +5,13 @@ Media Queries
 @media screen and (min-width: 400px) {
   
   header .header__text-wrap .header__name {
-    font-size: $font-xxlarge * 1.2
+    font-size: $font-xxlarge;
   }
+
+  header .header__text-wrap .header__summary {
+  }
+
+
 } // @media
 
 
@@ -20,18 +25,10 @@ Media Queries
     min-height: 90%;
   }
 
-  header .header__text-wrap {
-    height: 90%;
-    max-height: 80vh;
-    border-radius: 5px;
-  }
-
-  header .header__text-wrap .header__name {
-    margin-top: -5vh;
-  }
 
   header .header__name {
-    font-size: $font-xxlarge * 1.5;    
+    font-size: $font-xxlarge * 1.5;   
+    font-size: 3rem; 
   }
 } // @media
 
@@ -39,6 +36,11 @@ Media Queries
 @media screen and (min-width: 900px) {
   html {
     font-size: 20px;
+  }
+
+  header .header__text-wrap .header__name {
+    font-size: 3.8rem;
+    margin-top: 1rem;
   }
 
   #about #bio__text-wrap {
@@ -55,6 +57,16 @@ Media Queries
       margin-bottom: $section-spacing;
     }
   } // main .work .work__client
+
+  footer .footer__credits {
+    flex-direction: row;
+  } // .footer__credits
+
+  footer .footer__credits > *:first-child {
+    border-right: 1px solid white;
+    border-right: 1px solid RGBA(255, 255, 255, 0.75);
+  }
+
 } // @media
 
 
