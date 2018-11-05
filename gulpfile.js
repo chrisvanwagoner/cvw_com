@@ -63,11 +63,11 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 
 gulp.task('images', function(){
   return gulp.src('src/images/**/*.+(png|jpg|gif|svg)')
-  .pipe(imagemin([
-    imagemin.jpegtran({progressive: true}),
-    imagemin.optipng({optimizationLevel: 5}),
-    imagemin.svgo({plugins: [{removeViewBox: true}]})
-  ]))
+  // .pipe(imagemin([
+  //   imagemin.jpegtran({progressive: true}),
+  //   imagemin.optipng({optimizationLevel: 5}),
+  //   imagemin.svgo({plugins: [{removeViewBox: true}]})
+  // ]))
   .pipe(gulp.dest('dist/images'))
 });
 
