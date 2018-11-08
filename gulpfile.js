@@ -62,7 +62,7 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
 });
 
 gulp.task('images', function(){
-  return gulp.src('src/images/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('src/images/**/*.+(png|jpg|jpeg|gif|svg)')
   // .pipe(imagemin([
   //   imagemin.jpegtran({progressive: true}),
   //   imagemin.optipng({optimizationLevel: 5}),
