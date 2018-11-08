@@ -63,14 +63,18 @@ i {
 li { 
   list-style: none;
 }
+.fa-angle-double-right {
+  position: relative;
+  top: 2px;
+}
 
 /***********************************
   Header
 ***********************************/
 
 header {
-  background-color: $pink-white;
   background-color: $primary-bg;
+  background-image: url(../images/gradient.jpg);
   background-position: center center;
   background-size: cover;
   display: flex;
@@ -113,6 +117,7 @@ header {
     padding: 2rem;
     .header__name {
       color: $dark-green;
+      color: #FFFFF4;
       text-align: inherit;
       letter-spacing: -1px;
       font-weight: 400;
@@ -274,7 +279,6 @@ main {
       img {
         max-width: 100%;
         height: auto;
-        border-radius: 10px;
         box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.25);
         transition: 0.25s;
         &:hover,
@@ -282,8 +286,9 @@ main {
           box-shadow: 0 0.5rem 0.75rem rgba(0,0,0,0.25);
           box-shadow: 0 0.5rem 0.75rem rgba(#FF0052,0.5);
           transition: 0.25s;
-          top: -1px;
+          // top: -1px;
           position: relative;
+          transform: scale(1.02);
         }
       }
       .client-details {
@@ -323,10 +328,12 @@ main {
           background-color: #ffffff;
           box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.18);
           border-radius: 6px;
+          transition: all 0.25s ease-in-out;
           &:hover,
           &:focus {
             box-shadow: 0 8px 12px rgba(#FF0052,.21),0 1px 4px rgba(#FF0052,.28);
-            top: -1px;
+          }
+          &:active {
           }
         }
       } // .client-details
@@ -337,114 +344,160 @@ main {
     Social Links
   ***********************************/
   .social-links {
+    align-items: center;
+    background-color: $primary-bg;
+    background-image: url(../images/watercolor-banner.jpg);
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: $primary-bg;
-    margin-top: $section-spacing;
-    margin-bottom: $section-spacing * 2;
+    padding-bottom: $section-spacing * 2;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: $section-spacing;
+    // transform: rotate(-2deg);
+    @media (min-width: 900px) {
+      padding-left: 200px;
+      padding-right: 200px;
+    }
     .social-links__title {
+      // font-family: tangerine, sans-serif;
+      color: $hot-pink;
+      font-style: italic;
+      font-weight: 700;
       margin-left: 2%;
-      width: 90%;
-      color: black;
-      transform: rotateZ(-5deg);
       margin-bottom: 0.5em;
+      transform: rotateZ(-5deg);
+      width: 90%;
+      @media (min-width: 900px) {
+        font-size: $font-xxlarge;
+        margin-bottom: 3rem;
+      }
     }
     .social-links__buttons-wrap {
+      align-items: center;
       display: flex;
       flex: 0;
-      flex-wrap: wrap;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-around;
-      align-items: center;
-      max-width: 650px;
+      width: 100%;
       .btn {
         letter-spacing: 1px;
-        margin-right: 0.5em;
+        // margin-right: 0.5em;
         margin-top: 0.5em;
+        width: 100%;
       } // .btn
-      .btn--twitter {
-        color: #fff;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 200;
-        // background: linear-gradient(180deg, RGBA(45, 199, 245, 1.00), RGBA(5, 159, 245, 1));
-        background: linear-gradient(to bottom, RGBA(45, 199, 245, 1.00), RGBA(5, 159, 245, 1));
-        z-index: 1;
-        position: relative;
-        display: inline-block;
-        border-radius: 25px;
-        width: 150px;
-        height: 50px;
-        box-shadow: 0px 6px 10px 1px RGBA(5, 159, 245, 0.5);
-        transition: 0.2s;
-        // margin: 0 1em;
-        .name {
-          color: #fff;
-          position: relative;
-          text-align: center;
-          display: inline-block;
-          // margin: 0 auto;
-          width: 100%;
-          vertical-align: text-top;
-          font-weight: 400;
-          top: -7px;
-        }
-        .highlight {
-          background: linear-gradient(to bottom, rgba(255,255,255,0.5), RGBA(5, 159, 245, 0.1));
-          position: relative;
-          margin: 0 auto;
-          width: 135px;
-          height: 15px;
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-          box-shadow: 0 0 16px 1px rgba(255,255,255,0.1);
-        }
-        .lowlight {
-          height: 0px;
-          position: inherit;
-          width: 135px;
-          top: -0.75em;
-          margin: 0 auto;
-          box-shadow: 0 0 12px 1px rgba(255,255,255,0.5);
-        }
-        .lowlight2 {
-          height: 0px;
-          position: inherit;
-          width: 115px;
-          top: -0.75em;
-          margin: 0 auto;
-          box-shadow: 0 0 16px 2px rgba(255,255,255,0.7);
-        }
-        &:hover,
-        &:focus {
-          transition: 0.2s;
-          top: -2px;
-          box-shadow: 0px 10px 16px 1px RGBA(5, 159, 245, 0.5);
-          .name {
-            opacity: 1;
-            transition: 0.2s;
-          }
-        }
-      } // .btn-twitter
+      // .btn--twitter {
+      //   color: #fff;
+      //   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      //   font-weight: 200;
+      //   background: linear-gradient(to bottom, RGBA(45, 199, 245, 1.00), RGBA(5, 159, 245, 1));
+      //   z-index: 1;
+      //   position: relative;
+      //   display: inline-block;
+      //   border-radius: 25px;
+      //   width: 150px;
+      //   height: 50px;
+      //   box-shadow: 0px 6px 10px 1px RGBA(5, 159, 245, 0.5);
+      //   transition: 0.2s;
+      //   .name {
+      //     color: #fff;
+      //     position: relative;
+      //     text-align: center;
+      //     display: inline-block;
+      //     width: 100%;
+      //     vertical-align: text-top;
+      //     font-weight: 400;
+      //     top: -7px;
+      //   }
+      //   .highlight {
+      //     background: linear-gradient(to bottom, rgba(255,255,255,0.5), RGBA(5, 159, 245, 0.1));
+      //     position: relative;
+      //     margin: 0 auto;
+      //     width: 135px;
+      //     height: 15px;
+      //     border-top-left-radius: 20px;
+      //     border-top-right-radius: 20px;
+      //     box-shadow: 0 0 16px 1px rgba(255,255,255,0.1);
+      //   }
+      //   .lowlight {
+      //     height: 0px;
+      //     position: inherit;
+      //     width: 135px;
+      //     top: -0.75em;
+      //     margin: 0 auto;
+      //     box-shadow: 0 0 12px 1px rgba(255,255,255,0.5);
+      //   }
+      //   .lowlight2 {
+      //     height: 0px;
+      //     position: inherit;
+      //     width: 115px;
+      //     top: -0.75em;
+      //     margin: 0 auto;
+      //     box-shadow: 0 0 16px 2px rgba(255,255,255,0.7);
+      //   }
+      //   &:hover,
+      //   &:focus {
+      //     transition: 0.2s;
+      //     top: -2px;
+      //     box-shadow: 0px 10px 16px 1px RGBA(5, 159, 245, 0.5);
+      //     .name {
+      //       opacity: 1;
+      //       transition: 0.2s;
+      //     }
+      //   }
+      // } // .btn-twitter
 
       .btn--github {
-        color: #000;
-        top: 0.4em;
+        // color: #000;
+        // top: 0.4em;
+        // position: relative;
+        // padding: 0.5em;
+        // font-family: monospace;
+        // background-color: darkgrey;
+        // border: medium solid grey;
+        // border-top: medium solid lightgrey;
+        // border-left: medium solid lightgrey;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+        appearance: none;
+        background-position: -1px -1px;
+        background-repeat: repeat-x;
+        background-size: 110% 110%;
+        border: 1px solid rgba(27,31,35,.2);
+        border-radius: .25em;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 6px 12px;
         position: relative;
-        padding: 0.5em;
-        font-family: monospace;
-        background-color: darkgrey;
-        border: medium solid grey;
-        border-top: medium solid lightgrey;
-        border-left: medium solid lightgrey;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        background-color: #28a745;
+        background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+        color: #fff;
+        font-family: -apple-system,sans-serif;
         &:hover, 
         &:active,
         &:focus {
-          border-top-color: grey;
-          border-left-color: grey;
-          border-right-color: lightgrey;
-          border-bottom-color: lightgrey;
+          // border-top-color: grey;
+          // border-left-color: grey;
+          // border-right-color: lightgrey;
+          // border-bottom-color: lightgrey;
+          background-color: #269f42;
+          background-image: linear-gradient(-180deg,#2fcb53,#269f42 90%);
+          background-position: -.5em;
+          border-color: rgba(27,31,35,.5);
+        }
+        i {
+          margin-right: 5px;
         }
       } // .btn--github
 
@@ -455,7 +508,7 @@ main {
         background-color: #ae995a;
         border: 3px solid #ae995a;
         font-weight: 400;
-        top: 1.2em;
+        // top: 1.2em;
         font-family: helvetica, Arial, sans-serif;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -467,21 +520,21 @@ main {
           color: #000000;
         }
       } // .btn--vsco
-      .btn--tumblr {
-        padding: 0.5rem 0.8rem;
-        color: #fff;
-        border-radius: 2px;
-        position: relative;
-        // top: 1em;
-        background-color: #36465d;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        &:hover,
-        &:focus {
-          animation: 2s linear infinite rainbow-shadow;
-          -moz-animation: 2s linear infinite rainbow-shadow;
-          -webkit-animation: 2s linear infinite rainbow-shadow;
-        }
-      } // .btn-tumblr
+      // .btn--tumblr {
+      //   padding: 0.5rem 0.8rem;
+      //   color: #fff;
+      //   border-radius: 2px;
+      //   position: relative;
+      //   // top: 1em;
+      //   background-color: #36465d;
+      //   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      //   &:hover,
+      //   &:focus {
+      //     animation: 2s linear infinite rainbow-shadow;
+      //     -moz-animation: 2s linear infinite rainbow-shadow;
+      //     -webkit-animation: 2s linear infinite rainbow-shadow;
+      //   }
+      // } // .btn-tumblr
       .btn--linkedin {
         padding: 0.5em 1em;
         color: #ffffff;
@@ -494,7 +547,7 @@ main {
         background-image: -o-linear-gradient(to top, #287bbc 0%, #23639a 100%);
         background-image: linear-gradient(to top, #287bbc 0%, #23639a 100%);
         border-radius: 3px;
-        &:hove,
+        &:hover,
         &:focus {
           background-color: #2672ae;
           background-image: -webkit-linear-gradient(to top, #2672ae 0%, #1e4f7e 100%);
@@ -554,6 +607,12 @@ footer {
     a {
       border-bottom: 1px solid white;
       color: $white;
+      position: relative;
+      transition: all 0.25s ease-in-out;
+      &:hover,
+      &:focus {
+        border-bottom-color: $hot-pink;
+      }
     }
   }
 
@@ -585,6 +644,9 @@ footer {
           box-shadow: 0 8px #ff056b;
           border-bottom: 4px solid $green;
           box-shadow: 0 8px $green;
+        }
+        .fa-arrow-right {
+          transform: rotate(-45deg);
         }
       }
     } // li
