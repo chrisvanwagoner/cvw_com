@@ -189,4 +189,17 @@ basicScroll animations
 //   })
 //   .start();
 // });
+
+
+var buttons = document.getElementsByClassName("client-details__link");
+buttons.on("hover",function() {
+
+  
+});
+
+function addShake(this) {
+  this.className += "swing animated";
+}
+
+
 //# sourceMappingURL=scripts.js.map

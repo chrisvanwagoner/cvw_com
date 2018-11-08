@@ -6,8 +6,7 @@ Media Queries
   header .header__text-wrap .header__name {
     font-size: $font-xxlarge;
   }
-} // @media
-
+} 
 
 @media screen and (min-width: 600px) {
   html {
@@ -19,13 +18,11 @@ Media Queries
     min-height: 90%;
   }
 
-
   header .header__name {
     font-size: $font-xxlarge * 1.5;   
     font-size: 3rem; 
   }
-} // @media
-
+} 
 
 @media screen and (min-width: 900px) {
   html {
@@ -34,20 +31,11 @@ Media Queries
 
   header .header__text-wrap .header__name {
     font-size: 3.5rem;
-    // margin-top: 1rem;
   }
 
   #about #bio__text-wrap {
     padding-bottom: $section-spacing * 1.5;
   }
-
-  main .work .work__client {
-    .client-details {
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: $section-spacing;
-    }
-  } // main .work .work__client
 
   footer .footer__credits {
     flex-direction: row;
@@ -58,34 +46,11 @@ Media Queries
     border-right: 1px solid RGBA(255, 255, 255, 0.75);
   }
 
-} // @media
-
+} 
 
 @media (min-width: 900px) {
   * {
     font-weight: 300;
     letter-spacing: 0.5px;
   }
-
-  main .work {
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-around;
-    justify-content: center;
-    align-items: start;
-
-    .work__client {
-      min-width: 400px;
-    }
-  } // .work
-
-  main .work >:nth-child(even) {
-    margin-right: 2%;
-  }
-
-  main .social-links {
-    // padding-top: 0;
-  }
-} // @media
-
-
+} 
