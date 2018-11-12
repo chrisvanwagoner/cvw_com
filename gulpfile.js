@@ -26,6 +26,8 @@ gulp.task("concatScripts", function() {
         'src/js/lib/anime.min.js',
         'src/js/lib/wow.min.js',
         'src/js/lib/basicScroll.min.js',
+        'node_modules/vue/dist/vue.js',
+        'src/js/app.js',
         'src/js/runthis.js'
         ])
     .pipe(maps.init())
@@ -58,7 +60,7 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch('src/*.html', browserSync.reload);
   // gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
-  gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
+  // gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
 });
 
 gulp.task('images', function(){
