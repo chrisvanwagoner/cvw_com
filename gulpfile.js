@@ -23,10 +23,10 @@ gulp.task('browserSync', function() {
 /* Concatenate the listed scripts, map them, and output into a single file */
 gulp.task("concatScripts", function() {
     return gulp.src([
-        'src/js/lib/anime.min.js',
+        // 'src/js/lib/anime.min.js',
         'src/js/lib/wow.min.js',
         'src/js/lib/basicScroll.min.js',
-        'node_modules/vue/dist/vue.js',
+        'node_modules/vue/dist/vue.min.js',
         'src/js/app.js',
         'src/js/runthis.js'
         ])
