@@ -23,9 +23,11 @@ gulp.task('browserSync', function() {
 /* Concatenate the listed scripts, map them, and output into a single file */
 gulp.task("concatScripts", function() {
     return gulp.src([
-        'src/js/lib/anime.min.js',
+        // 'src/js/lib/anime.min.js',
         'src/js/lib/wow.min.js',
         'src/js/lib/basicScroll.min.js',
+        'node_modules/vue/dist/vue.min.js',
+        'src/js/app.js',
         'src/js/runthis.js'
         ])
     .pipe(maps.init())
@@ -58,7 +60,7 @@ gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch('src/*.html', browserSync.reload);
   // gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
-  gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
+  // gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
 });
 
 gulp.task('images', function(){
@@ -85,7 +87,11 @@ gulp.task('getHugoPosts', function() {
 
 // Grab the CSS, JS, and images for the Hugo posts and copy them to the dist/clients directory
 gulp.task('getHugoEtc', ['getHugoPosts'], function() {
-  gulp.src(['src/clients/public/css/**/*','src/clients/public/images/**/*','src/clients/public/js/**/*'], { base: 'src/clients/public'})
+  gulp.src([
+    'src/clients/public/css/**/*',
+    'src/clients/public/images/**/*',
+    'src/clients/public/js/**/*'
+  ], { base: 'src/clients/public' })
   .pipe(gulp.dest('dist/clients'));
 });
 

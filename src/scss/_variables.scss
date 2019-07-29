@@ -3,50 +3,135 @@ _variables.scss
 Sass Variables
 ***********************************/
 
-// $primary-color: #2E2E2E;
-// $primary-color: #4a4a4a;
-$primary-color: #2a2a2a;
-// $primary-bg: #fafafa;
-$primary-bg: #fdfdfc;
-$primary-bg: #effdff;
-$green: #418965;
-$dark-green: #0D1F2A;
-$black: #000000;
-$red: #ff0036;
-$white: #FFFFFF;
-$pink: #ffe8e2;
-$tangerine: #FF977C;
-$blue: #272AC5;
-$red: #E20000;
-$hot-pink: #FF0052;
-$light-blue: #0082DD;
-$yellow: #EED600;
-$green: #2E7D7A;
-$orange: #FF6F20;
-$teal: #263238;
-$gold: #FFD700;
-$pink-white: #FFF8F2;
+$primary-text: #19181D;
+$primary-bg: #FCFBFA;
+$light-blue: #FAFBFE;
+$light-green: #F0FBF6;
+$light-orange: #F7F5F4;
+$light-purple: #FAF8FC;
+$blue: #F0F3FB;
+$green: #E3F1EB;
+$red: #F61436;
 
-
-$section-spacing: 3em;
-$screen-margin: 5%;
-
-$sansfonts: Europa, "Avenir Next", sans-serif;
-$seriffonts: "Source Serif", Garamond, serif;
-$monofonts: Inconsolata, monospace;
-
-$font-small: 0.8em;
-$font-normal: 1em;
-$font-large: 1.8em;
-$font-xlarge: 2em;
-$font-xxlarge: 2.2em;
-
-$client-ww-yellow: #FEC524;
-$client-bs-green: #B4D335;
-$client-bs-blue: #161843;
-$client-raleys-red: #FF0036;
-$client-ivie-green: #87A93E;
-$client-deca-blue: #447FC6;
-$client-als-red: #E51837;
-
-$highlight: 1px solid orange;
+%headingExtraLight {
+	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-style:  italic;
+	font-weight: 200;
+}
+%headingLight {
+	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-style:  italic;
+	font-weight: 300;
+}
+%heading {
+	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-style:  normal;
+	font-weight: 400;
+}
+// %headingBold {
+// 	font-family: 'Inter', 'Avenir Next', sans-serif;
+// 	font-style:  normal;
+// 	font-weight: 700;
+// }
+%headingBoldItalic {
+	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-style:  italic;
+	font-weight: 700;
+}
+%headingBlack {
+	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-style:  italic;
+	font-weight: 900;
+}
+%text {
+	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-style:  normal;
+	font-weight: 300;
+}
+%h1 {
+	@extend %headingExtraLight;
+	color: $primary-text;
+	font-size: 2rem;
+	letter-spacing: -2px;
+	line-height: 2.3rem;
+}
+%h2 {
+	@extend %headingBlack;
+	color: $primary-text;
+    opacity: 0.04;
+	font-size: 300px;
+	letter-spacing: -12px;
+	line-height: 300px;
+}
+%h3 {
+	@extend %headingExtraLight;
+	color: $primary-text;
+	font-size: 3rem;
+	letter-spacing: -2px;
+	line-height: 3.1rem;
+	text-transform: uppercase;
+}
+%h4 {
+	@extend %headingBoldItalic;
+	color: $primary-text;
+	font-size: 1rem;
+	letter-spacing: 0.57px;
+	line-height: 1rem;
+}
+%paragraph {
+	@extend %text;
+	color: $primary-text;
+	font-size: 1rem;
+	letter-spacing: -0.2px;
+	line-height: 1.3rem;
+}
+%small {
+	@extend %headingLight;
+	color: #4A4A4A;
+	font-size: 0.9rem;
+	letter-spacing: -0.2px;
+	line-height: 1.3rem;
+}
+%lede {
+	@extend %heading;
+	color: $primary-text;
+	font-size: 20px;
+	letter-spacing: -0.8px;
+	line-height: 26px;
+}
+%link {
+	@extend %transition;
+	position: relative;
+	text-decoration: none;
+	&:after {
+		background-color: $red;
+		content: "";
+		position: absolute;
+		bottom: 1px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		z-index: -1;
+	}
+	&:hover {
+		color: $red;
+	}
+}
+%footer-text {
+	@extend %paragraph;
+	@extend %transition;
+	font-style: italic;
+	font-size: 16px;
+}
+%transition {
+	transition: all 0.2s ease-in-out;
+}
+%shadow {
+	box-shadow: 0 2px 17px 0 rgba(143,142,173,0.47);
+}
+%grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-column-gap: 1em;
+	// grid-row-gap: 1em;
+}
