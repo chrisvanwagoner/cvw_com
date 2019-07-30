@@ -203,7 +203,10 @@ small, header .header__bio {
 
 main .client-info__link, footer a {
   position: relative;
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  font-style: italic; }
   main .client-info__link:after, footer a:after {
     background-color: #555;
     background-color: rgba(25, 24, 29, 0.8);
@@ -215,8 +218,8 @@ main .client-info__link, footer a {
     height: 1px;
     z-index: -1; }
   main .client-info__link:hover:after, footer a:hover:after {
-    background-color: #F61436;
-    height: 3px; }
+    background-color: #0F21E3;
+    height: 2px; }
 
 footer li {
   font-style: italic;
@@ -386,7 +389,7 @@ footer {
     grid-column: 2 / 12; }
     @media (min-width: 990px) {
       footer .contact {
-        grid-column: 8 / 10; } }
+        grid-column: 8 / 12; } }
   footer h4 {
     margin-bottom: 18px; }
   footer ul {
@@ -394,6 +397,7 @@ footer {
   footer li {
     margin-bottom: 18px; }
   footer a {
+    font-weight: 200;
     color: #19181D; }
 
 /*# sourceMappingURL=main.css.map */

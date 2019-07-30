@@ -12,6 +12,7 @@ $light-purple: #E9E5F4;
 $blue: #F0F3FB;
 $green: #E3F1EB;
 $red: #F61436;
+$hot-blue: #0F21E3;
 
 %headingExtraLight {
 	font-family: 'Inter', 'Avenir Next', sans-serif;
@@ -107,6 +108,9 @@ $red: #F61436;
 %link {
 	position: relative;
 	text-decoration: none;
+	font-weight: 700;
+	font-size: 16px;
+	font-style: italic;
 	&:after {
 		@extend %transition;
 		background-color: #555;
@@ -122,8 +126,8 @@ $red: #F61436;
 	&:hover {
 		&:after {
 			@extend %transition;
-			background-color: $red;
-			height: 3px;
+			background-color: $hot-blue;
+			height: 2px;
 		}
 	}
 }
