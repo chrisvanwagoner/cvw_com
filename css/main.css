@@ -1,0 +1,363 @@
+/***********************************
+main.scss
+***********************************/
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif; } }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100;
+  src: url("../fonts/Inter-ThinItalic.woff2") format("woff2"), url("../fonts/Inter-ThinItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 200;
+  src: url("../fonts/Inter-ExtraLightItalic.woff2") format("woff2"), url("../fonts/Inter-ExtraLightItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  src: url("../fonts/Inter-LightItalic.woff2") format("woff2"), url("../fonts/Inter-LightItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/Inter-Italic.woff2") format("woff2"), url("../fonts/Inter-Italic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 500;
+  src: url("../fonts/Inter-MediumItalic.woff2") format("woff2"), url("../fonts/Inter-MediumItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 600;
+  src: url("../fonts/Inter-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Inter-SemiBoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/Inter-BoldItalic.woff2") format("woff2"), url("../fonts/Inter-BoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 800;
+  src: url("../fonts/Inter-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/Inter-ExtraBoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/Inter-Black.woff2") format("woff2"), url("../fonts/Inter-Black.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 900;
+  src: url("../fonts/Inter-BlackItalic.woff2") format("woff2"), url("../fonts/Inter-BlackItalic.woff") format("woff"); }
+
+/* -------------------------------------------------------
+  Variable font.
+  Usage:
+  
+	html { font-family: 'Inter', sans-serif; }
+	@supports (font-variation-settings: normal) {
+	  html { font-family: 'Inter var', sans-serif; }
+	}
+  */
+/* --------------------------------------------------------------------------
+  [EXPERIMENTAL] Multi-axis, single variable font.
+  
+  Slant axis is not yet widely supported (as of February 2019) and thus this
+  multi-axis single variable font is opt-in rather than the default.
+  
+  When using this, you will probably need to set font-variation-settings
+  explicitly, e.g.
+  
+	* { font-variation-settings: "slnt" 0deg }
+	.italic { font-variation-settings: "slnt" 10deg }
+  
+  */
+/***********************************
+_variables.scss
+Sass Variables
+***********************************/
+h1, h3 {
+  font-family: 'Inter', 'Avenir Next', sans-serif;
+  font-style: italic;
+  font-weight: 200; }
+
+small, header .header__bio {
+  font-family: 'Inter', 'Avenir Next', sans-serif;
+  font-style: italic;
+  font-weight: 300; }
+
+h4 {
+  font-family: 'Inter', 'Avenir Next', sans-serif;
+  font-style: italic;
+  font-weight: 700; }
+
+h2 {
+  font-family: 'Inter', 'Avenir Next', sans-serif;
+  font-style: italic;
+  font-weight: 900; }
+
+footer li, p, main .client-info__link {
+  font-family: 'Inter', 'Avenir Next', sans-serif;
+  font-style: normal;
+  font-weight: 300; }
+
+h1 {
+  color: #19181D;
+  font-size: 2rem;
+  letter-spacing: -2px;
+  line-height: 2.3rem; }
+
+h2 {
+  color: #19181D;
+  font-size: 300px;
+  letter-spacing: -12px;
+  line-height: 300px; }
+
+h3 {
+  color: #19181D;
+  font-size: 3rem;
+  letter-spacing: -2px;
+  line-height: 3.1rem;
+  text-transform: uppercase; }
+
+h4 {
+  color: #19181D;
+  font-size: 1rem;
+  letter-spacing: 0.57px;
+  line-height: 1rem; }
+
+footer li, p, main .client-info__link {
+  color: #19181D;
+  font-size: 1rem;
+  letter-spacing: -0.2px;
+  line-height: 1.3rem; }
+
+small, header .header__bio {
+  color: #4A4A4A;
+  font-size: 0.9rem;
+  letter-spacing: -0.2px;
+  line-height: 1.3rem; }
+
+main .client-info__link, footer a {
+  position: relative;
+  text-decoration: none; }
+  main .client-info__link:after, footer a:after {
+    background-color: #A3A0A9;
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    z-index: -1; }
+  main .client-info__link:hover:after, footer a:hover:after {
+    background-color: #F61436; }
+
+footer li {
+  font-style: italic;
+  font-size: 16px; }
+
+main .client-info__link:after, footer a:after, footer li {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+main figure {
+  -webkit-box-shadow: 0 2px 17px 0 rgba(143, 142, 173, 0.47);
+          box-shadow: 0 2px 17px 0 rgba(143, 142, 173, 0.47); }
+
+header, main .client, footer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1em; }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html {
+  background-color: #FCFBFA;
+  color: #19181D;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: 'Inter', sans-serif; }
+
+/***********************************
+  Header
+***********************************/
+header {
+  padding-top: 97px;
+  padding-bottom: 122px; }
+  header .header__image {
+    border-radius: 100px;
+    -webkit-box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
+            box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
+    grid-column: 1 / 12 span;
+    height: 200px;
+    margin-bottom: 73px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px; }
+  header .header__text-wrap {
+    max-width: 400px;
+    grid-column: 7 / 11; }
+  header .header__name {
+    margin-bottom: 16px; }
+
+/***********************************
+  Main
+***********************************/
+main {
+  position: relative; }
+  main .work {
+    display: inline-block;
+    left: 220px;
+    opacity: 0.1;
+    position: absolute;
+    top: 40px;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    z-index: 0; }
+    @supports (-webkit-text-stroke: 2px #19181D) {
+      main .work {
+        -webkit-text-stroke-color: #19181D;
+        -webkit-text-stroke-width: 2px;
+        color: transparent; } }
+  main .client {
+    padding-top: 210px;
+    padding-bottom: 210px;
+    overflow: hidden;
+    margin: 0 20px 20px; }
+    main .client:last-child {
+      margin-bottom: 0; }
+    main .client--cityparks {
+      background-color: #E5F4ED; }
+    main .client--fedcity {
+      background-color: #DFE4F0; }
+    main .client--fike {
+      background-color: #F4EEE5; }
+    main .client--veda {
+      background-color: #E9E5F4; }
+  main .client-info {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    position: relative;
+    width: 370px;
+    z-index: 1; }
+  main .client-info__category {
+    display: inline-block;
+    font-size: 14px;
+    left: -12px;
+    position: absolute;
+    top: 6px;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+  main .client-info__name {
+    margin-bottom: 4rem; }
+  main .client-info__text {
+    margin-bottom: 3rem;
+    grid-row: 1 / 3; }
+  main figure {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row: 1 / 1;
+    -ms-flex-item-align: start;
+        align-self: start;
+    width: 500px;
+    z-index: 1;
+    position: relative; }
+    main figure:after {
+      background-color: #FFF;
+      border-radius: 25px;
+      bottom: 0;
+      -webkit-box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
+              box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
+      content: "";
+      height: 150px;
+      left: 10%;
+      position: absolute;
+      width: 80%;
+      z-index: -1; }
+    main figure img {
+      display: block; }
+
+/***********************************
+Footer
+***********************************/
+footer {
+  padding-top: 70px;
+  padding-bottom: 70px; }
+  footer .contact {
+    grid-column: 8 / 10; }
+  footer h4 {
+    margin-bottom: 18px; }
+  footer ul {
+    list-style: none; }
+  footer li {
+    margin-bottom: 18px; }
+  footer a {
+    color: #19181D; }
+
+/*# sourceMappingURL=main.css.map */
