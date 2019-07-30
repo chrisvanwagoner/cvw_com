@@ -1,6 +1,10 @@
 /***********************************
 main.scss
 ***********************************/
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif; } }
+
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -162,7 +166,6 @@ h1 {
 
 h2 {
   color: #19181D;
-  opacity: 0.04;
   font-size: 300px;
   letter-spacing: -12px;
   line-height: 300px; }
@@ -196,7 +199,7 @@ main .client-info__link, footer a {
   position: relative;
   text-decoration: none; }
   main .client-info__link:after, footer a:after {
-    background-color: #F61436;
+    background-color: #A3A0A9;
     content: "";
     position: absolute;
     bottom: 1px;
@@ -204,18 +207,18 @@ main .client-info__link, footer a {
     width: 100%;
     height: 1px;
     z-index: -1; }
-  main .client-info__link:hover, footer a:hover {
-    color: #F61436; }
+  main .client-info__link:hover:after, footer a:hover:after {
+    background-color: #F61436; }
 
 footer li {
   font-style: italic;
   font-size: 16px; }
 
-main .client-info__link, footer a, footer li {
+main .client-info__link:after, footer a:after, footer li {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
 
-main .client-info__image {
+main figure {
   -webkit-box-shadow: 0 2px 17px 0 rgba(143, 142, 173, 0.47);
           box-shadow: 0 2px 17px 0 rgba(143, 142, 173, 0.47); }
 
@@ -233,7 +236,7 @@ header, main .client, footer {
 html {
   background-color: #FCFBFA;
   color: #19181D;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24px;
   font-family: 'Inter', sans-serif; }
 
@@ -247,7 +250,7 @@ header {
     border-radius: 100px;
     -webkit-box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
             box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
-    grid-column: 6 / 8;
+    grid-column: 1 / 12 span;
     height: 200px;
     margin-bottom: 73px;
     margin-left: auto;
@@ -265,27 +268,36 @@ header {
 main {
   position: relative; }
   main .work {
+    display: inline-block;
+    left: 220px;
+    opacity: 0.1;
     position: absolute;
+    top: 40px;
     -webkit-transform-origin: 0 0;
             transform-origin: 0 0;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
-    left: 55%;
-    top: 40px;
-    display: inline-block;
     z-index: 0; }
+    @supports (-webkit-text-stroke: 2px #19181D) {
+      main .work {
+        -webkit-text-stroke-color: #19181D;
+        -webkit-text-stroke-width: 2px;
+        color: transparent; } }
   main .client {
     padding-top: 210px;
     padding-bottom: 210px;
-    overflow: hidden; }
+    overflow: hidden;
+    margin: 0 20px 20px; }
+    main .client:last-child {
+      margin-bottom: 0; }
     main .client--cityparks {
-      background-color: #F0FBF6; }
+      background-color: #E5F4ED; }
     main .client--fedcity {
-      background-color: #FAFBFE; }
+      background-color: #DFE4F0; }
     main .client--fike {
-      background-color: #F7F5F4; }
+      background-color: #F4EEE5; }
     main .client--veda {
-      background-color: #FAF8FC; }
+      background-color: #E9E5F4; }
   main .client-info {
     grid-column-start: 3;
     grid-column-end: 6;
@@ -302,19 +314,34 @@ main {
             transform-origin: 0 0;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg); }
-    main .client-info__category span {
-      display: inline-block;
-      -webkit-transform: rotate(180deg);
-              transform: rotate(180deg); }
   main .client-info__name {
-    margin-bottom: 3rem; }
+    margin-bottom: 4rem; }
   main .client-info__text {
-    margin-bottom: 1.3rem; }
-  main .client-info__image {
+    margin-bottom: 3rem;
+    grid-row: 1 / 3; }
+  main figure {
     grid-column-start: 7;
     grid-column-end: 9;
+    grid-row: 1 / 1;
+    -ms-flex-item-align: start;
+        align-self: start;
     width: 500px;
-    z-index: 1; }
+    z-index: 1;
+    position: relative; }
+    main figure:after {
+      background-color: #FFF;
+      border-radius: 25px;
+      bottom: 0;
+      -webkit-box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
+              box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
+      content: "";
+      height: 150px;
+      left: 10%;
+      position: absolute;
+      width: 80%;
+      z-index: -1; }
+    main figure img {
+      display: block; }
 
 /***********************************
 Footer

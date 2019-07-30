@@ -5,10 +5,10 @@ Sass Variables
 
 $primary-text: #19181D;
 $primary-bg: #FCFBFA;
-$light-blue: #FAFBFE;
-$light-green: #F0FBF6;
-$light-orange: #F7F5F4;
-$light-purple: #FAF8FC;
+$light-blue: #DFE4F0;
+$light-green: #E5F4ED;
+$light-orange: #F4EEE5;
+$light-purple: #E9E5F4;
 $blue: #F0F3FB;
 $green: #E3F1EB;
 $red: #F61436;
@@ -58,7 +58,6 @@ $red: #F61436;
 %h2 {
 	@extend %headingBlack;
 	color: $primary-text;
-    opacity: 0.04;
 	font-size: 300px;
 	letter-spacing: -12px;
 	line-height: 300px;
@@ -100,11 +99,11 @@ $red: #F61436;
 	line-height: 26px;
 }
 %link {
-	@extend %transition;
 	position: relative;
 	text-decoration: none;
 	&:after {
-		background-color: $red;
+		@extend %transition;
+		background-color: #A3A0A9;
 		content: "";
 		position: absolute;
 		bottom: 1px;
@@ -114,7 +113,9 @@ $red: #F61436;
 		z-index: -1;
 	}
 	&:hover {
-		color: $red;
+		&:after {
+			background-color: $red;
+		}
 	}
 }
 %footer-text {
@@ -133,5 +134,4 @@ $red: #F61436;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-column-gap: 1em;
-	// grid-row-gap: 1em;
 }

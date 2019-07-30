@@ -5,6 +5,9 @@
 // 	src: url("Inter-Thin.woff2") format("woff2"),
 // 		 url("Inter-Thin.woff") format("woff");
 //   }
+@supports (font-variation-settings: normal) {
+	html { font-family: 'Inter var', sans-serif; }
+  }
   @font-face {
 	font-family: 'Inter';
 	font-style:  italic;

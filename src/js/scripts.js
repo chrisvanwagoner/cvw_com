@@ -12,7 +12,7 @@ var clients = [
   {
     name: "City Parks Alliance",
     class: "cityparks",
-    summary: "A full site redesign for ",
+    summary: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
     category: "Non-profit",
     url: "https://cityparksalliance.org",
     imgSrc: "images/city-parks-alliance.jpg",
@@ -51,11 +51,10 @@ var clients = [
   }
 ];
 
-
-new Vue({
-  el: '#app',
+var main = new Vue({
+  el: '#main',
   data: {
-    clients: clients
+    clients: clients,
   }
 });
 

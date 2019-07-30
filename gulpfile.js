@@ -95,7 +95,7 @@ gulp.task('getHugoEtc', ['getHugoPosts'], function() {
   .pipe(gulp.dest('dist/clients'));
 });
 
-gulp.task("build", ['sass', 'minifyScripts', 'images'], function() {
+gulp.task("build", ['sass', 'minifyScripts', 'images', 'watch'], function() {
   return gulp.src([
     "src/css/lib/normalize.css",
     "src/css/lib/animate.min.css",

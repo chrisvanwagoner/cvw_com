@@ -22,8 +22,8 @@
   <!-- ============================== -->
   <!-- Scripts -->
   <!-- Load in Europa from Adobe Typekit -->
-  <script rel="preload" src="https://use.typekit.net/luj6vzy.js"></script>
-  <script> try { Typekit.load({ async: true }); } catch (e) {} </script>
+  <!-- <script rel="preload" src="https://use.typekit.net/luj6vzy.js"></script>
+  <script> try { Typekit.load({ async: true }); } catch (e) {} </script> -->
   <!-- Font Awesome CDN-->
   <!-- <script src="https://use.fontawesome.com/0d546cdd84.js"></script> -->
   <!-- jQuery used for scroll-up buttons in footer -->
@@ -49,7 +49,7 @@
   </div>
 </header>
 
-<main id="app" class="clients">
+<main id="main" class="clients">
   <h2 class="work">Work</h2>
   <div v-for="client in clients" v-bind:class="'client client--' + client.class">
     <div class="client-info">
@@ -58,7 +58,9 @@
       <p class="client-info__text">{{ client.summary }}</p>
       <a class="client-info__link" v-bind:href="client.url" target="_blank">See More</a>
     </div> <!-- .client-info -->
-    <img class="client-info__image" v-bind:src="client.imgSrc" v-bind:srcset="client.imgSrc2x" v-bind:alt="client.imgAlt">
+    <figure class="client-info__figure">
+      <img v-bind:src="client.imgSrc" v-bind:srcset="client.imgSrc2x" v-bind:alt="client.imgAlt">
+    </figure>
 
   </div> <!-- .client -->
 

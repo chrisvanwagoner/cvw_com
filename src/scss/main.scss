@@ -13,7 +13,7 @@ main.scss
 html {
 	background-color: $primary-bg;
   color: $primary-text;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24px;
   font-family: 'Inter', sans-serif;
 }
@@ -46,7 +46,7 @@ header {
   .header__image {
     border-radius: 100px;
     box-shadow: -2px 2px 30px 0 rgba(78,29,29,0.16), 6px 5px 45px 0 rgba(33,38,67,0.24);
-    grid-column: 6 / 8;
+    grid-column: 1 / 12 span;
     height: 200px;
     margin-bottom: 73px;
     margin-left: auto;
@@ -71,19 +71,29 @@ header {
 main {
   position: relative;
   .work {
+    display: inline-block;
+    left: 220px;
+    opacity: 0.1;
     position: absolute;
+    top: 40px;
     transform-origin: 0 0;
     transform: rotate(90deg);
-    left: 55%;
-    top: 40px;
-    display: inline-block;
     z-index: 0;
+    @supports(-webkit-text-stroke: 2px $primary-text) {
+      -webkit-text-stroke-color: $primary-text;
+      -webkit-text-stroke-width: 2px;
+      color: transparent;
+    }
   }
   .client {
     @extend %grid;
     padding-top: 210px;
     padding-bottom: 210px;
     overflow: hidden;
+    margin: 0 20px 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     &--cityparks {
       background-color: $light-green;
     }
@@ -113,27 +123,46 @@ main {
     transform-origin: 0 0;
     transform: rotate(90deg);
     span {
-      display: inline-block;
-      transform: rotate(180deg);
+      // display: inline-block;
+      // transform: rotate(180deg);
     }
   }
   .client-info__name {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
   .client-info__text {
-    margin-bottom: 1.3rem;
-
+    margin-bottom: 3rem;
+    grid-row: 1 / 3;
   }
   .client-info__link {
     @extend %link;
     @extend %paragraph;
   }
-  .client-info__image {
+  figure {
     @extend %shadow;
+    
     grid-column-start: 7;
     grid-column-end: 9;
+    grid-row: 1 / 1;
+    align-self: start;
     width: 500px;
     z-index: 1;
+    position: relative;
+    &:after {
+      background-color: #FFF;
+      border-radius: 25px;
+      bottom: 0;
+      box-shadow: 0 9px 62px 0 rgba(107,106,139,0.5);
+      content: "";
+      height: 150px;
+      left: 10%;
+      position: absolute;
+      width: 80%;
+      z-index: -1;
+    }
+    img {
+      display: block;
+    }
   }
 } 
 
