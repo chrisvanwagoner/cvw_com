@@ -1,4 +1,0 @@
-languageCode = "en-us"
-title = "Chris van Wagoner"
-baseURL = "/clients/"
-theme = "hugo_theme_pickles"
