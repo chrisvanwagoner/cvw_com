@@ -186,21 +186,22 @@ h4 {
 footer li, p, main .client-info__link {
   color: #19181D;
   font-size: 1rem;
-  letter-spacing: -0.2px;
-  line-height: 1.3rem; }
+  letter-spacing: -1px;
+  line-height: 1.4rem; }
 
 small, header .header__bio {
-  color: #4A4A4A;
+  color: #555;
+  color: rgba(25, 24, 29, 0.8);
   font-size: 0.9rem;
-  letter-spacing: -0.2px;
-  line-height: 1.3rem; }
+  letter-spacing: -0.8px;
+  line-height: 1.4rem; }
 
 main .client-info__link, footer a {
   position: relative;
   text-decoration: none; }
   main .client-info__link:after, footer a:after {
     background-color: #555;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(25, 24, 29, 0.8);
     content: "";
     position: absolute;
     bottom: 1px;
@@ -216,8 +217,8 @@ footer li {
   font-size: 16px; }
 
 main .client-info__link:after, footer a:after, footer li {
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
 
 main figure {
   -webkit-box-shadow: 0 2px 17px 0 rgba(143, 142, 173, 0.47);
@@ -237,7 +238,7 @@ header, main .client, footer {
 html {
   background-color: #FCFBFA;
   color: #19181D;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
   font-family: 'Inter', sans-serif; }
 
@@ -321,7 +322,6 @@ main {
         grid-column: 2 / 6; } }
     @media (min-width: 1200px) {
       main .client-info {
-        width: 370px;
         grid-column: 3 / 6; } }
   main .client-info__category {
     font-size: 14px;
@@ -341,12 +341,12 @@ main {
     @media (min-width: 990px) {
       main .client-info__name {
         margin-bottom: 4rem; } }
+    @media (min-width: 1200px) {
+      main .client-info__name {
+        margin-bottom: 6rem; } }
   main .client-info__text {
     margin-bottom: 1rem;
     grid-row: 1 / 3; }
-    @media (min-width: 990px) {
-      main .client-info__text {
-        margin-bottom: 3rem; } }
   main figure {
     grid-column: 2 / 12;
     grid-row: 1 / 1;
@@ -369,7 +369,7 @@ main {
       -webkit-box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
               box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
       content: "";
-      height: 150px;
+      height: 200px;
       left: 10%;
       position: absolute;
       width: 80%;

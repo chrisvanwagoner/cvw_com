@@ -86,15 +86,16 @@ $red: #F61436;
 	@extend %text;
 	color: $primary-text;
 	font-size: 1rem;
-	letter-spacing: -0.2px;
-	line-height: 1.3rem;
+	letter-spacing: -1px;
+	line-height: 1.4rem;
 }
 %small {
 	@extend %headingExtraLight;
-	color: #4A4A4A;
+	color: #555;
+	color: rgba($primary-text, 0.8);
 	font-size: 0.9rem;
-	letter-spacing: -0.2px;
-	line-height: 1.3rem;
+	letter-spacing: -0.8px;
+	line-height: 1.4rem;
 }
 %lede {
 	@extend %heading;
@@ -109,7 +110,7 @@ $red: #F61436;
 	&:after {
 		@extend %transition;
 		background-color: #555;
-		background-color: rgba(#000, 0.5);
+		background-color: rgba($primary-text, 0.8);
 		content: "";
 		position: absolute;
 		bottom: 1px;
@@ -131,7 +132,7 @@ $red: #F61436;
 	font-size: 16px;
 }
 %transition {
-	transition: all 0.2s ease-in-out;
+	transition: all 0.1s ease-in-out;
 }
 %shadow {
 	box-shadow: 0 2px 17px 0 rgba(143,142,173,0.47);
