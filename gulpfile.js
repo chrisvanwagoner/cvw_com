@@ -102,6 +102,7 @@ gulp.task("build", ['sass', 'minifyScripts'], function() {
     "src/css/main.css*",
     "src/index.html",
     "src/js/scripts.min.js",
+    "src/images/**",
     "src/fonts/**",
     "src/robots.txt"
     ], { base: 'src'})
