@@ -209,13 +209,14 @@ main .client-info__link, footer a {
     background-color: rgba(25, 24, 29, 0.8);
     content: "";
     position: absolute;
-    bottom: 1px;
+    top: 1.1rem;
     left: 0;
     width: 100%;
     height: 1px;
     z-index: -1; }
   main .client-info__link:hover:after, footer a:hover:after {
-    background-color: #F61436; }
+    background-color: #F61436;
+    height: 3px; }
 
 footer li {
   font-style: italic;
