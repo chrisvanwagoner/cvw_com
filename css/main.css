@@ -133,10 +133,15 @@ main.scss
 _variables.scss
 Sass Variables
 ***********************************/
-h1, h3, small, header .header__bio {
+h1, small, header .header__bio {
   font-family: 'Inter', 'Avenir Next', sans-serif;
   font-style: italic;
   font-weight: 200; }
+
+h3 {
+  font-family: 'Inter', 'Avenir Next', sans-serif;
+  font-style: italic;
+  font-weight: 700; }
 
 h4 {
   font-family: 'Inter', 'Avenir Next', sans-serif;
@@ -204,13 +209,14 @@ main .client-info__link, footer a {
     background-color: rgba(25, 24, 29, 0.8);
     content: "";
     position: absolute;
-    bottom: 1px;
+    top: 1.1rem;
     left: 0;
     width: 100%;
     height: 1px;
     z-index: -1; }
   main .client-info__link:hover:after, footer a:hover:after {
-    background-color: #F61436; }
+    background-color: #F61436;
+    height: 3px; }
 
 footer li {
   font-style: italic;
@@ -221,13 +227,13 @@ main .client-info__link:after, footer a:after, footer li {
   transition: all 0.1s ease-in-out; }
 
 main figure {
-  -webkit-box-shadow: 0 2px 17px 0 rgba(143, 142, 173, 0.47);
-          box-shadow: 0 2px 17px 0 rgba(143, 142, 173, 0.47); }
+  -webkit-box-shadow: 0 2px 30px 5px rgba(143, 142, 173, 0.7);
+          box-shadow: 0 2px 30px 5px rgba(143, 142, 173, 0.7); }
 
 header, main .client, footer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 1em; }
+  grid-column-gap: 1.4rem; }
 
 * {
   margin: 0;
@@ -298,11 +304,15 @@ main {
     overflow: hidden; }
     @media (min-width: 990px) {
       main .client {
-        padding-top: 210px;
-        padding-bottom: 210px;
-        margin: 0 20px 20px; }
+        padding-top: 160px;
+        padding-bottom: 160px;
+        margin: 0 1.4rem 1.4rem; }
         main .client:last-child {
           margin-bottom: 0; } }
+    @media (min-width: 1400px) {
+      main .client {
+        padding-top: 0;
+        padding-bottom: 0; } }
     main .client--cityparks {
       background-color: #E5F4ED; }
     main .client--fedcity {
@@ -320,9 +330,11 @@ main {
       main .client-info {
         width: 100%;
         grid-column: 2 / 6; } }
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
       main .client-info {
-        grid-column: 3 / 6; } }
+        grid-column: 3 / 6;
+        -ms-flex-item-align: center;
+            align-self: center; } }
   main .client-info__category {
     font-size: 14px;
     display: inline-block;
@@ -341,11 +353,8 @@ main {
     @media (min-width: 990px) {
       main .client-info__name {
         margin-bottom: 4rem; } }
-    @media (min-width: 1200px) {
-      main .client-info__name {
-        margin-bottom: 6rem; } }
   main .client-info__text {
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
     grid-row: 1 / 3; }
   main figure {
     grid-column: 2 / 12;
@@ -358,22 +367,11 @@ main {
     margin-bottom: 2rem; }
     @media (min-width: 990px) {
       main figure {
-        grid-column: 7 / 12; } }
-    @media (min-width: 1200px) {
+        grid-column: 6 / 12;
+        margin-bottom: 0; } }
+    @media (min-width: 1400px) {
       main figure {
-        width: 500px; } }
-    main figure:after {
-      background-color: #FFF;
-      border-radius: 25px;
-      bottom: 0;
-      -webkit-box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
-              box-shadow: 0 9px 62px 0 rgba(107, 106, 139, 0.5);
-      content: "";
-      height: 200px;
-      left: 10%;
-      position: absolute;
-      width: 80%;
-      z-index: -1; }
+        grid-column: 6 / 13; } }
     main figure img {
       display: block;
       width: 100%; }
