@@ -28,11 +28,11 @@ $red: #F61436;
 	font-style:  normal;
 	font-weight: 400;
 }
-// %headingBold {
-// 	font-family: 'Inter', 'Avenir Next', sans-serif;
-// 	font-style:  normal;
-// 	font-weight: 700;
-// }
+%headingBold {
+	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-style:  italic;
+	font-weight: 700;
+}
 %headingBoldItalic {
 	font-family: 'Inter', 'Avenir Next', sans-serif;
 	font-style:  italic;
@@ -63,7 +63,7 @@ $red: #F61436;
 	line-height: 300px;
 }
 %h3 {
-	@extend %headingExtraLight;
+	@extend %headingBold;
 	color: $primary-text;
 	font-size: 2rem;
 	letter-spacing: -1px;
