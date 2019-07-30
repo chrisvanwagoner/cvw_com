@@ -65,10 +65,15 @@ $red: #F61436;
 %h3 {
 	@extend %headingExtraLight;
 	color: $primary-text;
-	font-size: 3rem;
-	letter-spacing: -2px;
-	line-height: 3.1rem;
+	font-size: 2rem;
+	letter-spacing: -1px;
+	line-height: 2.1rem;
 	text-transform: uppercase;
+	@media (min-width: 990px) {
+		font-size: 3rem;
+		letter-spacing: -2px;
+		line-height: 3.1rem;
+	}
 }
 %h4 {
 	@extend %headingBoldItalic;
