@@ -46,7 +46,7 @@ $red: #F61436;
 %text {
 	font-family: 'Inter', 'Avenir Next', sans-serif;
 	font-style:  normal;
-	font-weight: 300;
+	font-weight: 200;
 }
 %h1 {
 	@extend %headingExtraLight;
@@ -90,7 +90,7 @@ $red: #F61436;
 	line-height: 1.3rem;
 }
 %small {
-	@extend %headingLight;
+	@extend %headingExtraLight;
 	color: #4A4A4A;
 	font-size: 0.9rem;
 	letter-spacing: -0.2px;
@@ -108,7 +108,8 @@ $red: #F61436;
 	text-decoration: none;
 	&:after {
 		@extend %transition;
-		background-color: #A3A0A9;
+		background-color: #555;
+		background-color: rgba(#000, 0.5);
 		content: "";
 		position: absolute;
 		bottom: 1px;
