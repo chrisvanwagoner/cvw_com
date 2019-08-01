@@ -24,11 +24,12 @@ gulp.task('browserSync', function() {
 gulp.task("concatScripts", function() {
     return gulp.src([
         // 'src/js/lib/anime.min.js',
-        'src/js/lib/wow.min.js',
-        'src/js/lib/basicScroll.min.js',
+        // 'src/js/lib/wow.min.js',
+        // 'src/js/lib/basicScroll.min.js',
         'node_modules/vue/dist/vue.min.js',
         'src/js/app.js',
-        'src/js/runthis.js'
+        'src/js/lazyload.js',
+        // 'src/js/runthis.js'
         ])
     .pipe(maps.init())
     .pipe(concat('scripts.js'))
