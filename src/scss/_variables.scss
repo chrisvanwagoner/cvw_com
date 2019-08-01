@@ -3,119 +3,106 @@ _variables.scss
 Sass Variables
 ***********************************/
 
-$primary-text: #19181D;
-$primary-bg: #FCFBFA;
-$light-blue: #DFE4F0;
-$light-green: #E5F4ED;
-$light-orange: #F4EEE5;
-$light-purple: #E9E5F4;
-$blue: #F0F3FB;
-$green: #E3F1EB;
-$red: #F61436;
-$hot-blue: #0F21E3;
+$heading: #19181D;
+$text: #19181D;
+$bg: #FFFEFD;
+$blue: #0005EC;
 
-%headingExtraLight {
-	font-family: 'Inter', 'Avenir Next', sans-serif;
+$lh: 26px;
+
+$min-xs:   "screen and (min-width: 400px)";
+$min-sm:   "screen and (min-width: 600px)";
+$min-md:   "screen and (min-width: 800px)";
+$min-lg:   "screen and (min-width: 1000px)";
+$min-xl:   "screen and (min-width: 1200px)";
+$min-xxl:  "screen and (min-width: 1400px)";
+$min-xxxl: "screen and (min-width: 1600px)";
+
+%headingExtraLightItalic {
+	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
 	font-style:  italic;
 	font-weight: 200;
 }
-%headingLight {
-	font-family: 'Inter', 'Avenir Next', sans-serif;
-	font-style:  italic;
-	font-weight: 300;
-}
-%heading {
-	font-family: 'Inter', 'Avenir Next', sans-serif;
-	font-style:  normal;
-	font-weight: 400;
-}
-%headingBold {
-	font-family: 'Inter', 'Avenir Next', sans-serif;
-	font-style:  italic;
-	font-weight: 700;
-}
 %headingBoldItalic {
-	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
 	font-style:  italic;
 	font-weight: 700;
 }
-%headingBlack {
-	font-family: 'Inter', 'Avenir Next', sans-serif;
+%headingBlackItalic {
+	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
 	font-style:  italic;
 	font-weight: 900;
 }
 %text {
-	font-family: 'Inter', 'Avenir Next', sans-serif;
+	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
 	font-style:  normal;
 	font-weight: 200;
 }
 %h1 {
-	@extend %headingExtraLight;
-	color: $primary-text;
+	@extend %headingExtraLightItalic;
+	color: $heading;
 	font-size: 2rem;
 	letter-spacing: -2px;
-	line-height: 2.3rem;
+	line-height: $lh * 2;
 }
 %h2 {
-	@extend %headingBlack;
-	color: $primary-text;
+	@extend %headingBlackItalic;
+	color: $heading;
 	font-size: 300px;
 	letter-spacing: -12px;
 	line-height: 300px;
 }
 %h3 {
-	@extend %headingBold;
-	color: $primary-text;
+	@extend %headingBoldItalic;
+	color: $heading;
 	font-size: 2rem;
 	letter-spacing: -1px;
-	line-height: 2.1rem;
-	text-transform: uppercase;
-	@media (min-width: 990px) {
-		font-size: 3rem;
+	line-height: $lh * 1.6;
+	@media #{$min-lg} {
+        font-size: 2.5rem;
 		letter-spacing: -2px;
-		line-height: 3.1rem;
+		line-height: $lh * 2;
 	}
+    @media #{$min-xl} {
+        font-size: 3rem;
+        line-height: $lh * 2.4;
+    }
 }
 %h4 {
 	@extend %headingBoldItalic;
-	color: $primary-text;
+	color: $heading;
 	font-size: 1rem;
 	letter-spacing: 0.57px;
 	line-height: 1rem;
 }
 %paragraph {
 	@extend %text;
-	color: $primary-text;
+	color: $text;
 	font-size: 1rem;
-	letter-spacing: -1px;
-	line-height: 1.4rem;
+	letter-spacing: -0.7px;
+	line-height: $lh;
 }
 %small {
-	@extend %headingExtraLight;
-	color: #555;
-	color: rgba($primary-text, 0.8);
-	font-size: 0.9rem;
-	letter-spacing: -0.8px;
-	line-height: 1.4rem;
-}
-%lede {
-	@extend %heading;
-	color: $primary-text;
-	font-size: 20px;
-	letter-spacing: -0.8px;
-	line-height: 26px;
+	@extend %headingBoldItalic;
+	color: $heading;
+	font-size: 0.7rem;
+	letter-spacing: 0;
+	line-height: $lh;
+	margin-bottom: $lh * 0.5;
+	@media #{$min-xl} {
+		font-weight: 200;
+	}
 }
 %link {
 	position: relative;
 	text-decoration: none;
 	font-weight: 700;
-	font-size: 16px;
+	font-size: 18px;
 	font-style: italic;
+	color: $heading;
 	&:after {
-		@extend %transition;
-		background-color: #555;
-		background-color: rgba($primary-text, 0.8);
 		content: "";
+		background-color: $text;
 		position: absolute;
 		top: 1.1rem;
 		left: 0;
@@ -123,28 +110,24 @@ $hot-blue: #0F21E3;
 		height: 1px;
 		z-index: -1;
 	}
-	&:hover {
+    &:hover,
+    &:focus {
 		&:after {
-			@extend %transition;
-			background-color: $hot-blue;
-			height: 2px;
+			background-color: $blue;
+			height: 2px
 		}
 	}
 }
-%footer-text {
-	@extend %paragraph;
-	@extend %transition;
-	font-style: italic;
-	font-size: 16px;
-}
-%transition {
-	transition: all 0.1s ease-in-out;
-}
+
 %shadow {
 	box-shadow: 0 2px 30px 5px rgba(143, 142, 173, 0.7);
 }
 %grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	grid-column-gap: 1.4rem;
+	grid-column-gap: $lh;
+}
+%grid-slim {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
 }
