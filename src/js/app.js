@@ -2,42 +2,62 @@ var clients = [
   {
     name: "City Parks Alliance",
     class: "cityparks",
-    summary: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
-    category: "Non-profit",
+    summary: "A new website build with custom masonry layout of featured content for the nation's only independent nonprofit organization for urban parks.",
+    category: "National Nonprofit",
     url: "https://cityparksalliance.org",
-    imgSrc: "images/city-parks-alliance.jpg",
+    imgPlc: "images/city-parks-alliance.jpg",
+    imgSrc: "images/city-parks-alliance@1x.jpg",
     imgSrc2x: "images/city-parks-alliance@2x.jpg 2x",
-    imgAlt: "Screenshot of the City Parks Alliance homepage header"
+    imgAlt: "Screenshot of the City Parks Alliance homepage header",
+    bgColor: "#E5F4ED"
+  },
+  {
+    name: "Anheuser-Busch",
+    class: "anheuser",
+    summary: "Site maintenance for Anheuser-Busch's platform for updates on their nationwide outreach.",
+    category: "Outreach",
+    url: "https://www.purposebeyondbrewing.com/index.html",
+    imgPlc: "images/anheuser-busch.jpg",
+    imgSrc: "images/anheuser-busch@1x.jpg",
+    imgSrc2x: "images/anheuser-busch@2x.jpg 2x",
+    imgAlt: "Screenshot of an Anheuser-Busch Purpose Beyond Brewing initiative page",
+    bgColor: "rgb(249, 245, 229)"
   },
   {
     name: "Federal City Council",
     class: "fedcity",
-    summary: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
-    category: "Non-profit",
+    summary: "For over 60 years, Federal City Council has sought to improve civic life in Washington, D.C.",
+    category: "DC Nonrofit",
     url: "https://www.federalcitycouncil.org",
-    imgSrc: "images/federal-city-council.jpg",
+    imgPlc: "images/federal-city-council.jpg",
+    imgSrc: "images/federal-city-council@1x.jpg",
     imgSrc2x: "images/federal-city-council@2x.jpg 2x",
-    imgAlt: "Screenshot of the Federal City Council homepage header"
+    imgAlt: "Screenshot of the Federal City Council homepage header",
+    bgColor: "#DFE4F0"
   },
   {
     name: "Fike",
     class: "fike",
-    summary: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
-    category: "Industial Safety Equipment",
+    summary: "A complete site rebuild to showcase Fike's world renown industrial safety equipment.",
+    category: "Industial Safety",
     url: "https://www.fike.com",
-    imgSrc: "images/fike.jpg",
+    imgPlc: "images/fike.jpg",
+    imgSrc: "images/fike@1x.jpg",
     imgSrc2x: "images/fike@2x.jpg 2x",
-    imgAlt: "Screenshot of the Fike homepage header"
+    imgAlt: "Screenshot of the Fike homepage header",
+    bgColor: "rgb(244, 232, 224)"
   },
   {
-    name: "Veda Data",
+    name: "VEDA Data",
     class: "veda",
-    summary: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
-    category: "Healthcare Data",
+    summary: "Harnessing machine learning, VEDA's services examine healthcare data and provide solutions to the industry's complex problems.",
+    category: "Data + Machine Learning",
     url: "https://vedadata.com",
-    imgSrc: "images/veda-data.jpg",
+    imgPlc: "images/veda-data.jpg",
+    imgSrc: "images/veda-data@1x.jpg",
     imgSrc2x: "images/veda-data@2x.jpg 2x",
-    imgAlt: "Screenshot of the Veda Data homepage header"
+    imgAlt: "Screenshot of the Veda Data homepage header",
+    bgColor: "#E9E5F4"
   }
 ];
 
