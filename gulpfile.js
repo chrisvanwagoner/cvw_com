@@ -98,13 +98,14 @@ gulp.task('del', function() {
 
 gulp.task("build", ['sass', 'minifyScripts'], function() {
   return gulp.src([
-    "src/css/lib/normalize.css",
-    "src/css/lib/animate.min.css",
+    // "src/css/lib/normalize.css",
+    // "src/css/lib/animate.min.css",
     "src/css/main.css*",
     "src/index.html",
     "src/js/scripts.min.js",
     "src/images/**",
     "src/fonts/**",
+    "src/humans.txt",
     "src/robots.txt"
     ], { base: 'src'})
     .pipe(gulp.dest('./'));
