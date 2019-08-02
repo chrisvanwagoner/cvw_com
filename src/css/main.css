@@ -9,28 +9,28 @@ main.scss
   font-family: 'Inter';
   font-style: normal;
   font-weight: 200;
-  font-display: auto;
+  font-display: fallback;
   src: url("../fonts/Inter-ExtraLight-BETA.woff2") format("woff2"), url("../fonts/Inter-ExtraLight-BETA.woff") format("woff"); }
 
 @font-face {
   font-family: 'Inter';
   font-style: italic;
   font-weight: 200;
-  font-display: auto;
+  font-display: fallback;
   src: url("../fonts/Inter-ExtraLightItalic-BETA.woff2") format("woff2"), url("../fonts/Inter-ExtraLightItalic-BETA.woff") format("woff"); }
 
 @font-face {
   font-family: 'Inter';
   font-style: italic;
   font-weight: 700;
-  font-display: auto;
+  font-display: fallback;
   src: url("../fonts/Inter-BoldItalic.woff2") format("woff2"), url("../fonts/Inter-BoldItalic.woff") format("woff"); }
 
 @font-face {
   font-family: 'Inter';
   font-style: italic;
   font-weight: 900;
-  font-display: auto;
+  font-display: fallback;
   src: url("../fonts/Inter-BlackItalic.woff2") format("woff2"), url("../fonts/Inter-BlackItalic.woff") format("woff"); }
 
 /* -------------------------------------------------------
