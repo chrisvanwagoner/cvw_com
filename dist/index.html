@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Chris van Wagoner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="shortcut icon" href="images/apple-icon-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="images/apple-icon-precomposed.png">
+	<link type="text/plain" rel="author" href="https://www.chrisvanwagoner.com/humans.txt" />
+	<meta property="og:title" content="Chris van Wagoner">
+	<meta property="og:description" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="">
+	<meta property="og:site_name" content="Chris van Wagoner">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Chris van Wagoner">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image:src" content="">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+	<!-- <script rel="preload" src="https://use.typekit.net/luj6vzy.js"></script>
+	<script> try { Typekit.load({ async: true }); } catch (e) {} </script> -->
+	<!-- <script src="https://use.fontawesome.com/0d546cdd84.js"></script> -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- <script src="js/lib/jquery.min.js"></script> -->
+	<!-- <script rel="preload" src="js/lib/wow.min.js"></script> -->
+	<!-- <script rel="preload" src="js/lib/anime.min.js"></script> -->
+</head>
+
+<body>
+
+	<header>
+
+		<img src="images/chris-van-wagoner-portrait.jpg" 
+			srcset=""
+			data-src="images/chris-van-wagoner-portrait@1x.jpg" 
+			data-srcset="images/chris-van-wagoner-portrait@2x.jpg 2x" 
+			alt="Chris van Wagoner headshot"
+			loading="lazy">
+
+		<div class="header__text-wrap">
+
+			<h1 class="header__name">Chris van Wagoner</h1>
+
+			<p class="header__bio">Web developer with over three years of experience in creation and maintenance of WordPress sites for clients ranging from medical tech companies to non-profit organizations. Focused on adding functionality to fit each client’s unique requirements while matching designs to pixel-perfect accuracy. Built and launched 13 websites in the past year and a half using WordPress, PHP, JavaScript, and Sass. Collaborate with on-site and remote designers, UX, and project managers while communicating directly with clients.</p>
+
+		</div>
+
+	</header>
+
+	<main id="main" class="clients">
+		
+		<h2 class="work">Work</h2>
+
+		<div v-for="client in clients" 
+			v-bind:class="'client client--' + client.class" 
+			v-bind:style="'background-color:' + client.bgColor + ';'">
+
+			<div class="client-info">
+
+				<h3 class="client-info__name">{{ client.name }}</h3>
+
+				<small class="client-info__category"><span>{{ client.category }}</span></small>
+
+				<p class="client-info__text">{{ client.summary }}</p>
+
+				<a class="client-info__link" 
+				v-bind:href="client.url" 
+				target="_blank">See More</a>
+
+			</div> <!-- .client-info -->
+
+			<figure class="client-info__figure">
+
+				<img v-bind:src="client.imgPlc" 
+					srcset="" 
+					v-bind:data-src="client.imgSrc" 
+					v-bind:data-srcset="client.imgSrc2x" 
+					v-bind:alt="client.imgAlt"
+					loading="lazy">
+
+			</figure>
+
+		</div> <!-- .client -->
+
+	</main>
+
+	<footer>
+
+		<div class="contact">
+
+			<h4>Contact</h4>
+
+			<ul>
+
+				
+				<li><a href="https://www.linkedin.com/in/chrisvanwagoner/" target="_blank">LinkedIn</a></li>
+				
+				<li><a href="https://github.com/chrisvanwagoner" target="_blank">GitHub</a></li>
+
+				<li><a href="https://www.instagram.com/ch.vw" target="_blank">Instagram</a></li>
+
+				<li>Located in Washington, D.C.</li>
+
+			</ul>   
+
+		</div>  
+
+	</footer>
+
+	<!-- <script src="js/runthis.js"></script> -->
+	<script rel="preload" src="js/scripts.min.js"></script>
+
+</body>
+
+</html>
