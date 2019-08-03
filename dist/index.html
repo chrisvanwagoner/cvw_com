@@ -16,7 +16,7 @@
 	<meta name="twitter:title" content="Chris van Wagoner">
 	<meta name="twitter:description" content="">
 	<meta name="twitter:image:src" content="">
-    <link rel="stylesheet" type="text/css" href="css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css">
 	<!-- <script rel="preload" src="https://use.typekit.net/luj6vzy.js"></script>
 	<script> try { Typekit.load({ async: true }); } catch (e) {} </script> -->
 	<!-- <script src="https://use.fontawesome.com/0d546cdd84.js"></script> -->
@@ -74,8 +74,9 @@
 
 				<img v-bind:src="client.imgPlc" 
 					srcset="" 
+					sizes="100vw" 
 					v-bind:data-src="client.imgSrc" 
-					v-bind:data-srcset="client.imgSrc2x" 
+					v-bind:data-srcset="client.imgSrcSet" 
 					v-bind:alt="client.imgAlt"
 					loading="lazy">
 
