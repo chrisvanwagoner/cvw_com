@@ -38,7 +38,7 @@ gulp.task('sass', function() {
 
 /* Minify CSS */
 gulp.task('cssmin', function () {
-  gulp.src('src/css/main.css')
+  gulp.src('src/css/styles.css')
     .pipe(cssmin())
     .pipe(rename({
       suffix: '.min'
@@ -114,7 +114,7 @@ gulp.task("build", ['del', 'sass', 'cssmin', 'minifyScripts'], function() {
   return gulp.src([
     // "src/css/lib/normalize.css",
     // "src/css/lib/animate.min.css",
-    "src/css/main.min.css*",
+    "src/css/styles.min.css*",
     "src/index.html",
     "src/js/scripts.min.js",
     "src/images/**",
