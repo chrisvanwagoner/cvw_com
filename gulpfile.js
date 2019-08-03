@@ -28,6 +28,9 @@ gulp.task('sass', function() {
     .pipe(maps.init())
     .pipe(sass())
     .pipe(autoprefixer())
+    .pipe(rename({
+      basename: "styles",
+    }))
     .pipe(maps.write('./'))
     .pipe(gulp.dest('src/css'))
     .pipe(browserSync.stream());
@@ -37,7 +40,9 @@ gulp.task('sass', function() {
 gulp.task('cssmin', function () {
   gulp.src('src/css/main.css')
     .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('src/css'));
 });
 
