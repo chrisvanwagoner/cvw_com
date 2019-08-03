@@ -29,6 +29,7 @@
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "imagekit": "^1.5.0",
     "node-normalize-scss": "^3.0.0",
     "vue": "^2.5.17"
   },

@@ -9,6 +9,7 @@ var gulp = require('gulp'),
   maps = require('gulp-sourcemaps'),
   del = require('del'),
   imagemin = require('gulp-imagemin'),
+  ImageKit = require('imagekit'), 
   autoprefixer = require('gulp-autoprefixer');
   // pug = require('gulp-pug');
 
