@@ -8,7 +8,7 @@ var gulp = require('gulp'),
   cssmin = require('gulp-cssmin'),
   maps = require('gulp-sourcemaps'),
   del = require('del'),
-  imagemin = require('gulp-imagemin'),
+  // imagemin = require('gulp-imagemin'),
   ImageKit = require('imagekit'), 
   autoprefixer = require('gulp-autoprefixer');
   // pug = require('gulp-pug');
@@ -53,8 +53,8 @@ gulp.task("concatScripts", function() {
     // 'src/js/lib/wow.min.js',
     // 'src/js/lib/basicScroll.min.js',
     'node_modules/vue/dist/vue.min.js',
-    // 'src/js/app.js',
-    'src/js/app-local-images.js',
+    'src/js/app.js',
+    // 'src/js/app-local-images.js',
     'src/js/lazyload.js',
     // 'src/js/runthis.js'
     ])
@@ -75,6 +75,7 @@ return gulp.src("src/js/scripts.js")
 /* Look for changes to any SCSS file in scss directory, to any HTML file, and to any JS file in the js directory */
 gulp.task('watch', ['browserSync', 'sass', 'cssmin'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/css/styles.css', ['cssmin']);
   gulp.watch('src/*.html', browserSync.reload);
   // gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
   // gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
