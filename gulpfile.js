@@ -53,7 +53,8 @@ gulp.task("concatScripts", function() {
     // 'src/js/lib/wow.min.js',
     // 'src/js/lib/basicScroll.min.js',
     'node_modules/vue/dist/vue.min.js',
-    'src/js/app.js',
+    // 'src/js/app.js',
+    'src/js/app-cloudinary.js',
     'src/js/lazyload.js',
     // 'src/js/runthis.js'
     ])
