@@ -36,13 +36,13 @@
 	  var img = new Image()
 		// , src = el.getAttribute('data-src');
 		, src = el.getAttribute('data-src')
-		, srcset = el.getAttribute('data-srcset');
+		// , srcset = el.getAttribute('data-srcset');
 	  img.onload = function() {
 		if (!! el.parent)
 		  el.parent.replaceChild(img, el)
 		else
 		  el.src = src;
-		  el.srcset = srcset;
+		//   el.srcset = srcset;
   
 		fn? fn() : null;
 	  }
@@ -55,7 +55,7 @@
 	  return (
 		 rect.top    >= 0
 	  && rect.left   >= 0
-	  && rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+	  && rect.top <= (window.innerHeight + 200 || document.documentElement.clientHeight + 200)
 	  )
 	}
   
