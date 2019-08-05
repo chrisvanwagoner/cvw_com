@@ -30,19 +30,17 @@
 
 	<header>
 
-		<!-- <img src="images/chris-van-wagoner-portrait.jpg" 
+		<img src="images/chris-van-wagoner-portrait.jpg" 
 			srcset=""
 			data-src="images/chris-van-wagoner-portrait@1x.jpg" 
 			data-srcset="images/chris-van-wagoner-portrait@2x.jpg 2x" 
 			alt="Chris van Wagoner headshot"
-			loading="lazy" 
-			crossorigin="anonymous"> -->
-		<img src="https://ik.imagekit.io/cvw/chris-van-wagoner-portrait_mIICKnnQn.jpg" 
+			loading="lazy">
+		<!-- <img src="https://ik.imagekit.io/cvw/chris-van-wagoner-portrait_mIICKnnQn.jpg" 
 			srcset=""
 			data-src="https://ik.imagekit.io/cvw/chris-van-wagoner-portrait_1x_MRebbQYaoc.jpg" 
-			data-srcset="https://ik.imagekit.io/cvw/chris-van-wagoner-portrait_2x_m578MTa0MA.jpg 2x" 
 			alt="Chris van Wagoner headshot"
-			loading="lazy">
+			loading="lazy"> -->
 
 		<div class="header__text-wrap">
 
@@ -71,16 +69,15 @@
 				<p class="client-info__text">{{ client.summary }}</p>
 
 				<a class="client-info__link" 
-				v-bind:href="client.url" 
-				target="_blank"
-				rel="noopener">See More</a>
+					v-bind:href="client.url" 
+					target="_blank"
+					rel="noopener">See More</a>
 
 			</div> <!-- .client-info -->
 
 			<figure class="client-info__figure">
 
 				<img v-bind:src="client.imgPlc" 
-					srcset="" 
 					sizes="100vw" 
 					v-bind:data-src="client.imgSrc" 
 					v-bind:data-srcset="client.imgSrcSet" 
