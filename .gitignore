@@ -8,6 +8,7 @@ node_modules/
 # ======================
 .sass-cache/
 *.css.map
+*.js.map
 
 # ======================
 # macOS 
