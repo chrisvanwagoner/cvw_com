@@ -54,7 +54,6 @@ gulp.task("concatScripts", function() {
     // 'src/js/lib/basicScroll.min.js',
     'node_modules/vue/dist/vue.min.js',
     'src/js/app.js',
-    // 'src/js/app-local-images.js',
     'src/js/lazyload.js',
     // 'src/js/runthis.js'
     ])
