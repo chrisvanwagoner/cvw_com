@@ -110,15 +110,14 @@ var main = new Vue({
   
 	function loadImage (el, fn) {
 	  var img = new Image()
-		// , src = el.getAttribute('data-src');
 		, src = el.getAttribute('data-src')
-		// , srcset = el.getAttribute('data-srcset');
+		, srcset = el.getAttribute('data-srcset');
 	  img.onload = function() {
 		if (!! el.parent)
 		  el.parent.replaceChild(img, el)
 		else
 		  el.src = src;
-		//   el.srcset = srcset;
+		  el.srcset = srcset;
   
 		fn? fn() : null;
 	  }
