@@ -10,6 +10,7 @@ var gulp = require('gulp'),
   del = require('del'),
   // imagemin = require('gulp-imagemin'),
   ImageKit = require('imagekit'), 
+  cloudinaryUpload = require('gulp-cloudinary-upload'),
   autoprefixer = require('gulp-autoprefixer');
   // pug = require('gulp-pug');
 
