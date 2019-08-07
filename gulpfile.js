@@ -9,8 +9,8 @@ var gulp = require('gulp'),
   maps = require('gulp-sourcemaps'),
   del = require('del'),
   // imagemin = require('gulp-imagemin'),
-  ImageKit = require('imagekit'), 
-  cloudinaryUpload = require('gulp-cloudinary-upload'),
+  // ImageKit = require('imagekit'), 
+  // cloudinaryUpload = require('gulp-cloudinary-upload'),
   autoprefixer = require('gulp-autoprefixer');
   // pug = require('gulp-pug');
 
@@ -25,7 +25,9 @@ gulp.task('browserSync', function() {
 
 /* Compile SCSS to CSS */
 gulp.task('sass', function() {
-  return gulp.src("src/scss/main.scss")
+  return gulp.src([
+    "src/scss/main.scss"
+  ])
     .pipe(maps.init())
     .pipe(sass())
     .pipe(autoprefixer())
@@ -39,7 +41,9 @@ gulp.task('sass', function() {
 
 /* Minify CSS */
 gulp.task('cssmin', function () {
-  gulp.src('src/css/styles.css')
+  gulp.src([
+    'src/css/styles.css'
+  ])
     .pipe(cssmin())
     .pipe(rename({
       suffix: '.min'
@@ -51,13 +55,13 @@ gulp.task('cssmin', function () {
 gulp.task("concatScripts", function() {
   return gulp.src([
     // 'src/js/lib/anime.min.js',
-    // 'src/js/lib/wow.min.js',
+    'src/js/lib/wow.min.js',
     // 'src/js/lib/basicScroll.min.js',
     'node_modules/vue/dist/vue.min.js',
     // 'src/js/app.js',
     'src/js/app-cloudinary.js',
     'src/js/lazyload.js',
-    // 'src/js/runthis.js'
+    'src/js/runthis.js'
     ])
     .pipe(maps.init())
     .pipe(concat('scripts.js'))
