@@ -78,6 +78,7 @@ header {
   .header__bio {
     @extend %paragraph;
     font-style: italic;
+    text-align: justify;
   }
 } 
 
