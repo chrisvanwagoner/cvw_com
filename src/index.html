@@ -16,6 +16,8 @@
 	<meta name="twitter:title" content="Chris van Wagoner">
 	<meta name="twitter:description" content="">
 	<meta name="twitter:image:src" content=""> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/lib/normalize.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/lib/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.min.css">
 	<!-- <script rel="preload" src="https://use.typekit.net/luj6vzy.js"></script>
 	<script> try { Typekit.load({ async: true }); } catch (e) {} </script> -->
@@ -68,13 +70,21 @@
 
 			<div class="client-info">
 
-				<h3 class="client-info__name">{{ client.name }}</h3>
+				<h3 class="client-info__name wow fadeIn" 
+					data-wow-duration="500ms" 
+					data-wow-delay="100ms">{{ client.name }}</h3>
 
-				<small class="client-info__category"><span>{{ client.category }}</span></small>
+				<small class="client-info__category wow fadeIn" 
+						data-wow-duration="500ms" 
+						data-wow-delay="300ms"><span>{{ client.category }}</span></small>
 
-				<p class="client-info__text">{{ client.summary }}</p>
+				<p class="client-info__text wow fadeIn" 
+					data-wow-duration="500ms" 
+					data-wow-delay="200ms">{{ client.summary }}</p>
 
-				<a class="client-info__link" 
+				<a class="client-info__link wow fadeIn" 
+					data-wow-duration="500ms"
+					data-wow-delay="400ms" 
 					v-bind:href="client.url" 
 					target="_blank"
 					rel="noopener">See More</a>
