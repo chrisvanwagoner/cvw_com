@@ -65,26 +65,20 @@
 		<h2 class="work">Work</h2>
 
 		<div v-for="client in clients" 
-			v-bind:class="'client client--' + client.class" 
-			v-bind:style="'background-color:' + client.bgColor + ';'">
+			v-bind:class="'client client--' + client.class + ' wow fadeIn'" 
+			v-bind:style="'background-color:' + client.bgColor + ';'"
+			data-wow-duration="300ms" 
+			data-wow-delay="200ms">
 
 			<div class="client-info">
 
-				<h3 class="client-info__name wow fadeIn" 
-					data-wow-duration="500ms" 
-					data-wow-delay="100ms">{{ client.name }}</h3>
+				<h3 class="client-info__name">{{ client.name }}</h3>
 
-				<small class="client-info__category wow fadeIn" 
-						data-wow-duration="500ms" 
-						data-wow-delay="300ms"><span>{{ client.category }}</span></small>
+				<small class="client-info__category"><span>{{ client.category }}</span></small>
 
-				<p class="client-info__text wow fadeIn" 
-					data-wow-duration="500ms" 
-					data-wow-delay="200ms">{{ client.summary }}</p>
+				<p class="client-info__text">{{ client.summary }}</p>
 
-				<a class="client-info__link wow fadeIn" 
-					data-wow-duration="500ms"
-					data-wow-delay="400ms" 
+				<a class="client-info__link" 
 					v-bind:href="client.url" 
 					target="_blank"
 					rel="noopener">See More</a>
