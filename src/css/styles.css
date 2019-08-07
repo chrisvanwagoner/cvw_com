@@ -207,7 +207,8 @@ header {
   header .header__name {
     margin-bottom: 16px; }
   header .header__bio {
-    font-style: italic; }
+    font-style: italic;
+    text-align: justify; }
 
 /***********************************
   Main
