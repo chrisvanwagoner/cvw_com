@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   sass = require('gulp-sass'),
   cssmin = require('gulp-cssmin'),
+  htmlmin = require('gulp-htmlmin'),
   maps = require('gulp-sourcemaps'),
   del = require('del'),
   // imagemin = require('gulp-imagemin'),
@@ -77,6 +78,15 @@ return gulp.src("src/js/scripts.js")
   .pipe(gulp.dest('src/js'));
 });
 
+/**
+ * Minify index.html
+ */
+gulp.task('minifyHtml', () => {
+  return gulp.src('src/index.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('dist'));
+});
+
 /* Look for changes to any SCSS file in scss directory, to any HTML file, and to any JS file in the js directory */
 gulp.task('watch', ['browserSync', 'sass', 'cssmin'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
@@ -117,12 +127,12 @@ gulp.task('del', function() {
 //   .pipe(gulp.dest('dist/clients'));
 // });
 
-gulp.task("build", ['del', 'sass', 'cssmin', 'minifyScripts'], function() {
+gulp.task("build", ['del', 'sass', 'cssmin', 'minifyScripts', 'minifyHtml'], function() {
   return gulp.src([
     // "src/css/lib/normalize.css",
     // "src/css/lib/animate.min.css",
     "src/css/styles.min.css*",
-    "src/index.html",
+    // "src/index.html",
     "src/js/scripts.min.js",
     "src/images/**",
     "src/fonts/**",
