@@ -12,8 +12,8 @@ var gulp = require('gulp'),
   // imagemin = require('gulp-imagemin'),
   // ImageKit = require('imagekit'), 
   // cloudinaryUpload = require('gulp-cloudinary-upload'),
-  autoprefixer = require('gulp-autoprefixer');
-  // pug = require('gulp-pug');
+  autoprefixer = require('gulp-autoprefixer'),
+  pug = require('gulp-pug');
 
 var browserSync = require('browser-sync').create();
 gulp.task('browserSync', function() {
@@ -22,6 +22,16 @@ gulp.task('browserSync', function() {
       baseDir: 'src'
     },
   })
+});
+
+/* Pug to HTML */
+gulp.task('pug', function buildHTML() {
+  del(['src/index.html']);
+  return gulp.src('src/index.pug')
+    .pipe(pug({
+      // Your options in here.
+    }))
+    .pipe(gulp.dest('src'));
 });
 
 /* Compile SCSS to CSS */
@@ -88,7 +98,7 @@ gulp.task('minifyHtml', () => {
 });
 
 /* Look for changes to any SCSS file in scss directory, to any HTML file, and to any JS file in the js directory */
-gulp.task('watch', ['browserSync', 'sass', 'cssmin'], function() {
+gulp.task('watch', ['browserSync', 'pug', 'sass', 'cssmin'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch('src/css/styles.css', ['cssmin']);
   gulp.watch('src/*.html', browserSync.reload);
@@ -127,12 +137,12 @@ gulp.task('del', function() {
 //   .pipe(gulp.dest('dist/clients'));
 // });
 
-gulp.task("build", ['del', 'sass', 'cssmin', 'minifyScripts', 'minifyHtml'], function() {
+gulp.task("build", ['del', 'pug', 'sass', 'cssmin', 'minifyScripts'], function() {
   return gulp.src([
     // "src/css/lib/normalize.css",
     // "src/css/lib/animate.min.css",
     "src/css/styles.min.css*",
-    // "src/index.html",
+    "src/index.html",
     "src/js/scripts.min.js",
     "src/images/**",
     "src/fonts/**",
