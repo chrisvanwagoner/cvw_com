@@ -140,7 +140,7 @@ gulp.task('del', function() {
 gulp.task("build", ['del', 'pug', 'sass', 'cssmin', 'minifyScripts'], function() {
   return gulp.src([
     // "src/css/lib/normalize.css",
-    // "src/css/lib/animate.min.css",
+    "src/css/lib/animate.min.css",
     "src/css/styles.min.css*",
     "src/index.html",
     "src/js/scripts.min.js",
