@@ -37,6 +37,7 @@ html(lang='en')
 					a.client-info__link(v-bind:href='client.url', target='_blank', rel='noopener') See More
 				// .client-info
 				figure.client-info__figure
+					a(v-bind:href='client.url', target='_blank', rel='noopener', aria-label='See More')
 					img(v-bind:src='client.imgPlc', 
 					srcset='', 
 					sizes='100vw', 
