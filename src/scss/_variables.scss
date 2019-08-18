@@ -41,9 +41,12 @@ $min-xxxl: "screen and (min-width: 1600px)";
 %h1 {
 	@extend %headingExtraLightItalic;
 	color: $heading;
-	font-size: 2rem;
+	font-size: 1.6rem;
 	letter-spacing: -2px;
-	line-height: $lh * 2;
+	line-height: 1;
+	@media #{$min-xs} {
+		font-size: 2rem;
+	}
 }
 %h2 {
 	@extend %headingBlackItalic;
