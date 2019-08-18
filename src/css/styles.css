@@ -81,9 +81,12 @@ p, header .header__bio, main .client-info__link {
 
 h1 {
   color: #19181D;
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: -2px;
-  line-height: 52px; }
+  line-height: 1; }
+  @media screen and (min-width: 400px) {
+    h1 {
+      font-size: 2rem; } }
 
 h2 {
   color: #19181D;
