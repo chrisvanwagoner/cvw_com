@@ -125,6 +125,9 @@ $min-xxxl: "screen and (min-width: 1600px)";
 %shadow {
 	box-shadow: 0 2px 30px 5px rgba(143, 142, 173, 0.7);
 }
+%transition {
+	transition: all 200ms ease-in-out;
+}
 %grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
