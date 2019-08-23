@@ -313,7 +313,13 @@ main {
         grid-column: 6 / 13;
         margin-bottom: 0;
         opacity: 0.6;
-        margin-top: 52px; } }
+        margin-top: 52px;
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out; }
+        main figure:hover {
+          opacity: 0.8;
+          -webkit-transition: all 200ms ease-in-out;
+          transition: all 200ms ease-in-out; } }
     main figure a {
       position: absolute;
       top: -1px;

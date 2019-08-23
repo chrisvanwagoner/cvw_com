@@ -190,6 +190,13 @@ main {
       margin-bottom: 0;
       opacity: 0.6;
       margin-top: $lh * 2;
+      -webkit-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
+      &:hover {
+        opacity: 0.8;
+        -webkit-transition: all 200ms ease-in-out;
+	      transition: all 200ms ease-in-out;
+      }
     }
     a {
       position: absolute;
