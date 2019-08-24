@@ -88,7 +88,7 @@ h2 {
   font-style: italic;
   font-weight: 900; }
 
-h3, main .client-info__link {
+h3 {
   font-family: 'DM Serif Display', serif;
   font-weight: 400;
   font-style: normal; }
@@ -162,7 +162,6 @@ small {
 main .client-info__link, footer a {
   position: relative;
   text-decoration: none;
-  font-weight: 700;
   font-size: 18px;
   font-style: italic;
   color: #19181D; }
@@ -361,6 +360,8 @@ main {
     @media screen and (min-width: 1200px) {
       main .client-info__text {
         margin-bottom: 13px; } }
+  main .client-info__link {
+    font-weight: 700; }
   main figure {
     grid-column: 2 / 12;
     grid-row: 1 / 1;
@@ -399,7 +400,8 @@ main {
       top: -1px;
       right: -1px;
       bottom: -1px;
-      left: -1px; }
+      left: -1px;
+      z-index: 1; }
     main figure img {
       display: block;
       width: 100%; }
