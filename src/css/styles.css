@@ -1,6 +1,20 @@
 /***********************************
 main.scss
 ***********************************/
+/* dm-serif-display-regular - latin */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local("DM Serif Display Regular"), local("DMSerifDisplay-Regular"), url("../fonts/dm-serif-display-v3-latin-regular.woff2") format("woff2"), url("../fonts/dm-serif-display-v3-latin-regular.woff") format("woff"); }
+
+/* dm-serif-display-italic - latin */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local("DM Serif Display Italic"), local("DMSerifDisplay-Italic"), url("../fonts/dm-serif-display-v3-latin-italic.woff2") format("woff2"), url("../fonts/dm-serif-display-v3-latin-italic.woff") format("woff"); }
+
 @supports (font-variation-settings: normal) {
   html {
     font-family: 'Inter var', sans-serif; } }
@@ -64,7 +78,7 @@ h1 {
   font-style: italic;
   font-weight: 200; }
 
-h3, h4, small {
+h4, small {
   font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
   font-style: italic;
   font-weight: 700; }
@@ -73,6 +87,11 @@ h2 {
   font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
   font-style: italic;
   font-weight: 900; }
+
+h3, main .client-info__link {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-style: normal; }
 
 p, header .header__bio, main .client-info__link {
   font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
@@ -83,10 +102,20 @@ h1 {
   color: #19181D;
   font-size: 1.6rem;
   letter-spacing: -2px;
-  line-height: 1; }
+  line-height: 41.6px;
+  margin-bottom: 52px; }
   @media screen and (min-width: 400px) {
     h1 {
-      font-size: 2rem; } }
+      font-size: 2rem;
+      line-height: 52px; } }
+  @media screen and (min-width: 1000px) {
+    h1 {
+      font-size: 1.2rem;
+      letter-spacing: 0.6px;
+      line-height: 26px;
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-style: italic; } }
 
 h2 {
   color: #19181D;
@@ -102,7 +131,6 @@ h3 {
   @media screen and (min-width: 1000px) {
     h3 {
       font-size: 2.5rem;
-      letter-spacing: -2px;
       line-height: 52px; } }
   @media screen and (min-width: 1200px) {
     h3 {
@@ -126,7 +154,7 @@ small {
   font-size: 0.7rem;
   letter-spacing: 0;
   line-height: 26px;
-  margin-bottom: 13px; }
+  margin-bottom: 5.2px; }
   @media screen and (min-width: 1200px) {
     small {
       font-weight: 200; } }
@@ -178,40 +206,90 @@ html {
 
 body {
   background-color: #FFFEFD;
-  color: #19181D; }
+  color: #19181D;
+  max-width: 1560px; }
   @media screen and (min-width: 800px) {
     body {
-      margin-right: 26px;
-      margin-left: 26px; } }
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 26px;
+      padding-left: 26px; } }
 
 /***********************************
   Header
 ***********************************/
 header {
-  padding-top: 97px;
-  padding-bottom: 122px; }
-  header img {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  @media screen and (min-width: 1000px) {
+    header {
+      min-height: 100vh;
+      padding-top: 26px;
+      padding-bottom: 26px; } }
+  header figure {
     border-radius: 100px;
     -webkit-box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
             box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
     grid-column: 1 / 12 span;
     height: 200px;
-    margin-bottom: 73px;
+    margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
     width: 200px; }
+    @media screen and (min-width: 1000px) {
+      header figure {
+        border-radius: 0;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        grid-column: 1 / 6 span;
+        height: 500px;
+        width: 100%;
+        margin-bottom: 0;
+        min-height: 700px;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+        height: 100%;
+        -ms-flex-item-align: start;
+            align-self: flex-start; } }
+    header figure img {
+      height: 100%;
+      width: auto; }
   header .header__text-wrap {
     grid-column: 2 / 12;
     width: 100%; }
     @media screen and (min-width: 1000px) {
       header .header__text-wrap {
-        max-width: 400px;
-        grid-column: 7 / 12; } }
-  header .header__name {
-    margin-bottom: 16px; }
+        grid-column: 8/12;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        position: relative; } }
+  @media screen and (min-width: 1000px) {
+    header .header__name {
+      margin-bottom: 0;
+      position: absolute;
+      top: 0;
+      right: 0; } }
   header .header__bio {
     font-style: italic;
     text-align: justify; }
+    @media screen and (min-width: 1000px) {
+      header .header__bio:first-of-type::first-letter {
+        font-size: 2rem; } }
 
 /***********************************
   Main
@@ -244,15 +322,9 @@ main {
     @media screen and (min-width: 800px) {
       main .client {
         padding-top: 0;
-        padding-bottom: 0;
-        margin-top: 26px; }
-        main .client:last-child {
+        padding-bottom: 0; }
+        main .client:not(:last-child) {
           margin-bottom: 26px; } }
-    @media screen and (min-width: 1600px) {
-      main .client {
-        max-width: 1560px;
-        margin-left: auto;
-        margin-right: auto; } }
   main .client-info {
     grid-column: 2 / 12;
     position: relative;
@@ -340,7 +412,7 @@ footer {
     grid-column: 2 / 12; }
     @media screen and (min-width: 1000px) {
       footer .contact {
-        grid-column: 7 / 12; } }
+        grid-column: 8 / 12; } }
   footer h4 {
     margin-bottom: 18px; }
   footer ul {

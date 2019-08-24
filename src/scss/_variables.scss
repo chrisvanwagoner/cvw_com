@@ -33,6 +33,16 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	font-style:  italic;
 	font-weight: 900;
 }
+%headingSerif {
+	font-family: 'DM Serif Display', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+%headingSerifItalic {
+	font-family: 'DM Serif Display', serif;
+	font-weight: 400;
+	font-style: italic;
+}
 %text {
 	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
 	font-style:  normal;
@@ -43,9 +53,19 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	color: $heading;
 	font-size: 1.6rem;
 	letter-spacing: -2px;
-	line-height: 1;
+	line-height: $lh * 1.6;
+	margin-bottom: $lh * 2;
 	@media #{$min-xs} {
 		font-size: 2rem;
+		line-height: $lh * 2;
+	}
+	@media #{$min-lg} {
+		font-size: 1.2rem;
+		letter-spacing: 0.6px;
+		line-height: $lh;
+		font-family: 'DM Serif Display', serif;
+		font-weight: 400;
+		font-style: italic;
 	}
 }
 %h2 {
@@ -56,14 +76,13 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	line-height: 300px;
 }
 %h3 {
-	@extend %headingBoldItalic;
+	@extend %headingSerif;
 	color: $heading;
 	font-size: 2rem;
 	letter-spacing: -1px;
 	line-height: $lh * 1.6;
 	@media #{$min-lg} {
         font-size: 2.5rem;
-		letter-spacing: -2px;
 		line-height: $lh * 2;
 	}
     @media #{$min-xl} {
@@ -91,7 +110,7 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	font-size: 0.7rem;
 	letter-spacing: 0;
 	line-height: $lh;
-	margin-bottom: $lh * 0.5;
+	margin-bottom: $lh * 0.2;
 	@media #{$min-xl} {
 		font-weight: 200;
 	}
