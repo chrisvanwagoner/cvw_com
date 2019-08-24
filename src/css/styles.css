@@ -1,6 +1,20 @@
 /***********************************
 main.scss
 ***********************************/
+/* dm-serif-display-regular - latin */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local("DM Serif Display Regular"), local("DMSerifDisplay-Regular"), url("../fonts/dm-serif-display-v3-latin-regular.woff2") format("woff2"), url("../fonts/dm-serif-display-v3-latin-regular.woff") format("woff"); }
+
+/* dm-serif-display-italic - latin */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local("DM Serif Display Italic"), local("DMSerifDisplay-Italic"), url("../fonts/dm-serif-display-v3-latin-italic.woff2") format("woff2"), url("../fonts/dm-serif-display-v3-latin-italic.woff") format("woff"); }
+
 @supports (font-variation-settings: normal) {
   html {
     font-family: 'Inter var', sans-serif; } }
@@ -64,7 +78,7 @@ h1 {
   font-style: italic;
   font-weight: 200; }
 
-h3, h4, small {
+h4, small {
   font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
   font-style: italic;
   font-weight: 700; }
@@ -74,6 +88,11 @@ h2 {
   font-style: italic;
   font-weight: 900; }
 
+h3, main .client-info__link {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-style: normal; }
+
 p, header .header__bio, main .client-info__link {
   font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
   font-style: normal;
@@ -81,9 +100,22 @@ p, header .header__bio, main .client-info__link {
 
 h1 {
   color: #19181D;
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: -2px;
-  line-height: 52px; }
+  line-height: 41.6px;
+  margin-bottom: 52px; }
+  @media screen and (min-width: 400px) {
+    h1 {
+      font-size: 2rem;
+      line-height: 52px; } }
+  @media screen and (min-width: 1000px) {
+    h1 {
+      font-size: 1.2rem;
+      letter-spacing: 0.6px;
+      line-height: 26px;
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-style: italic; } }
 
 h2 {
   color: #19181D;
@@ -99,7 +131,6 @@ h3 {
   @media screen and (min-width: 1000px) {
     h3 {
       font-size: 2.5rem;
-      letter-spacing: -2px;
       line-height: 52px; } }
   @media screen and (min-width: 1200px) {
     h3 {
@@ -123,7 +154,7 @@ small {
   font-size: 0.7rem;
   letter-spacing: 0;
   line-height: 26px;
-  margin-bottom: 13px; }
+  margin-bottom: 5.2px; }
   @media screen and (min-width: 1200px) {
     small {
       font-weight: 200; } }
@@ -214,6 +245,7 @@ header {
         grid-column: 1 / 6 span;
         height: 500px;
         width: 100%;
+        margin-bottom: 0;
         min-height: 700px;
         display: -ms-flexbox;
         display: -webkit-box;
@@ -222,9 +254,7 @@ header {
             -ms-flex-pack: center;
                 justify-content: center;
         -ms-flex-item-align: center;
-            align-self: center; } }
-    @media screen and (min-width: 1200px) {
-      header figure {
+            align-self: center;
         height: 100%;
         -ms-flex-item-align: start;
             align-self: flex-start; } }
@@ -246,12 +276,20 @@ header {
                 flex-direction: column;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
-                justify-content: center; } }
-  header .header__name {
-    margin-bottom: 16px; }
+                justify-content: center;
+        position: relative; } }
+  @media screen and (min-width: 1000px) {
+    header .header__name {
+      margin-bottom: 0;
+      position: absolute;
+      top: 0;
+      right: 0; } }
   header .header__bio {
     font-style: italic;
     text-align: justify; }
+    @media screen and (min-width: 1000px) {
+      header .header__bio:first-of-type::first-letter {
+        font-size: 2rem; } }
 
 /***********************************
   Main
