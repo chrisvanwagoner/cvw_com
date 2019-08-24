@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/chrisvanwagoner/cvw_com.git"
+    "url": "git+ssh://git@github.com/chrisvanwagoner/chrisvanwagoner.github.io.git"
   },
   "author": "Chris van Wagoner",
   "license": "",
   "bugs": {
-    "url": "https://github.com/chrisvanwagoner/cvw_com/issues"
+    "url": "https://github.com/chrisvanwagoner/chrisvanwagoner.github.io/issues"
   },
-  "homepage": "https://github.com/chrisvanwagoner/cvw_com#readme",
+  "homepage": "https://github.com/chrisvanwagoner/chrisvanwagoner.github.io#readme",
   "devDependencies": {
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
@@ -34,8 +34,5 @@
     "imagekit": "^1.5.0",
     "node-normalize-scss": "^3.0.0",
     "vue": "^2.5.17"
-  },
-  "dependencies": {
-    "basicscroll": "^2.1.0"
   }
 }
