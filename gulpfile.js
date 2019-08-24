@@ -98,12 +98,12 @@ gulp.task('minifyHtml', () => {
 });
 
 /* Look for changes to any SCSS file in scss directory, to any HTML file, and to any JS file in the js directory */
-gulp.task('watch', ['browserSync', 'pug', 'sass', 'cssmin'], function() {
+gulp.task('watch', ['browserSync', 'pug', 'sass', 'cssmin', 'minifyScripts'], function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch('src/css/styles.css', ['cssmin']);
   gulp.watch('src/*.html', browserSync.reload);
   // gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
-  // gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
+  gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
 });
 
 gulp.task('images', function(){
