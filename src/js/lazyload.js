@@ -38,7 +38,7 @@
 		, srcset = el.getAttribute('data-srcset');
 	  img.onload = function() {
 		if (!! el.parent)
-		  el.parent.replaceChild(img, el)
+		  el.parent.replaceChild(img.lazy, el)
 		else
 		  el.src = src;
 		  el.srcset = srcset;
