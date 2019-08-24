@@ -202,7 +202,7 @@ main {
   .client-info__link {
     @extend %link;
     @extend %paragraph;
-    @extend %headingSerif;
+    font-weight: 700;
   }
   figure {
     @extend %shadow;
@@ -247,6 +247,7 @@ main {
       right: -1px;
       bottom: -1px;
       left: -1px;
+      z-index: 1;
     }
     img {
       display: block;
