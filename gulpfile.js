@@ -65,10 +65,10 @@ gulp.task('cssmin', function () {
 /* Concatenate the listed scripts, map them, and output into a single file */
 gulp.task("concatScripts", function() {
   return gulp.src([
+    'node_modules/vue/dist/vue.min.js',
     // 'src/js/lib/anime.min.js',
     'src/js/lib/wow.min.js',
     // 'src/js/lib/basicScroll.min.js',
-    'node_modules/vue/dist/vue.min.js',
     // 'src/js/app.js',
     'src/js/app-cloudinary.js',
     'src/js/lazyload.js',
@@ -103,7 +103,7 @@ gulp.task('watch', ['browserSync', 'pug', 'sass', 'cssmin', 'minifyScripts'], fu
   gulp.watch('src/css/styles.css', ['cssmin']);
   gulp.watch('src/*.html', browserSync.reload);
   // gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
-  gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
+  // gulp.watch('src/js/scripts.js', ['minifyScripts', browserSync.reload]);
 });
 
 gulp.task('images', function(){
