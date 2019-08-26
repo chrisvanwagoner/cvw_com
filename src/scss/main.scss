@@ -58,7 +58,7 @@ header {
   padding-top: 60px;
   padding-bottom: 60px;
   @media #{$min-lg} {
-    min-height: 100vh;
+    height: 100vh;
     padding-top: $lh;
     padding-bottom: $lh;
   }
@@ -87,11 +87,16 @@ header {
       height: 100%;
       align-self: flex-start;
     }
-    @media #{$min-xl} {
+    @media #{$min-xxl} {
+      // justify-content: flex-start;
     }
     img {
       height: 100%;
       width: auto;
+      // @media #{$min-xxl} {
+      //   height: auto;
+      //   width: 100%;
+      // }
     }
   }
   .header__text-wrap {
