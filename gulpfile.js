@@ -1,156 +1,144 @@
 'use strict';
 
-var gulp = require('gulp'),
-  uglify = require('gulp-uglify'),
-  concat = require('gulp-concat'),
-  rename = require('gulp-rename'),
-  sass = require('gulp-sass'),
-  cssmin = require('gulp-cssmin'),
-  htmlmin = require('gulp-htmlmin'),
-  maps = require('gulp-sourcemaps'),
-  del = require('del'),
-  // imagemin = require('gulp-imagemin'),
-  // ImageKit = require('imagekit'), 
-  // cloudinaryUpload = require('gulp-cloudinary-upload'),
-  autoprefixer = require('gulp-autoprefixer'),
-  pug = require('gulp-pug');
+// Load plugins
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const cssmin = require('gulp-cssmin');
+const htmlmin = require('gulp-htmlmin');
+const maps = require('gulp-sourcemaps');
+const del = require('del');
+const autoprefixer = require('gulp-autoprefixer');
+const pug = require('gulp-pug');
+const plumber = require('gulp-plumber');
+const browsersync = require('browser-sync').create();
+// const imagemin = require('gulp-imagemin');
+// const ImageKit = require('imagekit'); 
+// const cloudinaryUpload = require('gulp-cloudinary-upload');
 
-var browserSync = require('browser-sync').create();
-gulp.task('browserSync', function() {
-  browserSync.init({
+// BrowserSync
+function browserSync(done) {
+  browsersync.init({
     server: {
-      baseDir: 'src'
+      baseDir: "./src"
     },
-  })
-});
+    port: 3000
+  });
+  done();
+}
+
+// BrowserSync Reload
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
 
 /* Pug to HTML */
-gulp.task('pug', function buildHTML() {
+function html() {
   del(['src/index.html']);
-  return gulp.src('src/index.pug')
+  return gulp
+    .src('src/index.pug')
     .pipe(pug({
       // Your options in here.
     }))
-    .pipe(gulp.dest('src'));
-});
+    .pipe(gulp.dest('./src'))
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(browsersync.stream());
+}
 
-/* Compile SCSS to CSS */
-gulp.task('sass', function() {
-  return gulp.src([
-    "src/scss/main.scss"
-  ])
-    .pipe(maps.init())
+/* Transpile SCSS to minified CSS */
+function styles() {
+  return gulp
+    .src([
+      'src/scss/main.scss'
+    ])
+    // .pipe(maps.init())
+    .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(rename({
       basename: "styles",
     }))
     .pipe(maps.write('./'))
-    .pipe(gulp.dest('src/css'))
-    .pipe(browserSync.stream());
-});
-
-/* Minify CSS */
-gulp.task('cssmin', function () {
-  gulp.src([
-    'src/css/styles.css'
-  ])
+    // .pipe(gulp.dest('src/css'))
+    // .src(['src/css/styles.css'])
     .pipe(cssmin())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('src/css'));
-});
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('src/css'))
+    .pipe(browsersync.stream());
+}
 
-/* Concatenate the listed scripts, map them, and output into a single file */
-gulp.task("concatScripts", function() {
-  return gulp.src([
-    // 'src/js/lib/anime.min.js',
-    'src/js/lib/wow.min.js',
-    // 'src/js/lib/basicScroll.min.js',
-    'node_modules/vue/dist/vue.min.js',
-    // 'src/js/app.js',
-    'src/js/app-cloudinary.js',
-    'src/js/lazyload.js',
-    'src/js/runthis.js'
+/* Concatenate and minify scripts */
+function scripts() {
+  return gulp
+    .src([
+      // 'src/js/lib/anime.min.js',
+      'src/js/lib/wow.min.js',
+      // 'src/js/lib/basicScroll.min.js',
+      'node_modules/vue/dist/vue.min.js',
+      'src/js/app.js',
+      // 'src/js/app-cloudinary.js',
+      'src/js/lazyload.js',
+      'src/js/runthis.js'
     ])
-    .pipe(maps.init())
+    // .pipe(maps.init())
     .pipe(concat('scripts.js'))
     .pipe(maps.write('./'))
+    // .pipe(gulp.dest('src/js'))
+    // .src("src/js/scripts.js")
+    .pipe(uglify())
+    .pipe(rename('scripts.min.js'))
     .pipe(gulp.dest('src/js'));
-});
+}
 
-/* Take the file output by concatScripts, and minify it */
-gulp.task("minifyScripts", ["concatScripts"], function() {
-return gulp.src("src/js/scripts.js")
-  .pipe(uglify())
-  .pipe(rename('scripts.min.js'))
-  .pipe(gulp.dest('src/js'));
-});
+// Images
+function images() {
+  return gulp
+    .src('src/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    .pipe(gulp.dest('/images'))
+}
 
-/**
- * Minify index.html
- */
-gulp.task('minifyHtml', () => {
-  return gulp.src('src/index.html')
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('dist'));
-});
+/* Delete the /dist directory contents */
+function clean() {
+  return del(['dist/*']);
+}
 
-/* Look for changes to any SCSS file in scss directory, to any HTML file, and to any JS file in the js directory */
-gulp.task('watch', ['browserSync', 'pug', 'sass', 'cssmin'], function() {
-  gulp.watch('src/scss/**/*.scss', ['sass']);
-  gulp.watch('src/css/styles.css', ['cssmin']);
-  gulp.watch('src/*.html', browserSync.reload);
-  // gulp.watch('src/js/**/*.js', ['concatScripts', browserSync.reload]);
-  // gulp.watch('src/js/**/*.js', ['minifyScripts', browserSync.reload]);
-});
-
-gulp.task('images', function(){
-  return gulp.src('src/images/**/*.+(png|jpg|jpeg|gif|svg)')
-  // .pipe(imagemin([
-  //   imagemin.jpegtran({progressive: true}),
-  //   imagemin.optipng({optimizationLevel: 5}),
-  //   imagemin.svgo({plugins: [{removeViewBox: true}]})
-  // ]))
-  .pipe(gulp.dest('/images'))
-});
-
-/* Delete the dist directory and the generated CSS files */
-gulp.task('del', function() {
-  del(['dist/*']);
-});
-
-// Grab index.html posts generated by Hugo and copy them to dist/clients
-// gulp.task('getHugoPosts', function() {
-//   return gulp.src(['src/clients/public/posts/**/*'])
-//     .pipe(gulp.dest('dist/clients'));
-// });
-
-// Grab the CSS, JS, and images for the Hugo posts and copy them to the dist/clients directory
-// gulp.task('getHugoEtc', ['getHugoPosts'], function() {
-//   gulp.src([
-//     'src/clients/public/css/**/*',
-//     'src/clients/public/images/**/*',
-//     'src/clients/public/js/**/*'
-//   ], { base: 'src/clients/public' })
-//   .pipe(gulp.dest('dist/clients'));
-// });
-
-gulp.task("build", ['del', 'pug', 'sass', 'cssmin', 'minifyScripts'], function() {
-  return gulp.src([
-    // "src/css/lib/normalize.css",
-    "src/css/lib/animate.min.css",
-    "src/css/styles.min.css*",
-    "src/index.html",
-    "src/js/scripts.min.js",
-    "src/images/**",
-    "src/fonts/**",
-    "src/humans.txt",
-    "src/robots.txt"
-    ], { base: 'src'})
+// Build site in /dist
+function build() {
+  clean();
+  return gulp
+    .src([
+      // "src/css/lib/normalize.css",
+      "src/css/lib/animate.min.css",
+      "src/index.html",
+      "src/css/styles.min.css",
+      "src/js/scripts.min.js",
+      "src/images/**",
+      "src/fonts/**",
+      "src/humans.txt",
+      "src/robots.txt"
+      ], { base: './src' })
     .pipe(gulp.dest('./dist'))
-    
-});
+}
 
-gulp.task("default", ["watch"]);
+// Watch files
+function watchFiles() {
+  gulp.watch("./src/scss/**/*", styles);
+  gulp.watch("./src/js/**/*", scripts);
+  gulp.watch('./src/index.pug', html);
+}
+
+// define complex tasks
+const watch = gulp.parallel(watchFiles, browserSync);
+
+// export tasks
+exports.images = images;
+exports.html = html;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.clean = clean;
+exports.build = build;
+exports.watch = watch;
+exports.default = watch;
