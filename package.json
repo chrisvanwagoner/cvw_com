@@ -17,15 +17,16 @@
   },
   "homepage": "https://github.com/chrisvanwagoner/cvw_com#readme",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.26.7",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-cloudinary-upload": "^1.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^3.4.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^3.2.1",
@@ -36,6 +37,8 @@
     "vue": "^2.5.17"
   },
   "dependencies": {
-    "basicscroll": "^2.1.0"
+    "basicscroll": "^2.1.0",
+    "clean-css": "^4.2.3",
+    "gulp-cli": "^2.2.0"
   }
 }
