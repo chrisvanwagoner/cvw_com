@@ -10,8 +10,7 @@ html(lang='en')
 		link(type='text/plain', rel='author', href='https://www.chrisvanwagoner.com/humans.txt')
 		link(rel='stylesheet', type='text/css', href='css/lib/animate.min.css')
 		link(rel='stylesheet', type='text/css', href='css/styles.min.css')
-
-	body
+	body#app
 		header
 			figure
 				img(src='https://res.cloudinary.com/dlyj42rsq/image/upload/v1564970391/images/chris-van-wagoner-portrait_arh7lr.jpg', 
@@ -20,9 +19,9 @@ html(lang='en')
 				data-srcset='https://res.cloudinary.com/dlyj42rsq/image/upload/v1564970392/images/chris-van-wagoner-portrait_2x_ybkzqs.jpg 2x', 
 				alt='Chris van Wagoner headshot', 
 				loading='lazy')
-			.header__text-wrap
-				h1.header__name Chris van Wagoner
-				p.header__bio Web developer experienced in creation and maintenance of WordPress sites.  Added functionality to fit each client’s unique requirements while matching designs to pixel-perfect accuracy. Built and launched 13 websites in the past year and a half using WordPress, PHP, JavaScript, and Sass.
+			.header-text
+				h1.header-text__name Chris van Wagoner
+				p.header-text__bio Web developer experienced in creation and maintenance of WordPress sites.  Added functionality to fit each client’s unique requirements while matching designs to pixel-perfect accuracy. Built and launched 13 websites in the past year and a half using WordPress, PHP, JavaScript, and Sass.
 		main#main.clients
 			h2.work Work
 			div(v-for='client in clients', 
@@ -37,7 +36,7 @@ html(lang='en')
 					p.client-info__text {{ client.summary }}
 					a.client-info__link(v-bind:href='client.url', target='_blank', rel='noopener') See More
 				// .client-info
-				figure.client-info__figure
+				figure
 					a(v-bind:href='client.url', target='_blank', rel='noopener', aria-label='See More')
 					img(v-bind:src='client.imgPlc', 
 					srcset='', 
