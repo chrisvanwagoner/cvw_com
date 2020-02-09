@@ -318,9 +318,3 @@ basicScroll animations
 //   })
 //   .start();
 // });
-
-var clientDivs = document.querySelector('.client');
-// clientDivs.forEach(function (el, index) {
-//   console.log(index + ' ' + el);
-// });
-// console.log(clients[1].bgColor);
