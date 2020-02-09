@@ -183,7 +183,8 @@ main .client-info__link, footer a {
     height: 2px; }
 
 main figure {
-  box-shadow: 0 2px 30px 5px rgba(143, 142, 173, 0.7); }
+  -webkit-box-shadow: 0 2px 30px 5px rgba(143, 142, 173, 0.7);
+          box-shadow: 0 2px 30px 5px rgba(143, 142, 173, 0.7); }
 
 header, main .client, footer {
   display: grid;
@@ -198,7 +199,8 @@ a:focus {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 html {
   font-size: 18px;
@@ -234,7 +236,8 @@ header {
       padding-bottom: 2.6rem; } }
   header figure {
     border-radius: 100px;
-    box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
+    -webkit-box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
+            box-shadow: -2px 2px 30px 0 rgba(78, 29, 29, 0.16), 6px 5px 45px 0 rgba(33, 38, 67, 0.24);
     grid-column: 1 / 12 span;
     height: 200px;
     margin-bottom: 60px;
@@ -245,7 +248,8 @@ header {
     @media screen and (min-width: 1000px) {
       header figure {
         border-radius: 0;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
         grid-column: 1 / 9 span;
         height: 500px;
         width: 100%;
@@ -258,7 +262,8 @@ header {
       @media screen and (min-width: 1000px) {
         header figure img {
           margin-right: auto;
-          object-fit: cover; } }
+          -o-object-fit: cover;
+             object-fit: cover; } }
   header .header-text {
     grid-column: 2 / 12;
     width: 100%; }
@@ -289,8 +294,10 @@ main {
     opacity: 0.04;
     position: absolute;
     top: 40px;
-    transform-origin: 0 0;
-    transform: rotate(90deg);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     z-index: 1; }
     @supports (-webkit-text-stroke: 2px #19181D) {
       main h2 {
@@ -304,13 +311,22 @@ main {
   main .client {
     padding-top: 80px;
     padding-bottom: 80px;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
     @media screen and (min-width: 800px) {
       main .client {
         padding-top: 0;
         padding-bottom: 0; }
         main .client:not(:last-child) {
-          margin-bottom: 2.6rem; } }
+          margin-bottom: 2.6rem; }
+        main .client:before {
+          position: absolute;
+          content: '';
+          background-color: inherit;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 25%; } }
   main .client-info {
     grid-column: 2 / 12;
     position: relative;
@@ -318,8 +334,9 @@ main {
     width: 100%; }
     @media screen and (min-width: 800px) {
       main .client-info {
-        grid-column: 2 / 6;
-        align-self: center; } }
+        grid-column: 2 / 5;
+        -ms-flex-item-align: center;
+            align-self: center; } }
   main .client-info__name {
     margin-bottom: 1rem; }
     @media screen and (min-width: 1000px) {
@@ -332,11 +349,14 @@ main {
         left: -12px;
         position: absolute;
         top: 6px;
-        transform-origin: 0 0;
-        transform: rotate(90deg); }
+        -webkit-transform-origin: 0 0;
+                transform-origin: 0 0;
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); }
         main .client-info__category span {
           display: inline-block;
-          transform: rotate(180deg); } }
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg); } }
   main .client-info__text {
     margin-bottom: 1.3rem;
     grid-row: 1 / 3; }
@@ -346,7 +366,8 @@ main {
   main figure {
     grid-column: 2 / 12;
     grid-row: 1 / 1;
-    align-self: start;
+    -ms-flex-item-align: start;
+        align-self: start;
     z-index: 1;
     position: relative;
     width: 100%;
@@ -356,7 +377,8 @@ main {
     top: 0; }
     @media (max-width: 1000px) {
       main figure {
-        box-shadow: none; } }
+        -webkit-box-shadow: none;
+                box-shadow: none; } }
     @media screen and (min-width: 400px) {
       main figure {
         max-height: 300px; } }
@@ -370,9 +392,11 @@ main {
         margin-bottom: 0;
         opacity: 0.8;
         margin-top: 2.6rem;
+        -webkit-transition: all 200ms ease-in-out;
         transition: all 200ms ease-in-out; }
         main figure:hover {
           opacity: 0.6;
+          -webkit-transition: all 200ms ease-in-out;
           transition: all 200ms ease-in-out; } }
     main figure a {
       position: absolute;
@@ -409,5 +433,3 @@ footer {
     font-size: 18px; }
   footer a {
     font-weight: 200; }
-
-/*# sourceMappingURL=styles.css.map */
