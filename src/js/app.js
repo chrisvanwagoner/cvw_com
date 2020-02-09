@@ -64,6 +64,6 @@ var clients = [
 var main = new Vue({
   el: '#main',
   data: {
-    clients: clients,
+    clients: clients
   }
 });
