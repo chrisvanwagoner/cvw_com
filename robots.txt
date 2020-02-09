@@ -1,2 +1,10 @@
 User-agent: *
 Disallow: /src
+Disallow: /node_modules
+Disallow: /readme.md
+Disallow: /.gitignore
+Disallow: /.gitmodules
+Disallow: /image-sizes.txt
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /images-unused

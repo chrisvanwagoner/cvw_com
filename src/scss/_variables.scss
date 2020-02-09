@@ -8,7 +8,9 @@ $text: #19181D;
 $bg: #FFFEFD;
 $blue: #0005EC;
 
-$lh: 26px;
+$fs: 1rem;
+$lh: $fs + ($fs * 0.3);
+$spacer: $lh * 2;
 
 $min-xs:   "screen and (min-width: 400px)";
 $min-sm:   "screen and (min-width: 600px)";
@@ -18,18 +20,20 @@ $min-xl:   "screen and (min-width: 1200px)";
 $min-xxl:  "screen and (min-width: 1400px)";
 $min-xxxl: "screen and (min-width: 1600px)";
 
+$max-lg: '(max-width: 1000px)';
+
 %headingExtraLightItalic {
-	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-style:  italic;
 	font-weight: 200;
 }
 %headingBoldItalic {
-	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-style:  italic;
 	font-weight: 700;
 }
 %headingBlackItalic {
-	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-style:  italic;
 	font-weight: 900;
 }
@@ -44,7 +48,7 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	font-style: italic;
 }
 %text {
-	font-family: 'Inter', 'Avenir Next', Helvetica, arial, sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-style:  normal;
 	font-weight: 200;
 }
@@ -81,6 +85,9 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	font-size: 2rem;
 	letter-spacing: -1px;
 	line-height: $lh * 1.6;
+	@media #{$min-md} {
+		font-size: 1.8rem;
+	}
 	@media #{$min-lg} {
         font-size: 2.5rem;
 		line-height: $lh * 2;
@@ -131,8 +138,7 @@ $min-xxxl: "screen and (min-width: 1600px)";
 		height: 1px;
 		z-index: -1;
 	}
-    &:hover,
-    &:focus {
+    &:hover {
 		&:after {
 			background-color: $blue;
 			height: 2px
@@ -154,4 +160,9 @@ $min-xxxl: "screen and (min-width: 1600px)";
 %grid-slim {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
+}
+%focus {
+	outline: 3px solid #c1e0fe;
+	outline: 3px solid rgba(131,192,253,.5);
+	outline-offset: 1px;
 }
