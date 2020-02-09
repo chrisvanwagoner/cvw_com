@@ -170,11 +170,21 @@ main {
     padding-top: 80px;
     padding-bottom: 80px;
     overflow: hidden;
+    position: relative;
     @media #{$min-md} { 
       padding-top: 0;
       padding-bottom: 0;
       &:not(:last-child) {
         margin-bottom: $spacer;
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        background-color: inherit;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 25%;
       }
     }
   }
@@ -184,9 +194,10 @@ main {
     z-index: 1;
     width: 100%;
     @media #{$min-md} {
-      grid-column: 2 / 6;
+      grid-column: 2 / 5;
       align-self: center;
     }
+
   }
   .client-info__name {
     margin-bottom: 1rem;
