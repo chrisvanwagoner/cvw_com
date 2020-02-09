@@ -1,19 +1,20 @@
 'use strict';
 
 // Load plugins
-const gulp = require('gulp');
-const uglify = require('gulp-uglify');
+const autoprefixer = require('gulp-autoprefixer');
+const browsersync = require('browser-sync').create();
 const concat = require('gulp-concat');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass');
 const cssmin = require('gulp-cssmin');
+const del = require('del');
+const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 const maps = require('gulp-sourcemaps');
-const del = require('del');
-const autoprefixer = require('gulp-autoprefixer');
-const pug = require('gulp-pug');
 const plumber = require('gulp-plumber');
-const browsersync = require('browser-sync').create();
+const pug = require('gulp-pug');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
+// const concatCss = require('gulp-concat-css');
 // const imagemin = require('gulp-imagemin');
 // const ImageKit = require('imagekit'); 
 // const cloudinaryUpload = require('gulp-cloudinary-upload');
@@ -62,7 +63,7 @@ function styles() {
       basename: "styles",
     }))
     .pipe(maps.write('./'))
-    // .pipe(gulp.dest('src/css'))
+    .pipe(gulp.dest('src/css'))
     // .src(['src/css/styles.css'])
     .pipe(cssmin())
     .pipe(rename({ suffix: '.min' }))
@@ -85,9 +86,8 @@ function scripts() {
     ])
     // .pipe(maps.init())
     .pipe(concat('scripts.js'))
-    .pipe(maps.write('./'))
-    // .pipe(gulp.dest('src/js'))
-    // .src("src/js/scripts.js")
+    // .pipe(maps.write('./'))
+    .pipe(gulp.dest('src/js'))
     .pipe(uglify())
     .pipe(rename('scripts.min.js'))
     .pipe(gulp.dest('src/js'));
