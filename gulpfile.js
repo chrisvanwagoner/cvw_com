@@ -14,6 +14,8 @@ const pug = require('gulp-pug');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
+
+// const babel = require('gulp-babel');
 // const concatCss = require('gulp-concat-css');
 // const imagemin = require('gulp-imagemin');
 // const ImageKit = require('imagekit'); 
@@ -41,11 +43,8 @@ function html() {
   del(['src/index.html']);
   return gulp
     .src('src/index.pug')
-    .pipe(pug({
-      // Your options in here.
-    }))
+    .pipe(pug())
     .pipe(gulp.dest('./src'))
-    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(browsersync.stream());
 }
 
@@ -53,21 +52,21 @@ function html() {
 function styles() {
   return gulp
     .src([
+      'src/css/lib/animate.min.css',
       'src/scss/main.scss'
     ])
-    // .pipe(maps.init())
+    .pipe(concat('styles.scss'))
+    .pipe(maps.init())
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(rename({
-      basename: "styles",
-    }))
     .pipe(maps.write('./'))
     .pipe(gulp.dest('src/css'))
     // .src(['src/css/styles.css'])
-    .pipe(cssmin())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('src/css'))
+    // .pipe(cssmin())
+    // .pipe(rename({ suffix: '.min' }))
+    // TODO: remove minification here and move to just the build task
+    // .pipe(gulp.dest('src/css'))
     .pipe(browsersync.stream());
 }
 
@@ -75,22 +74,25 @@ function styles() {
 function scripts() {
   return gulp
     .src([
+      'src/js/lib/jquery.min.js',
       // 'src/js/lib/anime.min.js',
       'src/js/lib/wow.min.js',
-      // 'src/js/lib/basicScroll.min.js',
       'node_modules/vue/dist/vue.min.js',
+      // 'src/js/lib/basicScroll.min.js',
       'src/js/app.js',
       // 'src/js/app-cloudinary.js',
-      'src/js/lazyload.js',
-      'src/js/runthis.js'
+      'src/js/runthis.js',
+      // 'src/js/lazyload.js',
+      'src/js/lib/lazysizes.min.js',
     ])
-    // .pipe(maps.init())
+    .pipe(maps.init())
     .pipe(concat('scripts.js'))
-    // .pipe(maps.write('./'))
+    .pipe(maps.write('./'))
     .pipe(gulp.dest('src/js'))
-    .pipe(uglify())
-    .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest('src/js'));
+    // .pipe(uglify())
+    // .pipe(babel({presets: ['minify']}))
+    // .pipe(rename('scripts.min.js'))
+    // .pipe(gulp.dest('src/js'));
 }
 
 // Images
@@ -102,26 +104,43 @@ function images() {
 
 /* Delete the /dist directory contents */
 function clean() {
-  return del(['dist/*']);
+  return del([
+    'dist/*',
+    "src/css/styles.min.css",
+    "src/js/scripts.min.js"
+  ]);
 }
 
 // Build site in /dist
 function build() {
   clean();
+  gulp
+    .src(['src/js/scripts.js'])
+    .pipe(uglify())
+    .pipe(rename('scripts.min.js'))
+    .pipe(gulp.dest('./dist/js'));
+  
+  gulp
+    .src(['src/css/styles.css'])
+    .pipe(cssmin())
+    .pipe(rename('styles.min.css'))
+    .pipe(gulp.dest('./dist/css'));
+  
+  gulp
+    .src(['src/index.html'])
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./dist'));
+
   return gulp
     .src([
-      // "src/css/lib/normalize.css",
-      "src/css/lib/animate.min.css",
-      "src/index.html",
-      "src/css/styles.min.css",
-      "src/js/scripts.min.js",
       "src/images/**",
       "src/fonts/**",
       "src/humans.txt",
       "src/robots.txt"
-      ], { base: './src' })
-    .pipe(gulp.dest('./dist'))
+    ], { base: './src' })
+    .pipe(gulp.dest('./dist'));
 }
+
 
 // Watch files
 function watchFiles() {
@@ -131,7 +150,9 @@ function watchFiles() {
 }
 
 // define complex tasks
+const start = gulp.series(styles, scripts, html);
 const watch = gulp.parallel(watchFiles, browserSync);
+const run = gulp.series(start, watch);
 
 // export tasks
 exports.images = images;
@@ -140,5 +161,7 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.clean = clean;
 exports.build = build;
+exports.start = start;
 exports.watch = watch;
-exports.default = watch;
+exports.run = run;
+exports.default = run;
