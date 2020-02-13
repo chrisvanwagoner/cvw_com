@@ -4,78 +4,78 @@
  * expects a list of:  
  * `<img src="blank.gif" data-src="my_image.png" width="600" height="400" class="lazy">`
  */
-!function(window){
-	var $q = function(q, res){
-		  if (document.querySelectorAll) {
-			res = document.querySelectorAll(q);
-		  } else {
-			var d=document
-			  , a=d.styleSheets[0] || d.createStyleSheet();
-			a.addRule(q,'f:b');
-			for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
-			  l[b].currentStyle.f && c.push(l[b]);
-  
-			a.removeRule(0);
-			res = c;
-		  }
-		  return res;
+(function($) {
+	var $q = function (q, res) {
+			if (document.querySelectorAll) {
+				res = document.querySelectorAll(q);
+			} else {
+				var d = document,
+					a = d.styleSheets[0] || d.createStyleSheet();
+				a.addRule(q, 'f:b');
+				for (var l = d.all, b = 0, c = [], f = l.length; b < f; b++)
+					l[b].currentStyle.f && c.push(l[b]);
+
+				a.removeRule(0);
+				res = c;
+			}
+			return res;
+		},
+		addEventListener = function (evt, fn) {
+			window.addEventListener ?
+				this.addEventListener(evt, fn, false) :
+				(window.attachEvent) ?
+				this.attachEvent('on' + evt, fn) :
+				this['on' + evt] = fn;
+		},
+		_has = function (obj, key) {
+			return Object.prototype.hasOwnProperty.call(obj, key);
+		};
+
+	function loadImage(el, fn) {
+		var img = new Image(),
+			src = el.getAttribute('data-src'),
+			srcset = el.getAttribute('data-srcset');
+		img.onload = function () {
+			if (!!el.parent)
+				el.parent.replaceChild(img.lazy, el)
+			else
+				el.src = src;
+			el.srcset = srcset;
+
+			fn ? fn() : null;
 		}
-	  , addEventListener = function(evt, fn){
-		  window.addEventListener
-			? this.addEventListener(evt, fn, false)
-			: (window.attachEvent)
-			  ? this.attachEvent('on' + evt, fn)
-			  : this['on' + evt] = fn;
-		}
-	  , _has = function(obj, key) {
-		  return Object.prototype.hasOwnProperty.call(obj, key);
-		}
-	  ;
-  
-	function loadImage (el, fn) {
-	  var img = new Image()
-		, src = el.getAttribute('data-src')
-		, srcset = el.getAttribute('data-srcset');
-	  img.onload = function() {
-		if (!! el.parent)
-		  el.parent.replaceChild(img.lazy, el)
-		else
-		  el.src = src;
-		  el.srcset = srcset;
-  
-		fn? fn() : null;
-	  }
-	  img.src = src;
+		img.src = src;
+		img.srcset = srcset;
 	}
-  
+
 	function elementInViewport(el) {
-	  var rect = el.getBoundingClientRect()
-  
-	  return (
-		 rect.top    >= 0
-	  && rect.left   >= 0
-	  && rect.top <= (window.innerHeight + 200 || document.documentElement.clientHeight + 200)
-	  )
+		var rect = el.getBoundingClientRect()
+		console.log(rect);
+		return (
+			rect.top >= -100 &&
+			rect.left >= 0 &&
+			rect.top <= (window.innerHeight - 200 || document.documentElement.clientHeight - 200) ||
+			rect.bottom <= (window.innerHeight - 200)
+		)
 	}
-  
-	  var images = new Array()
-		, query = $q('img')
-		, processScroll = function(){
+
+	var images = new Array(),
+		query = $q('img'),
+		processScroll = function () {
 			for (var i = 0; i < images.length; i++) {
-			  if (elementInViewport(images[i])) {
-				loadImage(images[i], function () {
-				  images.splice(i, i);
-				});
-			  }
+				if (elementInViewport(images[i])) {
+					loadImage(images[i], function () {
+						images.splice(i, i);
+					});
+				}
 			};
-		  }
-		;
-	  // Array.prototype.slice.call is not callable under our lovely IE8 
-	  for (var i = 0; i < query.length; i++) {
+		};
+	// Array.prototype.slice.call is not callable under our lovely IE8 
+	for (var i = 0; i < query.length; i++) {
 		images.push(query[i]);
-	  };
-  
-	  processScroll();
-	  addEventListener('scroll',processScroll);
-  
-  }(this);​
+	};
+
+	processScroll();
+	addEventListener('scroll', processScroll);
+
+})(jQuery);
