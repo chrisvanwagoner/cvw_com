@@ -20,7 +20,8 @@ html {
   cursor: default;
 }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter var', 'Inter', sans-serif;
+  font-variation-settings: 'wght' 200;
   background-color: $bg;
   color: $heading;
   max-width: 1560px;
@@ -67,9 +68,10 @@ header {
   padding-top: 60px;
   padding-bottom: 60px;
   @media #{$min-lg} {
-    min-height: 100vh;
-    padding-top: $spacer;
+    height: 100vh;
+    padding-top: $lh;
     padding-bottom: $spacer;
+    max-height: 100%;
   }
   figure {
     border-radius: 100px;
@@ -84,14 +86,14 @@ header {
     @media #{$min-lg} {
       border-radius: 0;
       box-shadow: none;
-      grid-column: 1 / 9 span;
+      grid-column: 1 / 8 span;
       height: 500px;
       width: 100%;
       margin-bottom: 0;
       min-height: 700px;
       // display: -ms-flexbox;
-      // display: flex;
-      // justify-content: center;
+      display: flex;
+      justify-content: center;
       // align-self: center;
       // align-self: flex-start;
       height: 100%;
@@ -105,6 +107,7 @@ header {
       @media #{$min-lg} {
         margin-right: auto;
         object-fit: cover;
+        width: 100%;
       }
     }
   }
@@ -135,6 +138,9 @@ header {
       &:first-of-type::first-letter {
         font-size: 1.8rem;
       }
+    }
+    a {
+      @extend %link;
     }
   }
 } 
@@ -170,7 +176,7 @@ main {
     @extend %grid;
     padding-top: 80px;
     padding-bottom: 80px;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
     @media #{$min-md} { 
       padding-top: 0;
@@ -230,20 +236,14 @@ main {
   .client-info__link {
     @extend %link;
     @extend %paragraph;
-    font-weight: 700;
+    font-variation-settings: 'wght' 700;
   }
-  figure {
-    @extend %shadow;
+  .client-site {
     grid-column: 2 / 12;
     grid-row: 1 / 1;
     align-self: start;
-    z-index: 1;
     position: relative;
-    width: 100%;
-    margin-bottom: 2rem;
-    max-height: 200px;
     overflow: hidden;
-    top: 0;
     @media #{$max-lg} {
       box-shadow: none;
     }
@@ -257,23 +257,47 @@ main {
       max-height: 560px;
       grid-column: 6 / 13;
       margin-bottom: 0;
-      opacity: 0.8;
-      margin-top: $lh * 2;
+      // opacity: 0.8;
+      margin-top: $spacer;
       transition: all 200ms ease-in-out;
-      &:hover {
-        opacity: 0.6;
-	      transition: all 200ms ease-in-out;
-      }
+      
     }
+  }
+  figure {
     a {
       position: absolute;
       top: -1px;
       right: -1px;
       bottom: -1px;
       left: -1px;
-      z-index: 1;
+      z-index: 2;
+    }
+    // @extend %shadow;
+    // z-index: 1;
+    position: relative;
+    width: 100%;
+    // margin-bottom: 2rem;
+    max-height: 200px;
+    overflow: hidden;
+    top: 0;
+    @media #{$min-xs} {
+      max-height: 300px;
+    }
+    @media #{$min-sm} {
+      max-height: 400px;
+    }
+    @media #{$min-md} {
+      max-height: 560px;
+    }
+    &:hover,
+    &:focus {
+      img {
+        @extend %transition;
+        opacity: 0.8;
+      }
     }
     img {
+      @extend %transition;
       display: block;
       width: 100%;
     }
