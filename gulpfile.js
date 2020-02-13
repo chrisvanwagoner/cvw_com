@@ -56,11 +56,9 @@ function styles() {
       'src/scss/main.scss'
     ])
     .pipe(concat('styles.scss'))
-    .pipe(maps.init())
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(maps.write('./'))
     .pipe(gulp.dest('src/css'))
     // .src(['src/css/styles.css'])
     // .pipe(cssmin())
@@ -79,15 +77,13 @@ function scripts() {
       'src/js/lib/wow.min.js',
       'node_modules/vue/dist/vue.min.js',
       // 'src/js/lib/basicScroll.min.js',
+      'src/js/lib/lazysizes.min.js',
       'src/js/app.js',
       // 'src/js/app-cloudinary.js',
       'src/js/runthis.js',
       // 'src/js/lazyload.js',
-      'src/js/lib/lazysizes.min.js',
     ])
-    .pipe(maps.init())
     .pipe(concat('scripts.js'))
-    .pipe(maps.write('./'))
     .pipe(gulp.dest('src/js'))
     // .pipe(uglify())
     // .pipe(babel({presets: ['minify']}))
