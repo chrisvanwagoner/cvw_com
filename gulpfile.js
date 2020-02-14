@@ -14,6 +14,7 @@ const pug = require('gulp-pug');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
+const minifyCssNames = require('gulp-minify-cssnames');
 
 // const babel = require('gulp-babel');
 // const concatCss = require('gulp-concat-css');
@@ -107,9 +108,22 @@ function clean() {
   ]);
 }
 
+function cssClasses() {
+  return gulp
+    .src([
+      './dist/js/scripts.min.js',
+      './dist/css/styles.min.css',
+      './dist/index.html'
+    ])
+    .pipe(minifyCssNames({
+      prefix: '',
+      postfix: '-min'
+    }))
+    .pipe(gulp.dest('./dist'));
+}
+
 // Build site in /dist
 function build() {
-  clean();
   gulp
     .src(['src/js/scripts.js'])
     .pipe(uglify())
@@ -149,6 +163,7 @@ function watchFiles() {
 const start = gulp.series(styles, scripts, html);
 const watch = gulp.parallel(watchFiles, browserSync);
 const run = gulp.series(start, watch);
+const prod = gulp.series(clean, build, cssClasses);
 
 // export tasks
 exports.images = images;
@@ -156,8 +171,10 @@ exports.html = html;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.clean = clean;
+exports.cssClasses = cssClasses;
 exports.build = build;
 exports.start = start;
 exports.watch = watch;
 exports.run = run;
 exports.default = run;
+exports.prod = prod;
