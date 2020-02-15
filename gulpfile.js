@@ -64,7 +64,6 @@ function styles() {
     // .src(['src/css/styles.css'])
     // .pipe(cssmin())
     // .pipe(rename({ suffix: '.min' }))
-    // TODO: remove minification here and move to just the build task
     // .pipe(gulp.dest('src/css'))
     .pipe(browsersync.stream());
 }
@@ -108,19 +107,19 @@ function clean() {
   ]);
 }
 
-function cssClasses() {
-  return gulp
-    .src([
-      './dist/js/scripts.min.js',
-      './dist/css/styles.min.css',
-      './dist/index.html'
-    ])
-    .pipe(minifyCssNames({
-      prefix: '',
-      postfix: '-min'
-    }))
-    .pipe(gulp.dest('./dist'));
-}
+// function cssClasses() {
+//   return gulp
+//     .src([
+//       // './dist/js/scripts.min.js',
+//       './dist/css/styles.min.css',
+//       './dist/index.html'
+//     ])
+//     .pipe(minifyCssNames({
+//       prefix: 'm-',
+//       postfix: ''
+//     }))
+//     .pipe(gulp.dest('./dist'));
+// }
 
 // Build site in /dist
 function build() {
@@ -163,7 +162,7 @@ function watchFiles() {
 const start = gulp.series(styles, scripts, html);
 const watch = gulp.parallel(watchFiles, browserSync);
 const run = gulp.series(start, watch);
-const prod = gulp.series(clean, build, cssClasses);
+const prod = gulp.series(clean, build);
 
 // export tasks
 exports.images = images;
@@ -171,7 +170,7 @@ exports.html = html;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.clean = clean;
-exports.cssClasses = cssClasses;
+// exports.cssClasses = cssClasses;
 exports.build = build;
 exports.start = start;
 exports.watch = watch;
