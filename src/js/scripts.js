@@ -15,6 +15,54 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 !function(a,b){var c=b(a,a.document,Date);a.lazySizes=c,"object"==typeof module&&module.exports&&(module.exports=c)}("undefined"!=typeof window?window:{},function(a,b,c){"use strict";var d,e;if(function(){var b,c={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.5,hFac:.8,loadMode:2,loadHidden:!0,ricTimeout:0,throttleDelay:125};e=a.lazySizesConfig||a.lazysizesConfig||{};for(b in c)b in e||(e[b]=c[b])}(),!b||!b.getElementsByClassName)return{init:function(){},cfg:e,noSupport:!0};var f=b.documentElement,g=a.HTMLPictureElement,h="addEventListener",i="getAttribute",j=a[h].bind(a),k=a.setTimeout,l=a.requestAnimationFrame||k,m=a.requestIdleCallback,n=/^picture$/i,o=["load","error","lazyincluded","_lazyloaded"],p={},q=Array.prototype.forEach,r=function(a,b){return p[b]||(p[b]=new RegExp("(\\s|^)"+b+"(\\s|$)")),p[b].test(a[i]("class")||"")&&p[b]},s=function(a,b){r(a,b)||a.setAttribute("class",(a[i]("class")||"").trim()+" "+b)},t=function(a,b){var c;(c=r(a,b))&&a.setAttribute("class",(a[i]("class")||"").replace(c," "))},u=function(a,b,c){var d=c?h:"removeEventListener";c&&u(a,b),o.forEach(function(c){a[d](c,b)})},v=function(a,c,e,f,g){var h=b.createEvent("Event");return e||(e={}),e.instance=d,h.initEvent(c,!f,!g),h.detail=e,a.dispatchEvent(h),h},w=function(b,c){var d;!g&&(d=a.picturefill||e.pf)?(c&&c.src&&!b[i]("srcset")&&b.setAttribute("srcset",c.src),d({reevaluate:!0,elements:[b]})):c&&c.src&&(b.src=c.src)},x=function(a,b){return(getComputedStyle(a,null)||{})[b]},y=function(a,b,c){for(c=c||a.offsetWidth;c<e.minSize&&b&&!a._lazysizesWidth;)c=b.offsetWidth,b=b.parentNode;return c},z=function(){var a,c,d=[],e=[],f=d,g=function(){var b=f;for(f=d.length?e:d,a=!0,c=!1;b.length;)b.shift()();a=!1},h=function(d,e){a&&!e?d.apply(this,arguments):(f.push(d),c||(c=!0,(b.hidden?k:l)(g)))};return h._lsFlush=g,h}(),A=function(a,b){return b?function(){z(a)}:function(){var b=this,c=arguments;z(function(){a.apply(b,c)})}},B=function(a){var b,d=0,f=e.throttleDelay,g=e.ricTimeout,h=function(){b=!1,d=c.now(),a()},i=m&&g>49?function(){m(h,{timeout:g}),g!==e.ricTimeout&&(g=e.ricTimeout)}:A(function(){k(h)},!0);return function(a){var e;(a=!0===a)&&(g=33),b||(b=!0,e=f-(c.now()-d),e<0&&(e=0),a||e<9?i():k(i,e))}},C=function(a){var b,d,e=99,f=function(){b=null,a()},g=function(){var a=c.now()-d;a<e?k(g,e-a):(m||f)(f)};return function(){d=c.now(),b||(b=k(g,e))}},D=function(){var g,m,o,p,y,D,F,G,H,I,J,K,L=/^img$/i,M=/^iframe$/i,N="onscroll"in a&&!/(gle|ing)bot/.test(navigator.userAgent),O=0,P=0,Q=0,R=-1,S=function(a){Q--,(!a||Q<0||!a.target)&&(Q=0)},T=function(a){return null==K&&(K="hidden"==x(b.body,"visibility")),K||!("hidden"==x(a.parentNode,"visibility")&&"hidden"==x(a,"visibility"))},U=function(a,c){var d,e=a,g=T(a);for(G-=c,J+=c,H-=c,I+=c;g&&(e=e.offsetParent)&&e!=b.body&&e!=f;)(g=(x(e,"opacity")||1)>0)&&"visible"!=x(e,"overflow")&&(d=e.getBoundingClientRect(),g=I>d.left&&H<d.right&&J>d.top-1&&G<d.bottom+1);return g},V=function(){var a,c,h,j,k,l,n,o,q,r,s,t,u=d.elements;if((p=e.loadMode)&&Q<8&&(a=u.length)){for(c=0,R++;c<a;c++)if(u[c]&&!u[c]._lazyRace)if(!N||d.prematureUnveil&&d.prematureUnveil(u[c]))ba(u[c]);else if((o=u[c][i]("data-expand"))&&(l=1*o)||(l=P),r||(r=!e.expand||e.expand<1?f.clientHeight>500&&f.clientWidth>500?500:370:e.expand,d._defEx=r,s=r*e.expFactor,t=e.hFac,K=null,P<s&&Q<1&&R>2&&p>2&&!b.hidden?(P=s,R=0):P=p>1&&R>1&&Q<6?r:O),q!==l&&(D=innerWidth+l*t,F=innerHeight+l,n=-1*l,q=l),h=u[c].getBoundingClientRect(),(J=h.bottom)>=n&&(G=h.top)<=F&&(I=h.right)>=n*t&&(H=h.left)<=D&&(J||I||H||G)&&(e.loadHidden||T(u[c]))&&(m&&Q<3&&!o&&(p<3||R<4)||U(u[c],l))){if(ba(u[c]),k=!0,Q>9)break}else!k&&m&&!j&&Q<4&&R<4&&p>2&&(g[0]||e.preloadAfterLoad)&&(g[0]||!o&&(J||I||H||G||"auto"!=u[c][i](e.sizesAttr)))&&(j=g[0]||u[c]);j&&!k&&ba(j)}},W=B(V),X=function(a){var b=a.target;if(b._lazyCache)return void delete b._lazyCache;S(a),s(b,e.loadedClass),t(b,e.loadingClass),u(b,Z),v(b,"lazyloaded")},Y=A(X),Z=function(a){Y({target:a.target})},$=function(a,b){try{a.contentWindow.location.replace(b)}catch(c){a.src=b}},_=function(a){var b,c=a[i](e.srcsetAttr);(b=e.customMedia[a[i]("data-media")||a[i]("media")])&&a.setAttribute("media",b),c&&a.setAttribute("srcset",c)},aa=A(function(a,b,c,d,f){var g,h,j,l,m,p;(m=v(a,"lazybeforeunveil",b)).defaultPrevented||(d&&(c?s(a,e.autosizesClass):a.setAttribute("sizes",d)),h=a[i](e.srcsetAttr),g=a[i](e.srcAttr),f&&(j=a.parentNode,l=j&&n.test(j.nodeName||"")),p=b.firesLoad||"src"in a&&(h||g||l),m={target:a},s(a,e.loadingClass),p&&(clearTimeout(o),o=k(S,2500),u(a,Z,!0)),l&&q.call(j.getElementsByTagName("source"),_),h?a.setAttribute("srcset",h):g&&!l&&(M.test(a.nodeName)?$(a,g):a.src=g),f&&(h||l)&&w(a,{src:g})),a._lazyRace&&delete a._lazyRace,t(a,e.lazyClass),z(function(){var b=a.complete&&a.naturalWidth>1;p&&!b||(b&&s(a,"ls-is-cached"),X(m),a._lazyCache=!0,k(function(){"_lazyCache"in a&&delete a._lazyCache},9)),"lazy"==a.loading&&Q--},!0)}),ba=function(a){if(!a._lazyRace){var b,c=L.test(a.nodeName),d=c&&(a[i](e.sizesAttr)||a[i]("sizes")),f="auto"==d;(!f&&m||!c||!a[i]("src")&&!a.srcset||a.complete||r(a,e.errorClass)||!r(a,e.lazyClass))&&(b=v(a,"lazyunveilread").detail,f&&E.updateElem(a,!0,a.offsetWidth),a._lazyRace=!0,Q++,aa(a,b,f,d,c))}},ca=C(function(){e.loadMode=3,W()}),da=function(){3==e.loadMode&&(e.loadMode=2),ca()},ea=function(){if(!m){if(c.now()-y<999)return void k(ea,999);m=!0,e.loadMode=3,W(),j("scroll",da,!0)}};return{_:function(){y=c.now(),d.elements=b.getElementsByClassName(e.lazyClass),g=b.getElementsByClassName(e.lazyClass+" "+e.preloadClass),j("scroll",W,!0),j("resize",W,!0),j("pageshow",function(a){if(a.persisted){var c=b.querySelectorAll("."+e.loadingClass);c.length&&c.forEach&&l(function(){c.forEach(function(a){a.complete&&ba(a)})})}}),a.MutationObserver?new MutationObserver(W).observe(f,{childList:!0,subtree:!0,attributes:!0}):(f[h]("DOMNodeInserted",W,!0),f[h]("DOMAttrModified",W,!0),setInterval(W,999)),j("hashchange",W,!0),["focus","mouseover","click","load","transitionend","animationend"].forEach(function(a){b[h](a,W,!0)}),/d$|^c/.test(b.readyState)?ea():(j("load",ea),b[h]("DOMContentLoaded",W),k(ea,2e4)),d.elements.length?(V(),z._lsFlush()):W()},checkElems:W,unveil:ba,_aLSL:da}}(),E=function(){var a,c=A(function(a,b,c,d){var e,f,g;if(a._lazysizesWidth=d,d+="px",a.setAttribute("sizes",d),n.test(b.nodeName||""))for(e=b.getElementsByTagName("source"),f=0,g=e.length;f<g;f++)e[f].setAttribute("sizes",d);c.detail.dataAttr||w(a,c.detail)}),d=function(a,b,d){var e,f=a.parentNode;f&&(d=y(a,f,d),e=v(a,"lazybeforesizes",{width:d,dataAttr:!!b}),e.defaultPrevented||(d=e.detail.width)&&d!==a._lazysizesWidth&&c(a,f,e,d))},f=function(){var b,c=a.length;if(c)for(b=0;b<c;b++)d(a[b])},g=C(f);return{_:function(){a=b.getElementsByClassName(e.autosizesClass),j("resize",g)},checkElems:g,updateElem:d}}(),F=function(){!F.i&&b.getElementsByClassName&&(F.i=!0,E._(),D._())};return k(function(){e.init&&F()}),d={cfg:e,autoSizer:E,loader:D,init:F,uP:w,aC:s,rC:t,hC:r,fire:v,gW:y,rAF:z}});
 var clients = [
   {
+    name: "Smokefree Oregon",
+    class: "sfo",
+    url: "https://smokefreeoregon.com",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
+    name: "America's Physician Groups",
+    class: "apg",
+    url: "https://www.apg.org",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
+    name: "National Disability Rights Network",
+    class: "ndrn",
+    url: "https://ndrn.org",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
+    name: "Kirk Humanitarian",
+    class: "kirk",
+    url: "https://kirkhumanitarian.org",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
     name: "City Parks Alliance",
     class: "cityparks",
     summary: "A new website build with custom masonry layout of featured content for the nation's only independent nonprofit organization for urban parks.",
@@ -76,8 +124,8 @@ var clients = [
   }
 ];
 
-var main = new Vue({
-  el: '#main',
+var app = new Vue({
+  el: '#app',
   data: {
     clients: clients
   }
@@ -85,19 +133,11 @@ var main = new Vue({
 
 /* runthis.js */
 
-/* Smooth scrolling to in-page anchor tag */
-// jQuery(document).on('click', 'a[href*="#"]', function(event){
-// 	event.preventDefault();
-// 	jQuery('html, body').animate({
-// 		scrollTop: $( $.attr(this, 'href') ).offset().top
-//  	}, 750);
-// });
-
 /* ==============================
 Instanciate Wow.js object
 ============================== */
 var wow = new WOW({
-    boxClass:     'wow',      // animated element css class (default is wow)
+    boxClass:     'animate',  // animated element css class (default is wow)
     animateClass: 'animated', // animation css class (default is animated)
     offset:       0,          // distance to the element when triggering the animation (default is 0)
     mobile:       true,       // trigger animations on mobile devices (default is true)
@@ -109,137 +149,3 @@ var wow = new WOW({
     scrollContainer: null // optional scroll container selector, otherwise use window
   });
 wow.init();
-
-
-/* ==============================
-Anime.js animations
-============================== */
-
-// var moveBlue = anime({
-//   targets: '#shapes__blue',
-//   points: [
-//     { value: '212.094205,582.322815 C192.81317,593.998548 160.160043,677.580791 180.367029,723.543488 C203.556952,776.291154 334.831493,860.920005 391.727687,832.890369 C406.964495,825.384029 431.800162,801.962576 413.798251,782.911828 C365.261597,731.547304 472.755012,625.884528 449.585938,596.976563 C422.720509,563.456669 289.666615,535.348428 212.094205,582.322815' },
-//   ],
-//   easing: 'easeOutQuad',
-//   duration: 2000,
-//   loop: true
-// });
-
-
-// var svgMorphingBlue = anime({
-//   targets: '.header__svg-wrap #shapes__blue',
-//   d: [
-//     { value: 'M1112.89,2422.18c-105.845,195.503 -154.021,435.229 -7.197,584.253c79.147,80.333 327.559,498.358 589.003,459.779c154.957,-22.866 365.459,-189.712 287.794,-391.577c-105.733,-274.817 -136.582,-586.141 -201.337,-717.066c-79.353,-160.437 -582.484,-93.831 -668.263,64.611Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 3000,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-// var svgMorphingBlueLight = anime({
-//   targets: '.header__svg-wrap #shapes__blue--light',
-//   d: [
-//     { value: 'M4132.61,2707.62c-24.219,68.083 60.066,247.898 223.134,184.647c134.167,-52.04 210.291,-28.935 276.388,-132.905c94.065,-147.963 221.195,-120.454 371.42,-249.4c110.149,-94.548 108.471,-155.353 98.937,-263.04c-13.254,-149.704 26.325,-204.971 -138.121,-283.761c-112.966,-54.125 -202.861,-30.85 -339.675,13.068c-169.152,54.297 -143.088,386.037 -232.691,388.099c-265.886,6.118 -227.194,252.778 -259.392,343.292Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 4000,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-// var svgMorphingBlueLight = anime({
-//   targets: '.header__svg-wrap #shapes__red',
-//   d: [
-//     { value: 'M3919.83,1856.63c-55.134,222.972 -284.316,259.089 -244.319,565.296c20.998,160.762 100.929,396.591 517.461,307.587c207.042,-44.241 266.878,41.773 360.645,-224.938c39.065,-111.117 57.369,-88.759 102.438,-221.516c19.744,-58.16 5.549,-265.493 167.416,-354.745c168.315,-92.807 197.912,-353.233 102.802,-424.429c-128.145,-95.924 -274.669,10.383 -553.428,-98.08c-307.35,-119.587 -415.96,300.971 -453.015,450.825Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 4200,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-// var svgMorphingPink = anime({
-//   targets: '.header__svg-wrap #shapes__pink',
-//   d: [
-//     { value: 'M1764.95,1569.76c-196.219,107.963 -259.412,492.907 -491.717,574.397c-253.059,88.771 -181.572,734.454 80.314,776.23c515.914,82.297 938.822,-65.845 1093.8,41.596c190.32,131.942 711.793,-168.671 869.704,-122.956c319.067,92.369 573.613,779.472 749.813,662.321c287.238,-190.978 603.079,-784.962 489.577,-987.449c-171.362,-305.706 -226.902,-820.545 -506.607,-881.254c-242.999,-52.742 -1116.38,365.027 -1434.17,97.431c-220.081,-185.316 -638.379,-277.144 -850.709,-160.316Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 5200,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-// var svgMorphingBlack = anime({
-//   targets: '.header__svg-wrap #shapes__black',
-//   d: [
-//     { value: 'M2692.67,3146.8c-142.651,-36.287 -177.216,107.527 -325.39,107.992c-63.32,0.199 -135.908,107.538 -149.984,170.394c-15.543,69.408 243.759,139.722 317.318,156.25c157.665,35.427 506.045,-45.972 532.942,-142.725c23.957,-86.175 -35.02,-107.484 -115.429,-200.83c-59.072,-68.575 -147.352,-62.564 -259.457,-91.081Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 4200,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-// var svgMorphingYellow = anime({
-//   targets: '.header__svg-wrap #shapes__yellow',
-//   d: [
-//     { value: 'M2948.5,1146.13c-289.77,157.787 -320.811,807.934 -131.842,1003.14c179.365,185.286 110.23,449.266 598.925,546.632c260.177,51.837 503.014,231.685 831.535,68.039c288.545,-143.731 485.641,-374.475 541.661,-590.934c24.542,-94.83 -29.485,-451.984 -153.897,-708.036c-124.412,-256.051 -97.728,-577.706 -142.858,-734.386c-66.218,-229.894 -581.9,-195.123 -733.623,-155.484c-392.102,102.441 -609.012,461.64 -809.901,571.029Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 5000,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-// var svgMorphingPurple = anime({
-//   targets: '.header__svg-wrap #shapes__purple',
-//   d: [
-//     { value: 'M4140.29,2239.36c228.418,-363.527 35.079,-832.444 -22.694,-1197.93c-41.775,-264.276 -36.776,-821.269 -773.671,-906.118c-335.376,-38.616 -774.039,237.79 -885.954,564.309c-133.872,390.577 -557.951,528.136 -598.841,820.014c-17.914,127.871 241.705,833.154 547.284,1151.72c310.821,324.034 733.495,373.228 1056.78,251.86c237.075,-89.001 514.131,-424.51 677.092,-683.862Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 3600,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-// var svgMorphingGreen = anime({
-//   targets: '.header__svg-wrap #shapes__green',
-//   d: [
-//     { value: 'M1578.79,2113.07c220.969,-106.979 225.499,-117.635 397.915,-445.769c143.492,-273.09 76.943,-605.523 22.224,-755.89c-36.719,-100.899 -162.164,-390.278 -474.757,-512.649c-265.208,-103.822 -623.302,-150.183 -591.254,182.163c35.409,367.214 980.878,857.162 253.927,964.58c-270.035,39.902 -350.993,228.065 -240.266,411.105c152.12,251.465 381.728,277.728 632.211,156.46Z' },
-//   ],
-//   easing: 'easeInOutQuad',
-//   duration: 3600,
-//   direction: 'alternate',
-//   loop: true
-// });
-
-
-// var line = anime({
-//   targets: '.header__svg-wrap path',
-//   strokeDashoffset: [anime.setDashoffset, 0],
-//   easing: 'easeInOutCubic',
-//   duration: 4000,
-//   delay: function(el, i) { return i * 5 },
-//   direction: 'normal',
-//   loop: false
-// });
-
-/* ==============================
-basicScroll animations
-============================== */
-// document.querySelectorAll(".work__client img").forEach(function(elem) {
-//   var instance = basicScroll.create({
-//     elem: elem,
-//     from: "bottom-bottom",
-//     to: "top-top",
-//     direct: true,
-//     props: {
-//       "--dist": {
-//         from: "100",
-//         to: "0"
-//       }
-//     }
-//   })
-//   .start();
-// });
