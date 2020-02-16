@@ -126,13 +126,13 @@ function build() {
   gulp
     .src(['src/js/scripts.js'])
     .pipe(uglify())
-    .pipe(rename('scripts.min.js'))
+    // .pipe(rename('scripts.min.js'))
     .pipe(gulp.dest('./dist/js'));
   
   gulp
     .src(['src/css/styles.css'])
     .pipe(cssmin())
-    .pipe(rename('styles.min.css'))
+    // .pipe(rename('styles.min.css'))
     .pipe(gulp.dest('./dist/css'));
   
   gulp
