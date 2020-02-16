@@ -1,5 +1,53 @@
 var clients = [
   {
+    name: "Smokefree Oregon",
+    class: "sfo",
+    url: "https://smokefreeoregon.com",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
+    name: "America's Physician Groups",
+    class: "apg",
+    url: "https://www.apg.org",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
+    name: "National Disability Rights Network",
+    class: "ndrn",
+    url: "https://ndrn.org",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
+    name: "Kirk Humanitarian",
+    class: "kirk",
+    url: "https://kirkhumanitarian.org",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
     name: "City Parks Alliance",
     class: "cityparks",
     summary: "A new website build with custom masonry layout of featured content for the nation's only independent nonprofit organization for urban parks.",
@@ -61,8 +109,8 @@ var clients = [
   }
 ];
 
-var main = new Vue({
-  el: '#main',
+var app = new Vue({
+  el: '#app',
   data: {
     clients: clients
   }
