@@ -1,16 +1,16 @@
 /* dm-serif-display-regular - latin */
-@font-face {
-	font-family: 'DM Serif Display';
-	font-style: normal;
-	font-weight: 400;
-	// src: url('../fonts/dm-serif-display-v3-latin-regular.eot'); /* IE9 Compat Modes */
-	src: local('DM Serif Display Regular'), local('DMSerifDisplay-Regular'),
-		//  url('../fonts/dm-serif-display-v3-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('../fonts/dm-serif-display-v3-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('../fonts/dm-serif-display-v3-latin-regular.woff') format('woff'), /* Modern Browsers */
-		//  url('../fonts/dm-serif-display-v3-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		//  url('../fonts/dm-serif-display-v3-latin-regular.svg#DMSerifDisplay') format('svg'); /* Legacy iOS */
-  }
+// @font-face {
+// 	font-family: 'DM Serif Display';
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	// src: url('../fonts/dm-serif-display-v3-latin-regular.eot'); /* IE9 Compat Modes */
+// 	src: local('DM Serif Display Regular'), local('DMSerifDisplay-Regular'),
+// 		//  url('../fonts/dm-serif-display-v3-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+// 		 url('../fonts/dm-serif-display-v3-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+// 		 url('../fonts/dm-serif-display-v3-latin-regular.woff') format('woff'), /* Modern Browsers */
+// 		//  url('../fonts/dm-serif-display-v3-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+// 		//  url('../fonts/dm-serif-display-v3-latin-regular.svg#DMSerifDisplay') format('svg'); /* Legacy iOS */
+//   }
   
 /* dm-serif-display-italic - latin */
 @font-face {
@@ -37,12 +37,6 @@
 @supports (font-variation-settings: normal) {
 	html { font-family: 'Inter var', sans-serif; }
 }
-// @font-face {
-// 	font-family: 'Inter';
-// 	font-style: italic;
-// 	font-weight: 100;
-// font-display: swap;
-// 	src: url("../fonts/Inter-ThinItalic-BETA.woff2") format("woff2"), url("../fonts/Inter-ThinItalic-BETA.woff") format("woff"); }
 
 @font-face {
 	font-family: 'Inter';
@@ -174,6 +168,14 @@
 	src: url("../fonts/Inter-upright.var.woff2") format("woff2 supports variations(gvar)"),
 		 url("../fonts/Inter-upright.var.woff2") format("woff2-variations"),
 		 url("../fonts/Inter-upright.var.woff2") format("woff2");
+  }
+  @font-face {
+	font-family: 'Jost';
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: normal;
+	font-named-instance: 'Regular';
+	src: url("../fonts/Jost-VF.ttf") format("ttf supports variations(gvar)");
   }
 //   @font-face {
 // 	font-family: 'Inter var';
