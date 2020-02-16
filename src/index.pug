@@ -27,8 +27,8 @@ html(lang='en')
 				data-animate-duration="0.75s") Chris van Wagoner
 				p.header-text__bio.animate.fadeInLeft(data-animate-delay="0.1s",
 				data-animate-duration="0.75s") Chris van Wagoner is a D.C. based developer, specializing in WordPress and front-end PHP. At #[a.link(href='https://www.socialdriver.com' target='_blank' rel='noopener') Social Driver], he works with visual and UX designers and stakeholders to build fast, beautiful sites for non-profits in Washington and across the U.S.
-		main#app.clients
-			h2.work Selected Work
+		main#app
+			h2.main__title Selected Work
 			ul.clients
 				li(v-for='(client, index) in clients' :key='index', 
 				v-bind:class="'client client--' + client.class", 
