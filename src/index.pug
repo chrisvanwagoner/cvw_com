@@ -15,10 +15,10 @@ html(lang='en')
 	body
 		header
 			figure
-				img.animate.fadeInLeft.lazyload(src='https://res.cloudinary.com/dlyj42rsq/image/upload/v1564970391/images/chris-van-wagoner-portrait_arh7lr.jpg', 
+				img.animate.fadeInLeft.lazyload(src='images/chris-van-wagoner-portrait-blur.jpg', 
 				srcset='', 
-				data-src='https://res.cloudinary.com/dlyj42rsq/image/upload/v1564970391/images/chris-van-wagoner-portrait_1x_p9djkx.jpg', 
-				data-srcset='https://res.cloudinary.com/dlyj42rsq/image/upload/v1564970392/images/chris-van-wagoner-portrait_2x_ybkzqs.jpg 2x', 
+				data-src='images/chris-van-wagoner-portrait@1x.jpg', 
+				data-srcset='images/chris-van-wagoner-portrait@2x.jpg 2x', 
 				alt='Chris van Wagoner headshot', 
 				loading='lazy'
 				data-animate-duration="0.75s")
@@ -31,9 +31,9 @@ html(lang='en')
 			h2.main__title Selected Work
 			ul.clients
 				li(v-for='(client, index) in clients' :key='index', 
-				v-bind:class="'client client--' + client.class", 
+				v-bind:class="'client", 
 				data-animate-duration='300ms')
-					a.client-name.animate.fadeInUp(data-animate-delay="0.3s",
+					a.client-name.animate.out.fadeInUp(data-animate-delay="0.4s",
 					data-animate-duration="0.2s"
 					v-bind:href='client.url', 
 					target='_blank', 
