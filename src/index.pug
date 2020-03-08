@@ -15,7 +15,7 @@ html(lang='en')
 	body
 		header
 			figure
-				img.animate.fadeInLeft.lazyload(src='images/chris-van-wagoner-portrait-blur.jpg', 
+				img.fadeInLeft.lazyload(src='images/chris-van-wagoner-portrait-blur.jpg', 
 				srcset='', 
 				data-src='images/chris-van-wagoner-portrait@1x.jpg', 
 				data-srcset='images/chris-van-wagoner-portrait@2x.jpg 2x', 
@@ -23,25 +23,30 @@ html(lang='en')
 				loading='lazy'
 				data-animate-duration="0.75s")
 			.header-text
-				h1.header-text__name.animate.fadeInLeft(data-animate-delay="0.2s",
+				h1.header-text__name.fadeInLeft(data-animate-delay="0.2s",
 				data-animate-duration="0.75s") Chris van Wagoner
-				p.header-text__bio.animate.fadeInLeft(data-animate-delay="0.1s",
+				p.header-text__bio.fadeInLeft(data-animate-delay="0.1s",
 				data-animate-duration="0.75s") Chris van Wagoner is a D.C. based developer, specializing in WordPress and front-end PHP. At #[a.link(href='https://www.socialdriver.com' target='_blank' rel='noopener') Social Driver], he works with visual and UX designers and stakeholders to build fast, beautiful sites for non-profits in Washington and across the U.S.
 		main#app
 			h2.main__title Selected Work
 			ul.clients
+				
+				//- li#client.client(data-animate-duration='300ms')
+				//- 	a.client-name.animate.out.fadeInUp(data-animate-delay="0.4s",
+				//- 	data-animate-duration="0.2s",
+				//- 	href='client.url', 
+				//- 	target='_blank', 
+				//- 	rel='noopener') TEST NAME
 				li(v-for='(client, index) in clients' :key='index', 
-				v-bind:class="'client", 
+				v-bind:class="'client client-' + index",
 				data-animate-duration='300ms')
-					a.client-name.animate.out.fadeInUp(data-animate-delay="0.4s",
-					data-animate-duration="0.2s"
-					v-bind:href='client.url', 
+					a.client-name.out(v-bind:href='client.url', 
 					target='_blank', 
 					rel='noopener') {{ client.name }}
 			// .client
 		footer
 			.contact
-				h4 Contact
+				h3 Contact
 				ul    
 					li
 						a(href='https://www.linkedin.com/in/chrisvanwagoner/', target='_blank', rel='noopener') LinkedIn
