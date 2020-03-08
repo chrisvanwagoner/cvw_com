@@ -16,7 +16,7 @@ const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const minifyCssNames = require('gulp-minify-cssnames');
 
-// const babel = require('gulp-babel');
+const babel = require('gulp-babel');
 // const concatCss = require('gulp-concat-css');
 // const imagemin = require('gulp-imagemin');
 // const ImageKit = require('imagekit'); 
@@ -125,6 +125,9 @@ function clean() {
 function build() {
   gulp
     .src(['src/js/scripts.js'])
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(uglify())
     // .pipe(rename('scripts.min.js'))
     .pipe(gulp.dest('./dist/js'));
