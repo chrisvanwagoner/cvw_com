@@ -2520,13 +2520,20 @@ h1 {
 h2 {
   font-style: italic;
   color: #19181D;
-  font-size: 18vw;
-  letter-spacing: -0.9vw;
+  font-size: 16vw;
+  letter-spacing: -0.7vw;
   line-height: 0.8;
   text-transform: uppercase; }
+  @media screen and (min-width: 800px) {
+    h2 {
+      font-size: 18vw; } }
   @media screen and (min-width: 1000px) {
     h2 {
-      font-size: 13rem; } }
+      font-size: 18vw;
+      letter-spacing: -0.5vw; } }
+  @media screen and (min-width: 1200px) {
+    h2 {
+      font-size: 200px; } }
 
 h3 {
   color: #19181D;
@@ -2574,12 +2581,10 @@ header .header-text__bio a, footer a {
   color: #19181D;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
-  position: relative;
-  text-decoration: none; }
+  position: relative; }
   header .header-text__bio a:after, footer a:after {
     -webkit-transition: background-color 200ms ease-in-out;
     transition: background-color 200ms ease-in-out;
-    content: "";
     background-color: #24130C;
     position: absolute;
     bottom: 0;
@@ -2587,6 +2592,11 @@ header .header-text__bio a, footer a {
     width: 100%;
     height: 1px;
     z-index: -1; }
+  @media screen and (min-width: 800px) {
+    header .header-text__bio a, footer a {
+      text-decoration: none; }
+      header .header-text__bio a:after, footer a:after {
+        content: ""; } }
   header .header-text__bio a:hover, footer a:hover, header .header-text__bio a:focus, footer a:focus {
     color: #167568; }
     header .header-text__bio a:hover:after, footer a:hover:after, header .header-text__bio a:focus:after, footer a:focus:after {
@@ -2598,23 +2608,23 @@ main .client-name {
   color: #19181D;
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
-  overflow: hidden;
   text-decoration: underline; }
   main .client-name:after {
-    content: "";
     -webkit-transition: left 300ms ease-in-out;
     transition: left 300ms ease-in-out;
     background-color: #24130C;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     right: 0;
-    left: 200%;
+    left: 100%;
     width: 100%;
     height: 2px;
     z-index: -1; }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 800px) {
     main .client-name {
-      text-decoration: none; } }
+      text-decoration: none; }
+      main .client-name:after {
+        content: ""; } }
   main .client-name:hover, main .client-name:focus {
     color: #167568; }
     main .client-name:hover:after, main .client-name:focus:after {
@@ -2668,7 +2678,7 @@ header {
   padding-bottom: 1.3rem; }
   @media screen and (min-width: 1000px) {
     header {
-      height: 100vh;
+      height: 90vh;
       margin-bottom: 10.4rem; } }
   header figure {
     border-radius: 100px;
@@ -2679,14 +2689,13 @@ header {
     margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
-    overflow: hidden;
     width: 200px; }
     @media screen and (min-width: 1000px) {
       header figure {
         border-radius: 0;
         -webkit-box-shadow: none;
                 box-shadow: none;
-        grid-column: 1 / 8 span;
+        grid-column: 1 / 7 span;
         width: 100%;
         margin-bottom: 0;
         display: -webkit-box;
@@ -2714,7 +2723,7 @@ header {
     @media screen and (min-width: 1000px) {
       header .header-text {
         display: grid;
-        grid-column: 10 / 12;
+        grid-column: 9 / 12;
         grid-template-rows: 1fr 1fr; } }
   header .header-text__name {
     position: relative; }
@@ -2752,25 +2761,33 @@ main .clients {
 
 main .client {
   position: relative;
-  overflow: hidden; }
-  main .client:not(:last-child) {
-    margin-bottom: 20px; }
+  overflow: hidden;
+  text-align: right;
+  margin-bottom: 1.5vh;
+  padding-bottom: 1vh; }
   @media screen and (min-width: 1000px) {
     main .client {
-      text-align: right; } }
+      margin-bottom: 1vh; } }
 
 main .client-name {
   --wght: 400;
   display: inline-block;
-  font-size: 4vw;
+  font-size: 5vw;
   letter-spacing: -0.01vw;
-  line-height: 0.9;
-  margin-right: 1rem;
+  line-height: 1.2;
   font-variation-settings: "wght" var(--wght); }
+  @media screen and (min-width: 800px) {
+    main .client-name {
+      line-height: 0.9;
+      font-size: 4vw; } }
   @media screen and (min-width: 1000px) {
     main .client-name {
+      font-size: 4vw;
       text-transform: uppercase;
       letter-spacing: -3px; } }
+  @media screen and (min-width: 1000px) {
+    main .client-name {
+      font-size: 56px; } }
 
 /***********************************
 Footer
@@ -2788,5 +2805,6 @@ footer {
     margin-bottom: 1.3rem; }
   footer li {
     font-size: 18px;
-    font-style: italic;
     margin-bottom: 18px; }
+    footer li span {
+      font-style: italic; }
