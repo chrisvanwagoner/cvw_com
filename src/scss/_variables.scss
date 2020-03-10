@@ -79,12 +79,19 @@ $max-lg: '(max-width: 1000px)';
 	@extend %headingSerif;
 	font-style: italic;
 	color: $heading;
-	font-size: 18vw;
-	letter-spacing: -0.9vw;
+	font-size: 16vw;
+	letter-spacing: -0.7vw;
 	line-height: 0.8;
 	text-transform: uppercase;    
+	@media #{$min-md} {
+		font-size: 18vw;
+	}
 	@media #{$min-lg} {
-		font-size: $lh * 10;
+		font-size: 18vw;
+		letter-spacing: -0.5vw;
+	}
+	@media #{$min-xl} {
+		font-size: 200px;
 	}
 }
 %h3 {
@@ -134,16 +141,15 @@ $max-lg: '(max-width: 1000px)';
 	}
 }
 %link {
+	// @extend %text;
 	font-size: 18px;
 	font-weight: 300;
 	font-variation-settings: 'wght' 300;
 	color: $heading;
 	transition: color 200ms ease-in-out;
 	position: relative;
-	text-decoration: none;
 	&:after {
 		transition: background-color 200ms ease-in-out;
-		content: "";
 		background-color: $text;
 		position: absolute;
 		bottom: 0;
@@ -151,6 +157,12 @@ $max-lg: '(max-width: 1000px)';
 		width: 100%;
 		height: 1px;
 		z-index: -1;
+	}
+	@media #{$min-md} {
+		text-decoration: none;
+		&:after {
+			content: "";
+		}
 	}
 	&:hover,
 	&:focus {
@@ -168,22 +180,24 @@ $max-lg: '(max-width: 1000px)';
 	font-size: 18px;
 	color: $heading;
 	transition: color 300ms ease-in-out;
-	overflow: hidden;
 	text-decoration: underline;
+	
 	&:after {
-		content: "";
 		transition: left 300ms ease-in-out;
 		background-color: $text;
 		position: absolute;
-		bottom: 0;
+		bottom: -1px;
 		right: 0;
-		left: 200%;
+		left: 100%;
 		width: 100%;
 		height: 2px;
 		z-index: -1;
 	}
-	@media #{$min-lg} {
+	@media #{$min-md} {
 		text-decoration: none;
+		&:after {
+			content: "";
+		}
 	}
 	&:hover,
 	&:focus {
