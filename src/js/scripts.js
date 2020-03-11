@@ -196,28 +196,27 @@ var app = new Vue({
 /* ==============================
 Instanciate Wow.js object
 ============================== */
-var wow = new WOW({
-    boxClass:     'animate',  // animated element css class (default is wow)
-    animateClass: 'animated', // animation css class (default is animated)
-    offset:       0,          // distance to the element when triggering the animation (default is 0)
-    mobile:       true,       // trigger animations on mobile devices (default is true)
-    live:         true,       // act on asynchronously loaded content (default is true)
-    callback:     function(box) {
-      // the callback is fired every time an animation is started
-      // the argument that is passed in is the DOM node being animated
-    },
-    scrollContainer: null // optional scroll container selector, otherwise use window
-  });
-wow.init();
+// var wow = new WOW({
+//     boxClass:     'animate',  // animated element css class (default is wow)
+//     animateClass: 'animated', // animation css class (default is animated)
+//     offset:       0,          // distance to the element when triggering the animation (default is 0)
+//     mobile:       true,       // trigger animations on mobile devices (default is true)
+//     live:         true,       // act on asynchronously loaded content (default is true)
+//     callback:     function(box) {
+//       // the callback is fired every time an animation is started
+//       // the argument that is passed in is the DOM node being animated
+//     },
+//     scrollContainer: null // optional scroll container selector, otherwise use window
+//   });
+// wow.init();
 
 
 let clientEntry = document.querySelectorAll('.client');
-let fadeInLeft = document.querySelectorAll('.fadeInLeft');
+let fadeLeft = document.querySelectorAll('.fade-left');
+let fadeRight = document.querySelectorAll('.fade-right');
 let windowHeight = window.innerHeight;
 let targetTop = windowHeight * 0.3;
 let targetBottom = windowHeight * 0.7;
-let checkHeight = (event) => {
-}
 
 // fadeInLeft.forEach((el) => {
 //   el.style.setProperty('opacity', 0);
@@ -230,10 +229,18 @@ let checkHeight = (event) => {
 window.addEventListener('scroll', () => {
   window.requestAnimationFrame(() => {
 
-    fadeInLeft.forEach((el) => {
+    fadeLeft.forEach((el) => {
       let rect = el.getBoundingClientRect();
       let top = rect.top;
-      el.style.setProperty('--left', ((top-el.offsetTop) / 2) + 'px');
+      let speed = el.dataset.speed;
+      el.style.setProperty('--left', ((top-el.offsetTop) * speed) + 'px');
+      el.style.setProperty('--opacity', (1 - (-top / 800)));
+    });
+    fadeRight.forEach((el) => {
+      let rect = el.getBoundingClientRect();
+      let top = rect.top;
+      let speed = el.dataset.speed;
+      el.style.setProperty('--left', ((top-el.offsetTop) * speed) + 'px');
       el.style.setProperty('--opacity', (1 - (-top / 800)));
     });
 
@@ -243,14 +250,30 @@ window.addEventListener('scroll', () => {
       let distFromTop = elRect.top;
       let weight;
       if (distFromTop <= targetTop) {
-        weight = ((distFromTop / targetTop) * 300) + 100;
+        weight = ((distFromTop / targetTop) * 500) + 100;
         elName.style.setProperty('--wght', weight );
       } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
         weight = (400 - (distFromTop - (targetBottom)) * 2);
         elName.style.setProperty('--wght', weight );
       } else {
-        elName.style.setProperty('--wght', 400 );
+        elName.style.setProperty('--wght', 500 );
       }
     });
   });
 });
+
+let preview = document.querySelector('#preview');
+
+clientEntry.forEach((el) => {
+  let name = el.querySelector('.client-name');
+  let image = name.getAttribute('data-preview');
+  name.addEventListener('mouseover', (e) => {
+    window.setTimeout(() => {
+      preview.style.setProperty('background-image', 'url(' + image + ')');
+      preview.style.setProperty('opacity', '0.5');
+    }, 250);
+  });
+  name.addEventListener('mouseout', (e) => preview.style.setProperty('opacity', '0'));
+});
+
+

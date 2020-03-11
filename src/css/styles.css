@@ -2675,7 +2675,8 @@ ul {
 ***********************************/
 header {
   padding-top: 1.3rem;
-  padding-bottom: 1.3rem; }
+  padding-bottom: 1.3rem;
+  overflow: hidden; }
   @media screen and (min-width: 1000px) {
     header {
       height: 90vh;
@@ -2742,13 +2743,28 @@ header {
         header .header-text__bio:first-of-type::first-letter {
           font-size: 1.8rem; } }
 
+#preview {
+  -webkit-transition: opacity 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  opacity: 0; }
+  @media screen and (min-width: 800px) {
+    #preview {
+      bottom: 0;
+      left: 0;
+      width: 100%; } }
+
 /***********************************
   Main
 ***********************************/
 main .main__title {
   grid-column: 2 / 12;
   margin-bottom: 2.6rem;
-  margin-bottom: 10vw; }
+  margin-bottom: 10vw;
+  z-index: -2; }
   @media screen and (min-width: 1000px) {
     main .main__title {
       grid-column: 1 / 12 span; } }
@@ -2763,11 +2779,7 @@ main .client {
   position: relative;
   overflow: hidden;
   text-align: right;
-  margin-bottom: 1.5vh;
-  padding-bottom: 1vh; }
-  @media screen and (min-width: 1000px) {
-    main .client {
-      margin-bottom: 1vh; } }
+  padding-bottom: 2.5vh; }
 
 main .client-name {
   --wght: 400;
