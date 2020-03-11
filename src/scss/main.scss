@@ -129,7 +129,7 @@ header {
       @extend %link;
     }
   }
-  @media #{$min-lh} {
+  @media #{$min-lg} {
     .fadeLeft,
     .fadeRight {
       right: var(--left);
