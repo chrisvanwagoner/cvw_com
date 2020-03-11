@@ -2730,18 +2730,20 @@ header {
     position: relative; }
     @media screen and (min-width: 1000px) {
       header .header-text__name {
-        right: var(--left);
         grid-row: 1 / 2; } }
   header .header-text__bio {
     position: relative;
     font-style: italic; }
     @media screen and (min-width: 1000px) {
       header .header-text__bio {
-        right: var(--left);
         opacity: calc(var(--opacity) - 0.6);
         grid-row: 2 / 2; }
         header .header-text__bio:first-of-type::first-letter {
           font-size: 1.8rem; } }
+  @media screen and (min-width: 1000px) {
+    header .fadeLeft,
+    header .fadeRight {
+      right: var(--left); } }
 
 #preview {
   -webkit-transition: opacity 250ms ease-in-out;
