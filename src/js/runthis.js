@@ -57,10 +57,10 @@ window.addEventListener('scroll', () => {
       let distFromTop = elRect.top;
       let weight;
       if (distFromTop <= targetTop) {
-        weight = ((distFromTop / targetTop) * 500) + 100;
+        weight = ((distFromTop / targetTop) * 400) + 100;
         elName.style.setProperty('--wght', weight );
       } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
-        weight = (400 - (distFromTop - (targetBottom)) * 2);
+        weight = (500 - (distFromTop - (targetBottom)) * 2);
         elName.style.setProperty('--wght', weight );
       } else {
         elName.style.setProperty('--wght', 500 );
