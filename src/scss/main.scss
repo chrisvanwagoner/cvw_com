@@ -63,6 +63,7 @@ header {
   @extend %grid;
   padding-top: $lh;
   padding-bottom: $lh;
+  overflow: hidden;
   @media #{$min-lg} {
     height: 90vh;
     margin-bottom: $lh * 8;
@@ -111,7 +112,6 @@ header {
   .header-text__name {
     position: relative;
     @media #{$min-lg} {
-      right: var(--left);
       grid-row: 1 / 2;
     }
   }
@@ -119,7 +119,6 @@ header {
     position: relative;
     font-style: italic;
     @media #{$min-lg} {
-      right: var(--left);
       opacity: calc(var(--opacity) - 0.6);
       grid-row: 2 / 2;
       &:first-of-type::first-letter {
@@ -130,8 +129,27 @@ header {
       @extend %link;
     }
   }
+  @media #{$min-lh} {
+    .fadeLeft,
+    .fadeRight {
+      right: var(--left);
+    }
+  }
 } 
-
+#preview {
+  transition: opacity 250ms ease-in-out;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+  // background-position: center center;
+  @media #{$min-md} {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
 /***********************************
   Main
 ***********************************/
@@ -141,6 +159,10 @@ main {
     grid-column: 2 / 12;
     margin-bottom: $spacer;
     margin-bottom: 10vw;
+    z-index: -2;
+    // font-style: normal;
+    // font-family: 'Inter var', sans-serif;
+    // font-variation-settings: 'wght' 500;
     @media #{$min-lg} {
       grid-column: 1 / 12 span;
     }
@@ -155,12 +177,10 @@ main {
     position: relative;
     overflow: hidden;
     text-align: right;
-      // margin-bottom: 20px;
-      margin-bottom: 1.5vh; 
-      padding-bottom: 1vh;
-      @media #{$min-lg} {
-        margin-bottom: 1vh; 
-    }
+    padding-bottom: 2.5vh;
+    // @media #{$min-lg} {
+    //   padding-bottom: 2.5vh; 
+    // }
   }
   .client-name {
     --wght: 400;
