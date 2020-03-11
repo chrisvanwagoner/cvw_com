@@ -227,7 +227,12 @@ footer {
   }
   li {
     font-size: 18px;
-    margin-bottom: 18px;
+    &:not(:first-child) {
+      margin-top: 18px;
+    }
+    &:last-child {
+      margin-top: 36px;
+    }
     span {
       font-style: italic;
     }
