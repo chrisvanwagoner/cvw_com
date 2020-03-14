@@ -226,9 +226,8 @@ let targetBottom = windowHeight * 0.7;
 //   el.style.setProperty('opacity', 1);
 // });
 
-window.addEventListener('scroll', () => {
-  window.requestAnimationFrame(() => {
-
+let events = () => {
+  
     fadeLeft.forEach((el) => {
       let rect = el.getBoundingClientRect();
       let top = rect.top;
@@ -258,8 +257,15 @@ window.addEventListener('scroll', () => {
       } else {
         elName.style.setProperty('--wght', 500 );
       }
-    });
+    
   });
+}
+
+window.addEventListener('scroll', () => {
+  window.requestAnimationFrame( events );
+});
+window.addEventListener('resize', () => {
+  window.requestAnimationFrame( events );
 });
 
 let preview = document.querySelector('#preview');
