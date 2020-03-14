@@ -14,7 +14,7 @@ html(lang='en')
 
 	body
 		header
-			figure
+			figure.header__figure
 				img.fade-left.lazyload(src='images/chris-van-wagoner-portrait-blur.jpg', 
 				srcset='', 
 				data-src='images/chris-van-wagoner-portrait@1x.jpg', 
@@ -22,9 +22,8 @@ html(lang='en')
 				data-speed="0.5"
 				alt='Chris van Wagoner headshot', 
 				loading='lazy')
-			.header-text
-				h1.header-text__name.fade-right(data-speed="1") Chris van Wagoner
-				p.header-text__bio.fade-right(data-speed="0.15") Chris van Wagoner is a D.C. based developer, specializing in WordPress and front-end PHP. At #[a.link(href='https://www.socialdriver.com' target='_blank' rel='noopener') Social&nbsp;Driver], he works with visual and UX designers and stakeholders to build fast, beautiful sites for non-profits in Washington and across the U.S.
+			h1.header__name.fade-right(data-speed="1") Chris van Wagoner
+			p.header__bio.fade-right(data-speed="0.15") Chris van Wagoner is a D.C. based developer, specializing in WordPress and front-end PHP. At #[a.link(href='https://www.socialdriver.com' target='_blank' rel='noopener') Social&nbsp;Driver], he works with visual and UX designers and stakeholders to build fast, beautiful sites for non-profits in Washington and across the U.S.
 		#preview
 		main#app
 			h2.main__title Selected <br>Work
