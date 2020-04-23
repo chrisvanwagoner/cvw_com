@@ -3,19 +3,19 @@
 /* ==============================
 Instanciate Wow.js object
 ============================== */
-// var wow = new WOW({
-//     boxClass:     'animate',  // animated element css class (default is wow)
-//     animateClass: 'animated', // animation css class (default is animated)
-//     offset:       0,          // distance to the element when triggering the animation (default is 0)
-//     mobile:       true,       // trigger animations on mobile devices (default is true)
-//     live:         true,       // act on asynchronously loaded content (default is true)
-//     callback:     function(box) {
-//       // the callback is fired every time an animation is started
-//       // the argument that is passed in is the DOM node being animated
-//     },
-//     scrollContainer: null // optional scroll container selector, otherwise use window
-//   });
-// wow.init();
+var wow = new WOW({
+    boxClass:     'animate',  // animated element css class (default is wow)
+    animateClass: 'animated', // animation css class (default is animated)
+    offset:       0,          // distance to the element when triggering the animation (default is 0)
+    mobile:       true,       // trigger animations on mobile devices (default is true)
+    live:         true,       // act on asynchronously loaded content (default is true)
+    callback:     function(box) {
+      // the callback is fired every time an animation is started
+      // the argument that is passed in is the DOM node being animated
+    },
+    scrollContainer: null // optional scroll container selector, otherwise use window
+  });
+wow.init();
 
 
 let clientEntry = document.querySelectorAll('.client');
@@ -24,6 +24,16 @@ let fadeRight = document.querySelectorAll('.fade-right');
 let windowHeight = window.innerHeight;
 let targetTop = windowHeight * 0.3;
 let targetBottom = windowHeight * 0.7;
+// const line = anime({
+//   targets: 'h2 svg path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   duration: 500,
+//   delay: function(el, i) { return i * 100; },
+//   loop: false,
+//   direction: 'normal',
+//   easing: 'easeInOutSine',
+//   autoplay: false
+// });
 
 // fadeInLeft.forEach((el) => {
 //   el.style.setProperty('opacity', 0);
@@ -55,17 +65,23 @@ let events = () => {
       let elName = el.querySelector('.client-name');
       let distFromTop = elRect.top;
       let weight;
+      const maxWeight = 300;
       if (distFromTop <= targetTop) {
-        weight = ((distFromTop / targetTop) * 400) + 100;
+        weight = ((distFromTop / targetTop) * (maxWeight - 100)) + 100;
         elName.style.setProperty('--wght', weight );
       } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
-        weight = (500 - (distFromTop - (targetBottom)) * 2);
+        weight = (maxWeight - (distFromTop - (targetBottom)) * 2);
         elName.style.setProperty('--wght', weight );
       } else {
-        elName.style.setProperty('--wght', 500 );
+        elName.style.setProperty('--wght', maxWeight );
       }
+    });
+
+    // let h2Rect = document.querySelector('h2').getBoundingClientRect()
+    // if ( h2Rect.top < targetTop ) {
+    //   line.play();
+    // }
     
-  });
 }
 
 window.addEventListener('scroll', () => {
@@ -88,5 +104,4 @@ clientEntry.forEach((el) => {
   });
   name.addEventListener('mouseout', (e) => preview.style.setProperty('opacity', '0'));
 });
-
 
