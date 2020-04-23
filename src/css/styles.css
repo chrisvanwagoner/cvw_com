@@ -2408,10 +2408,6 @@ main.scss
   font-weight: 400;
   src: local("DM Serif Display Italic"), local("DMSerifDisplay-Italic"), url("../fonts/dm-serif-display-v3-latin-italic.woff2") format("woff2"), url("../fonts/dm-serif-display-v3-latin-italic.woff") format("woff"); }
 
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: 'Inter var', sans-serif; } }
-
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -2453,17 +2449,9 @@ main.scss
   font-family: 'Inter var';
   font-weight: 100 900;
   font-display: swap;
-  font-style: normal;
+  font-style: oblique 0deg 10deg;
   font-named-instance: 'Regular';
-  src: url("../fonts/Inter-upright.var.woff2") format("woff2 supports variations(gvar)"), url("../fonts/Inter-upright.var.woff2") format("woff2-variations"), url("../fonts/Inter-upright.var.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'Jost';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url("../fonts/Jost-VF.ttf") format("ttf supports variations(gvar)"); }
+  src: url("../fonts/Inter.var.woff2") format("woff2"); }
 
 /* --------------------------------------------------------------------------
   [EXPERIMENTAL] Multi-axis, single variable font.
@@ -2563,7 +2551,7 @@ h4 {
 p {
   color: #24130C;
   font-size: 1rem;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.3px;
   line-height: 1.3rem; }
 
 small {
@@ -2601,9 +2589,9 @@ header .header__bio a, footer a {
       header .header__bio a:after, footer a:after {
         content: ""; } }
   header .header__bio a:hover, footer a:hover, header .header__bio a:focus, footer a:focus {
-    color: #0005EC; }
+    color: #00584b; }
     header .header__bio a:hover:after, footer a:hover:after, header .header__bio a:focus:after, footer a:focus:after {
-      background-color: #0005EC; }
+      background-color: #00584b; }
 
 main .client-name {
   position: relative;
@@ -2612,31 +2600,30 @@ main .client-name {
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
   text-decoration: underline; }
-  main .client-name:after {
-    -webkit-transition: left 300ms ease-in-out;
-    transition: left 300ms ease-in-out;
-    background-color: #24130C;
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    left: 100%;
-    width: 0;
-    height: 2px;
-    z-index: -1; }
   @media screen and (min-width: 800px) {
     main .client-name {
       text-decoration: none; }
       main .client-name:after {
-        content: ""; } }
+        content: "";
+        -webkit-transition: left 300ms ease-in-out;
+        transition: left 300ms ease-in-out;
+        background-color: #24130C;
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        left: 100%;
+        width: 0;
+        height: 1px;
+        z-index: -1; } }
   main .client-name:hover, main .client-name:focus {
-    color: #0005EC; }
+    color: #00584b; }
     main .client-name:hover:after, main .client-name:focus:after {
       width: 100%;
       left: 0;
-      background-color: #0005EC; }
+      background-color: #00584b; }
       @media screen and (min-width: 1200px) {
         main .client-name:hover:after, main .client-name:focus:after {
-          height: 3px; } }
+          height: 2px; } }
 
 main, footer {
   display: grid;
@@ -2669,8 +2656,7 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  background-color: #F4F0EC;
-  background-color: #F7F3F3;
+  background-color: #f5f3f3;
   font-family: 'Inter var', 'Inter', sans-serif;
   font-weight: 300;
   font-variation-settings: 'wght' 300;
@@ -2740,6 +2726,7 @@ header {
           width: 100%; } }
   header .header__name {
     grid-column: 2 / 12;
+    grid-column: 1 / -1;
     position: relative; }
     @media screen and (min-width: 1000px) {
       header .header__name {
@@ -2747,6 +2734,7 @@ header {
         grid-row: 1 / 3; } }
   header .header__bio {
     grid-column: 2 / 12;
+    grid-column: 1 / -1;
     grid-row: 3 / 12;
     position: relative; }
     @media screen and (min-width: 1000px) {
@@ -2755,7 +2743,8 @@ header {
         grid-column: 9 / 12;
         grid-row: 6 / 12; }
         header .header__bio:first-of-type::first-letter {
-          font-size: 1.8rem; } }
+          font-size: 1.8rem;
+          font-variation-settings: 'wght' 200; } }
   @media screen and (min-width: 1000px) {
     header .fade-left,
     header .fade-right {
@@ -2782,28 +2771,35 @@ main {
   padding-bottom: 1.3rem;
   margin-bottom: 10vw; }
   main .main__title {
-    grid-column: 2 / 12;
+    grid-column: 1 / -1;
     padding-bottom: 1.3rem;
-    z-index: -2; }
+    z-index: -2;
+    position: relative; }
     @media screen and (min-width: 1000px) {
       main .main__title {
         grid-column: 1 / 12 span;
         margin-bottom: 10vw; } }
+  main svg {
+    position: absolute;
+    left: 250px;
+    bottom: -30px; }
+    @media screen and (max-width: 1000px) {
+      main svg {
+        display: none; } }
   main .clients {
-    grid-column: 2 / 12; }
-    @media screen and (min-width: 1000px) {
-      main .clients {
-        grid-column: 1 / 12 span; } }
+    grid-column: 1 / -1; }
   main .client {
     position: relative;
     overflow: hidden;
     text-align: right;
-    padding-bottom: 2.5vh;
-    margin-right: 15px; }
+    padding-bottom: 2.5vh; }
+    @media screen and (min-width: 1000px) {
+      main .client {
+        margin-right: 15px; } }
   main .client-name {
-    --wght: 400;
+    --wght: 100;
     display: inline-block;
-    font-size: 5vw;
+    font-size: 4vw;
     letter-spacing: -0.01vw;
     line-height: 1.2;
     font-variation-settings: "wght" var(--wght); }
@@ -2811,22 +2807,30 @@ main {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
       main .client-name {
-        line-height: 0.9;
-        font-size: 4vw; } }
+        line-height: 0.9; } }
     @media screen and (min-width: 1000px) {
       main .client-name {
         font-size: 4vw;
-        text-transform: uppercase;
-        letter-spacing: -4px; } }
+        letter-spacing: -3px; } }
 
 /***********************************
 Footer
 ***********************************/
 footer {
   padding-bottom: 16px;
-  margin-bottom: 10vw; }
+  margin-bottom: 10vw;
+  display: block; }
   footer .contact {
     grid-column: 2 / 12; }
+  footer h3 {
+    position: relative; }
+  footer svg {
+    position: absolute;
+    left: 160px;
+    top: -35px; }
+    @media screen and (max-width: 1000px) {
+      footer svg {
+        display: none; } }
   footer li {
     font-size: 18px; }
     footer li:not(:first-child) {
