@@ -67,7 +67,7 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	@extend %headingSerif;
 	color: $heading;
 	font-size: 1.6rem;
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 	line-height: $lh * 1.6;
 	margin-bottom: $lh * 2;
 	@media #{$min-xs} {
