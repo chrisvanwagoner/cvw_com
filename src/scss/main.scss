@@ -209,7 +209,7 @@ main {
     @extend %fancy;
     @extend %heading;
     display: inline-block;
-    font-size: 4vw;
+    font-size: 5.3vw;
     letter-spacing: -0.01vw;
     line-height: 1.2;
     font-variation-settings: 'wght' var(--wght);
@@ -218,7 +218,7 @@ main {
     }
     @media #{$min-md} {
       line-height: 0.9;
-      // font-size: 4vw;
+      font-size: 4vw;
     }
     @media #{$min-lg} {
       font-size: 4vw;
