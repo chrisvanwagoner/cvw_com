@@ -2493,7 +2493,7 @@ p {
 h1 {
   color: #19181D;
   font-size: 1.6rem;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   line-height: 2.08rem;
   margin-bottom: 2.6rem; }
   @media screen and (min-width: 400px) {
@@ -2799,7 +2799,7 @@ main {
   main .client-name {
     --wght: 100;
     display: inline-block;
-    font-size: 4vw;
+    font-size: 5.3vw;
     letter-spacing: -0.01vw;
     line-height: 1.2;
     font-variation-settings: "wght" var(--wght); }
@@ -2807,7 +2807,8 @@ main {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
       main .client-name {
-        line-height: 0.9; } }
+        line-height: 0.9;
+        font-size: 4vw; } }
     @media screen and (min-width: 1000px) {
       main .client-name {
         font-size: 4vw;
