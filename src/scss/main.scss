@@ -22,7 +22,6 @@ html {
 }
 body {
   background-color: $bg;
-  background-color: #F7F3F3;
   font-family: 'Inter var', 'Inter', sans-serif;
   font-weight: 300;
   font-variation-settings: 'wght' 300;
@@ -112,6 +111,7 @@ header {
   }
   .header__name {
     grid-column: 2 / 12;
+    grid-column: 1 / -1;
     position: relative;
     @media #{$min-lg} {
       grid-column: 9 / 12;
@@ -120,6 +120,7 @@ header {
   }
   .header__bio {
     grid-column: 2 / 12;
+    grid-column: 1 / -1;
     grid-row: 3 / 12;
     position: relative;
     // font-style: italic;
@@ -129,6 +130,7 @@ header {
       grid-row: 6 / 12;
       &:first-of-type::first-letter {
         font-size: 1.8rem;
+        font-variation-settings: 'wght' 200;
       }
     }
     a {
@@ -166,9 +168,10 @@ main {
   padding-bottom: $lh;
   margin-bottom: 10vw;
   .main__title {
-    grid-column: 2 / 12;
+    grid-column: 1 / -1;
     padding-bottom: $lh;
     z-index: -2;
+    position: relative;
     // font-style: normal;
     // font-family: 'Inter var', sans-serif;
     // font-variation-settings: 'wght' 500;
@@ -177,29 +180,36 @@ main {
       margin-bottom: 10vw;
     }
   }
-  .clients {
-    grid-column: 2 / 12;
-    @media #{$min-lg} {
-      grid-column: 1 / 12 span;
-      
+  svg {
+    position: absolute;
+    left: 250px;
+    bottom: -30px;
+    @media #{$max-lg} {
+      display: none;
     }
+  }
+  .clients {
+    // grid-column: 2 / 12;
+    grid-column: 1 / -1;
+    // @media #{$min-lg} {
+      
+    // }
   }
   .client {
     position: relative;
     overflow: hidden;
     text-align: right;
     padding-bottom: 2.5vh;
-    margin-right: 15px;
-    // @media #{$min-lg} {
-    //   padding-bottom: 2.5vh; 
-    // }
+    @media #{$min-lg} {
+      margin-right: 15px;
+    }
   }
   .client-name {
-    --wght: 400;
+    --wght: 100;
     @extend %fancy;
     @extend %heading;
     display: inline-block;
-    font-size: 5vw;
+    font-size: 4vw;
     letter-spacing: -0.01vw;
     line-height: 1.2;
     font-variation-settings: 'wght' var(--wght);
@@ -208,12 +218,12 @@ main {
     }
     @media #{$min-md} {
       line-height: 0.9;
-      font-size: 4vw;
+      // font-size: 4vw;
     }
     @media #{$min-lg} {
       font-size: 4vw;
-      text-transform: uppercase;
-      letter-spacing: -4px;
+      // text-transform: uppercase;
+      letter-spacing: -3px;
     }
     @media #{$min-lg} {
       // font-size: 56px;
@@ -228,6 +238,7 @@ footer {
   @extend %grid;
   padding-bottom: 16px;
   margin-bottom: 10vw;
+  display: block;
   @media #{$min-lg} {
     // padding-top: $spacer * 2;
     // padding-bottom: $spacer * 2;
@@ -236,7 +247,15 @@ footer {
     grid-column: 2 / 12;
   }
   h3 {
-    
+    position: relative;
+  }
+  svg {
+    position: absolute;
+    left: 160px;
+    top: -35px;
+    @media #{$max-lg} {
+      display: none;
+    }
   }
   li {
     font-size: 18px;
