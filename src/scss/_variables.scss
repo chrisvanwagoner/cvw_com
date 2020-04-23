@@ -4,12 +4,15 @@ Sass Variables
 ***********************************/
 
 $blue: #0005EC;
-$green: #167568;
+// $green: #167568;
+$green: #00584b;
 $heading: #19181D;
-$bg: #F4F0EC;
+// $bg: #F4F0EC;
+$bg: #f5f3f3;
+// $bg: #FFF;
 $text: #19181D;
 $text: #24130C;
-$hover: $blue;
+$hover: $green;
 
 $fs: 1rem;
 $lh: $fs + ($fs * 0.3);
@@ -18,12 +21,12 @@ $spacer: $lh * 2;
 $min-xs:   "screen and (min-width: 400px)";
 $min-sm:   "screen and (min-width: 600px)";
 $min-md:   "screen and (min-width: 800px)";
+$max-lg:   "screen and (max-width: 1000px)";
 $min-lg:   "screen and (min-width: 1000px)";
 $min-xl:   "screen and (min-width: 1200px)";
 $min-xxl:  "screen and (min-width: 1400px)";
 $min-xxxl: "screen and (min-width: 1600px)";
 
-$max-lg: '(max-width: 1000px)';
 
 %headingExtraLight {
 	font-family: inherit;
@@ -129,7 +132,7 @@ $max-lg: '(max-width: 1000px)';
 	@extend %text;
 	color: $text;
 	font-size: 1rem;
-	letter-spacing: -0.7px;
+	letter-spacing: -0.3px;
 	line-height: $lh;
 }
 %small {
@@ -187,21 +190,20 @@ $max-lg: '(max-width: 1000px)';
 	transition: color 300ms ease-in-out;
 	text-decoration: underline;
 	
-	&:after {
-		transition: left 300ms ease-in-out;
-		background-color: $text;
-		position: absolute;
-		bottom: -1px;
-		right: 0;
-		left: 100%;
-		width: 0;
-		height: 2px;
-		z-index: -1;
-	}
+	
 	@media #{$min-md} {
 		text-decoration: none;
 		&:after {
 			content: "";
+			transition: left 300ms ease-in-out;
+			background-color: $text;
+			position: absolute;
+			bottom: -1px;
+			right: 0;
+			left: 100%;
+			width: 0;
+			height: 1px;
+			z-index: -1;
 		}
 	}
 	&:hover,
@@ -212,7 +214,7 @@ $max-lg: '(max-width: 1000px)';
 			left: 0;
 			background-color: $hover;
 			@media #{$min-xl} { 
-				height: 3px;
+				height: 2px;
 			}
 			
 		}
