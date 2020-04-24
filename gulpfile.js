@@ -73,9 +73,9 @@ function scripts() {
   return gulp
     .src([
       // 'src/js/lib/gsap.min.js',
-      'src/js/lib/jquery.min.js',
-      'src/js/lib/anime.min.js',
-      'src/js/lib/wow.min.js',
+      // 'src/js/lib/jquery.min.js',
+      // 'src/js/lib/anime.min.js',
+      // 'src/js/lib/wow.min.js',
       'node_modules/vue/dist/vue.min.js',
       // 'src/js/lib/basicScroll.min.js',
       'src/js/lib/lazysizes.min.js',
@@ -131,13 +131,13 @@ function build() {
     }))
     .pipe(uglify())
     // .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('dist/js'));
   
   gulp
     .src(['src/css/styles.css'])
     .pipe(cssmin())
     // .pipe(rename('styles.min.css'))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('dist/css'));
   
   gulp
     .src(['src/index.html'])
