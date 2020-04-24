@@ -20,6 +20,7 @@ $spacer: $lh * 2;
 
 $min-xs:   "screen and (min-width: 400px)";
 $min-sm:   "screen and (min-width: 600px)";
+$max-md:   "screen and (max-width: 800px)";
 $min-md:   "screen and (min-width: 800px)";
 $max-lg:   "screen and (max-width: 1000px)";
 $min-lg:   "screen and (min-width: 1000px)";
@@ -155,29 +156,42 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	color: $heading;
 	transition: color 200ms ease-in-out;
 	position: relative;
+	text-decoration: none;
+	overflow: hidden;
+	&:before,
 	&:after {
-		transition: background-color 200ms ease-in-out;
-		background-color: $text;
+		content: "";
 		position: absolute;
 		bottom: 1px;
 		right: 0;
-		width: 100%;
 		height: 1px;
 		z-index: -1;
 	}
-	@media #{$min-md} {
-		text-decoration: none;
-
-		&:after {
-			content: "";
-		}
+	&:before {
+		width: 100%;
+		background-color: #cacaca;
+		// left: 0;
 	}
+	&:after {
+		transition: width 300ms ease-in-out;
+		background-color: $hover;
+		width: 0;
+		// left: 0;
+	}
+	// @media #{$min-md} {
+		
+
+	// 	&:after {
+	// 		content: "";
+	// 	}
+	// }
 	&:hover,
 	&:focus {
 		color: $hover;
 		&:after {
-			// width: 100%;
+			width: 100%;
 			// height: 2px;
+			// left: 0;
 			background-color: $hover;
 			
 		}
@@ -188,22 +202,34 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	font-size: 18px;
 	color: $heading;
 	transition: color 300ms ease-in-out;
-	text-decoration: underline;
-	
-	
+	text-decoration: none;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		right: 0;
+		height: 1px;
+		z-index: -1;
+		// @media #{$min-xl} { 
+		// 	height: 2px;
+		// }
+	}
+	&:before {
+		background-color: #cacaca;
+		// left: 0;
+		width: 100%;
+	}
+	&:after {
+		transition: width 300ms ease-in-out;
+		background-color: $text;	
+		// left: 100%;
+		width: 0;
+	}
 	@media #{$min-md} {
-		text-decoration: none;
 		&:after {
-			content: "";
-			transition: left 300ms ease-in-out;
-			background-color: $text;
-			position: absolute;
-			bottom: -1px;
-			right: 0;
-			left: 100%;
-			width: 0;
-			height: 1px;
-			z-index: -1;
+			// width: 100%;
+			
 		}
 	}
 	&:hover,
@@ -211,12 +237,7 @@ $min-xxxl: "screen and (min-width: 1600px)";
 		color: $hover;
 		&:after {
 			width: 100%;
-			left: 0;
 			background-color: $hover;
-			@media #{$min-xl} { 
-				height: 2px;
-			}
-			
 		}
 	}
 }
@@ -247,3 +268,9 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	outline: 3px solid rgba(131,192,253,.5);
 	outline-offset: 1px;
 }
+
+// @keyframes dash {
+// 	to {
+// 		stroke-dashoffset: 0;
+// 	}
+// }
