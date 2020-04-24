@@ -126,9 +126,9 @@ function clean() {
 function build() {
   gulp
     .src(['src/js/scripts.js'])
-    // .pipe(babel({
-    //   presets: ['@babel/env']
-    // }))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(uglify())
     // .pipe(rename('scripts.min.js'))
     .pipe(gulp.dest('dist/js'));
