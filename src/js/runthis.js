@@ -3,27 +3,31 @@
 /* ==============================
 Instanciate Wow.js object
 ============================== */
-var wow = new WOW({
-    boxClass:     'animate',  // animated element css class (default is wow)
-    animateClass: 'animated', // animation css class (default is animated)
-    offset:       0,          // distance to the element when triggering the animation (default is 0)
-    mobile:       true,       // trigger animations on mobile devices (default is true)
-    live:         true,       // act on asynchronously loaded content (default is true)
-    callback:     function(box) {
-      // the callback is fired every time an animation is started
-      // the argument that is passed in is the DOM node being animated
-    },
-    scrollContainer: null // optional scroll container selector, otherwise use window
-  });
-wow.init();
+// var wow = new WOW({
+//     boxClass:     'animate',  // animated element css class (default is wow)
+//     animateClass: 'animated', // animation css class (default is animated)
+//     offset:       0,          // distance to the element when triggering the animation (default is 0)
+//     mobile:       true,       // trigger animations on mobile devices (default is true)
+//     live:         true,       // act on asynchronously loaded content (default is true)
+//     callback:     function(box) {
+//       // the callback is fired every time an animation is started
+//       // the argument that is passed in is the DOM node being animated
+//     },
+//     scrollContainer: null // optional scroll container selector, otherwise use window
+//   });
+// wow.init();
 
 
 let clientEntry = document.querySelectorAll('.client');
 let fadeLeft = document.querySelectorAll('.fade-left');
 let fadeRight = document.querySelectorAll('.fade-right');
 let windowHeight = window.innerHeight;
-let targetTop = windowHeight * 0.3;
-let targetBottom = windowHeight * 0.7;
+let targetTop = windowHeight * 0.7;
+let targetBottom = windowHeight * 0.9;
+// let paths = document.querySelectorAll('svg path');
+// paths.forEach((path) => {
+//   path.style.setProperty('--length', path.getTotalLength());
+// });
 // const line = anime({
 //   targets: 'h2 svg path',
 //   strokeDashoffset: [anime.setDashoffset, 0],
@@ -69,9 +73,9 @@ let events = () => {
       if (distFromTop <= targetTop) {
         weight = ((distFromTop / targetTop) * (maxWeight - 100)) + 100;
         elName.style.setProperty('--wght', weight );
-      } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
-        weight = (maxWeight - (distFromTop - (targetBottom)) * 2);
-        elName.style.setProperty('--wght', weight );
+      // } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
+      //   weight = (maxWeight - (distFromTop - (targetBottom)) * 2);
+      //   elName.style.setProperty('--wght', weight );
       } else {
         elName.style.setProperty('--wght', maxWeight );
       }
@@ -91,17 +95,16 @@ window.addEventListener('resize', () => {
   window.requestAnimationFrame( events );
 });
 
-let preview = document.querySelector('#preview');
-
-clientEntry.forEach((el) => {
-  let name = el.querySelector('.client-name');
-  let image = name.getAttribute('data-preview');
-  name.addEventListener('mouseover', (e) => {
-    window.setTimeout(() => {
-      preview.style.setProperty('background-image', 'url(' + image + ')');
-      preview.style.setProperty('opacity', '0.5');
-    }, 250);
-  });
-  name.addEventListener('mouseout', (e) => preview.style.setProperty('opacity', '0'));
-});
+// let preview = document.querySelector('#preview');
+// clientEntry.forEach((el) => {
+//   let name = el.querySelector('.client-name');
+//   let image = name.getAttribute('data-preview');
+//   name.addEventListener('mouseover', (e) => {
+//     window.setTimeout(() => {
+//       preview.style.setProperty('background-image', 'url(' + image + ')');
+//       preview.style.setProperty('opacity', '0.5');
+//     }, 250);
+//   });
+//   name.addEventListener('mouseout', (e) => preview.style.setProperty('opacity', '0'));
+// });
 
