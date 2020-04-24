@@ -2820,12 +2820,15 @@ main {
       main .client {
         margin-right: 15px; } }
   main .client-name {
-    --wght: 100;
+    --wght: 300;
     display: inline-block;
     font-size: 5.3vw;
     font-variation-settings: "wght" var(--wght);
     letter-spacing: -0.01vw;
     line-height: 1.2; }
+    @media screen and (min-width: 1000px) {
+      main .client-name {
+        --wght: 100; } }
     main .client-name span {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
