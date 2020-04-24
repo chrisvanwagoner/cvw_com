@@ -47,20 +47,21 @@ let targetBottom = windowHeight * 0.9;
 //   el.style.setProperty('opacity', 1);
 // });
 
-let events = () => {
+if (window.innerWidth > 1000) {
+  let events = () => {
   
     fadeLeft.forEach((el) => {
       let rect = el.getBoundingClientRect();
       let top = rect.top;
       let speed = el.dataset.speed;
-      el.style.setProperty('--left', ((top-el.offsetTop) * speed) + 'px');
+      el.style.setProperty('--left', ((top - el.offsetTop) * speed) + 'px');
       el.style.setProperty('--opacity', (1 - (-top / 800)));
     });
     fadeRight.forEach((el) => {
       let rect = el.getBoundingClientRect();
       let top = rect.top;
       let speed = el.dataset.speed;
-      el.style.setProperty('--left', ((top-el.offsetTop) * speed) + 'px');
+      el.style.setProperty('--left', ((top - el.offsetTop) * speed) + 'px');
       el.style.setProperty('--opacity', (1 - (-top / 800)));
     });
 
@@ -72,12 +73,12 @@ let events = () => {
       const maxWeight = 300;
       if (distFromTop <= targetTop) {
         weight = ((distFromTop / targetTop) * (maxWeight - 100)) + 100;
-        elName.style.setProperty('--wght', weight );
-      // } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
-      //   weight = (maxWeight - (distFromTop - (targetBottom)) * 2);
-      //   elName.style.setProperty('--wght', weight );
+        elName.style.setProperty('--wght', weight);
+        // } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
+        //   weight = (maxWeight - (distFromTop - (targetBottom)) * 2);
+        //   elName.style.setProperty('--wght', weight );
       } else {
-        elName.style.setProperty('--wght', maxWeight );
+        elName.style.setProperty('--wght', maxWeight);
       }
     });
 
@@ -85,15 +86,14 @@ let events = () => {
     // if ( h2Rect.top < targetTop ) {
     //   line.play();
     // }
-    
+  }
+  window.addEventListener('scroll', () => {
+    window.requestAnimationFrame(events);
+  });
+  window.addEventListener('resize', () => {
+    window.requestAnimationFrame(events);
+  });
 }
-
-window.addEventListener('scroll', () => {
-  window.requestAnimationFrame( events );
-});
-window.addEventListener('resize', () => {
-  window.requestAnimationFrame( events );
-});
 
 // let preview = document.querySelector('#preview');
 // clientEntry.forEach((el) => {
