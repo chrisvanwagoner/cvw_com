@@ -216,7 +216,10 @@ main {
     }
   }
   .client-name {
-    --wght: 100; 
+    --wght: 300;
+    @media #{$min-lg} {
+      --wght: 100; 
+    }
     @extend %fancy;
     @extend %heading;
     display: inline-block;
