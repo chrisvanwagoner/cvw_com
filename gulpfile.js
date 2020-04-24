@@ -72,8 +72,8 @@ function styles() {
 function scripts() {
   return gulp
     .src([
-      // 'src/js/lib/gsap.min.js',
       // 'src/js/lib/jquery.min.js',
+      // 'src/js/lib/gsap.min.js',
       // 'src/js/lib/anime.min.js',
       // 'src/js/lib/wow.min.js',
       'node_modules/vue/dist/vue.min.js',
@@ -126,9 +126,9 @@ function clean() {
 function build() {
   gulp
     .src(['src/js/scripts.js'])
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
+    // .pipe(babel({
+    //   presets: ['@babel/env']
+    // }))
     .pipe(uglify())
     // .pipe(rename('scripts.min.js'))
     .pipe(gulp.dest('dist/js'));
