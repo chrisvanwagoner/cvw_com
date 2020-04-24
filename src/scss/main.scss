@@ -10,12 +10,15 @@ main.scss
   padding: 0;
   box-sizing: border-box;
 }
+::selection {
+  background: $green;
+  color: #FFF;
+}
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   font-size: 20px;
   cursor: default;
   scroll-behavior: smooth;
@@ -23,6 +26,8 @@ html {
 body {
   background-color: $bg;
   font-family: 'Inter var', 'Inter', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
   font-weight: 300;
   font-variation-settings: 'wght' 300;
   color: $heading;
@@ -33,6 +38,9 @@ body {
     margin-right: auto;
     margin-left: auto;
   }
+}
+h1, h2, h3, h4, h5, h6, p, small, a {
+  text-rendering: optimizeLegibility;
 }
 h1 {
   @extend %h1;
@@ -60,57 +68,52 @@ ul {
 ***********************************/
 header {
   @extend %grid-header;
+  height: 90vh;
+  margin-bottom: 100px;
+  overflow: hidden; 
   padding-top: $lh;
   padding-bottom: $lh;
-  overflow: hidden;
-  margin-bottom: 8vw;
+  @media #{$min-sm} {
+    height: auto;
+  }
   @media #{$min-lg} {
-    height: 70vh;
-    min-height:700px;
-    // margin-bottom: $lh * 8;
+    height: auto;
     margin-bottom: 10vw;
+    min-height:700px;
   }
   @media #{$min-xl} {
-    height: 90vh;
   }
   .header__figure {
-    // border-radius: 100px;
-    // box-shadow: -2px 2px 30px 0 rgba(78,29,29,0.16), 6px 5px 45px 0 rgba(33,38,67,0.24);
     grid-column: 2 / 12;
     grid-row: 2 / 3;
-    // height: 200px;
     margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
-    // width: 200px;
     display: none;
     @media #{$min-lg} {
-      display: block;
       border-radius: 0;
       box-shadow: none;
+      display: flex;
       grid-column: 1 / 7 span;
       grid-row: 1 / 12 span;
-      // height: 500px;
-      width: 100%;
-      margin-bottom: 0;
-      display: flex;
-      justify-content: center;
       height: 100%;
+      justify-content: center;
+      margin-bottom: 0;
+      width: 100%;
     }
     img {
-      width: 100%;
       height: auto;
+      width: 100%;
       @media #{$min-lg} {
-        transform: translate(var(--left));
-        opacity: var(--opacity);
         margin-right: auto;
         object-fit: cover;
+        opacity: var(--opacity);
+        transform: translate(var(--left));
         width: 100%;
       }
     }
   }
   .header__name {
-    grid-column: 2 / 12;
     grid-column: 1 / -1;
     position: relative;
     @media #{$min-lg} {
@@ -119,22 +122,33 @@ header {
     }
   }
   .header__bio {
-    grid-column: 2 / 12;
     grid-column: 1 / -1;
     grid-row: 3 / 12;
     position: relative;
-    // font-style: italic;
     @media #{$min-lg} {
-      opacity: calc(var(--opacity) - 0.6);
       grid-column: 9 / 12;
       grid-row: 6 / 12;
-      &:first-of-type::first-letter {
-        font-size: 1.8rem;
-        font-variation-settings: 'wght' 200;
-      }
+      opacity: calc(var(--opacity) - 0.6);
+    }
+    p:first-of-type::first-letter {
+      font-size: 1.8rem;
+      font-variation-settings: 'wght' 200;
     }
     a {
       @extend %link;
+    }
+  }
+  svg {
+    position: absolute;
+    bottom: -300px;
+    right: 0;
+    @media #{$max-lg} {
+      display: none;
+    }
+    path {
+      stroke-dasharray: 5000;
+      stroke-dashoffset: 5000;
+      animation: dash 750ms linear 1750ms forwards;
     }
   }
   @media #{$min-lg} {
@@ -145,15 +159,13 @@ header {
   }
 } 
 #preview {
-  transition: opacity 250ms ease-in-out;
-  top: 0;
-  right: 0;
-  position: fixed;
-  z-index: -1;
+  background-color: $green;
   opacity: 0;
-  // background-position: center top;
-  // background-size: contain;
-  // background-repeat: no-repeat;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 250ms ease-in-out;
+  z-index: -1;
   @media #{$min-md} {
     bottom: 0;
     left: 0;
@@ -165,16 +177,13 @@ header {
 ***********************************/
 main {
   @extend %grid;
+  margin-bottom: 100px;
   padding-bottom: $lh;
-  margin-bottom: 10vw;
   .main__title {
     grid-column: 1 / -1;
     padding-bottom: $lh;
-    z-index: -2;
     position: relative;
-    // font-style: normal;
-    // font-family: 'Inter var', sans-serif;
-    // font-variation-settings: 'wght' 500;
+    z-index: -2;
     @media #{$min-lg} {
       grid-column: 1 / 12 span;
       margin-bottom: 10vw;
@@ -182,51 +191,49 @@ main {
   }
   svg {
     position: absolute;
-    left: 250px;
     bottom: -30px;
+    left: 250px;
     @media #{$max-lg} {
       display: none;
     }
+    path {
+      // --length: 5000;
+      // animation: dash 1000ms linear 750ms forwards;
+      // stroke-dasharray: var(--length);
+      // stroke-dashoffset: var(--length);
+    }
   }
   .clients {
-    // grid-column: 2 / 12;
     grid-column: 1 / -1;
-    // @media #{$min-lg} {
-      
-    // }
   }
   .client {
+    padding-bottom: 2.5vh;
     position: relative;
     overflow: hidden;
     text-align: right;
-    padding-bottom: 2.5vh;
     @media #{$min-lg} {
       margin-right: 15px;
     }
   }
   .client-name {
-    --wght: 100;
+    --wght: 100; 
     @extend %fancy;
     @extend %heading;
     display: inline-block;
     font-size: 5.3vw;
+    font-variation-settings: 'wght' var(--wght);
     letter-spacing: -0.01vw;
     line-height: 1.2;
-    font-variation-settings: 'wght' var(--wght);
     span {
       overflow: hidden;
     }
     @media #{$min-md} {
+      font-size: 4vw;
       line-height: 0.9;
-      font-size: 4vw;
     }
     @media #{$min-lg} {
       font-size: 4vw;
-      // text-transform: uppercase;
       letter-spacing: -3px;
-    }
-    @media #{$min-lg} {
-      // font-size: 56px;
     }
   }
 } 
@@ -236,13 +243,9 @@ Footer
 ***********************************/
 footer {
   @extend %grid;
-  padding-bottom: 16px;
-  margin-bottom: 10vw;
   display: block;
-  @media #{$min-lg} {
-    // padding-top: $spacer * 2;
-    // padding-bottom: $spacer * 2;
-  }
+  margin-bottom: 10vw;
+  padding-bottom: 16px;
   .contact {
     grid-column: 2 / 12;
   }
@@ -251,8 +254,8 @@ footer {
   }
   svg {
     position: absolute;
-    left: 160px;
     top: -35px;
+    left: 160px;
     @media #{$max-lg} {
       display: none;
     }
@@ -265,12 +268,8 @@ footer {
     &:last-child {
       margin-top: 36px;
     }
-    span {
-      // font-style: italic;
-    }
   } 
   a {
     @extend %link;
-    // font-weight: 200;
   }
 }  
