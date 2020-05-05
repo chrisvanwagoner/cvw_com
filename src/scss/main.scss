@@ -77,11 +77,11 @@ header {
     height: auto;
   }
   @media #{$min-lg} {
-    height: auto;
     margin-bottom: 10vw;
-    min-height:700px;
+    min-height: 700px;
   }
   @media #{$min-xl} {
+    min-height: 900px;
   }
   .header__figure {
     grid-column: 2 / 12;
@@ -130,10 +130,25 @@ header {
       grid-row: 6 / 12;
       opacity: calc(var(--opacity) - 0.6);
     }
-    p:first-of-type::first-letter {
-      font-size: 1.8rem;
-      font-variation-settings: 'wght' 200;
+    // p::first-letter {
+      // font-size: 1.5rem;
+      // font-variation-settings: 'wght' 400;
+    // }
+    p {
+      position: relative;
     }
+    // p:before {
+    //   content: "";
+    //   display: inline-block;
+    //   position: relative;
+    //   width: 5px;
+    //   height: 1px;
+    //   // background-color: #cacaca;
+    //   padding: 0;
+    //   margin: 0 7px 0 0;
+    //   top: -6px;
+    //   left: 0;
+    // }
     a {
       @extend %link;
     }
