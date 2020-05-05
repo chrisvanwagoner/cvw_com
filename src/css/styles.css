@@ -2698,9 +2698,11 @@ header {
       height: auto; } }
   @media screen and (min-width: 1000px) {
     header {
-      height: auto;
       margin-bottom: 10vw;
       min-height: 700px; } }
+  @media screen and (min-width: 1200px) {
+    header {
+      min-height: 900px; } }
   header .header__figure {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
@@ -2752,9 +2754,8 @@ header {
         grid-column: 9 / 12;
         grid-row: 6 / 12;
         opacity: calc(var(--opacity) - 0.6); } }
-    header .header__bio p:first-of-type::first-letter {
-      font-size: 1.8rem;
-      font-variation-settings: 'wght' 200; }
+    header .header__bio p {
+      position: relative; }
   header svg {
     position: absolute;
     bottom: -300px;
