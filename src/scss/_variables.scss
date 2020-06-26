@@ -14,6 +14,11 @@ $text: #19181D;
 $text: #24130C;
 $hover: $green;
 
+.dark-mode {
+	$bg: #240C1B;
+	$text: #f6f4f3;
+}
+
 $fs: 1rem;
 $lh: $fs + ($fs * 0.3);
 $spacer: $lh * 2;
