@@ -1,5 +1,29 @@
 var clients = [
   {
+    name: "Greater & Greener",
+    class: "gg",
+    url: "https://www.greatergreener.org/",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
+    name: "State of Babies",
+    class: "sob",
+    url: "https://www.stateofbabies.org",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
     name: "Smokefree Oregon",
     class: "sfo",
     url: "https://smokefreeoregon.com",
