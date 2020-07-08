@@ -2481,7 +2481,8 @@ small {
   font-weight: 700;
   font-variation-settings: 'wght' 700; }
 
-h1, h2, h3, h4 {
+h1, h2, h3,
+.h3-like, h4 {
   font-family: 'DM Serif Display', serif;
   font-weight: 400;
   font-style: italic; }
@@ -2526,20 +2527,24 @@ h2 {
     h2 {
       font-size: 200px; } }
 
-h3 {
+h3,
+.h3-like {
   color: #19181D;
   font-size: 1.4rem;
   letter-spacing: 0px;
   line-height: 2.08rem;
   margin-bottom: 1.3rem; }
   @media screen and (min-width: 800px) {
-    h3 {
+    h3,
+    .h3-like {
       font-size: 1.8rem; } }
   @media screen and (min-width: 1000px) {
-    h3 {
+    h3,
+    .h3-like {
       line-height: 2.6rem; } }
   @media screen and (min-width: 1200px) {
-    h3 {
+    h3,
+    .h3-like {
       line-height: 3.12rem; } }
 
 h4 {
@@ -2550,7 +2555,7 @@ h4 {
   line-height: 1rem; }
 
 p {
-  color: #24130C;
+  color: #19181D;
   font-size: 1rem;
   letter-spacing: -0.3px;
   line-height: 1.3rem; }
@@ -2617,7 +2622,7 @@ main .client-name {
   main .client-name:after {
     -webkit-transition: width 300ms ease-in-out;
     transition: width 300ms ease-in-out;
-    background-color: #24130C;
+    background-color: #19181D;
     width: 0; }
   main .client-name:hover, main .client-name:focus {
     color: #00584b; }
@@ -2804,13 +2809,13 @@ main {
       main .main__title {
         grid-column: 1 / 12 span;
         margin-bottom: 10vw; } }
-  main svg {
+  main .title-decoration {
     position: absolute;
     bottom: -30px;
     left: 250px;
     z-index: -1; }
     @media screen and (max-width: 1000px) {
-      main svg {
+      main .title-decoration {
         display: none; } }
   main .clients {
     grid-column: 1 / -1; }
@@ -2852,14 +2857,14 @@ footer {
   padding-bottom: 16px; }
   footer .contact {
     grid-column: 2 / 12; }
-  footer h3 {
+  footer h2 {
     position: relative; }
-  footer svg {
+  footer .title-decoration {
     position: absolute;
     top: -35px;
     left: 160px; }
     @media screen and (max-width: 1000px) {
-      footer svg {
+      footer .title-decoration {
         display: none; } }
   footer li {
     font-size: 18px; }

@@ -24,20 +24,20 @@ let fadeRight = document.querySelectorAll('.fade-right');
 let windowHeight = window.innerHeight;
 let targetTop = windowHeight * 0.7;
 let targetBottom = windowHeight * 0.9;
-// let paths = document.querySelectorAll('svg path');
+let paths = document.querySelectorAll('svg path');
 // paths.forEach((path) => {
 //   path.style.setProperty('--length', path.getTotalLength());
 // });
-// const line = anime({
-//   targets: 'h2 svg path',
-//   strokeDashoffset: [anime.setDashoffset, 0],
-//   duration: 500,
-//   delay: function(el, i) { return i * 100; },
-//   loop: false,
-//   direction: 'normal',
-//   easing: 'easeInOutSine',
-//   autoplay: false
-// });
+const line = anime({
+  targets: 'svg path',
+  strokeDashoffset: [anime.setDashoffset, 0],
+  duration: 1000,
+  delay: function(el, i) { return i * 100; },
+  loop: false,
+  direction: 'reverse',
+  easing: 'easeInOutSine',
+  autoplay: false
+});
 
 // fadeInLeft.forEach((el) => {
 //   el.style.setProperty('opacity', 0);
@@ -82,10 +82,10 @@ if (window.innerWidth > 1000) {
       }
     });
 
-    // let h2Rect = document.querySelector('h2').getBoundingClientRect()
-    // if ( h2Rect.top < targetTop ) {
-    //   line.play();
-    // }
+    let h2Rect = document.querySelector('h2').getBoundingClientRect();
+      if ( h2Rect.top < targetTop ) {
+        line.play();
+    }
   }
   window.addEventListener('scroll', () => {
     window.requestAnimationFrame(events);
