@@ -2707,7 +2707,7 @@ header {
       min-height: 700px; } }
   @media screen and (min-width: 1200px) {
     header {
-      min-height: 900px; } }
+      height: 100vh; } }
   header .header__figure {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
