@@ -2590,18 +2590,18 @@ header .header__bio a, main .client__name, footer a {
     height: 1px;
     z-index: -1; }
   header .header__bio a:before, main .client__name:before, footer a:before {
-    width: 100%;
-    background-color: #CACACA; }
+    background-color: #CACACA;
+    width: 100%; }
   header .header__bio a:after, main .client__name:after, footer a:after {
+    background-color: #00584b;
     -webkit-transition: width 300ms ease-in-out;
     transition: width 300ms ease-in-out;
-    background-color: #00584b;
     width: 0; }
   header .header__bio a:hover, main .client__name:hover, footer a:hover, header .header__bio a:focus, main .client__name:focus, footer a:focus {
     color: #00584b; }
     header .header__bio a:hover:after, main .client__name:hover:after, footer a:hover:after, header .header__bio a:focus:after, main .client__name:focus:after, footer a:focus:after {
-      width: 100%;
-      background-color: #00584b; }
+      background-color: #00584b;
+      width: 100%; }
 
 main, footer {
   display: grid;
@@ -2805,7 +2805,7 @@ main {
   main .main__clients {
     grid-column: 1 / -1; }
   main .client {
-    padding-bottom: 2.5vh;
+    padding-bottom: 1.7vh;
     position: relative;
     overflow: hidden;
     text-align: right; }
@@ -2818,10 +2818,13 @@ main {
     font-size: 5vw;
     font-variation-settings: "wght" var(--wght);
     letter-spacing: -0.01vw;
-    line-height: 1.2; }
+    line-height: 1.2;
+    padding-bottom: 0.8vw; }
     @media screen and (min-width: 1000px) {
       main .client__name {
         --wght: 100; } }
+    main .client__name:before, main .client__name:after {
+      bottom: 0.7vw; }
     main .client__name span {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
