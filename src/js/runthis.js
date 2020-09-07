@@ -67,7 +67,7 @@ if (window.innerWidth > 1000) {
 
     clientEntry.forEach((el) => {
       let elRect = el.getBoundingClientRect();
-      let elName = el.querySelector('.client-name');
+      let elName = el.querySelector('.client__name');
       let distFromTop = elRect.top;
       let weight;
       const maxWeight = 300;
