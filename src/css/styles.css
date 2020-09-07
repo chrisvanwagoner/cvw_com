@@ -2572,8 +2572,8 @@ small {
     small {
       font-weight: 200; } }
 
-header .header__bio a, footer a {
-  font-size: 18px;
+header .header__bio a, main .client__name, footer a {
+  font-size: 1rem;
   font-weight: 400;
   font-variation-settings: 'wght' 400;
   color: #19181D;
@@ -2582,52 +2582,24 @@ header .header__bio a, footer a {
   position: relative;
   text-decoration: none;
   overflow: hidden; }
-  header .header__bio a:before, footer a:before, header .header__bio a:after, footer a:after {
+  header .header__bio a:before, main .client__name:before, footer a:before, header .header__bio a:after, main .client__name:after, footer a:after {
     content: "";
     position: absolute;
     bottom: 1px;
     right: 0;
     height: 1px;
     z-index: -1; }
-  header .header__bio a:before, footer a:before {
+  header .header__bio a:before, main .client__name:before, footer a:before {
     width: 100%;
-    background-color: #cacaca; }
-  header .header__bio a:after, footer a:after {
+    background-color: #CACACA; }
+  header .header__bio a:after, main .client__name:after, footer a:after {
     -webkit-transition: width 300ms ease-in-out;
     transition: width 300ms ease-in-out;
     background-color: #00584b;
     width: 0; }
-  header .header__bio a:hover, footer a:hover, header .header__bio a:focus, footer a:focus {
+  header .header__bio a:hover, main .client__name:hover, footer a:hover, header .header__bio a:focus, main .client__name:focus, footer a:focus {
     color: #00584b; }
-    header .header__bio a:hover:after, footer a:hover:after, header .header__bio a:focus:after, footer a:focus:after {
-      width: 100%;
-      background-color: #00584b; }
-
-main .client__name {
-  position: relative;
-  font-size: 18px;
-  color: #19181D;
-  -webkit-transition: color 300ms ease-in-out;
-  transition: color 300ms ease-in-out;
-  text-decoration: none; }
-  main .client__name:before, main .client__name:after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    height: 1px;
-    z-index: -1; }
-  main .client__name:before {
-    background-color: #cacaca;
-    width: 100%; }
-  main .client__name:after {
-    -webkit-transition: width 300ms ease-in-out;
-    transition: width 300ms ease-in-out;
-    background-color: #19181D;
-    width: 0; }
-  main .client__name:hover, main .client__name:focus {
-    color: #00584b; }
-    main .client__name:hover:after, main .client__name:focus:after {
+    header .header__bio a:hover:after, main .client__name:hover:after, footer a:hover:after, header .header__bio a:focus:after, main .client__name:focus:after, footer a:focus:after {
       width: 100%;
       background-color: #00584b; }
 
@@ -2663,9 +2635,12 @@ html {
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-size: 20px;
+  font-size: 16px;
   cursor: default;
   scroll-behavior: smooth; }
+  @media screen and (min-width: 800px) {
+    html {
+      font-size: 20px; } }
 
 body {
   background-color: #f6f4f3;
@@ -2769,6 +2744,8 @@ header {
         opacity: calc(var(--opacity) - 0.6); } }
     header .header__bio p {
       position: relative; }
+    header .header__bio a {
+      font-size: 1rem; }
   header svg {
     position: absolute;
     bottom: -300px;
@@ -2806,7 +2783,7 @@ header {
   Main
 ***********************************/
 main {
-  margin-bottom: 100px;
+  margin-bottom: 5.2rem;
   padding-bottom: 1.3rem; }
   main .main__title {
     grid-column: 1 / -1;
@@ -2825,7 +2802,7 @@ main {
     @media screen and (max-width: 1000px) {
       main .title-decoration {
         display: none; } }
-  main .clients {
+  main .main__clients {
     grid-column: 1 / -1; }
   main .client {
     padding-bottom: 2.5vh;
@@ -2836,9 +2813,9 @@ main {
       main .client {
         margin-right: 15px; } }
   main .client__name {
-    --wght: 300;
+    --wght: 400;
     display: inline-block;
-    font-size: 5.3vw;
+    font-size: 5vw;
     font-variation-settings: "wght" var(--wght);
     letter-spacing: -0.01vw;
     line-height: 1.2; }
@@ -2853,7 +2830,6 @@ main {
         line-height: 0.9; } }
     @media screen and (min-width: 1000px) {
       main .client__name {
-        font-size: 4vw;
         letter-spacing: -3px; } }
 
 /***********************************
@@ -2874,9 +2850,7 @@ footer {
     @media screen and (max-width: 1000px) {
       footer .title-decoration {
         display: none; } }
-  footer li {
-    font-size: 18px; }
-    footer li:not(:first-child) {
-      margin-top: 18px; }
-    footer li:last-child {
-      margin-top: 36px; }
+  footer li:not(:first-child) {
+    margin-top: 18px; }
+  footer li:last-child {
+    margin-top: 36px; }
