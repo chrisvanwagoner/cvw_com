@@ -53,7 +53,7 @@ function html() {
 function styles() {
   return gulp
     .src([
-      'src/css/lib/animate.min.css',
+      // 'src/css/lib/animate.min.css',
       'src/scss/main.scss'
     ])
     .pipe(concat('styles.scss'))
@@ -74,7 +74,7 @@ function scripts() {
     .src([
       // 'src/js/lib/jquery.min.js',
       // 'src/js/lib/gsap.min.js',
-      'src/js/lib/anime.min.js',
+      // 'src/js/lib/anime.min.js',
       // 'src/js/lib/wow.min.js',
       'node_modules/vue/dist/vue.min.js',
       // 'src/js/lib/basicScroll.min.js',
