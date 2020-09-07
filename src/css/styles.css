@@ -2515,10 +2515,11 @@ h2 {
   letter-spacing: -0.7vw;
   line-height: 0.8;
   text-transform: uppercase;
-  margin-bottom: 2.6rem; }
+  margin-bottom: 5.2rem; }
   @media screen and (min-width: 800px) {
     h2 {
-      font-size: 18vw; } }
+      font-size: 18vw;
+      margin-bottom: 2.6rem; } }
   @media screen and (min-width: 1000px) {
     h2 {
       font-size: 18vw;
@@ -2694,7 +2695,7 @@ ul {
 ***********************************/
 header {
   height: 90vh;
-  margin-bottom: 100px;
+  margin-bottom: 5.2rem;
   overflow: hidden;
   padding-top: 1.3rem;
   padding-bottom: 1.3rem; }
