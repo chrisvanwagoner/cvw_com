@@ -70,7 +70,7 @@ ul {
 header {
   @extend %grid-header;
   height: 90vh;
-  margin-bottom: 100px;
+  margin-bottom: $lh * 4;
   overflow: hidden; 
   padding-top: $lh;
   padding-bottom: $lh;
