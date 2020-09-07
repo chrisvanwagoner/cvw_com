@@ -2471,7 +2471,7 @@ main.scss
 _variables.scss
 Sass Variables
 ***********************************/
-main .client-name {
+main .client__name {
   font-family: inherit;
   font-weight: 400;
   font-variation-settings: 'wght' 400; }
@@ -2603,38 +2603,37 @@ header .header__bio a, footer a {
       width: 100%;
       background-color: #00584b; }
 
-main .client-name {
+main .client__name {
   position: relative;
   font-size: 18px;
   color: #19181D;
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
   text-decoration: none; }
-  main .client-name:before, main .client-name:after {
+  main .client__name:before, main .client__name:after {
     content: "";
     position: absolute;
     bottom: -1px;
     right: 0;
     height: 1px;
     z-index: -1; }
-  main .client-name:before {
+  main .client__name:before {
     background-color: #cacaca;
     width: 100%; }
-  main .client-name:after {
+  main .client__name:after {
     -webkit-transition: width 300ms ease-in-out;
     transition: width 300ms ease-in-out;
     background-color: #19181D;
     width: 0; }
-  main .client-name:hover, main .client-name:focus {
+  main .client__name:hover, main .client__name:focus {
     color: #00584b; }
-    main .client-name:hover:after, main .client-name:focus:after {
+    main .client__name:hover:after, main .client__name:focus:after {
       width: 100%;
       background-color: #00584b; }
 
 main, footer {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 1.3rem; }
+  grid-template-columns: repeat(12, 1fr); }
 
 header {
   display: grid;
@@ -2674,7 +2673,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   font-weight: 300;
-  font-variation-settings: 'wght' 300;
+  font-variation-settings: "wght" 300;
   color: #19181D;
   max-width: 1560px;
   padding-right: 1.3rem;
@@ -2684,7 +2683,15 @@ body {
       margin-right: auto;
       margin-left: auto; } }
 
-h1, h2, h3, h4, h5, h6, p, small, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small,
+a {
   text-rendering: optimizeLegibility; }
 
 ul {
@@ -2828,7 +2835,7 @@ main {
     @media screen and (min-width: 1000px) {
       main .client {
         margin-right: 15px; } }
-  main .client-name {
+  main .client__name {
     --wght: 300;
     display: inline-block;
     font-size: 5.3vw;
@@ -2836,16 +2843,16 @@ main {
     letter-spacing: -0.01vw;
     line-height: 1.2; }
     @media screen and (min-width: 1000px) {
-      main .client-name {
+      main .client__name {
         --wght: 100; } }
-    main .client-name span {
+    main .client__name span {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
-      main .client-name {
+      main .client__name {
         font-size: 4vw;
         line-height: 0.9; } }
     @media screen and (min-width: 1000px) {
-      main .client-name {
+      main .client__name {
         font-size: 4vw;
         letter-spacing: -3px; } }
 
