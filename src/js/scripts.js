@@ -246,16 +246,17 @@ let paths = document.querySelectorAll('svg path');
 // paths.forEach((path) => {
 //   path.style.setProperty('--length', path.getTotalLength());
 // });
-const line = anime({
-  targets: 'svg path',
-  strokeDashoffset: [anime.setDashoffset, 0],
-  duration: 1000,
-  delay: function(el, i) { return i * 100; },
-  loop: false,
-  direction: 'reverse',
-  easing: 'easeInOutSine',
-  autoplay: false
-});
+
+// const line = anime({
+//   targets: 'svg path',
+//   strokeDashoffset: [anime.setDashoffset, 0],
+//   duration: 1000,
+//   delay: function(el, i) { return i * 100; },
+//   loop: false,
+//   direction: 'reverse',
+//   easing: 'easeInOutSine',
+//   autoplay: false
+// });
 
 // fadeInLeft.forEach((el) => {
 //   el.style.setProperty('opacity', 0);
