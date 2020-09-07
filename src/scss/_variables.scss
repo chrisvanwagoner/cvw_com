@@ -24,7 +24,7 @@ $fs: 1rem; // 20px
 $lh: $fs + ($fs * 0.3); // 26px
 $spacer: $lh * 2; 
 
-// $min-xs:   "screen and (min-width: 400px)";
+$min-400:   "screen and (min-width: 400px)";
 $min-600:   "screen and (min-width: 600px)";
 $max-800:   "screen and (max-width: 800px)";
 $min-800:   "screen and (min-width: 800px)";
@@ -184,7 +184,7 @@ $min-1200:   "screen and (min-width: 1200px)";
 	}
 	&:hover,
 	&:focus {
-		color: $hover;
+		color: $link-hover;
 		&:after {
 			background-color: $link-hover;
 			width: 100%;
