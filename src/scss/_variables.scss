@@ -19,9 +19,9 @@ $hover: $green;
 	$text: #f6f4f3;
 }
 
-$fs: 1rem;
-$lh: $fs + ($fs * 0.3);
-$spacer: $lh * 2;
+$fs: 1rem; // 20px
+$lh: $fs + ($fs * 0.3); // 26px
+$spacer: $lh * 2; 
 
 $min-xs:   "screen and (min-width: 400px)";
 $min-sm:   "screen and (min-width: 600px)";
@@ -94,9 +94,10 @@ $min-xxxl: "screen and (min-width: 1600px)";
 	letter-spacing: -0.7vw;
 	line-height: 0.8;
 	text-transform: uppercase;  
-	margin-bottom: $lh * 2;  
+	margin-bottom: $lh * 4;
 	@media #{$min-md} {
 		font-size: 18vw;
+		margin-bottom: $lh * 2;  
 	}
 	@media #{$min-lg} {
 		font-size: 18vw;
