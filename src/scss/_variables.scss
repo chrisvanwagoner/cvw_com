@@ -203,7 +203,7 @@ $min-xxxl: "screen and (min-width: 1600px)";
 		}
 	}
 }
-%fancy {
+%client-link {
 	position: relative;
 	font-size: 18px;
 	color: $heading;
@@ -254,7 +254,7 @@ $min-xxxl: "screen and (min-width: 1600px)";
 %grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	grid-column-gap: $lh;
+	// grid-column-gap: $lh;
 }
 %grid-header {
 	display: grid;
