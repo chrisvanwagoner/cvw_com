@@ -43,7 +43,7 @@ html(lang='en')
 				li(v-for='(client, index) in clients' :key='index', 
 				v-bind:class="'client client-' + index",
 				data-animate-duration='300ms')
-					a.client__name.out(v-bind:href='client.url', 
+					a.client__name(v-bind:href='client.url', 
 					v-bind:data-preview='client.imgSrc',
 					target='_blank', 
 					rel='noopener') 
