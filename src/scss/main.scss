@@ -21,7 +21,10 @@ html {
 	-ms-text-size-adjust: 100%;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	font-size: 20px;
+	font-size: 16px;
+	@media #{$min-800} {
+		font-size: 20px;
+	}
 	cursor: default;
 	scroll-behavior: smooth;
 }
@@ -38,7 +41,7 @@ body {
 	padding-right: $lh;
 	padding-left: $lh;
 
-	@media #{$min-md} {
+	@media #{$min-800} {
 		margin-right: auto;
 		margin-left: auto;
 	}
@@ -96,16 +99,16 @@ header {
 	padding-top: $lh;
 	padding-bottom: $lh;
 
-	@media #{$min-sm} {
+	@media #{$min-600} {
 		height: auto;
 	}
 
-	@media #{$min-lg} {
+	@media #{$min-1000} {
 		margin-bottom: 10vw;
 		min-height: 700px;
 	}
 
-	@media #{$min-xl} {
+	@media #{$min-1200} {
 		height: 100vh;
 	}
 
@@ -117,7 +120,7 @@ header {
 		margin-right: auto;
 		display: none;
 
-		@media #{$min-lg} {
+		@media #{$min-1000} {
 			border-radius: 0;
 			box-shadow: none;
 			display: flex;
@@ -133,7 +136,7 @@ header {
 			height: auto;
 			width: 100%;
 
-			@media #{$min-lg} {
+			@media #{$min-1000} {
 				margin-right: auto;
 				object-fit: cover;
 				opacity: var(--opacity);
@@ -147,7 +150,7 @@ header {
 		grid-column: 1 / -1;
 		position: relative;
 
-		@media #{$min-lg} {
+		@media #{$min-1000} {
 			grid-column: 9 / 12;
 			grid-row: 1 / 3;
 		}
@@ -158,7 +161,7 @@ header {
 		grid-row: 3 / 12;
 		position: relative;
 
-		@media #{$min-lg} {
+		@media #{$min-1000} {
 			grid-column: 9 / 12;
 			grid-row: 6 / 12;
 			opacity: calc(var(--opacity) - 0.6);
@@ -186,6 +189,7 @@ header {
 		// }
 		a {
 			@extend %link;
+			font-size: $fs;
 		}
 	}
 
@@ -195,7 +199,7 @@ header {
 		right: 0;
 		z-index: -1;
 
-		@media #{$max-lg} {
+		@media #{$max-1000} {
 			display: none;
 		}
 
@@ -206,7 +210,7 @@ header {
 		}
 	}
 
-	@media #{$min-lg} {
+	@media #{$min-1000} {
 
 		.fade-left,
 		.fade-right {
@@ -224,7 +228,7 @@ header {
 	transition: opacity 250ms ease-in-out;
 	z-index: -1;
 
-	@media #{$min-md} {
+	@media #{$min-800} {
 		bottom: 0;
 		left: 0;
 		width: 100%;
@@ -236,7 +240,7 @@ header {
 ***********************************/
 main {
 	@extend %grid;
-	margin-bottom: 100px;
+	margin-bottom: $lh * 4;
 	padding-bottom: $lh;
 
 	.main__title {
@@ -245,7 +249,7 @@ main {
 		position: relative;
 		z-index: -2;
 
-		@media #{$min-lg} {
+		@media #{$min-1000} {
 			grid-column: 1 / 12 span;
 			margin-bottom: 10vw;
 		}
@@ -257,7 +261,7 @@ main {
 		left: 250px;
 		z-index: -1;
 
-		@media #{$max-lg} {
+		@media #{$max-1000} {
 			display: none;
 		}
 
@@ -279,22 +283,22 @@ main {
 		overflow: hidden;
 		text-align: right;
 
-		@media #{$min-lg} {
+		@media #{$min-1000} {
 			margin-right: 15px;
 		}
 	}
 
 	.client__name {
-		--wght: 300;
+		--wght: 400;
 
-		@media #{$min-lg} {
+		@media #{$min-1000} {
 			--wght: 100;
 		}
 
-		@extend %client-link;
+		@extend %link;
 		@extend %heading;
 		display: inline-block;
-		font-size: 5.3vw;
+		font-size: 5vw;
 		font-variation-settings: 'wght'var(--wght);
 		letter-spacing: -0.01vw;
 		line-height: 1.2;
@@ -303,13 +307,12 @@ main {
 			overflow: hidden;
 		}
 
-		@media #{$min-md} {
+		@media #{$min-800} {
 			font-size: 4vw;
 			line-height: 0.9;
 		}
 
-		@media #{$min-lg} {
-			font-size: 4vw;
+		@media #{$min-1000} {
 			letter-spacing: -3px;
 		}
 	}
@@ -337,13 +340,12 @@ footer {
 		top: -35px;
 		left: 160px;
 
-		@media #{$max-lg} {
+		@media #{$max-1000} {
 			display: none;
 		}
 	}
 
 	li {
-		font-size: 18px;
 
 		&:not(:first-child) {
 			margin-top: 18px;
