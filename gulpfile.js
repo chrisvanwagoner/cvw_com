@@ -77,6 +77,7 @@ function scripts() {
       // 'src/js/lib/anime.min.js',
       // 'src/js/lib/wow.min.js',
       'node_modules/vue/dist/vue.min.js',
+      'node_modules/animejs/lib/anime.min.js',
       // 'src/js/lib/basicScroll.min.js',
       'src/js/lib/lazysizes.min.js',
       'src/js/app.js',
