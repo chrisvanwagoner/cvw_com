@@ -1,3 +1,4 @@
+/* app.js */
 var clients = [
   {
     name: "Greater & Greener",
