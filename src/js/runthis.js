@@ -1,5 +1,6 @@
 /* runthis.js */
 
+
 /* ==============================
 Instanciate Wow.js object
 ============================== */
@@ -18,6 +19,7 @@ Instanciate Wow.js object
 // wow.init();
 
 
+
 let clientEntry = document.querySelectorAll('.client');
 let fadeLeft = document.querySelectorAll('.fade-left');
 let fadeRight = document.querySelectorAll('.fade-right');
@@ -29,16 +31,16 @@ let paths = document.querySelectorAll('svg path');
 //   path.style.setProperty('--length', path.getTotalLength());
 // });
 
-// const line = anime({
-//   targets: 'svg path',
-//   strokeDashoffset: [anime.setDashoffset, 0],
-//   duration: 1000,
-//   delay: function(el, i) { return i * 100; },
-//   loop: false,
-//   direction: 'reverse',
-//   easing: 'easeInOutSine',
-//   autoplay: false
-// });
+const line = anime({
+  targets: 'svg path',
+  // strokeDashoffset: [anime.setDashoffset, 0],
+  duration: 1000,
+  delay: function(el, i) { return i * 100; },
+  loop: false,
+  direction: 'reverse',
+  easing: 'easeInOutSine',
+  autoplay: true
+});
 
 // fadeInLeft.forEach((el) => {
 //   el.style.setProperty('opacity', 0);
@@ -83,10 +85,11 @@ if (window.innerWidth > 1000) {
       }
     });
 
-    let h2Rect = document.querySelector('h2').getBoundingClientRect();
-      if ( h2Rect.top < targetTop ) {
-        line.play();
-    }
+    // let h2Rect = document.querySelector('h2').getBoundingClientRect();
+    //   if ( h2Rect.top < targetTop ) {
+    //     line.play();
+    // }
+    paths.forEach(el => console.log(el));
   }
   window.addEventListener('scroll', () => {
     window.requestAnimationFrame(events);
