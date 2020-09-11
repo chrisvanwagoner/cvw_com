@@ -9,7 +9,6 @@ html(lang='en')
 		link(rel='apple-touch-icon', href='images/apple-touch-icon.png')
 		link(type='text/plain', rel='author', href='https://www.chrisvanwagoner.com/humans.txt')
 		link(href="css/styles.css" rel="stylesheet" type="text/css" media="screen")
-
 	body.light-mode
 		button.mode-toggle Dark Mode
 		header
@@ -24,9 +23,7 @@ html(lang='en')
 			h1.header__name.fade-right(data-speed="0.05") Chris van Wagoner
 			.header__bio.fade-right(data-speed="0.1") 
 				p Chris van Wagoner is a D.C. based developer, specializing in WordPress and front-end PHP. At #[a.link(href='https://www.socialdriver.com' target='_blank' rel='noopener') Social&nbsp;Driver], he works with visual and UX designers and stakeholders to build fast, beautiful sites for non-profits in Washington and across the U.S.
-
 		#preview
-
 		main#app
 			h2.main__title 
 				span Selected <br>Work
@@ -34,9 +31,7 @@ html(lang='en')
 					<svg class="main__svg" height="237" viewBox="0 0 327 237" width="327" xmlns="http://www.w3.org/2000/svg">
 						<path d="m89.9455556 193.30037c50.2088884 39.033704 163.4100004 72.515926 219.3677774-10.592592 36.332593-53.965889 5.402223-125.6406669-55.408889-156.5065187-44.382963-22.52611115-135.633333-37.830963-194.6148144-13.962963-85.0508148 34.4143704-63.70674071 140.1361477-26.2965926 181.0620737" fill="none" stroke="#00584b" stroke-width="1" transform="translate(1 1)"/>
 					</svg>
-				
 			ul.main__clients
-			
 				li(v-for='(client, index) in clients' :key='index', 
 				v-bind:class="'client client-' + index",
 				data-animate-duration='300ms')
@@ -45,7 +40,6 @@ html(lang='en')
 					target='_blank', 
 					rel='noopener') 
 						span {{ client.name }}
-
 		footer
 			.contact
 				h2.h3-like 
