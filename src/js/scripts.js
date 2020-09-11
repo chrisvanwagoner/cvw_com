@@ -223,8 +223,8 @@ let clientEntry = document.querySelectorAll('.client');
 let fadeLeft = document.querySelectorAll('.fade-left');
 let fadeRight = document.querySelectorAll('.fade-right');
 let windowHeight = window.innerHeight;
-let targetTop = windowHeight * 0.7;
-let targetBottom = windowHeight * 0.9;
+let targetTop = windowHeight * 0.4;
+let targetBottom = windowHeight * 0.7;
 let pathMain = document.querySelector('.main__svg path');
 let pathFooter = document.querySelector('.footer__svg path');
 // paths.forEach((path, index) => {
@@ -311,7 +311,7 @@ if (window.innerWidth > 600) {
   }
   let checkScrollMain = () => {
     let distFromTop = pathMain.getBoundingClientRect().top;
-    if (distFromTop <= windowHeight) { 
+    if (distFromTop <= targetBottom) { 
       // console.log(path);
       window.removeEventListener('scroll', checkScrollMain);
       pathMainAnimate.play();
@@ -320,7 +320,7 @@ if (window.innerWidth > 600) {
   
   let checkScrollFooter = () => {
     let distFromTop = pathFooter.getBoundingClientRect().top;
-    if (distFromTop <= windowHeight) { 
+    if (distFromTop <= targetBottom) { 
       // console.log(path);
       window.removeEventListener('scroll', checkScrollFooter);
       pathFooterAnimate.play();

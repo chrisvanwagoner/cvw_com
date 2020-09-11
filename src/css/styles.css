@@ -397,7 +397,7 @@ main {
     position: absolute;
     bottom: -30px;
     left: 250px;
-    opacity: 0.4;
+    opacity: 0.5;
     z-index: -1; }
     @media screen and (max-width: 600px) {
       main .title-decoration {
@@ -440,6 +440,8 @@ Footer
 ***********************************/
 footer {
   display: block;
+  min-height: 30%;
+  min-height: 30vh;
   margin-bottom: 10vw;
   overflow: hidden;
   padding-bottom: 16px; }
@@ -451,7 +453,7 @@ footer {
     position: absolute;
     top: -38px;
     left: 185px;
-    opacity: 0.4; }
+    opacity: 0.5; }
     @media screen and (max-width: 600px) {
       footer .title-decoration {
         display: none; } }
