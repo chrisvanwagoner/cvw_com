@@ -40,6 +40,7 @@ body {
 	max-width: 1560px;
 	padding-right: $lh;
 	padding-left: $lh;
+	transition: all 0.2s ease-in-out;
 
 	@media #{$min-800} {
 		margin-right: auto;
@@ -49,6 +50,7 @@ body {
 		color: #CACACA;
 		background-color: #1e2422;;
 	}
+	;
 }
 
 h1,
