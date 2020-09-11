@@ -352,10 +352,7 @@ header {
     bottom: -300px;
     right: 0;
     z-index: -1; }
-    @media screen and (max-width: 1000px) {
-      header svg {
-        display: none; } }
-    header svg path {
+    header svg path.animate {
       stroke-dasharray: 5000;
       stroke-dashoffset: 5000;
       -webkit-animation: dash 750ms linear 1750ms forwards;
@@ -385,6 +382,7 @@ header {
 ***********************************/
 main {
   margin-bottom: 5.2rem;
+  overflow: hidden;
   padding-bottom: 1.3rem; }
   main .main__title {
     grid-column: 1 / -1;
@@ -399,8 +397,9 @@ main {
     position: absolute;
     bottom: -30px;
     left: 250px;
+    opacity: 0.4;
     z-index: -1; }
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 600px) {
       main .title-decoration {
         display: none; } }
   main .main__clients {
@@ -425,7 +424,7 @@ main {
       main .client__name {
         --wght: 100; } }
     main .client__name:before, main .client__name:after {
-      bottom: 0.7vw; }
+      bottom: 0; }
     main .client__name span {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
@@ -442,6 +441,7 @@ Footer
 footer {
   display: block;
   margin-bottom: 10vw;
+  overflow: hidden;
   padding-bottom: 16px; }
   footer .contact {
     grid-column: 2 / 12; }
@@ -449,12 +449,14 @@ footer {
     position: relative; }
   footer .title-decoration {
     position: absolute;
-    top: -35px;
-    left: 160px; }
-    @media screen and (max-width: 1000px) {
+    top: -38px;
+    left: 185px;
+    opacity: 0.4; }
+    @media screen and (max-width: 600px) {
       footer .title-decoration {
         display: none; } }
   footer li:not(:first-child) {
     margin-top: 18px; }
   footer li:last-child {
+    font-style: italic;
     margin-top: 36px; }
