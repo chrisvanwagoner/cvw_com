@@ -200,13 +200,15 @@ header {
 		z-index: -1;
 
 		@media #{$max-1000} {
-			display: none;
+			// display: none;
 		}
 
 		path {
-			stroke-dasharray: 5000;
-			stroke-dashoffset: 5000;
-			animation: dash 750ms linear 1750ms forwards;
+			&.animate {
+				stroke-dasharray: 5000;
+				stroke-dashoffset: 5000;
+				animation: dash 750ms linear 1750ms forwards;
+			}
 		}
 	}
 
@@ -241,6 +243,7 @@ header {
 main {
 	@extend %grid;
 	margin-bottom: $lh * 4;
+	overflow: hidden;
 	padding-bottom: $lh;
 
 	.main__title {
@@ -259,9 +262,12 @@ main {
 		position: absolute;
 		bottom: -30px;
 		left: 250px;
+		opacity: 0.4;
 		z-index: -1;
 
-		@media #{$max-1000} {
+		@media #{$max-600} {
+			// bottom: -30px;
+			// left: 250px;
 			display: none;
 		}
 
@@ -295,8 +301,8 @@ main {
 			--wght: 100;
 		}
 
-		@extend %link;
 		@extend %heading;
+		@extend %link;
 		display: inline-block;
 		font-size: 5vw;
 		font-variation-settings: 'wght'var(--wght);
@@ -306,7 +312,8 @@ main {
 
 		&:before,
 		&:after {
-			bottom: 0.7vw;
+			// bottom: 0.7vw;
+			bottom: 0;
 		}
 
 		span {
@@ -331,6 +338,7 @@ footer {
 	@extend %grid;
 	display: block;
 	margin-bottom: 10vw;
+	overflow: hidden;
 	padding-bottom: 16px;
 
 	.contact {
@@ -343,10 +351,13 @@ footer {
 
 	.title-decoration {
 		position: absolute;
-		top: -35px;
-		left: 160px;
-
-		@media #{$max-1000} {
+		top: -38px;
+		left: 185px;
+		opacity: 0.4;
+		
+		@media #{$max-600} {
+			// top: -35px;
+			// left: 185px;
 			display: none;
 		}
 	}
@@ -358,6 +369,7 @@ footer {
 		}
 
 		&:last-child {
+			font-style: italic;
 			margin-top: 36px;
 		}
 	}
