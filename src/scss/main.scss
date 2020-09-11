@@ -262,7 +262,7 @@ main {
 		position: absolute;
 		bottom: -30px;
 		left: 250px;
-		opacity: 0.4;
+		opacity: 0.5;
 		z-index: -1;
 
 		@media #{$max-600} {
@@ -337,6 +337,8 @@ Footer
 footer {
 	@extend %grid;
 	display: block;
+	min-height: 30%;
+	min-height: 30vh;
 	margin-bottom: 10vw;
 	overflow: hidden;
 	padding-bottom: 16px;
@@ -353,7 +355,7 @@ footer {
 		position: absolute;
 		top: -38px;
 		left: 185px;
-		opacity: 0.4;
+		opacity: 0.5;
 		
 		@media #{$max-600} {
 			// top: -35px;
