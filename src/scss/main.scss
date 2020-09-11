@@ -36,7 +36,7 @@ body {
 	font-smoothing: antialiased;
 	font-weight: 300;
 	font-variation-settings: 'wght'300;
-	color: $heading;
+	color: $text;
 	max-width: 1560px;
 	padding-right: $lh;
 	padding-left: $lh;
@@ -44,6 +44,10 @@ body {
 	@media #{$min-800} {
 		margin-right: auto;
 		margin-left: auto;
+	}
+	&.dark-mode {
+		color: #CACACA;
+		background-color: #1e2422;;
 	}
 }
 
