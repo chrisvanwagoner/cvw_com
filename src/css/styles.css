@@ -433,6 +433,7 @@ main {
         line-height: 0.9; } }
     @media screen and (min-width: 1000px) {
       main .client__name {
+        font-size: 70px;
         letter-spacing: -3px; } }
 
 /***********************************
