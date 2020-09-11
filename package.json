@@ -1,7 +1,7 @@
 {
-  "name": "chrisvanwagoner",
+  "name": "chrisvanwagoner.com",
   "version": "1.0.0",
-  "description": "Personal Site",
+  "description": "Personal Site for Chris van Wagoner",
   "main": "index.js",
   "scripts": {
     "test": "test"
