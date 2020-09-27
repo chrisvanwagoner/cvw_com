@@ -162,7 +162,7 @@ $min-1200:   "screen and (min-width: 1200px)";
 	font-weight: 400;
 	font-variation-settings: 'wght' 400;
 	color: inherit;
-	transition: color 200ms ease-in-out;
+	transition: color 0.2s ease-in-out;
 	position: relative;
 	text-decoration: none;
 	overflow: hidden;
@@ -181,7 +181,7 @@ $min-1200:   "screen and (min-width: 1200px)";
 	}
 	&:after {
 		background-color: $link-hover;
-		transition: width 300ms ease-in-out;
+		transition: width 0.3s ease-in-out;
 		width: 0;
 	}
 	&:hover,
