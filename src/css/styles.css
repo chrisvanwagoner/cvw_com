@@ -178,8 +178,8 @@ header .header__bio a, main .client__name, footer a {
   font-weight: 400;
   font-variation-settings: 'wght' 400;
   color: inherit;
-  -webkit-transition: color 200ms ease-in-out;
-  transition: color 200ms ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
   position: relative;
   text-decoration: none;
   overflow: hidden; }
@@ -195,8 +195,8 @@ header .header__bio a, main .client__name, footer a {
     width: 100%; }
   header .header__bio a:after, main .client__name:after, footer a:after {
     background-color: #00584b;
-    -webkit-transition: width 300ms ease-in-out;
-    transition: width 300ms ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
     width: 0; }
   header .header__bio a:hover, main .client__name:hover, footer a:hover, header .header__bio a:focus, main .client__name:focus, footer a:focus {
     color: #00584b; }
@@ -263,6 +263,20 @@ body {
   body.dark-mode {
     color: #CACACA;
     background-color: #1e2422; }
+    body.dark-mode img {
+      -webkit-filter: brightness(0.7);
+              filter: brightness(0.7); }
+    body.dark-mode path {
+      stroke: #CACACA; }
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: #CACACA;
+      background-color: #1e2422; }
+      body img {
+        -webkit-filter: brightness(0.8);
+                filter: brightness(0.8); }
+      body path {
+        stroke: #CACACA; } }
 
 h1,
 h2,
@@ -322,6 +336,10 @@ header {
         width: 100%; } }
     header .header__figure img {
       height: auto;
+      -webkit-transition: -webkit-filter 0.2s ease-in-out;
+      transition: -webkit-filter 0.2s ease-in-out;
+      transition: filter 0.2s ease-in-out;
+      transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out;
       width: 100%; }
       @media screen and (min-width: 1000px) {
         header .header__figure img {

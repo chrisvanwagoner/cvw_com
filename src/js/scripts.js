@@ -314,15 +314,10 @@ if (window.innerWidth > 600) {
 		
 	}
 
-	let switchMode = (event) => {
-		if (body.classList.contains('dark-mode') == true) {
-			body.classList.remove('dark-mode');
-			event.target.innerHTML = 'Switch to dark mode';
-		} else {
-			body.classList.add('dark-mode');
-			event.target.innerHTML = 'Switch to light mode';
-		}
-	};
+	// TODO: add check if system pref is set to light or dark mode
+	// TODO: change the button copy and class if light or dark
+
+	
 
 	let checkScrollMain = () => {
 		let distFromTop = pathMain.getBoundingClientRect().top;
@@ -350,8 +345,19 @@ if (window.innerWidth > 600) {
 	window.addEventListener('resize', () => {
 		window.requestAnimationFrame(events);
 	});
-	switchButton.addEventListener('click', switchMode);
+	
 }
+
+let switchMode = (event) => {
+	if (body.classList.contains('dark-mode') == true) {
+		body.classList.remove('dark-mode');
+		event.target.innerHTML = 'Switch to dark mode';
+	} else {
+		body.classList.add('dark-mode');
+		event.target.innerHTML = 'Switch to light mode';
+	}
+};
+switchButton.addEventListener('click', switchMode);
 
 // let preview = document.querySelector('#preview');
 // clientEntry.forEach((el) => {
