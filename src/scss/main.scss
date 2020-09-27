@@ -48,9 +48,24 @@ body {
 	}
 	&.dark-mode {
 		color: #CACACA;
-		background-color: #1e2422;;
+		background-color: #1e2422;
+		img {
+			filter: brightness(0.7);
+		}
+		path {
+			stroke: #CACACA;
+		}
 	}
-	;
+	@media (prefers-color-scheme: dark) {
+		color: #CACACA;
+		background-color: #1e2422;
+		img {
+			filter: brightness(0.8);
+		}
+		path {
+			stroke: #CACACA;
+		}
+	}
 }
 
 h1,
@@ -140,6 +155,7 @@ header {
 
 		img {
 			height: auto;
+			transition: filter 0.2s ease-in-out;
 			width: 100%;
 
 			@media #{$min-1000} {
