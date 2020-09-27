@@ -6,27 +6,29 @@ main.scss
 @import "variables";
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::selection {
-	background: $green;
-	color: #FFF;
+  background: $green;
+  color: #FFF;
 }
 
 html {
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	font-size: 16px;
-	@media #{$min-800} {
-		font-size: 20px;
-	}
-	cursor: default;
-	scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+
+  @media #{$min-800} {
+    font-size: 20px;
+  }
+
+  cursor: default;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -77,36 +79,53 @@ h6,
 p,
 small,
 a {
-	text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
-	@extend %h1;
+  @extend %h1;
 }
 
 h2 {
-	@extend %h2;
+  @extend %h2;
 }
 
 h3,
 .h3-like {
-	@extend %h3;
+  @extend %h3;
 }
 
 h4 {
-	@extend %h4;
+  @extend %h4;
 }
 
 p {
-	@extend %paragraph;
+  @extend %paragraph;
 }
 
 small {
-	@extend %small;
+  @extend %small;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
+}
+
+button {
+  border: 1px solid $green;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  background-color: inherit;
+  opacity: 0.8;
+  border-radius: 40px;
+  cursor: pointer;
+
+  &--dark {}
+
+  &--light {}
 }
 
 /***********************************
@@ -244,162 +263,162 @@ header {
 }
 
 #preview {
-	background-color: $green;
-	opacity: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	transition: opacity 250ms ease-in-out;
-	z-index: -1;
+  background-color: $green;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 250ms ease-in-out;
+  z-index: -1;
 
-	@media #{$min-800} {
-		bottom: 0;
-		left: 0;
-		width: 100%;
-	}
+  @media #{$min-800} {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 
 /***********************************
   Main
 ***********************************/
 main {
-	@extend %grid;
-	margin-bottom: $lh * 4;
-	overflow: hidden;
-	padding-bottom: $lh;
+  @extend %grid;
+  margin-bottom: $lh * 4;
+  overflow: hidden;
+  padding-bottom: $lh;
 
-	.main__title {
-		grid-column: 1 / -1;
-		padding-bottom: $lh;
-		position: relative;
-		z-index: -2;
+  .main__title {
+    grid-column: 1 / -1;
+    padding-bottom: $lh;
+    position: relative;
+    z-index: -2;
 
-		@media #{$min-1000} {
-			grid-column: 1 / 12 span;
-			margin-bottom: 10vw;
-		}
-	}
+    @media #{$min-1000} {
+      grid-column: 1 / 12 span;
+      margin-bottom: 10vw;
+    }
+  }
 
-	.title-decoration {
-		position: absolute;
-		bottom: -30px;
-		left: 250px;
-		opacity: 0.5;
-		z-index: -1;
+  .title-decoration {
+    position: absolute;
+    bottom: -30px;
+    left: 250px;
+    opacity: 0.5;
+    z-index: -1;
 
-		@media #{$max-600} {
-			// bottom: -30px;
-			// left: 250px;
-			display: none;
-		}
+    @media #{$max-600} {
+      // bottom: -30px;
+      // left: 250px;
+      display: none;
+    }
 
-		path {
-			// --length: 5000;
-			// animation: dash 1000ms linear 750ms forwards;
-			// stroke-dasharray: var(--length);
-			// stroke-dashoffset: var(--length);
-		}
-	}
+    path {
+      // --length: 5000;
+      // animation: dash 1000ms linear 750ms forwards;
+      // stroke-dasharray: var(--length);
+      // stroke-dashoffset: var(--length);
+    }
+  }
 
-	.main__clients {
-		grid-column: 1 / -1;
-	}
+  .main__clients {
+    grid-column: 1 / -1;
+  }
 
-	.client {
-		padding-bottom: 1.7vh;
-		position: relative;
-		overflow: hidden;
-		text-align: right;
+  .client {
+    padding-bottom: 1.7vh;
+    position: relative;
+    overflow: hidden;
+    text-align: right;
 
-		@media #{$min-1000} {
-			margin-right: 15px;
-		}
-	}
+    @media #{$min-1000} {
+      margin-right: 15px;
+    }
+  }
 
-	.client__name {
-		--wght: 400;
+  .client__name {
+    --wght: 400;
 
-		@media #{$min-1000} {
-			--wght: 100;
-		}
+    @media #{$min-1000} {
+      --wght: 100;
+    }
 
-		@extend %heading;
-		@extend %link;
-		display: inline-block;
-		font-size: 5vw;
-		font-variation-settings: 'wght'var(--wght);
-		letter-spacing: -0.01vw;
-		line-height: 1.2;
-		padding-bottom: 0.8vw;
+    @extend %heading;
+    @extend %link;
+    display: inline-block;
+    font-size: 5vw;
+    font-variation-settings: 'wght'var(--wght);
+    letter-spacing: -0.01vw;
+    line-height: 1.2;
+    padding-bottom: 0.8vw;
 
-		&:before,
-		&:after {
-			// bottom: 0.7vw;
-			bottom: 0;
-		}
+    &:before,
+    &:after {
+      // bottom: 0.7vw;
+      bottom: 0;
+    }
 
-		span {
-			overflow: hidden;
-		}
+    span {
+      overflow: hidden;
+    }
 
-		@media #{$min-800} {
-			font-size: 4vw;
-			line-height: 0.9;
-		}
+    @media #{$min-800} {
+      font-size: 4vw;
+      line-height: 0.9;
+    }
 
-		@media #{$min-1000} {
-			font-size: 70px;
-			letter-spacing: -3px;
-		}
-	}
+    @media #{$min-1000} {
+      font-size: 70px;
+      letter-spacing: -3px;
+    }
+  }
 }
 
 /***********************************
 Footer
 ***********************************/
 footer {
-	@extend %grid;
-	display: block;
-	min-height: 30%;
-	min-height: 30vh;
-	margin-bottom: 10vw;
-	overflow: hidden;
-	padding-bottom: 16px;
+  @extend %grid;
+  display: block;
+  min-height: 30%;
+  min-height: 30vh;
+  margin-bottom: 10vw;
+  overflow: hidden;
+  padding-bottom: 16px;
 
-	.contact {
-		grid-column: 2 / 12;
-	}
+  .contact {
+    grid-column: 2 / 12;
+  }
 
-	h2 {
-		position: relative;
-	}
+  h2 {
+    position: relative;
+  }
 
-	.title-decoration {
-		position: absolute;
-		top: -38px;
-		left: 185px;
-		opacity: 0.5;
-		
-		@media #{$max-600} {
-			// top: -35px;
-			// left: 185px;
-			display: none;
-		}
-	}
+  .title-decoration {
+    position: absolute;
+    top: -38px;
+    left: 185px;
+    opacity: 0.5;
 
-	li {
+    @media #{$max-600} {
+      // top: -35px;
+      // left: 185px;
+      display: none;
+    }
+  }
 
-		&:not(:first-child) {
-			margin-top: 18px;
-		}
+  li {
 
-		&:last-child {
-			font-style: italic;
-			margin-top: 36px;
-		}
-	}
+    &:not(:first-child) {
+      margin-top: 18px;
+    }
 
-	a {
-		@extend %link;
-	}
+    &:last-child {
+      font-style: italic;
+      margin-top: 36px;
+    }
+  }
+
+  a {
+    @extend %link;
+  }
 }
