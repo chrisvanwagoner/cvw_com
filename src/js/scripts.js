@@ -52,18 +52,18 @@ var clients = [
     imgAlt: "",
     bgColor: ""
   },
-  {
-    name: "Anheuser-Busch",
-    class: "anheuser",
-    summary: "Site maintenance for Anheuser-Busch's platform for updates on their nationwide outreach.",
-    category: "Outreach",
-    url: "https://www.purposebeyondbrewing.com/index.html",
-    imgPlc: "images/anheuser-busch.jpg",
-    imgSrc: "images/anheuser-busch@1x.jpg",
-    imgSrcSet: "images/anheuser-busch@2x.jpg 2x",
-    imgAlt: "Screenshot of an Anheuser-Busch Purpose Beyond Brewing initiative page",
-    bgColor: "rgb(249, 245, 229)"
-  },
+  // {
+  //   name: "Anheuser-Busch",
+  //   class: "anheuser",
+  //   summary: "Site maintenance for Anheuser-Busch's platform for updates on their nationwide outreach.",
+  //   category: "Outreach",
+  //   url: "https://www.purposebeyondbrewing.com/index.html",
+  //   imgPlc: "images/anheuser-busch.jpg",
+  //   imgSrc: "images/anheuser-busch@1x.jpg",
+  //   imgSrcSet: "images/anheuser-busch@2x.jpg 2x",
+  //   imgAlt: "Screenshot of an Anheuser-Busch Purpose Beyond Brewing initiative page",
+  //   bgColor: "rgb(249, 245, 229)"
+  // },
   {
     name: "City Parks Alliance",
     class: "cityparks",
