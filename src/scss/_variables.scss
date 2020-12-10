@@ -12,7 +12,8 @@ $bg: #f6f4f3;
 // $bg: #FFF;
 $text: #19181D;
 // $text: #24130C;
-$link-underline: #CACACA;
+// $link-underline: #CACACA;
+$link-underline: #bbab57;
 $link-hover: $green;
 
 // .dark-mode {
@@ -170,7 +171,7 @@ $min-1200:   "screen and (min-width: 1200px)";
 	&:after {
 		content: "";
 		position: absolute;
-		bottom: 1px;
+		bottom: 0;
 		right: 0;
 		height: 1px;
 		z-index: -1;
