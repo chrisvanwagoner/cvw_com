@@ -8,13 +8,13 @@ const cssmin = require('gulp-cssmin');
 const del = require('del');
 const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
-const maps = require('gulp-sourcemaps');
+// const maps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const pug = require('gulp-pug');
-const rename = require('gulp-rename');
+// const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
-const minifyCssNames = require('gulp-minify-cssnames');
+// const minifyCssNames = require('gulp-minify-cssnames');
 
 const babel = require('gulp-babel');
 // const concatCss = require('gulp-concat-css');
@@ -103,9 +103,7 @@ function images() {
 /* Delete the /dist directory contents */
 function clean() {
   return del([
-    'dist/*',
-    "src/css/styles.min.css",
-    "src/js/scripts.min.js"
+    'dist/*'
   ]);
 }
 
@@ -127,11 +125,10 @@ function clean() {
 function build() {
   gulp
     .src(['src/js/scripts.js'])
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(uglify())
-    // .pipe(rename('scripts.min.js'))
+    // .pipe(babel({
+    //   presets: ['@babel/env']
+    // }))
+    // .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
   
   gulp
