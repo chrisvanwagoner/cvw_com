@@ -187,7 +187,7 @@ header .header__bio a, main .client__name, footer a {
     content: "";
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     height: 1px;
     z-index: -1; }
   header .header__bio a:before, main .client__name:before, footer a:before {
@@ -203,6 +203,9 @@ header .header__bio a, main .client__name, footer a {
     header .header__bio a:hover:after, main .client__name:hover:after, footer a:hover:after, header .header__bio a:focus:after, main .client__name:focus:after, footer a:focus:after {
       background-color: #00584b;
       width: 100%; }
+    @media (prefers-color-scheme: dark) {
+      header .header__bio a:hover, main .client__name:hover, footer a:hover, header .header__bio a:focus, main .client__name:focus, footer a:focus {
+        color: #FFF; } }
 
 main, footer {
   display: grid;
@@ -473,7 +476,13 @@ main {
       main .client__name {
         --wght: 100; } }
     main .client__name:before, main .client__name:after {
-      bottom: 0; }
+      bottom: 4px; }
+      @media screen and (min-width: 800px) {
+        main .client__name:before, main .client__name:after {
+          bottom: 7px; } }
+      @media screen and (min-width: 1200px) {
+        main .client__name:before, main .client__name:after {
+          bottom: 10px; } }
     main .client__name span {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
