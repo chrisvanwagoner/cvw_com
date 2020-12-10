@@ -186,12 +186,12 @@ header .header__bio a, main .client__name, footer a {
   header .header__bio a:before, main .client__name:before, footer a:before, header .header__bio a:after, main .client__name:after, footer a:after {
     content: "";
     position: absolute;
-    bottom: 1px;
+    bottom: 0;
     right: 0;
     height: 1px;
     z-index: -1; }
   header .header__bio a:before, main .client__name:before, footer a:before {
-    background-color: #CACACA;
+    background-color: #bbab57;
     width: 100%; }
   header .header__bio a:after, main .client__name:after, footer a:after {
     background-color: #00584b;
@@ -216,6 +216,18 @@ header {
   @media screen and (min-width: 1000px) {
     header {
       grid-template-rows: repeat(12, 1fr); } }
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 * {
   margin: 0;
@@ -244,6 +256,8 @@ html {
       font-size: 20px; } }
 
 body {
+  -webkit-animation: 1500ms fade-in;
+          animation: 1500ms fade-in;
   background-color: #f6f4f3;
   font-family: 'Inter var', 'Inter', sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -459,7 +473,7 @@ main {
       main .client__name {
         --wght: 100; } }
     main .client__name:before, main .client__name:after {
-      bottom: 0; }
+      bottom: 11px; }
     main .client__name span {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
