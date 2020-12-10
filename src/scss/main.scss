@@ -52,7 +52,7 @@ body {
 	}
 	&.dark-mode {
 		color: #CACACA;
-		background-color: #1e2422;
+		background-color: #191c1b;
 		img {
 			filter: brightness(0.7);
 		}
@@ -62,7 +62,7 @@ body {
 	}
 	@media (prefers-color-scheme: dark) {
 		color: #CACACA;
-		background-color: #1e2422;
+		background-color: #191c1b;
 		img {
 			filter: brightness(0.8);
 		}
@@ -356,7 +356,8 @@ main {
     &:before,
     &:after {
       // bottom: 0.7vw;
-      bottom: 11px;
+      // bottom: 11px;
+      bottom: 0;
     }
 
     span {
@@ -369,7 +370,7 @@ main {
     }
 
     @media #{$min-1000} {
-      font-size: 70px;
+      font-size: 60px;
       letter-spacing: -3px;
     }
   }
