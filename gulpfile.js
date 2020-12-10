@@ -167,7 +167,7 @@ function watchFiles() {
 const start = gulp.series(styles, scripts, html);
 const watch = gulp.parallel(watchFiles, browserSync);
 const run = gulp.series(start, watch);
-const dist = gulp.series(clean, build);
+const dist = gulp.series(clean, start, build);
 
 // export tasks
 exports.images = images;
