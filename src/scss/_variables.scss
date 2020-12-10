@@ -172,7 +172,7 @@ $min-1200:   "screen and (min-width: 1200px)";
 		content: "";
 		position: absolute;
 		bottom: 0;
-		right: 0;
+		left: 0;
 		height: 1px;
 		z-index: -1;
 	}
@@ -191,6 +191,10 @@ $min-1200:   "screen and (min-width: 1200px)";
 		&:after {
 			background-color: $link-hover;
 			width: 100%;
+		}
+		@media (prefers-color-scheme: dark) {
+			color: #FFF;
+			
 		}
 	}
 }
