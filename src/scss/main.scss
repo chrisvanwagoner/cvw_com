@@ -355,9 +355,14 @@ main {
 
     &:before,
     &:after {
-      // bottom: 0.7vw;
-      // bottom: 11px;
-      bottom: 0;
+      // bottom: 0.7vw;;
+      bottom: 4px;
+      @media #{$min-800} {
+        bottom: 7px;
+      }
+      @media #{$min-1200} {
+        bottom: 10px;
+      }
     }
 
     span {
