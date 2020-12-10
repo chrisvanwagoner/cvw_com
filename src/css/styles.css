@@ -276,7 +276,7 @@ body {
       margin-left: auto; } }
   body.dark-mode {
     color: #CACACA;
-    background-color: #1e2422; }
+    background-color: #191c1b; }
     body.dark-mode img {
       -webkit-filter: brightness(0.7);
               filter: brightness(0.7); }
@@ -285,7 +285,7 @@ body {
   @media (prefers-color-scheme: dark) {
     body {
       color: #CACACA;
-      background-color: #1e2422; }
+      background-color: #191c1b; }
       body img {
         -webkit-filter: brightness(0.8);
                 filter: brightness(0.8); }
@@ -473,7 +473,7 @@ main {
       main .client__name {
         --wght: 100; } }
     main .client__name:before, main .client__name:after {
-      bottom: 11px; }
+      bottom: 0; }
     main .client__name span {
       overflow: hidden; }
     @media screen and (min-width: 800px) {
@@ -482,7 +482,7 @@ main {
         line-height: 0.9; } }
     @media screen and (min-width: 1000px) {
       main .client__name {
-        font-size: 70px;
+        font-size: 60px;
         letter-spacing: -3px; } }
 
 /***********************************
