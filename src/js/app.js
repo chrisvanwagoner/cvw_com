@@ -1,6 +1,18 @@
 /* app.js */
 var clients = [
   {
+    name: "Entertainment Software Association",
+    class: "esa-map",
+    url: "https://www.theesa.com/video-game-impact-map/",
+    summary: "",
+    category: "",
+    imgPlc: "",
+    imgSrc: "",
+    imgSrcSet: " 2x",
+    imgAlt: "",
+    bgColor: ""
+  },
+  {
     name: "Greater & Greener",
     class: "gg",
     url: "https://www.greatergreener.org/",
