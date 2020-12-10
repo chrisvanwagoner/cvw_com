@@ -357,7 +357,7 @@ let switchMode = (event) => {
 		event.target.innerHTML = 'Switch to light mode';
 	}
 };
-switchButton.addEventListener('click', switchMode);
+// switchButton.addEventListener('click', switchMode);
 
 // let preview = document.querySelector('#preview');
 // clientEntry.forEach((el) => {
