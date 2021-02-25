@@ -9,7 +9,7 @@ let targetBottom = windowHeight * 0.7;
 let pathMain = document.querySelector('.main__svg path');
 let pathFooter = document.querySelector('.footer__svg path');
 let body = document.querySelector('body');
-let switchButton = document.querySelector('.mode-toggle');
+let toggleButton = document.querySelector('.toggle');
 let pathMainAnimate = anime({
 	targets: pathMain,
 	loop: false,
@@ -53,7 +53,6 @@ let events = () => {
 	clientEntry.forEach((el) => {
 		let distFromTop = el.getBoundingClientRect().top;
 		let elName = el.querySelector('.client__name');
-		// let distFromTop = elRect.top;
 		let weight;
 		let skew;
 		let translateX;
@@ -89,7 +88,7 @@ let checkScrollMain = () => {
 		window.removeEventListener('scroll', checkScrollMain);
 		pathMainAnimate.play();
 	}
-}
+};
 
 let checkScrollFooter = () => {
 	let distFromTop = pathFooter.getBoundingClientRect().top;
@@ -97,7 +96,7 @@ let checkScrollFooter = () => {
 		window.removeEventListener('scroll', checkScrollFooter);
 		pathFooterAnimate.play();
 	}
-}
+};
 
 window.addEventListener('scroll', checkScrollMain);
 window.addEventListener('scroll', checkScrollFooter);
@@ -109,16 +108,38 @@ window.addEventListener('resize', () => {
 });
 	
 
-let switchMode = (event) => {
+let toggleMode = (event) => {
 	if (body.classList.contains('dark-mode') == true) {
+		body.classList.add('light-mode');
 		body.classList.remove('dark-mode');
-		event.target.innerHTML = 'Switch to dark mode';
+		// event.target.classList.remove('toggle--dark')
+		event.target.innerHTML = '<span id="toggle-label" hidden>Switch to dark mode</span>';
 	} else {
 		body.classList.add('dark-mode');
-		event.target.innerHTML = 'Switch to light mode';
+		body.classList.remove('light-mode');
+		// event.target.classList.add('toggle--dark')
+		event.target.innerHTML = '<span id="toggle-label" hidden>Switch to light mode</span>';
 	}
 };
-// switchButton.addEventListener('click', switchMode);
+toggleButton.addEventListener('click', toggleMode);
+console.log(window.getComputedStyle(body));
+
+
+let colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+const setColorScheme = e => {
+  if (e.matches) {
+    body.classList.add('dark-mode');
+    
+    console.log('Dark mode')
+  } else {
+    body.classList.add('light-mode');
+    
+    console.log('Light mode')
+  }
+}
+
+setColorScheme(colorSchemeQueryList);
+colorSchemeQueryList.addEventListener(setColorScheme, null);
 
 // let preview = document.querySelector('#preview');
 // clientEntry.forEach((el) => {
