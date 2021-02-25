@@ -45,7 +45,7 @@ let pathFooterAnimate = anime({
 //   el.style.setProperty('opacity', 1);
 // });
 
-if (window.innerWidth > 600) {
+
 	let events = () => {
 
 		fadeLeft.forEach((el) => {
@@ -68,15 +68,26 @@ if (window.innerWidth > 600) {
 			let elName = el.querySelector('.client__name');
 			// let distFromTop = elRect.top;
 			let weight;
+			let skew;
+			let translateX;
 			const maxWeight = 300;
+			const maxSkew = 15;
+			const maxTranslate = 200;
 			if (distFromTop <= targetTop) {
 				weight = ((distFromTop / targetTop) * (maxWeight - 100)) + 100;
+				skew = ((targetTop - distFromTop) / targetTop) * maxSkew;
+				translateX = (((targetTop - distFromTop) / targetTop) ** 3) * maxTranslate;
+				
+
 				elName.style.setProperty('--wght', weight);
-				// } else if ((distFromTop >= targetBottom) && (distFromTop <= windowHeight)) {
-				//   weight = (maxWeight - (distFromTop - (targetBottom)) * 2);
-				//   elName.style.setProperty('--wght', weight );
+				if (window.innerWidth > 600) {
+					elName.style.setProperty('--skew', `${skew.toString()}deg`);
+					elName.style.setProperty('--translateX', `-${translateX.toString()}px`);
+				}
 			} else {
 				elName.style.setProperty('--wght', maxWeight);
+				elName.style.setProperty('--skew', '0');
+				elName.style.setProperty('--translateX', '0');
 			}
 		});
 
@@ -127,7 +138,6 @@ if (window.innerWidth > 600) {
 		window.requestAnimationFrame(events);
 	});
 	
-}
 
 let switchMode = (event) => {
 	if (body.classList.contains('dark-mode') == true) {
