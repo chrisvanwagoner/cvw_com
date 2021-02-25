@@ -50,6 +50,26 @@ body {
 		margin-right: auto;
 		margin-left: auto;
 	}
+
+  .toggle {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: inherit;
+    opacity: 0.7;
+    border-radius: 40px;
+    cursor: pointer;
+    background-position: 0% 0%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid $text;
+    border: 0;
+    color: $text;
+    background-image: url(../images/sun.svg);
+  }
+
 	&.dark-mode {
 		color: #CACACA;
 		background-color: #191c1b;
@@ -59,16 +79,25 @@ body {
 		path {
 			stroke: #CACACA;
 		}
+
+    .toggle {
+      border-color: #CACACA;
+      color: $bg;
+      background-image: url(../images/moon.svg);
+    }
 	}
+
 	@media (prefers-color-scheme: dark) {
-		color: #CACACA;
-		background-color: #191c1b;
-		img {
-			filter: brightness(0.8);
-		}
-		path {
-			stroke: #CACACA;
-		}
+    &:not(.light-mode) {
+      color: #CACACA;
+      background-color: #191c1b;
+      img {
+        filter: brightness(0.7);
+      }
+      path {
+        stroke: #CACACA;
+      }
+    }
 	}
 }
 
@@ -111,23 +140,6 @@ small {
 
 ul {
   list-style: none;
-}
-
-button {
-  border: 1px solid $green;
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  background-color: inherit;
-  opacity: 0.8;
-  border-radius: 40px;
-  cursor: pointer;
-
-  &--dark {}
-
-  &--light {}
 }
 
 /***********************************
