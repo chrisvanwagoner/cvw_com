@@ -156,7 +156,8 @@ function build() {
 // Watch files
 function watchFiles() {
   gulp.watch("./src/scss/**/*", styles);
-  gulp.watch("./src/js/**/*", scripts);
+  // gulp.watch("./src/js/**/*", scripts);
+  gulp.watch("./src/js/runthis.js", scripts);
   gulp.watch('./src/index.pug', html);
 }
 
