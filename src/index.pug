@@ -11,7 +11,8 @@ html(lang='en')
 		link(href="css/styles.css" rel="stylesheet" type="text/css" media="screen")
 	body
 		header
-			//- button.mode-toggle.button--dark Switch to dark mode
+			button.toggle(aria-labeledby="toggle-label")
+				span#toggle-label(hidden) Switch to dark mode
 			figure.header__figure
 				img.fade-left.lazyload(src='images/chris-van-wagoner-portrait-blur.jpg', 
 				srcset='images/chris-van-wagoner-portrait-blur.jpg', 
