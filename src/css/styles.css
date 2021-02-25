@@ -277,6 +277,23 @@ body {
     body {
       margin-right: auto;
       margin-left: auto; } }
+  body .toggle {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: inherit;
+    opacity: 0.7;
+    border-radius: 40px;
+    cursor: pointer;
+    background-position: 0% 0%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid #19181D;
+    border: 0;
+    color: #19181D;
+    background-image: url(../images/sun.svg); }
   body.dark-mode {
     color: #CACACA;
     background-color: #191c1b; }
@@ -285,14 +302,18 @@ body {
               filter: brightness(0.7); }
     body.dark-mode path {
       stroke: #CACACA; }
+    body.dark-mode .toggle {
+      border-color: #CACACA;
+      color: #f6f4f3;
+      background-image: url(../images/moon.svg); }
   @media (prefers-color-scheme: dark) {
-    body {
+    body:not(.light-mode) {
       color: #CACACA;
       background-color: #191c1b; }
-      body img {
-        -webkit-filter: brightness(0.8);
-                filter: brightness(0.8); }
-      body path {
+      body:not(.light-mode) img {
+        -webkit-filter: brightness(0.7);
+                filter: brightness(0.7); }
+      body:not(.light-mode) path {
         stroke: #CACACA; } }
 
 h1,
@@ -308,18 +329,6 @@ a {
 
 ul {
   list-style: none; }
-
-button {
-  border: 1px solid #00584b;
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  background-color: inherit;
-  opacity: 0.8;
-  border-radius: 40px;
-  cursor: pointer; }
 
 /***********************************
   Header
