@@ -112,29 +112,21 @@ let toggleMode = (event) => {
 	if (body.classList.contains('dark-mode') == true) {
 		body.classList.add('light-mode');
 		body.classList.remove('dark-mode');
-		// event.target.classList.remove('toggle--dark')
 		event.target.innerHTML = '<span id="toggle-label" hidden>Switch to dark mode</span>';
 	} else {
 		body.classList.add('dark-mode');
 		body.classList.remove('light-mode');
-		// event.target.classList.add('toggle--dark')
 		event.target.innerHTML = '<span id="toggle-label" hidden>Switch to light mode</span>';
 	}
 };
 toggleButton.addEventListener('click', toggleMode);
-console.log(window.getComputedStyle(body));
-
 
 let colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
 const setColorScheme = e => {
   if (e.matches) {
     body.classList.add('dark-mode');
-    
-    console.log('Dark mode')
   } else {
     body.classList.add('light-mode');
-    
-    console.log('Light mode')
   }
 }
 
