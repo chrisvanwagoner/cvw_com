@@ -424,19 +424,20 @@ header {
       right: var(--left); } }
 
 #preview {
+  --x: 0;
+  --y: 0;
   background-color: #00584b;
   opacity: 0;
   position: fixed;
-  right: 0;
-  top: 0;
+  top: 50px;
+  left: 50px;
   -webkit-transition: opacity 250ms ease-in-out;
   transition: opacity 250ms ease-in-out;
   z-index: -1; }
   @media screen and (min-width: 800px) {
     #preview {
-      bottom: 0;
-      left: 0;
-      width: 100%; } }
+      height: 500px;
+      width: 500px; } }
 
 /***********************************
   Main
