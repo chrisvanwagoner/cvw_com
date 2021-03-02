@@ -33,13 +33,14 @@ let pathFooterAnimate = anime({
 	delay: 500
 });
 
+// Updating #preview with client site images
 clientEntry.forEach((el) => {
 	let elName = el.querySelector('.client__name');
 	elName.addEventListener('mouseover', e => {
 		let elPreview = e.target.offsetParent.getAttribute('data-preview');
-		// console.log(elPreview);
 		preview.style.opacity = 1;
 		preview.style.backgroundImage = `url("../${elPreview}")`;
+		// TODO: replace e.pageX/y with cursor position
 		preview.style.setProperty('--x', `${e.pageX}px`);
 		preview.style.setProperty('--y', `${e.pageY}px`);
 
@@ -50,7 +51,9 @@ clientEntry.forEach((el) => {
 });
 
 
-const events = () => {
+
+// Move header and client elements as page is scrolled
+const scrollEvents = () => {
 
 	fadeLeft.forEach((el) => {
 		let top = el.getBoundingClientRect().top;
@@ -110,14 +113,15 @@ const checkScrollFooter = () => {
 window.addEventListener('scroll', checkScrollMain);
 window.addEventListener('scroll', checkScrollFooter);
 window.addEventListener('scroll', () => {
-	window.requestAnimationFrame(events);
+	window.requestAnimationFrame(scrollEvents);
 });
 window.addEventListener('resize', () => {
-	window.requestAnimationFrame(events);
+	window.requestAnimationFrame(scrollEvents);
 });
 
 
-let toggleMode = (event) => {
+// Toggle dark/light mode
+let toggleMode = () => {
 	if (body.classList.contains('dark-mode') == true) {
 		body.classList.add('light-mode');
 		body.classList.remove('dark-mode');
