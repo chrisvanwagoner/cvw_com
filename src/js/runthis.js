@@ -34,21 +34,21 @@ let pathFooterAnime = anime({
 });
 
 // Updating #preview with client site images
-clientEntry.forEach((el) => {
-	let elName = el.querySelector('.client__name');
-	elName.addEventListener('mouseover', e => {
-		let elPreview = e.target.offsetParent.getAttribute('data-preview');
-		preview.style.opacity = 1;
-		preview.style.backgroundImage = `url("../${elPreview}")`;
-		// TODO: replace e.pageX/y with cursor position
-		preview.style.setProperty('--x', `${e.pageX}px`);
-		preview.style.setProperty('--y', `${e.pageY}px`);
+// clientEntry.forEach((el) => {
+// 	let elName = el.querySelector('.client__name');
+// 	elName.addEventListener('mouseover', e => {
+// 		let elPreview = e.target.offsetParent.getAttribute('data-preview');
+// 		preview.style.opacity = 1;
+// 		preview.style.backgroundImage = `url("../${elPreview}")`;
+// 		// TODO: replace e.pageX/Y with cursor position
+// 		preview.style.setProperty('--x', `${e.pageX}px`);
+// 		preview.style.setProperty('--y', `${e.pageY}px`);
 
-	});
-	elName.addEventListener('mouseout', () => {
-		preview.style.opacity = 0;
-	});
-});
+// 	});
+// 	elName.addEventListener('mouseout', () => {
+// 		preview.style.opacity = 0;
+// 	});
+// });
 
 
 
