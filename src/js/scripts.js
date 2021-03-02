@@ -219,18 +219,17 @@ var app = new Vue({
 
 /* runthis.js */
 
-let clientEntry = document.querySelectorAll('.client');
+let body = document.querySelector('body');
+let preview = document.querySelector('#preview');
+let toggleButton = document.querySelector('.toggle');
 let fadeLeft = document.querySelectorAll('.fade-left');
 let fadeRight = document.querySelectorAll('.fade-right');
+let clientEntry = document.querySelectorAll('.client');
 let windowHeight = window.innerHeight;
 let targetTop = windowHeight * 0.4;
 let targetBottom = windowHeight * 0.7;
 let pathMain = document.querySelector('.main__svg path');
-let pathFooter = document.querySelector('.footer__svg path');
-let body = document.querySelector('body');
-let preview = document.querySelector('#preview');
-let toggleButton = document.querySelector('.toggle');
-let pathMainAnimate = anime({
+let pathMainAnime = anime({
 	targets: pathMain,
 	loop: false,
 	direction: 'linear',
@@ -239,9 +238,10 @@ let pathMainAnimate = anime({
 	duration: 3000,
 	autoplay: false,
 	delay: 500
-
+	
 });
-let pathFooterAnimate = anime({
+let pathFooter = document.querySelector('.footer__svg path');
+let pathFooterAnime = anime({
 	targets: pathFooter,
 	loop: false,
 	direction: 'linear',
@@ -252,24 +252,27 @@ let pathFooterAnimate = anime({
 	delay: 500
 });
 
-clientEntry.forEach((el) => {
-	let elName = el.querySelector('.client__name');
-	elName.addEventListener('mouseover', e => {
-		let elPreview = e.target.offsetParent.getAttribute('data-preview');
-		// console.log(elPreview);
-		preview.style.opacity = 1;
-		preview.style.backgroundImage = `url("../${elPreview}")`;
-		preview.style.setProperty('--x', `${e.pageX}px`);
-		preview.style.setProperty('--y', `${e.pageY}px`);
+// Updating #preview with client site images
+// clientEntry.forEach((el) => {
+// 	let elName = el.querySelector('.client__name');
+// 	elName.addEventListener('mouseover', e => {
+// 		let elPreview = e.target.offsetParent.getAttribute('data-preview');
+// 		preview.style.opacity = 1;
+// 		preview.style.backgroundImage = `url("../${elPreview}")`;
+// 		// TODO: replace e.pageX/Y with cursor position
+// 		preview.style.setProperty('--x', `${e.pageX}px`);
+// 		preview.style.setProperty('--y', `${e.pageY}px`);
 
-	});
-	elName.addEventListener('mouseout', () => {
-		preview.style.opacity = 0;
-	});
-});
+// 	});
+// 	elName.addEventListener('mouseout', () => {
+// 		preview.style.opacity = 0;
+// 	});
+// });
 
 
-const events = () => {
+
+// Move header and client elements as page is scrolled
+const scrollEvents = () => {
 
 	fadeLeft.forEach((el) => {
 		let top = el.getBoundingClientRect().top;
@@ -314,7 +317,7 @@ const checkScrollMain = () => {
 	let distFromTop = pathMain.getBoundingClientRect().top;
 	if (distFromTop <= targetBottom) {
 		window.removeEventListener('scroll', checkScrollMain);
-		pathMainAnimate.play();
+		pathMainAnime.play();
 	}
 };
 
@@ -322,21 +325,22 @@ const checkScrollFooter = () => {
 	let distFromTop = pathFooter.getBoundingClientRect().top;
 	if (distFromTop <= targetBottom) {
 		window.removeEventListener('scroll', checkScrollFooter);
-		pathFooterAnimate.play();
+		pathFooterAnime.play();
 	}
 };
 
 window.addEventListener('scroll', checkScrollMain);
 window.addEventListener('scroll', checkScrollFooter);
 window.addEventListener('scroll', () => {
-	window.requestAnimationFrame(events);
+	window.requestAnimationFrame(scrollEvents);
 });
 window.addEventListener('resize', () => {
-	window.requestAnimationFrame(events);
+	window.requestAnimationFrame(scrollEvents);
 });
 
 
-let toggleMode = (event) => {
+// Toggle dark/light mode
+let toggleMode = () => {
 	if (body.classList.contains('dark-mode') == true) {
 		body.classList.add('light-mode');
 		body.classList.remove('dark-mode');
