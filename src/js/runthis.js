@@ -73,19 +73,15 @@ const events = () => {
 		let skew;
 		let translateX;
 		const maxWeight = 300;
-		const maxSkew = 15;
-		const maxTranslate = 200;
+		const maxSkew = 35;
+		const maxTranslate = 100;
 		if (distFromTop <= targetTop) {
 			weight = ((distFromTop / targetTop) * (maxWeight - 100)) + 100;
 			skew = ((targetTop - distFromTop) / targetTop) * maxSkew;
 			translateX = (((targetTop - distFromTop) / targetTop) ** 3) * maxTranslate;
-
-
 			elName.style.setProperty('--wght', weight);
-			if (window.innerWidth > 600) {
-				elName.style.setProperty('--skew', `${skew.toString()}deg`);
-				elName.style.setProperty('--translateX', `-${translateX.toString()}px`);
-			}
+			elName.style.setProperty('--skew', `${skew.toString()}deg`);
+			elName.style.setProperty('--translateX', `-${translateX.toString()}px`);
 		} else {
 			elName.style.setProperty('--wght', maxWeight);
 			elName.style.setProperty('--skew', '0');
