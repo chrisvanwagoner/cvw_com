@@ -1,17 +1,16 @@
 /* runthis.js */
 
-let clientEntry = document.querySelectorAll('.client');
+let body = document.querySelector('body');
+let preview = document.querySelector('#preview');
+let toggleButton = document.querySelector('.toggle');
 let fadeLeft = document.querySelectorAll('.fade-left');
 let fadeRight = document.querySelectorAll('.fade-right');
+let clientEntry = document.querySelectorAll('.client');
 let windowHeight = window.innerHeight;
 let targetTop = windowHeight * 0.4;
 let targetBottom = windowHeight * 0.7;
 let pathMain = document.querySelector('.main__svg path');
-let pathFooter = document.querySelector('.footer__svg path');
-let body = document.querySelector('body');
-let preview = document.querySelector('#preview');
-let toggleButton = document.querySelector('.toggle');
-let pathMainAnimate = anime({
+let pathMainAnime = anime({
 	targets: pathMain,
 	loop: false,
 	direction: 'linear',
@@ -20,9 +19,10 @@ let pathMainAnimate = anime({
 	duration: 3000,
 	autoplay: false,
 	delay: 500
-
+	
 });
-let pathFooterAnimate = anime({
+let pathFooter = document.querySelector('.footer__svg path');
+let pathFooterAnime = anime({
 	targets: pathFooter,
 	loop: false,
 	direction: 'linear',
@@ -98,7 +98,7 @@ const checkScrollMain = () => {
 	let distFromTop = pathMain.getBoundingClientRect().top;
 	if (distFromTop <= targetBottom) {
 		window.removeEventListener('scroll', checkScrollMain);
-		pathMainAnimate.play();
+		pathMainAnime.play();
 	}
 };
 
@@ -106,7 +106,7 @@ const checkScrollFooter = () => {
 	let distFromTop = pathFooter.getBoundingClientRect().top;
 	if (distFromTop <= targetBottom) {
 		window.removeEventListener('scroll', checkScrollFooter);
-		pathFooterAnimate.play();
+		pathFooterAnime.play();
 	}
 };
 
