@@ -10,6 +10,15 @@ let windowHeight = window.innerHeight;
 let targetTop = windowHeight * 0.4;
 let targetBottom = windowHeight * 0.7;
 let pathMain = document.querySelector('.main__svg path');
+// let x, y = 0;
+// window.addEventListener('mousemove', e => {
+//     x = e.pageXOffset;
+//     y = e.pageYOffset;
+// });
+// // Print x and y to console on mousedown
+// window.addEventListener('mousedown', e => {
+// 	console.log(`x: ${x}\ty: ${y}`);
+// });
 let pathMainAnime = anime({
 	targets: pathMain,
 	loop: false,
@@ -33,20 +42,22 @@ let pathFooterAnime = anime({
 	delay: 500
 });
 
-// Updating #preview with client site images
+// // Updating #preview with client site images
 // clientEntry.forEach((el) => {
 // 	let elName = el.querySelector('.client__name');
 // 	elName.addEventListener('mouseover', e => {
 // 		let elPreview = e.target.offsetParent.getAttribute('data-preview');
+// 		// console.log(elPreview);
 // 		preview.style.opacity = 1;
 // 		preview.style.backgroundImage = `url("../${elPreview}")`;
 // 		// TODO: replace e.pageX/Y with cursor position
-// 		preview.style.setProperty('--x', `${e.pageX}px`);
-// 		preview.style.setProperty('--y', `${e.pageY}px`);
+// 		preview.style.setProperty('--x', `${x}px`);
+// 		preview.style.setProperty('--y', `${y}px`);
+// 		console.log(`x: ${x}\ty: ${y}`);
 
 // 	});
 // 	elName.addEventListener('mouseout', () => {
-// 		preview.style.opacity = 0;
+// 		// preview.style.opacity = 0;
 // 	});
 // });
 
