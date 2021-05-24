@@ -7,7 +7,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -19,7 +19,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -31,7 +31,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -43,7 +43,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -91,7 +91,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -115,7 +115,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -127,7 +127,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -139,7 +139,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -151,7 +151,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -163,7 +163,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -175,7 +175,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
@@ -187,7 +187,7 @@ var clients = [
     summary: "",
     category: "",
     imgPlc: "",
-    imgSrc: "",
+    imgSrc: "images/fike.jpg",
     imgSrcSet: " 2x",
     imgAlt: "",
     bgColor: ""
